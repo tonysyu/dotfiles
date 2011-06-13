@@ -1,3 +1,39 @@
-External submodules should be added using git's submodule command. For example:
+External submodules should be added using git's submodule command.
 
-    git submodule add http://github.com/tpope/vim-fugitive.git bundle/fugitive
+The following commands were issued from the parent directory:
+
+    git submodule add git://github.com/tpope/vim-fugitive.git vim/bundle/fugitive
+    git submodule add git://github.com/msanders/snipmate.vim.git vim/bundle/snipmate
+    git submodule add git://github.com/tpope/vim-surround.git vim/bundle/surround
+    git submodule add git://github.com/vim-scripts/The-NERD-tree.git vim/bundle/nerdtree
+    git submodule add git://github.com/wincent/Command-T.git vim/bundle/command-t
+    git submodule add git://github.com/mileszs/ack.vim.git vim/bundle/ack
+
+    git submodule add git://github.com/vim-scripts/LustyJuggler.git vim/bundle/lustyjuggler
+    git submodule add git://github.com/tsaleh/vim-matchit.git vim/bundle/matchit
+    git submodule add git://github.com/vim-scripts/reload.vim.git vim/bundle/reload
+    git submodule add git://github.com/bronson/vim-trailing-whitespace.git vim/bundle/trailing-whitespace
+    git submodule add git://github.com/scrooloose/nerdcommenter.git vim/bundle/nerdcommenter
+
+Find the following bundles:
+    pyflakes-vim
+    tex_pdf
+    conque
+
+
+Consider adding the following bundles:
+    taglist
+    tagbar
+
+    git submodule add git://github.com/tpope/vim-git.git vim/bundle/git
+    git submodule add git://github.com/ervandew/supertab.git vim/bundle/supertab
+    git submodule add git://github.com/sontek/minibufexpl.vim.git vim/bundle/minibufexpl
+    git submodule add git://github.com/mitechie/pyflakes-pathogen.git
+    git submodule add git://github.com/sjl/gundo.vim.git vim/bundle/gundo
+    git submodule add git://github.com/fs111/pydoc.vim.git vim/bundle/pydoc
+    git submodule add git://github.com/vim-scripts/pep8.git vim/bundle/pep8
+    git submodule add git://github.com/alfredodeza/pytest.vim.git vim/bundle/py.test
+    git submodule add git://github.com/reinh/vim-makegreen vim/bundle/makegreen
+    git submodule add git://github.com/vim-scripts/TaskList.vim.git vim/bundle/tasklist
+    git submodule add git://github.com/sontek/rope-vim.git vim/bundle/ropevim
+
