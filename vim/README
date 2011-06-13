@@ -1,0 +1,3 @@
+External submodules should be added using git's submodule command. For example:
+
+    git submodule add http://github.com/tpope/vim-fugitive.git bundle/fugitive
