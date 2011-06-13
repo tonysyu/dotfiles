@@ -1,0 +1,70 @@
+snippet article
+	\documentclass{article}
+	\usepackage{tsymath}
+
+	\begin{document}
+
+	${1}
+
+	\end{document}
+
+# figure environment
+snippet fig
+	\begin{figure}
+		\centering
+		\includegraphics{${1:imagename}}
+		\caption{${2}}
+		\label{fig:$1}
+	\end{figure}
+# usepackage
+snippet use
+	\usepackage{${1}}
+snippet new
+	\newcommand{${1}}{${2}}
+snippet bib
+	\bibliographystyle{plain}
+	\bibliography{${1}}
+
+snippet tsy
+	\usepackage{color}
+	\newcommand{\tsy}[1]{\textcolor{blue}{TSY:#1}}
+
+snippet sec
+	`Hline('=')`
+	\section{${1}}
+	`Hline('=')`
+
+snippet sub
+	\subsection{${1}}
+	`Hline('-')`
+
+snippet sss
+	\subsubsection{${1}}
+	`Hline('.')`
+
+snippet par
+	\paragraph{${1}}
+snippet %=
+	`Hline('=')`
+
+snippet %-
+	`Hline('-')`
+
+snippet %.
+	`Hline('.')`
+
+snippet (
+	\left(${1}\right)${2}
+snippet [
+	\left[${1}\right]${2}
+snippet cal
+	\mathcal{${1}}${2}
+snippet pd
+	\pderiv{${1}}{${2}}${3}
+snippet \[
+	\[
+	    ${1}
+	\]
+	${2}
+snippet unit
+	$\unit[${1}]{${2}}$${3}

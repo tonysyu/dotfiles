@@ -1,0 +1,56 @@
+snippet params
+	Parameters
+	----------
+
+snippet returns
+	Returns
+	-------
+
+snippet attrs
+	Attributes
+	----------
+
+snippet funcs
+	Functions
+	---------
+
+snippet class
+	Classes
+	-------
+
+snippet np
+	import numpy as np
+snippet plt
+	import matplotlib.pyplot as plt
+snippet pq
+	import quantities as pq
+snippet const
+	import scipy.constants as const
+snippet imgio
+	import scikits.image.io as imgio
+snippet ndimg
+	import scipy.ndimage as ndimg
+snippet assert_close
+	from numpy.testing import assert_array_almost_equal as assert_close
+snippet cb
+	import cookbook as cb
+snippet watch
+	with cb.stopwatch():
+snippet pdb
+	import pdb; pdb.set_trace()
+snippet ipdb
+	from IPython.Debugger import Tracer; Tracer()()
+snippet ishell
+	from IPython.Shell import IPShellEmbed; ipshell = IPShellEmbed(); ipshell()
+snippet dec
+	def wrapper(func):
+		# @functools.wraps(func)
+		def wrapped(*args, **kwargs):
+			val = func(*args, **kwargs)
+			return val
+		return wrapped
+snippet utf8
+	# -*- coding: utf-8 -*-
+snippet ax
+	ax = ax if ax is not None else plt.gca()
+
