@@ -109,7 +109,6 @@ hi! link ErrorMsg       Error
 hi! link Exception      Statement
 hi! link Float          Constant
 hi! link FoldColumn     Folded
-hi! link Function       Normal
 hi! link Identifier     Special
 hi! link Ignore         Comment
 hi! link IncSearch      Search
