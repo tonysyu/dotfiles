@@ -180,7 +180,10 @@ endfunction
 nmap _$ :call Preserve("%s/\\s\\+$//e")<CR>
 
 " Plugin Customization
-" ====================Beaba
+" ====================
+
+" Ignore files for Command-T
+set wildignore+=*.o,*.so,*.bmp,*.gif,*.tif,*.jpg,*.png,*.pdf,*.mat,*.npz
 
 " Default VCS prefix is ',c' which conflicts with NERD commenter
 let VCSCommandMapPrefix = ',v'
