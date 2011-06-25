@@ -51,11 +51,3 @@ hi Special		   guifg=#ff9800 gui=none ctermfg=208
 hi PreProc 		   guifg=#faf4c6 gui=none ctermfg=230
 hi Todo            guifg=#ff9f00 guibg=#202020 gui=none
 
-" Code-specific colors
-hi pythonImport    guifg=#009000 gui=none ctermfg=255
-hi pythonException guifg=#f00000 gui=none ctermfg=200
-hi pythonOperator  guifg=#7e8aa2 gui=none ctermfg=103
-hi pythonBuiltinFunction guifg=#009000 gui=none ctermfg=200
-hi pythonExClass   guifg=#009000 gui=none ctermfg=200
-
-
