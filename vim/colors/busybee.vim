@@ -23,6 +23,7 @@ if version >= 700
 endif
 
 " General colors
+hi ColorColumn     guibg=#333333
 hi Cursor 		   guifg=NONE    guibg=#626262 gui=none ctermbg=241
 hi Normal 		   guifg=#e2e2e5 guibg=#202020 gui=none ctermfg=253 ctermbg=234
 hi NonText 		   guifg=#808080 guibg=#202020 gui=none ctermfg=244 ctermbg=235
