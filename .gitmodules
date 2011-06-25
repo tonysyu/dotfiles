@@ -34,3 +34,6 @@
 [submodule "vim/bundle/tex_pdf"]
 	path = vim/bundle/tex_pdf
 	url = git://github.com/vim-scripts/TeX-PDF.git
+[submodule "vim/bundle/hexHighlight"]
+	path = vim/bundle/hexHighlight
+	url = git://github.com/yurifury/hexHighlight.git
