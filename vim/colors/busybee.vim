@@ -42,7 +42,7 @@ hi Todo 		   guifg=#8f8f8f gui=none ctermfg=245
 hi Boolean         guifg=#b1d631 gui=none ctermfg=148
 hi String 		   guifg=#777777 gui=none ctermfg=148
 hi Identifier 	   guifg=#b1d631 gui=none ctermfg=148
-hi Function 	   guifg=#ffff00 gui=none ctermfg=255
+hi Function 	   guifg=#ffff44 gui=none ctermfg=255
 hi Type 		   guifg=#7e8aa2 gui=none ctermfg=103
 hi Statement 	   guifg=#7e8aa2 gui=none ctermfg=103
 hi Keyword		   guifg=#ff9800 gui=none ctermfg=208
@@ -51,6 +51,4 @@ hi Number		   guifg=#ff9800 gui=none ctermfg=208
 hi Special		   guifg=#ff9800 gui=none ctermfg=208
 hi PreProc 		   guifg=#faf4c6 gui=none ctermfg=230
 hi Todo            guifg=#ff9f00 guibg=#202020 gui=none
-
-
 
