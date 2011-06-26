@@ -13,42 +13,43 @@ endif
 
 let colors_name = "busybee"
 
-" Vim >= 7.0 specific colors
-if version >= 700
-  hi CursorLine    guibg=#262626
-  hi CursorColumn  guibg=#202020
-  hi MatchParen    guifg=#d0ffc0 guibg=#202020 gui=bold
-  hi Pmenu 		   guifg=#ffffff guibg=#202020
-  hi PmenuSel 	   guifg=#000000 guibg=#b1d631
+if has("gui_running")
+    " Vim >= 7.0 specific colors
+    if version >= 700
+      hi CursorLine    guibg=#262626
+      hi CursorColumn  guibg=#202020
+      hi MatchParen    guifg=#d0ffc0 guibg=#202020 gui=bold
+      hi Pmenu 		   guifg=#ffffff guibg=#202020
+      hi PmenuSel 	   guifg=#000000 guibg=#b1d631
+    endif
+
+    " General colors
+    hi ColorColumn     guibg=#333333
+    hi Cursor 		   guifg=NONE    guibg=#626262 gui=none
+    hi Normal 		   guifg=#e2e2e5 guibg=#202020 gui=none
+    hi NonText 		   guifg=#808080 guibg=#202020 gui=none
+    hi LineNr 		   guifg=#444444 guibg=#202020 gui=none
+    hi StatusLine 	   guifg=#d3d3d5 guibg=#303030 gui=none
+    hi StatusLineNC    guifg=#939395 guibg=#303030 gui=none
+    hi VertSplit 	   guifg=#444444 guibg=#303030 gui=none
+    hi Folded 		   guibg=#384048 guifg=#a0a8b0 gui=none
+    hi Title		   guifg=#f6f3e8 guibg=NONE	gui=bold
+    hi Visual		   guifg=#faf4c6 guibg=#3c414c gui=none
+    hi SpecialKey	   guifg=#808080 guibg=#343434 gui=none
+
+    " Syntax highlighting
+    hi Comment 		   guifg=#555555 gui=italic
+    hi Todo 		   guifg=#8f8f8f gui=none
+    hi Boolean         guifg=#b1d631 gui=none
+    hi String 		   guifg=#777777 gui=none
+    hi Identifier 	   guifg=#b1d631 gui=none
+    hi Function 	   guifg=#ffff44 gui=none
+    hi Type 		   guifg=#7e8aa2 gui=none
+    hi Statement 	   guifg=#7e8aa2 gui=none
+    hi Keyword		   guifg=#ff9800 gui=none
+    hi Constant 	   guifg=#ff9800 gui=none
+    hi Number		   guifg=#ff9800 gui=none
+    hi Special		   guifg=#ff9800 gui=none
+    hi PreProc 		   guifg=#faf4c6 gui=none
+    hi Todo            guifg=#ff9f00 guibg=#202020 gui=none
 endif
-
-" General colors
-hi ColorColumn     guibg=#333333
-hi Cursor 		   guifg=NONE    guibg=#626262 gui=none
-hi Normal 		   guifg=#e2e2e5 guibg=#202020 gui=none
-hi NonText 		   guifg=#808080 guibg=#202020 gui=none
-hi LineNr 		   guifg=#444444 guibg=#202020 gui=none
-hi StatusLine 	   guifg=#d3d3d5 guibg=#303030 gui=none
-hi StatusLineNC    guifg=#939395 guibg=#303030 gui=none
-hi VertSplit 	   guifg=#444444 guibg=#303030 gui=none
-hi Folded 		   guibg=#384048 guifg=#a0a8b0 gui=none
-hi Title		   guifg=#f6f3e8 guibg=NONE	gui=bold
-hi Visual		   guifg=#faf4c6 guibg=#3c414c gui=none
-hi SpecialKey	   guifg=#808080 guibg=#343434 gui=none
-
-" Syntax highlighting
-hi Comment 		   guifg=#555555 gui=italic
-hi Todo 		   guifg=#8f8f8f gui=none
-hi Boolean         guifg=#b1d631 gui=none
-hi String 		   guifg=#777777 gui=none
-hi Identifier 	   guifg=#b1d631 gui=none
-hi Function 	   guifg=#ffff44 gui=none
-hi Type 		   guifg=#7e8aa2 gui=none
-hi Statement 	   guifg=#7e8aa2 gui=none
-hi Keyword		   guifg=#ff9800 gui=none
-hi Constant 	   guifg=#ff9800 gui=none
-hi Number		   guifg=#ff9800 gui=none
-hi Special		   guifg=#ff9800 gui=none
-hi PreProc 		   guifg=#faf4c6 gui=none
-hi Todo            guifg=#ff9f00 guibg=#202020 gui=none
-
