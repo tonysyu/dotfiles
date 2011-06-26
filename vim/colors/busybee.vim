@@ -52,4 +52,10 @@ if has("gui_running")
     hi Special		   guifg=#ff9800 gui=none
     hi PreProc 		   guifg=#faf4c6 gui=none
     hi Todo            guifg=#ff9f00 guibg=#202020 gui=none
+
+    " VimDiff highlighting
+    hi DiffAdd          guifg=#202020   guibg=#b1d631   gui=none
+    hi DiffChange       guifg=#202020   guibg=#ff9800   gui=none
+    hi DiffDelete       guifg=#202020   guibg=#ff6545   gui=none
+    hi DiffText         guifg=#202020   guibg=#86cbfc   gui=none
 endif
