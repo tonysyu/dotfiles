@@ -1,7 +1,7 @@
 "remove vi compatibility (this should be first since it has side effects)
 set nocompatible
 " syntax highlighting on
-colorscheme tsy
+colorscheme busybee
 syntax on
 " use pathogen to handle bundles
 filetype off
