@@ -188,7 +188,6 @@ set wildignore+=*.o,*.so,*.bmp,*.gif,*.tif,*.jpg,*.png,*.pdf,*.mat,*.npz
 " Default VCS prefix is ',c' which conflicts with NERD commenter
 let VCSCommandMapPrefix = ',v'
 
-let python_highlight_all = 1
 
 " Launch lusty juggler (which lists buffers, hence "b")
 nmap <silent> <leader>b <leader>lj
@@ -203,3 +202,4 @@ nmap <silent> <leader>nt :NERDTreeToggle<CR>
 " When I use vim from the command line I get ruby-not-installed warnings
 " even though ruby *is* installed; whatever, just ignore
 let g:LustyExplorerSuppressRubyWarning = 1
+
