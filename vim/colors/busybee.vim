@@ -34,7 +34,7 @@ if has("gui_running")
     hi VertSplit 	    guifg=#444444   guibg=#303030   gui=none
     hi Folded 		    guifg=#a0a8b0   guibg=#384048   gui=none
     hi Title		    guifg=#f6f3e8   guibg=NONE	    gui=bold
-    hi Visual		    guifg=#faf4c6   guibg=#3c414c   gui=none
+    hi Visual		    guifg=#202020   guibg=#e2e2e5   gui=none
     hi SpecialKey	    guifg=#808080   guibg=#343434   gui=none
 
     " Syntax highlighting
