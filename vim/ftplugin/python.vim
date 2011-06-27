@@ -7,10 +7,7 @@ set foldmethod=indent
 set foldlevel=99
 " pyflakes quickfix window will override other quickfix windows
 let g:pyflakes_use_quickfix = 0
-" Default python syntax doesn't highlight certain keywords
-" Add some keywords to decorator highlighting
-"syn keyword pythonDecorator True None False self
-syn keyword pythonBuiltinObj self
+
 " Save script, run script in it's directory, and return to working directory
 function! RunPython()
     write
