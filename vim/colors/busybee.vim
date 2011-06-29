@@ -40,23 +40,23 @@ if has("gui_running")
     " Syntax highlighting
     hi Boolean          guifg=#b1d631                   gui=none
     hi Comment 		    guifg=#555555                   gui=italic
-    hi Constant 	    guifg=#ff9800                   gui=none
+    hi Constant 	    guifg=#ffa319                   gui=none
     hi Function 	    guifg=#ffff66                   gui=none
     hi Identifier 	    guifg=#b1d631                   gui=none
-    hi Keyword		    guifg=#ff9800                   gui=none
-    hi Number		    guifg=#ff9800                   gui=none
-    hi Operator         guifg=#ff874f                   gui=none
+    hi Keyword		    guifg=#b1ddfc                   gui=none
+    hi Number		    guifg=#ffa319                   gui=none
+    hi Operator         guifg=#ff6545                   gui=none
     hi PreProc 		    guifg=#faf4c6                   gui=none
-    hi Special		    guifg=#ff9800                   gui=none
+    hi Special		    guifg=#ffa319                   gui=none
     hi Statement 	    guifg=#85a5ff                   gui=none
     hi String 		    guifg=#888888                   gui=none
-    hi Todo             guifg=#ff9800   guibg=#181818   gui=none
+    hi Todo             guifg=#ffa319   guibg=#181818   gui=none
     hi Type 		    guifg=#85a5ff                   gui=none
 
     " VimDiff highlighting
     hi DiffAdd          guifg=#181818   guibg=#b1d631   gui=none
-    hi DiffChange       guifg=#181818   guibg=#ff9800   gui=none
+    hi DiffChange       guifg=#181818   guibg=#ffa319   gui=none
     hi DiffDelete       guifg=#181818   guibg=#ff6545   gui=none
-    hi DiffText         guifg=#181818   guibg=#86cbfc   gui=none
+    hi DiffText         guifg=#181818   guibg=#b1ddfc   gui=none
 endif
 
