@@ -48,7 +48,7 @@ if has("gui_running")
     hi PreProc 		    guifg=#faf4c6                   gui=none
     hi Special		    guifg=#ff9800                   gui=none
     hi Statement 	    guifg=#819ac9                   gui=none
-    hi String 		    guifg=#777777                   gui=none
+    hi String 		    guifg=#888888                   gui=none
     hi Todo             guifg=#ff9f00   guibg=#181818   gui=none
     hi Type 		    guifg=#819ac9                   gui=none
 
