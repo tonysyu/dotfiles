@@ -19,7 +19,7 @@ if has("gui_running")
       hi CursorColumn                   guibg=#181818
       hi CursorLine                     guibg=#262626
       hi MatchParen     guifg=#d0ffc0   guibg=#181818   gui=bold
-      hi Pmenu 		    guifg=#ffffff   guibg=#181818
+      hi Pmenu 		    guifg=#ffffff   guibg=#262626
       hi PmenuSel 	    guifg=#000000   guibg=#b1d631
     endif
 
@@ -45,12 +45,13 @@ if has("gui_running")
     hi Identifier 	    guifg=#b1d631                   gui=none
     hi Keyword		    guifg=#ff9800                   gui=none
     hi Number		    guifg=#ff9800                   gui=none
+    hi Operator         guifg=#ff874f                   gui=none
     hi PreProc 		    guifg=#faf4c6                   gui=none
     hi Special		    guifg=#ff9800                   gui=none
-    hi Statement 	    guifg=#819ac9                   gui=none
+    hi Statement 	    guifg=#85a5ff                   gui=none
     hi String 		    guifg=#888888                   gui=none
-    hi Todo             guifg=#ff9f00   guibg=#181818   gui=none
-    hi Type 		    guifg=#819ac9                   gui=none
+    hi Todo             guifg=#ff9800   guibg=#181818   gui=none
+    hi Type 		    guifg=#85a5ff                   gui=none
 
     " VimDiff highlighting
     hi DiffAdd          guifg=#181818   guibg=#b1d631   gui=none
