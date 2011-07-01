@@ -40,3 +40,6 @@
 [submodule "vim/bundle/pyflakes"]
 	path = vim/bundle/pyflakes
 	url = git://github.com/mitechie/pyflakes-pathogen.git
+[submodule "vim/bundle/hexHighlight"]
+	path = vim/bundle/hexHighlight
+	url = git://github.com/EmmanuelOga/hexHighlight.git
