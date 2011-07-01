@@ -54,6 +54,7 @@ if has("gui_running")
     hi Todo             guifg=#ffa319   guibg=#181818   gui=none
     hi Type 		    guifg=#85a5ff                   gui=none
     hi link Structure   Operator
+    hi link Precondit   Structure
 
     " VimDiff highlighting
     hi DiffAdd          guifg=#181818   guibg=#b1d631   gui=none
