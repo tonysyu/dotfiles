@@ -155,7 +155,7 @@ endfunction
 command! EditSyntax call s:EditVimConfig('syntax')
 command! EditPlugin call s:EditVimConfig('ftplugin')
 command! EditSnippet call s:EditVimConfig('snippets', '.snippets')
-command! EditColors edit ~/.vim/colors/tsy.vim
+command! EditColors edit ~/.vim/colors/busybee.vim
 
 " Show syntax highlighting groups for word under cursor (Ctrl-Shift-P)
 nmap <C-S-P> :call <SID>SynStack()<CR>
