@@ -41,6 +41,7 @@ if has("gui_running")
     hi Boolean          guifg=#b1d631                   gui=none
     hi Comment 		    guifg=#555555                   gui=italic
     hi Constant 	    guifg=#ffa319                   gui=none
+    hi Directory        guifg=#ffa319                   gui=none
     hi Function 	    guifg=#ffff66                   gui=none
     hi Identifier 	    guifg=#b1d631                   gui=none
     hi Keyword		    guifg=#b1ddfc                   gui=none
@@ -52,6 +53,7 @@ if has("gui_running")
     hi String 		    guifg=#888888                   gui=none
     hi Todo             guifg=#ffa319   guibg=#181818   gui=none
     hi Type 		    guifg=#85a5ff                   gui=none
+    hi link Structure   Operator
 
     " VimDiff highlighting
     hi DiffAdd          guifg=#181818   guibg=#b1d631   gui=none
