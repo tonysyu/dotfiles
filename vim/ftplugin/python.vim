@@ -17,4 +17,3 @@ function! RunPython()
     cd `=current`
 endfunction
 nnoremap <silent> <leader>r :call RunPython()<CR>
-let g:python_highlight_all = 1

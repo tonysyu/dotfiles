@@ -203,3 +203,6 @@ nnoremap <Leader>gd :Gdiff<cr>
 "switch back to current file and closes fugitive buffer
 nnoremap <Leader>gf :diffoff!<cr><c-w>h:bd<cr>
 
+" syntax/python.vim gets run before ftplugin/python.vim, so we must set this
+" highlight option in vimrc instead of ftplugin.
+let g:python_highlight_all = 1
