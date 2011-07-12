@@ -38,12 +38,12 @@ if has("gui_running")
     hi Visual		    guifg=#181818   guibg=#e2e2e5   gui=none
 
     " Syntax highlighting
-    hi Boolean          guifg=#b1d631                   gui=none
+    hi Boolean          guifg=#b1ddfc                   gui=none
     hi Comment 		    guifg=#555555                   gui=italic
     hi Constant 	    guifg=#ffa319                   gui=none
     hi Directory        guifg=#ffa319                   gui=none
     hi Function 	    guifg=#ffff66                   gui=none
-    hi Identifier 	    guifg=#b1d631                   gui=none
+    hi Identifier 	    guifg=#ffa319                   gui=none
     hi Keyword		    guifg=#b1ddfc                   gui=none
     hi Number		    guifg=#ffa319                   gui=none
     hi Operator         guifg=#ff6545                   gui=none
