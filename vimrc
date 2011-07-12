@@ -127,14 +127,6 @@ nnoremap Q gqap
 " reflow selected text
 vnoremap Q gq
 
-" Shortcuts for fugitive.vim plugin
-nnoremap <Leader>gs :Gstatus<cr>
-nnoremap <Leader>gw :Gwrite<cr>
-nnoremap <Leader>gc :Gcommit<cr>
-nnoremap <Leader>gd :Gdiff<cr>
-"switch back to current file and closes fugitive buffer
-nnoremap <Leader>gf :diffoff!<cr><c-w>h:bd<cr>
-
 " FUNCTIONS
 " =========
 
@@ -202,4 +194,12 @@ nmap <silent> <leader>nt :NERDTreeToggle<CR>
 " When I use vim from the command line I get ruby-not-installed warnings
 " even though ruby *is* installed; whatever, just ignore
 let g:LustyExplorerSuppressRubyWarning = 1
+
+" Shortcuts for fugitive.vim plugin
+nnoremap <Leader>gs :Gstatus<cr>
+nnoremap <Leader>gw :Gwrite<cr>
+nnoremap <Leader>gc :Gcommit<cr>
+nnoremap <Leader>gd :Gdiff<cr>
+"switch back to current file and closes fugitive buffer
+nnoremap <Leader>gf :diffoff!<cr><c-w>h:bd<cr>
 
