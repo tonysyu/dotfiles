@@ -1,0 +1,36 @@
+.DS_Store
+*.tmproj
+*.orig
+*~
+
+# Vim related
+*.swp
+*.un~
+.netrwhist
+tags
+
+# Python related
+*.prof
+*.pyo
+*.pyc
+*.so
+*.o
+
+# LaTeX related
+*.fdb_latexmk
+*.synctex.gz
+*.aux
+*.bak
+*.bbl
+*.blg
+*.toc
+*.log
+*.lot
+*.lof
+*.out
+*.brf
+
+# Multimedia
+*.pdf
+*.mov
+*.avi
