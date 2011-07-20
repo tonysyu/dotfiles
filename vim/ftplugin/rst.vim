@@ -1,3 +1,7 @@
+
+setlocal tabstop=3                   " tab is 3 spaces
+setlocal shiftwidth=3                " indentation in normal mode is 3 spaces
+setlocal softtabstop=3               " back space removes up-to 3 spaces
 " chapter/sections
 " Parts
 noremap  <C-h>0 yyPVr#yyjp
