@@ -64,7 +64,11 @@ set gdefault                    " make substitutions global by default
 
 " Change to directory of active buffer
 "autocmd BufEnter * if bufname("") !~ "^\[A-Za-z0-9\]*://" | lcd %:p:h | endif
-autocmd BufNewFile,BufRead *.cir set filetype=spice
+"
+" Filetype mappings
+autocmd BufNewFile,BufRead,BufFilePost *.cir set filetype=spice
+autocmd BufNewFile,BufRead,BufFilePost *.txt set filetype=rst
+autocmd BufNewFile,BufRead,BufFilePost *.tex set filetype=tex
 
 autocmd BufLeave,FocusLost silent! wall " save when focus is lost
 " Since I'm auto-saving (above), don't save backup and swap files.
@@ -206,3 +210,4 @@ nnoremap <Leader>gf :diffoff!<cr><c-w>h:bd<cr>
 " syntax/python.vim gets run before ftplugin/python.vim, so we must set this
 " highlight option in vimrc instead of ftplugin.
 let g:python_highlight_all = 1
+
