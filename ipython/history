@@ -1,0 +1,1000 @@
+       return True
+alse
+def array123(nums):
+  for n in range(len(nums)-2):
+    if nums[n:n+2] == (1, 2, 3):
+       return True
+return False
+def array123(nums):
+  for n in range(len(nums)-2):
+    if nums[n:n+2] == (1, 2, 3):
+       return True
+   return False
+%cline
+%cpaste
+def array123(nums):
+  for n in range(len(nums)-2):
+    if nums[n:n+2] == (1, 2, 3):
+       return True
+  return False
+--
+array123([1,2,3])
+len(nums)
+nums = [1,2,3]
+len(nums)
+range(1)
+nums[:2]
+[1,2]==(1,2)
+[1,2]==[1,2]
+np.atleast1d([1])
+np.atleast_1d([1])
+y
+np.test()
+np.char.array
+np.char.array?
+np.unique?
+sum
+np.genfromtxt?
+import fpath
+p = fpath.Path('~').norm()
+ls
+p + 'Desktop/favorites'
+p
+p.abspath
+p.abspath()
+p.abspath?
+import matplotlib.ticker as tick
+tick.ScalarFormatter?
+tick.IndexLocator?
+tick.LinearLocator?
+plt.plot?
+plt.boxplot?
+30 * 15
+cd /Users/Tony/Desktop/
+ls
+from pybtex.database.input import bibtex
+parser = bibtex.Parser()
+bib_data = parser.parse_file('test.bib')
+bib_data.entries.keys()
+y
+%cpaste
+from pybtex.database.input import bibtex
+parser = bibtex.Parser()
+bib_data = parser.parse_file('test.bib')
+bib_data.entries.keys()
+--
+y
+ls
+from matplotlib.colors import LinearSegmentedColormap
+LinearSegmentedColormap?
+import matplotlib.colors as coors
+colors = coors
+colors.Colormap?
+colors.LinearSegmentedColormap?
+colors.q
+np.array([640, 480])/0.74
+np.array([640, 480]) * 0.74
+640/480.
+580/_
+np.array([580, 435]) * 0.74
+430/2, 322/2
+import fpath
+d = fpath.Dir('.')
+d.children()
+[c for c in d.children()]
+ls
+d.children?
+d.children()[0]
+list(d.children())[0]
+c = list(d.children())[0]
+list(d.walk('d'))
+y
+import fpath
+d = fpath.Dir('.')
+list(d.walk('d'))
+15*15
+pq
+ls
+dpi = 72
+dpi = 72.
+d_cm = 13
+cm2in = 0.393700787
+d = d_cm *cm2in
+d
+d * dpi
+2/3. * 26
+d
+pq
+y
+ls
+cd Documents/
+ls
+cd CrystalGrowth/
+cd PhDThesis/
+ls
+!pdflatex -interaction=nonstopmode thesis.tex
+import subprocess
+cmd = ['pdflatex', '-interaction=nonstopmode', 'thesis.tex']
+p = subprocess.Popen(cmd)
+p = subprocess.Popen(cmd.join())
+p = subprocess.Popen(' '.join(cmd))
+p = subprocess.Popen([' '.join(cmd)])
+' '.join(cmd)
+p = subprocess.Popen('pdflatex -interaction=nonstopmode thesis.tex')
+p = subprocess.Popen(cmd)
+import os
+os.system(' '.join(cmd))
+!pdflatex -interaction=nonstopmode thesis.tex
+p = subprocess.Popen(cmd)
+p.wait()
+import signal
+signal.alarm?
+p = subprocess.Popen(cmd)
+subprocess.PIPe?
+subprocess.PIPE?
+subprocess.PIPE
+subprocess.Popen.communicate
+subprocess.Popen.communicate?
+subprocess.Popen?
+a
+1
+e1
+1
+n
+a = 1
+a* 2
+def a():
+print 'hello'
+y
+ls
+cd Desktop/
+import yaml
+yaml.parse?
+yaml?
+yaml.load?
+f = open('degroff_cocktail_recipes.yaml')
+y = yaml.load(f)
+f = open('degroff_cocktail_recipes.yaml')
+y = yaml.load(f)
+f.close()
+f = open('degroff_cocktail_recipes.yaml')
+y = yaml.load(f)
+f = open('degroff_cocktail_recipes.yaml')
+f
+y = yaml.load(f)
+f.close()
+y = yaml.load(f)
+f = open('degroff_cocktail_recipes.yaml')
+y = yaml.load(f)
+f = open('degroff_cocktail_recipes.yaml')
+y = yaml.load(f)
+f = open('test.yaml')
+y = yaml.load(f)
+y
+f = open('degroff_cocktail_recipes.yaml')
+y = yaml.load(f)
+y
+pq
+[400, 700] * pq.nm
+a = 1*pq.nm
+a.units
+hasattr(a, 'units)
+hasattr(a, 'units')
+s='one'
+yaml.load
+ls
+f
+d = dict(a=1, b=2)
+d.pop?
+import itertools
+itertools.chain?
+d
+d.items
+d.items)_
+d.items()
+set(*d.items())
+set(itertools.chain(*d.items()))
+set(itertools.chain(*d.keys()))
+set(*d.keys())
+set(itertools.chain(*d.iteritems()))
+set(itertools.chain(*d.iterkeys()))
+k[D
+import numpy
+y
+from scikits.image import io
+io.imread?
+img = io.imread('test_particles.jpg', as_grey=True)
+img
+io.imsave?
+io.imsave(img, 'test_particles_grey.jpg')
+io.imsave?
+io.imsave('test_particles_grey.jpg', img)
+io.imshow(img)
+img = io.imread('test_particles.jpg')
+io.imshow(img)
+img = io.imread('test_particles.jpg', as_grey=True)
+io.imshow(img)
+img
+img = io.imread('test_particles.jpg')
+img
+img[:, :, 0]
+img[:, :, 1]
+io.imshow(img[:,:,0])
+io.imsave('test_particles_grey.jpg', img[:,:,0])
+from scipy import io
+io.loadmat('matlabprefs.mat')
+y
+import imptools
+imptools.circular_indices(3)
+imptools.circular_indices_around_center(3)
+imptools.circular_indices_around_center((0,0)3)
+imptools.circular_indices_around_center((0,0),3)
+y
+a = 45 * np.pi/180
+a
+a = 30 * np.pi/180
+theta = 150 * np.pi/180
+theta
+np.cos(a)
+np.sin(theta)
+np.sin(theta-np.pi/2)
+np.cos(theta)
+np.sin(a)
+np.sin(theta)
+f = lambda x:np.sin(theta) / (np.cos(theta) - np.cos(theta+x))
+f(np.pi/180 * 10)
+np.sin(a)
+a
+theta
+np.sin(theta)
+import os
+os.listdir()
+os.listdir('.')
+ls
+os.listdir?
+ls
+from scikits.image import io
+img = io.imread('imgseq000001111.jpg')
+img.shape
+a
+:q
+y;
+import profiles
+import scikits.bvp_solver as bvp
+bvp.ProblemDefinition?
+bvp.solve?
+plt.axis?
+g = lambda x: (20 - 3*x)/4.
+g(2)
+g(3)
+3*4+3*2
+from scipy.misc import pilutil
+pilutil?
+q
+pil
+pilutil
+pilutil.imread?
+y
+cd Documents/Fog/video/vary_substrate_spacing/S6fps50air2_coalesce/
+ls
+import scikits.image.io as imgio
+img = imgio.imread('imgseq000002631.jpg')
+img.min()
+img.max()
+img = np.float16(img)
+img
+import scipy.ndimage as ndimg
+ndimg.sobel?
+img = imgio.imread('imgseq000002631.jpg', as_grey=True)
+img
+img = np.float16(img)
+plt.imshow(ndimg.sobel(img))
+img = imgio.imread('imgseq000002631.jpg', as_grey=True)
+img = np.float64(img)
+plt.imshow(ndimg.sobel(img))
+grad = ndimg.sobel(img)
+grad.min()
+grad.max()
+plt.imshow(grad)
+plt.imshow(np.clip(grad, 0, 255))
+plt.imshow(np.clip(grad, -50, 255))
+plt.imshow(np.clip(grad, -255, 0))
+2 * 3.14 *2.74 /2.
+(27/4.)**(1./3)
+ pq
+pq
+from quantities import math
+a = 1*pq.inch
+plt.imshow(np.clip(grad, -255, 0))
+plt.imshow(255 -np.clip(grad, -255, 0))
+plt.imshow(np.clip(grad, 0, 255))
+plt.imshow(255 -np.clip(grad, -255, 0))
+plt.imshow(np.clip(grad, 0, 255))
+plt.imshow(255 -np.clip(grad, -255, 0))
+plt.imshow(np.clip(grad, 0, 255))
+plt.imshow(255 -np.clip(grad, -255, 0)+np.clip(grad, 0, 255))
+plt.imshow(grad)
+plt.imshow(grad**2)
+plt.imshow(np.clip(grad**2, 0, 100))
+plt.imshow(np.clip(grad**2, 0, 200))
+plt.imshow(np.clip(grad**2, 0, 1e3))
+plt.imshow(np.clip(grad**2, 0, 1e5))
+plt.imshow(np.clip(grad**2, 0, 1e4))
+plt.imshow(255 -np.clip(grad, -255, 0)+np.clip(grad, 0, 255))
+ndimg.gaussian_?
+ndimg.gaussian_filter?
+plt.imshow(img - ndimg.gaussian_filter(img, 2))
+%hist
+%edit 1-50
+ls
+!mvim measure_drops.py
+q
+%hist
+%hist?
+%hist -h
+%hist -s 1
+:q
+y
+ndimg
+imgio
+pq
+:q
+imgio
+ndimg
+%hist
+ls
+cd ..
+ls
+y
+import xlrd
+ls
+cd Documents/Fog/video/vary_substrate_spacing/S6fps50air2_coalesce/
+ls
+cd subset/
+ls
+xls = xlrd.open_workbook('drop_p1_right.xls')
+xls = xlrd.open_workbook('drop_p1_right_95.xls')
+xls.get_sheet?
+xls.get_sheet(0)
+xls.get_sheet()
+xls?
+ls
+import enthought.chaco.tools.api as ctools
+ctools.ZoomTool?
+from enthought.enable.api import BaseTool, KeySpec
+from enthought.enable.api import BaseTool, KeySpec, KeyEvent
+KeyEvent?
+KeyEvent()
+KeyEvent(character='Right')
+r_eventKeyEvent(character='Right')
+r_event = KeyEvent(character='Right')
+r_spec = KeySpec('Right')
+r_event.alt_down
+r_event.alt_down=Fals
+r_event.alt_down=False
+r_event.control_down=Fals
+r_event.control_down=False
+r_event.shift_down=Fals
+r_event.shift_down=False
+r_event.handled=False
+r_spec.match?
+r_spec.match(r_event)
+r_spec.match??
+r_spec.alt
+r_spec.key
+r_spec.alt
+r_spec.meta
+r_spec.control
+r_spec.shift
+r_event.meta_down
+r_event??
+r_event.__init__??
+from enthought.traits.api import ReadOnly
+ReadOnly?
+import c
+import cv
+cv.CreateMat?
+cv.CreateMemStorage?
+cv.HoughCircles?
+cv.CV_HOUGH_GRADIENT?
+cv.CV_HOUGH_GRADIENT
+cv.CreateM?
+cv.CreateMat?
+cv.CV_32F/
+cv.CV_32F
+cv.HoughCircles?
+cv.HoughCircles??
+x = 62
+y = 95
+r = 38
+w = 171
+h = 181
+w - x
+h - y
+cv.Canny?
+cv.LoadImage?
+ls
+cd Documents/Fog/
+ls
+cd ../..
+ls
+cd Desktop/
+ls
+cd hough_circles/
+ls
+cv.LoadImage('circle.png')
+img = cv.LoadImage('circle.png')
+np.asarray(img)
+a = np.asarray(img)
+a
+print a
+cv.LoadImage?
+262/(3.*175)
+img.tostring()
+np.fromstring?
+def dummy():
+    print 'hello'
+    
+a = 0 if 1 else dummy()
+a
+a = 0 if 0 else dummy()
+divmod?
+divmod(3, 1)
+ax = plt.gca()
+spec = ax.get_subplotspec()
+ax.get_subplotspec?
+spec?
+spec.get_geometry()
+spec.get_geometry?
+spec.get_geometry()
+spec.get_geometry??
+gspec = spec.get_gridspec()
+gspec.get_geometry?
+gspec.get_geometry??
+spec.num1
+spec.num1?
+spec?
+rec = np.array([(1, 2), (3, 4)], dtype=[('r', int), ('g', 'int')]
+)
+rec['r']
+rec[0]
+r = rec[0]
+r
+r.dtype
+r['r']
+rec = np.array([(1, 2), (3, 4)], dtype=[('r', object), ('g', object)]
+)
+rec[0]['r']=None
+rec
+np.ones((1,2))
+np.ones((1,2), dtype=[('a', int), ('b', int)])
+np.ones((2), dtype=[('a', int), ('b', int)])
+np.ones((3), dtype=[('a', int), ('b', int)])
+plt.subplot?
+img.origin
+cv.Threshold?
+img>128
+img
+size = lambda n, b, c: n*b + (n-1) * 2 * c
+size(4, 24, 24)
+size(6, 24, 12)
+size(8, 24, 6)
+size(7, 24, 6)
+size(5, 24, 12)
+size(10, 12, 12)
+size(9, 12, 12)
+size(8, 12, 12)
+size(7, 12, 12)
+size(9, 12, 6)
+size(10, 12, 6)
+size(11, 12, 6)
+size(15, 12, 3)
+size(14, 12, 3)
+size(14, 6, 6)
+size(15, 6, 6)
+size(18, 6, 3)
+size(20, 6, 3)
+size(22, 6, 3)
+size(21, 6, 3)
+size = lambda n, b, c: n*b + (n-1) * 2 * c
+nposts = lambda L, b, c: L / float(b + 2*c) + 2*c
+nposts(200, 24, 24)
+nposts = lambda L, b, c: (L + 2*c)/ float(b + 2*c)
+nposts(200, 24, 24)
+size(23, 6, 3)
+size(22, 6, 3)
+size(30, 6, 1.5)
+size(28, 6, 1.5)
+nposts(200, 24, 12)
+nposts(200, 24, 6)
+nposts(200, 12, 12)
+nposts(200, 12, 6)
+nposts(200, 12, 3)
+nposts(200, 6, 6)
+nposts(200, 6, 3)
+nposts(200, 6, 1.5)
+nposts(3, 6, 1.5)
+nposts(150, 6, 1.5)
+(68 + 84 + 38 + 65) + 20.95 + 75
+(68 + 84 + 38 + 65)*2 + 20.95 + 75
+cv.CreateImage?
+np.seterr?
+set([(1, 2), (1, 2), (3, 4)])
+zip((1,2,3), (1,2,3))
+cv.adaptiveThreshold
+cv.adaptiveThreshold?
+def dummy():
+    pas
+    
+def dummy():
+    pass
+dummy.func_name
+plt.figure?
+import mahotas
+y
+import mahotas
+ls
+mahotas.thin?
+import cv
+plt.savefig?
+cv.Sobel?
+y
+np.save?
+ls
+cd python/imppy/
+ls
+a_py = np.load('accum3.npy')
+from scipy import io
+a_ml = io.loadmat('data/circular_hough_matlab_results.mat')
+a_py
+a_ml = a_ml['accum3']
+a_ml
+a_py
+a_ex = np.load('accum3_examples.npy')
+a_test = np.load('accum3_tests.npy')
+a_test
+a_ex
+a_test - a_ml
+diff = a_test - a_ml
+diff.max()
+diff.min()
+a_ex = np.load('accum3_examples.npy')
+a_ex
+f = np.array([[ 1, 1, 1, 1, 1],
+                       [ 1, 2, 2, 2, 1],
+                       [ 1, 2, 4, 2, 1],
+                       [ 1, 2, 2, 2, 1],
+                       [ 1, 1, 1, 1, 1]], dtype=float)
+sum(f)
+a_ex = np.load('accum3_examples.npy')
+a_ex
+a_ex = np.load('accum3_examples.npy')
+a_ex
+np.allclose(a_ex, a_test)
+np.allclose(a_ex, a_ml)
+diff
+plt.imshow(diff)
+from itertools import product
+product(*[range(k) for k in (3,)])
+i = product(*[range(k) for k in (3,)])
+i.next
+i.next()
+a 
+a = np.arange(5)[:, np.newaxis]
+a
+np.squeeze(a)
+a
+i = product(*[range(k) for k in (3,)])
+i.next()
+import imppy
+import imppy.utils
+from imppy.utils import accumarray
+from imppy.utils import accumaarray
+from imppy.utils import accumarray
+n
+np.max?
+%run houghcircles.py
+ls
+whos
+input_file
+ls
+quit
+y
+%run test_denoise.py
+whos
+pwd
+n
+import glob
+glob.glob('S6_Q2_skip_100/*.jpg')
+%reload find_circles.py
+reload(find_circles.py)
+reload('find_circles.py')
+reload(find_circles)
+import find_circles
+import find_circles
+reload('find_circles.py')
+reload(find_circles)
+%run find_circles.py
+pw
+pwd
+s6_data = np.load('S6_Q2_skip_100/circle_data.npz')
+s6_data[
+]
+s6_data.keys()
+s6_data['img00001']
+ls
+np.savez?
+ls
+whos
+who
+s6_list = ['img%05i' % n in range(len(s6_data.keys()))]
+s6_list = ['img%05i' % n for n in range(len(s6_data.keys()))]
+s6_list
+s6_data.keys()
+s6_data_int = dict((n, s6_data[k]) for n, k in enumerate(s6_list))
+s6_data
+s6_data[s6_list[0]]
+s6_data_int = dict([(n, s6_data[k]) for n, k in enumerate(s6_list)])
+s6_data[1]
+s6_data_int[1]
+s6_data_int[0]
+s6_data[s6_list[0]]
+np.savez('S6_Q2_skip_100/circle_list', **s6_data_int)
+np.savez?
+s6_data
+s6_data.keys()
+len(s6_data.keys())
+plt.close()
+from imppy.utils import accumarray
+a = np.arange(10)
+accumarray(a, a)
+bincount(a, a)
+np.bincount?
+np.bincount(a, a)
+ksldkjfa;lkjflkjl;;sldkjf;laskjf;alksd;ljdlj
+hwo
+who
+s6_data.items
+s6_data.items()
+plt.fill_between?
+%run find_circles.py
+ls
+smooth = ndimg.gaussian_filter(IMG, 1.5)
+img = levels.rescale_intensity(smooth)
+img_ix = np.cumsum(img, axis=1)
+img_iy = np.cumsum(img, axis=0)
+plt.imshow(img_ix)
+plt.draw()
+plt.ion()
+plt.imshow(img_ix)
+plt.show()
+plt.imshow(img_ix+img_iy)
+k
+centers[k]
+centers.shape
+radii
+radii.shape
+np.empty(3)
+np.int
+np.int.dtype
+np.interp?
+np.bincount?
+np.histogram?
+np.searchsorted?
+np?
+np.where?
+import imppy.detection.circles as hc
+hc.estimate_radii?
+hc.find_circle_centers
+hc.find_circle_centers?
+a
+a = np.arange(10)
+1/a
+1./a
+ax = plt.gca()
+ax.set_xscale?
+hc.find_circle_centers?
+default = dict(a=1, b=2, c=3, d=4)
+np.choose?
+a = np.arange(25).reshape((5,5))
+a
+np.ravel_multi_index?
+np.diag(5)
+np.eye(5)
+e = np.eye(5)
+np.argmax(e, axis=0)
+np.argmax(e, axis=1)
+a = np.zeros((5,5))
+a[:, 0] = 1
+np.argmax(a, axis=0)
+np.argmax(a, axis=1)
+a[:, 2] = 2
+np.argmax(a, axis=1)
+np.argmax(a, axis=0)
+a
+a[0, np.zeros(5)]
+a[0, np.zeros(5, dtype=in)]
+a[0, np.zeros(5, dtype=int)]
+a[0, np.arange(, dtype=int)]
+a
+a = np.arange(25).reshape((5,5))
+a
+a[:, (0, 1,2,3,4)]
+np.take(a, (1,2,3,4,0)]
+np.take(a, (1,2,3,4,0))
+np.take(a, (1,2,3,4,0), axis=0)
+zip(xrange(3), (1,2,3))
+a
+a[:, (0, 1, 2,3,4)
+]
+a[:, np.array((0, 1, 2,3,4))]
+a[:, np.array((0, 1, 2,3,4))[:, np.newaxis]]
+a[:, (0, 1, 2,3,4)
+]
+a[zip(np.zeros(5), np.arange(5))]
+zip(np.zeros(5), np.arange(5))
+zip(np.zeros(5, dtype=int), np.arange(5))
+a[zip(np.zeros(5, dtype=int), np.arange(5))]
+a[tuple(zip(np.zeros(5, dtype=int), np.arange(5)))]
+a[:, (0, 1, 2,3,4)
+]
+%hist
+zip(np.zeros(5, dtype=int), np.arange(5))
+a[zip(np.zeros(5, dtype=int), np.arange(5))]
+a[[(0,0), (1,1)]]
+a[[np.arange(5), np.arange(5)[[
+a[[np.arange(5), np.arange(5)]]]]
+]]
+a[[np.arange(5), np.arange(5)]]
+a
+n
+from scipy import misc
+misc.lena
+%traits
+traits.File?
+q
+lkjlksjdlfkjsdlfkkjlkjljsdfjlasdlkflsoifqwerjklejrlkj
+	jkdjfklasjfcnv
+jkdjfklasjfcnv
+a;lskdjfl;aksjfd;lkjwelkrjqwerkk
+	
+	n
+.,mcvz;xlcjkv
+n
+		
+:q
+	
+				
+	
+		
+:q
+y
+import pywt
+y
+import pywt
+pywt.wavelist
+pywt.wavelist()
+pywt.dwt?
+pywt.WaveletPacket
+pywt.WaveletPacket?
+pywt.waverec?
+pywt.families?
+pywt.families._
+pywt.families
+pywt.families()
+pywt.families('bior')
+pywt.families(0)
+pywt.families(0\1)
+pywt.families(1)
+pywt.families(2)
+f = lambda k: 2**k - 1
+f = lambda k: 2**(k-1) - 1
+f(2()
+)
+f(2)
+f(3)
+import os
+ls
+cd Desktop/CWdata/
+ls
+os.listdir('raw/L06/23-Jun-2011/0/')
+os.path.isdir('.')
+os.listdir('raw/L06/23-Jun-2011/0/')
+plt.ginput?
+from matplotlib.widgets import RectangleSelector
+RectangleSelector?
+plt.connect?
+RectangleSelector?
+plt.connect?
+plt.disconnect?
+plt.connect?
+ax = plt.gca()
+plt.connect?
+ax.figure.canvas.mpl_disconnect?
+plt.ginput?
+plt.ginput??
+'% s' % 1
+RectangleSelector?
+fig = ax.figure
+fig.canvas.callbacks
+fig.canvas.callbacks.callbacks
+fig.suptitle?
+dir(fig.canvas)
+[n for n in dir(fig.canvas) if 'itle' in n]
+300-139.37
+2592./1944
+7./5
+np.savez?
+DeprecationWarning('hello')
+pritn DeprecationWarning('hello')
+print DeprecationWarning('hello')
+DeprecationWarning?
+w = DeprecationWarning('hello')
+import warnings
+warnings?
+warnings.warn?
+warnings.warn(w)
+ls
+pwd
+cd ../..
+run('python/imppy/detection/circles/houghcircles.py')
+%run('python/imppy/detection/circles/houghcircles.py')
+%run 'python/imppy/detection/circles/houghcircles.py'
+import pvapi
+y
+from motmot import fview
+fview?
+from motmot import camiface
+from motmot import fview
+from motmot import utils
+y
+from motmot.camiface
+import motmot
+import motmot.camiface
+import motmot.cam_iface
+from motmot.cam_iface import cam_iface_ctypes
+source_version
+installed_version
+sys.modules[package]
+sys.modules[package].version
+sys.modules[package].version.version
+y
+n
+installed_version
+y
+import apigen
+apigen.ApiDocWriter('scikits.image')
+import imppy.detection.circles as hc
+hc.hough_transform
+hc.hough_transform?
+import imppy.detection.circles.backmapping as bm
+bm.filter_accum?
+from imppy.detection.points import find_points
+find_points?
+hc.estimate_radii?
+pq
+t = 1 * pq.dimensionless
+t.units
+t.units == pq.dimensionless
+t.rescale(pq.m/pq.mm)
+t
+t.units pq.m/pq.mm
+t.units =pq.m/pq.mm
+t
+plt.ylim?
+q
+qp
+pq.um
+a = 20 *pq.um
+a.rescale(pq.inche)
+a.rescale(pq.inch)
+a = 20e3 *pq.um
+a.rescale(pq.inch)
+5%4
+import
+import os
+os.mkir?
+os.mkdir
+os.mkdir?
+np.lookfor('nearest')
+np.fix?
+os.mkdir?
+ls
+os.isdir('Documents')
+os.path.isdir('Documents')
+os.path.exists('Documents')
+os.path.exists('Document')
+os.path.isdir('Document')
+a = 'a'
+b = a
+a
+b
+a = 'c'
+a
+b
+for n in range(100):
+    os.path.exists(str(n))
+    
+'%s%i' % ('a')
+os.mkdir??
+0777
+os.path.genericpath?
+os.path.basename?
+os.path.split('/a/b/c/')
+os.path.split('/a/b/c.ext')
+import imppy.plotting
+imppy.plotting.overlay_circles?
+import imppy.detection.circles as hc
+hc.hough_transform?
+hc.estimate_radii?
+import imppy.detection.circles.backmapping as bm
+bm.filter_accum?
+s = 'a/b/c/'
+s.endswith('/')
+s[:-1]
+s.rstrip('/')
+s.rstrip('/').rstrip('/')
+xrange?
+import sys
+ls
+os.path.dirname('octave-core')
+os.path.abspath('octave-core')
+os.path.splitext('a/b/c.txt')
+np.where?
+import scikits.image.morphology as morph
+y
+''›k1
+skio
+imgio
+imgio.ImageCollection('*.jpg', conserve_memory=True)
+ic = imgio.ImageCollection('*.jpg', conserve_memory=True)
+ic[0]
+ic[0:2]
+imgio
+ic = imgio.ImageCollection('*.jpg', conserve_memory=True)
+ic[0:2]
+np.array()
+a = np.array([])
+a[:, np.newaxis]
+np.array([[],[]])
+np.array([[],[]]), np.array([])[:, np.newaxis)
+np.hstack(np.array([[],[]]), np.array([])[:, np.newaxis]))
+np.hstack((np.array([[],[]]), np.array([])[:, np.newaxis]))
+np.hstack((np.array([[],[]]), np.array([])))
+np.hstack(([], np.array([])))
+np.hstack(([], np.array([])[:,np.newaxis]))
+np.hstack((np.array([[],[]]), np.array([])[:,np.newaxis]))
+np.array([[],[]])
+np.array([])[:,np.newaxis])
+]
+np.array([[]])
+np.array([[[]],[[]]])
+np.array([[],[]])
+np.array([[]]).T
+np.array([[],[]])
+np.array([])[:, np.newaxis]
+np.array([[],[]])
+np.array([[],[]]).^
+np.array([[],[]]).T
+np.array([[],[]]).T, np.array([])[:,np.newaxis]
+np.hstack((np.array([[],[]]).T, np.array([])[:,np.newaxis]))
+pq
+pq.k
+pq.K
+pq.kt
+pq.constants.k
+pq.constants.k * 300*pq.K
+(pq.constants.k * 300*pq.K).simplified
+-5-2-1-23+21+6
+pq.constants.Avogadro_constant
+(18 *pq.cm**3 /6e23).simplified
+-5-2-1-29+21+6+6
+ndimg
+19**2
+21**2
+39.5**2
+40.5**2
+np.diff([1,2])
+f = plt.gcf()
+plt.suptitle?
+bgs.__class__

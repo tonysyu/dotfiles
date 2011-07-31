@@ -1,0 +1,247 @@
+***************************************************************************
+
+IPython post-mortem report
+
+IPython version: 0.10.2 
+
+Platform info  : os.name -> posix, sys.platform -> darwin
+
+***************************************************************************
+
+Current user configuration structure:
+
+{'Version': 0,
+ '__allownew': True,
+ 'alias': [],
+ 'args': [],
+ 'autocall': 0,
+ 'autoedit_syntax': 0,
+ 'autoexec': [],
+ 'autoindent': 1,
+ 'automagic': 1,
+ 'banner': 1,
+ 'c': '',
+ 'cache_size': 1000,
+ 'classic': 0,
+ 'color_info': 1,
+ 'colors': 'Linux',
+ 'confirm_exit': 1,
+ 'debug': 0,
+ 'deep_reload': 0,
+ 'editor': 'vi',
+ 'embedded': True,
+ 'execfile': [],
+ 'execute': [],
+ 'gthread': 0,
+ 'help': 0,
+ 'import_all': [],
+ 'import_mod': [],
+ 'import_some': [[]],
+ 'include': [],
+ 'interact': 0,
+ 'ipythondir': u'/Users/Tony/.ipython',
+ 'log': 0,
+ 'logfile': '',
+ 'logplay': '',
+ 'magic_docstrings': 0,
+ 'messages': 1,
+ 'multi_line_specials': 1,
+ 'nosep': 0,
+ 'object_info_string_level': 0,
+ 'opts': Struct({'__allownew': True, 'autocall': 0}),
+ 'pdb': 0,
+ 'pprint': 1,
+ 'profile': '',
+ 'prompt_in1': 'In [\\#]: ',
+ 'prompt_in2': '   .\\D.: ',
+ 'prompt_out': 'Out[\\#]: ',
+ 'prompts_pad_left': 1,
+ 'pydb': 0,
+ 'pylab': 0,
+ 'pylab_import_all': 0,
+ 'q4thread': 0,
+ 'qthread': 0,
+ 'quick': 0,
+ 'quiet': 0,
+ 'rcfile': 'ipythonrc',
+ 'readline': 1,
+ 'readline_merge_completions': 1,
+ 'readline_omit__names': 0,
+ 'readline_parse_and_bind': [],
+ 'readline_remove_delims': '-/~',
+ 'screen_length': -2,
+ 'separate_in': '\n',
+ 'separate_out': '\n',
+ 'separate_out2': '',
+ 'system_header': 'IPython system call: ',
+ 'system_verbose': 0,
+ 'term_title': 1,
+ 'tk': 0,
+ 'upgrade': 0,
+ 'wildcards_case_sensitive': 1,
+ 'wthread': 0,
+ 'wxversion': '0',
+ 'xmode': 'Context'}
+
+***************************************************************************
+
+Crash traceback:
+
+---------------------------------------------------------------------------
+AttributeError                                Python 2.6.1: /usr/bin/python
+                                                   Thu Jul 21 23:12:20 2011
+A problem occured executing Python code.  Here is the sequence of function
+calls leading up to the error, with the most recent (innermost) call last.
+
+/Users/Tony/python/devel/mpl/lib/matplotlib/sphinxext/ipython_directive.py in <module>()
+    552 
+    553 
+    554     ipython_directive.DEBUG = True
+    555     #options = dict(suppress=True)
+    556     options = dict()
+    557     for example in examples:
+    558         content = example.split('\n')
+    559         ipython_directive('debug', arguments=None, options=options,
+    560                           content=content, lineno=0,
+    561                           content_offset=None, block_text=None,
+    562                           state=None, state_machine=None,
+    563                           )
+    564 
+    565 
+    566 if __name__=='__main__':
+--> 567     test()
+        global test = <function test at 0x1023281b8>
+    568 
+    569 
+    570 
+    571 
+    572 
+    573 
+    574 
+    575 
+    576 
+    577 
+    578 
+    579 
+    580 
+    581 
+    582 
+
+/Users/Tony/python/devel/mpl/lib/matplotlib/sphinxext/ipython_directive.py in test()
+    547     S.upper() -> string
+    548     Return a copy of the string S converted to uppercase.
+    549  """
+    550     ]
+    551 
+    552 
+    553 
+    554     ipython_directive.DEBUG = True
+    555     #options = dict(suppress=True)
+    556     options = dict()
+    557     for example in examples:
+    558         content = example.split('\n')
+    559         ipython_directive('debug', arguments=None, options=options,
+    560                           content=content, lineno=0,
+    561                           content_offset=None, block_text=None,
+--> 562                           state=None, state_machine=None,
+        global state = undefined
+        global None = undefined
+        global state_machine = undefined
+    563                           )
+    564 
+    565 
+    566 if __name__=='__main__':
+    567     test()
+    568 
+    569 
+    570 
+    571 
+    572 
+    573 
+    574 
+    575 
+    576 
+    577 
+
+/Users/Tony/python/devel/mpl/lib/matplotlib/sphinxext/ipython_directive.py in ipython_directive(name='debug', arguments=None, options={}, content=['', 'In [9]: pwd', "Out[9]: '/home/jdhunter/py4science/book'", '', 'In [10]: cd bookdata/', '/home/jdhunter/py4science/book/bookdata', '', 'In [2]: from pylab import *', '', 'In [2]: ion()', '', "In [3]: im = imread('stinkbug.png')", '', '@savefig mystinkbug.png width=4in', 'In [4]: imshow(im)', 'Out[4]: <matplotlib.image.AxesImage object at 0x39ea850>', '', ''], lineno=0, content_offset=None, block_text=None, state=None, state_machine=None)
+    339 
+    340     debug = ipython_directive.DEBUG
+    341     shell.is_suppress = options.has_key('suppress')
+    342     shell.is_doctest = options.has_key('doctest')
+    343     shell.is_verbatim = options.has_key('verbatim')
+    344 
+    345     #print 'ipy', shell.is_suppress, options
+    346     parts = '\n'.join(content).split('\n\n')
+    347     lines = ['.. sourcecode:: ipython', '']
+    348 
+    349     figures = []
+    350     for part in parts:
+    351         block = block_parser(part)
+    352 
+    353         if len(block):
+--> 354             rows, figure = shell.process_block(block)
+        rows = undefined
+        figure = undefined
+        global shell.process_block = <bound method EmbeddedSphinxShell.process_block of <__main__.EmbeddedSphinxShell instance at 0x1013ff050>>
+        block = [(1, (None, 'pwd', '')), (2, "'/home/jdhunter/py4science/book'")]
+    355             for row in rows:
+    356                 lines.extend(['    %s'%line for line in row.split('\n')])
+    357 
+    358             if figure is not None:
+    359                 figures.append(figure)
+    360 
+    361     for figure in figures:
+    362         lines.append('')
+    363         lines.extend(figure.split('\n'))
+    364         lines.append('')
+    365 
+    366     #print lines
+    367     if len(lines)>2:
+    368         if debug:
+    369             print '\n'.join(lines)
+
+/Users/Tony/python/devel/mpl/lib/matplotlib/sphinxext/ipython_directive.py in process_block(self=<__main__.EmbeddedSphinxShell instance at 0x1013ff050>, block=[(1, (None, 'pwd', '')), (2, "'/home/jdhunter/py4science/book'")])
+    176         sys.stdout = stdout
+    177 
+    178 
+    179     def process_block(self, block):
+    180         """
+    181         process block from the block_parser and return a list of processed lines
+    182         """
+    183 
+    184         #print 'BLOCK', block
+    185         ret = []
+    186 
+    187         output = None
+    188         input_lines = None
+    189 
+    190         m = rgxin.match(str(self.IP.outputcache.prompt1).strip())
+--> 191         lineno = int(m.group(1))
+        lineno = undefined
+        global int = undefined
+        m.group = undefined
+    192 
+    193         input_prompt = fmtin%lineno
+    194         output_prompt = fmtout%lineno
+    195         image_file = None
+    196         image_directive = None
+    197         for token, data in block:
+    198 
+    199             if token==COMMENT:
+    200                 if not self.is_suppress:
+    201                     ret.append(data)
+    202 
+    203             elif token==INPUT:
+    204 
+    205                 decorator, input, rest = data
+    206                 #print 'INPUT:', data
+
+AttributeError: 'NoneType' object has no attribute 'group'
+
+***************************************************************************
+
+History of session input:
+_ip.magic("bookmark ipy_basedir")
+
+*** Last line of input (may not be in above history):
+bookmark ipy_basedir
