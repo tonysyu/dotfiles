@@ -179,7 +179,7 @@ c = get_config()
 
 # The font size. If unconfigured, Qt will be entrusted with the size of the
 # font.
-# c.IPythonWidget.font_size = 0
+c.IPythonWidget.font_size = 11
 
 # Use a list widget instead of plain text output for tab completion.
 # c.IPythonWidget.gui_completion = False
@@ -261,7 +261,7 @@ c = get_config()
 # c.ZMQInteractiveShell.separate_in = '\n'
 
 # Set the color scheme (NoColor, Linux, or LightBG).
-# c.ZMQInteractiveShell.colors = 'LightBG'
+c.ZMQInteractiveShell.colors = 'Linux'
 
 # Autoindent IPython code entered interactively.
 # c.ZMQInteractiveShell.autoindent = True
