@@ -39,9 +39,9 @@ snippet watch
 snippet pdb
 	import pdb; pdb.set_trace()
 snippet ipdb
-	from IPython.Debugger import Tracer; Tracer(colors='Linux'))()
+	from IPython.core.debugger import Tracer; Tracer()()
 snippet ishell
-	from IPython.Shell import IPShellEmbed; ipshell = IPShellEmbed(); ipshell()
+	import IPython.frontend.terminal.embed as _e; _e.InteractiveShellEmbed()()
 snippet dec
 	def wrapper(func):
 		# @functools.wraps(func)
