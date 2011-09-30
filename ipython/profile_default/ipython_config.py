@@ -157,7 +157,7 @@ c = get_config()
 # c.InteractiveShellApp.extra_extension = ''
 
 # List of files to run at IPython startup.
-# c.InteractiveShellApp.exec_files = []
+c.InteractiveShellApp.exec_files = ['extras.py']
 
 # A file to be run
 # c.InteractiveShellApp.file_to_run = ''
