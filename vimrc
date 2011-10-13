@@ -106,8 +106,13 @@ nnoremap <C-l> <C-w>l
 " Yank and paste from clipboard
 nnoremap <leader>y "*y
 vnoremap <leader>y "*y
+nnoremap <leader>Y "*Y
 nnoremap <leader>p "*p
+vnoremap <leader>p "*p
 nnoremap <leader>P "*P
+nnoremap <leader>d "*d
+vnoremap <leader>d "*d
+nnoremap <leader>D "*D
 
 " Insert lines without going insert mode (screws up quickfix)
 "nnoremap <S-Enter> O<Esc>
