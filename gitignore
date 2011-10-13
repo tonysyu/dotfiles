@@ -15,6 +15,7 @@ tags
 *.pyc
 *.so
 *.o
+.coverage
 
 # LaTeX related
 *.fdb_latexmk
