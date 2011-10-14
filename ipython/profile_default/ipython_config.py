@@ -188,8 +188,9 @@ c.InteractiveShellApp.exec_files = ['extras.py']
 # Autoindent IPython code entered interactively.
 # c.TerminalInteractiveShell.autoindent = True
 
-# 
-# c.TerminalInteractiveShell.readline_omit__names = 2
+# Tab completion customization: 1 = omit __ names, 2 = omit _ and __ names
+# You can still list private methods by specifying: obj._ (then press tab).
+c.TerminalInteractiveShell.readline_omit__names = 2
 
 # 
 # c.TerminalInteractiveShell.prompt_in2 = '   .\\D.: '
