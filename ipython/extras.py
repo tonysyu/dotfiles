@@ -29,7 +29,5 @@ def main():
         ip.ex('import scipy.ndimage as ndimg')
     ip.define_magic('ndimg', import_ndimg)
 
-    import numpy as np
-    np.set_printoptions(precision=3)
-
 main()
+

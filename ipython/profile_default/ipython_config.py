@@ -360,7 +360,7 @@ c.TerminalInteractiveShell.readline_omit__names = 2
 # c.PlainTextFormatter.newline = '\n'
 
 # 
-# c.PlainTextFormatter.float_precision = ''
+c.PlainTextFormatter.float_precision = '%0.3g'
 
 # 
 # c.PlainTextFormatter.verbose = False
