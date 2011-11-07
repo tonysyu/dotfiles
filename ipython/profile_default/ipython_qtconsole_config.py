@@ -80,7 +80,7 @@ c = get_config()
 
 # Pre-load matplotlib and numpy for interactive use, selecting a particular
 # matplotlib backend and loop integration.
-c.IPKernelApp.pylab = 'inline'
+#c.IPKernelApp.pylab = 'inline'
 
 # set the shell (XREP) port [default: random]
 # c.IPKernelApp.shell_port = 0
