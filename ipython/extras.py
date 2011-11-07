@@ -22,7 +22,7 @@ def main():
     ip.define_magic('ui', import_ui)
 
     def import_imgio(self, arg):
-        ip.ex('import scikits.image.io as sio')
+        ip.ex('import skimage.io as sio')
     ip.define_magic('sio', import_imgio)
 
     def import_ndimg(self, arg):
