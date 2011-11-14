@@ -18,7 +18,7 @@ if has("gui_running")
     if version >= 700
       hi CursorColumn                   guibg=#181818
       hi CursorLine                     guibg=#262626
-      hi MatchParen     guifg=#d0ffc0   guibg=#181818   gui=bold
+      hi MatchParen     guifg=#ff6545   guibg=#181818   gui=bold
       hi Pmenu 		    guifg=#ffffff   guibg=#262626
       hi PmenuSel 	    guifg=#000000   guibg=#b1d631
     endif
