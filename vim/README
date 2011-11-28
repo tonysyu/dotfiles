@@ -37,3 +37,8 @@ Consider adding the following bundles:
     git submodule add git://github.com/vim-scripts/TaskList.vim.git vim/bundle/tasklist
     git submodule add git://github.com/sontek/rope-vim.git vim/bundle/ropevim
 
+To update specific bundles, change to the bundle directory and run:
+    git pull origin master
+
+To update all bundles, go to the root directory and run:
+    git submodule foreach git pull origin master
