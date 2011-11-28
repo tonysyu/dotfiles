@@ -3,7 +3,7 @@
 	url = git://github.com/tpope/vim-fugitive.git
 [submodule "vim/bundle/snipmate"]
 	path = vim/bundle/snipmate
-	url = git://github.com/msanders/snipmate.vim.git
+	url = git://github.com/garbas/snipmate.vim.git
 [submodule "vim/bundle/surround"]
 	path = vim/bundle/surround
 	url = git://github.com/tpope/vim-surround.git
@@ -49,3 +49,6 @@
 [submodule "vim/bundle/rename"]
 	path = vim/bundle/rename
 	url = https://github.com/vim-scripts/Rename.git
+[submodule "vim/bundle/mw_utils"]
+	path = vim/bundle/mw_utils
+	url = https://github.com/MarcWeber/vim-addon-mw-utils
