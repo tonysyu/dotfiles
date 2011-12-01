@@ -52,3 +52,6 @@
 [submodule "vim/bundle/mw_utils"]
 	path = vim/bundle/mw_utils
 	url = https://github.com/MarcWeber/vim-addon-mw-utils
+[submodule "vim/bundle/minyankring"]
+	path = vim/bundle/minyankring
+	url = https://github.com/the-isz/MinYankRing.vim.git
