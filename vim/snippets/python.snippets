@@ -36,6 +36,9 @@ snippet cb
 	import cookbook as cb
 snippet watch
 	with cb.stopwatch():
+snippet prof
+	from yutils.testing import profile
+	profile('${1:code to profile}')
 snippet ipdb
 	from IPython.core.debugger import Tracer; Tracer()()
 snippet ishell
