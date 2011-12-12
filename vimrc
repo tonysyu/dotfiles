@@ -103,6 +103,9 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
+" Toggle between two, most-recent buffers
+nnoremap <leader><leader> <c-^>
+
 " Yank and paste from clipboard
 nnoremap <leader>y "*y
 vnoremap <leader>y "*y
