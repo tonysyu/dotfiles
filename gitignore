@@ -20,6 +20,7 @@ tags
 # LaTeX related
 *.fdb_latexmk
 *.synctex.gz
+*.pdfsync
 *.aux
 *.bak
 *.bbl
