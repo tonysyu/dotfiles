@@ -40,7 +40,7 @@ snippet prof
 	from yutils.testing import profile
 	profile('${1:code to profile}')
 snippet ipdb
-	from IPython.core.debugger import Tracer; Tracer()()
+	from IPython.core.debugger import Tracer; Tracer(colors='Linux')()
 snippet ishell
 	import IPython.frontend.terminal.embed as _e; _e.InteractiveShellEmbed()()
 snippet dec
