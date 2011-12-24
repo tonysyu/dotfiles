@@ -26,7 +26,9 @@ c = get_config()
 
 # Pre-load matplotlib and numpy for interactive use, selecting a particular
 # matplotlib backend and loop integration.
-# c.TerminalIPythonApp.pylab = None
+c.TerminalIPythonApp.pylab = 'qt'
+# Don't pollute namespace with numpy and matplotlib
+c.TerminalIPythonApp.pylab_import_all = False
 
 # Suppress warning messages about legacy config files
 # c.TerminalIPythonApp.ignore_old_config = False
