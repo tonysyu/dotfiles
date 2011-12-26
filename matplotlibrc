@@ -1,0 +1,25 @@
+### MATPLOTLIBRC Configuration file
+# backend: WxAgg
+# backend: TkAgg
+backend: QT4Agg
+#backend: macosx
+
+# text.usetex  : True
+# mathtext.fontset : stixsans
+# Antialiasing fails with usetex unless you use dvipnghack
+# text.dvipnghack : True
+
+# auto placement of legend
+legend.loc : best
+# Use single marker to represent line (e.g., '--o--' instead of 'o---o')
+legend.numpoints: 1
+
+axes.color_cycle : b, r, k, y, g, m, c
+image.cmap : gray
+
+# CMU fonts from http://sourceforge.net/projects/cm-unicode/files/
+# You probably need to clear ~/.matplotlib/fontList.cache before use.
+font.serif: CMU Serif
+font.sans-serif: CMU Bright
+# font.family: serif
+
