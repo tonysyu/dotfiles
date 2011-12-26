@@ -204,7 +204,7 @@ hi Delimiter
     \ guifg=#00A0A0         guibg=NONE          gui=NONE
     \ ctermfg=cyan          ctermbg=NONE        cterm=NONE
 hi Operator
-    \ guifg=white           guibg=NONE          gui=NONE
+    \ guifg=#FFFFB6         guibg=NONE          gui=NONE
     \ ctermfg=white         ctermbg=NONE        cterm=NONE
 
 hi link Character       Constant
