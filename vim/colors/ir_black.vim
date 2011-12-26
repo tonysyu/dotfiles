@@ -2,17 +2,17 @@
 " More at: http://blog.infinitered.com
 
 
-" ********************************************************************************
+" *****************************************************************************
 " Standard colors used in all ir_black themes:
 " Note, x:x:x are RGB values
 "
 "  normal: #f6f3e8
 "
-"  string: #A8FF60  168:255:96
-"    string inner (punc, code, etc): #00A0A0  0:160:160
-"  number: #FF73FD  255:115:253
+"  string: #CEFFAB  168:255:96
+"    string inner (punc, code, etc): #FFA560  0:160:160
+"  number: #FBC2FF  255:115:253
 "  comments: #7C7C7C  124:124:124
-"  keywords: #96CBFE  150:203:254
+"  keywords: #B5DCFE  150:203:254
 "  operators: white
 "  class: #FFFFB6  255:255:182
 "  method declaration name: #FFD2A7  255:210:167
@@ -39,7 +39,7 @@
 "  line number: #3D3D3D  61:61:61
 
 
-" ********************************************************************************
+" *****************************************************************************
 " The following are the preferred 16 colors for your terminal
 "           Colors      Bright Colors
 " Black     #4E4E4E     #7C7C7C
@@ -47,12 +47,12 @@
 " Green     #A8FF60     #CEFFAB
 " Yellow    #FFFFB6     #FFFFCB
 " Blue      #96CBFE     #B5DCFE
-" Magenta   #FF73FD     #FF9CFE
+" Magenta   #FF73FD     #FBC2FF
 " Cyan      #C6C5FE     #DFDFFE
 " White     #EEEEEE     #FFFFFF
 
 
-" ********************************************************************************
+" *****************************************************************************
 set background=dark
 hi clear
 
@@ -161,20 +161,20 @@ hi Comment
     \ guifg=#7C7C7C         guibg=NONE          gui=NONE
     \ ctermfg=darkgray      ctermbg=NONE        cterm=NONE
 hi String
-    \ guifg=#A8FF60         guibg=NONE          gui=NONE
+    \ guifg=#CEFFAB         guibg=NONE          gui=NONE
     \ ctermfg=green         ctermbg=NONE        cterm=NONE
 hi Number
-    \ guifg=#FF73FD         guibg=NONE          gui=NONE
+    \ guifg=#FBC2FF         guibg=NONE          gui=NONE
     \ ctermfg=magenta       ctermbg=NONE        cterm=NONE
 
 hi Keyword
-    \ guifg=#96CBFE         guibg=NONE          gui=NONE
+    \ guifg=#B5DCFE         guibg=NONE          gui=NONE
     \ ctermfg=blue          ctermbg=NONE        cterm=NONE
 hi PreProc
-    \ guifg=#96CBFE         guibg=NONE          gui=NONE
+    \ guifg=#B5DCFE         guibg=NONE          gui=NONE
     \ ctermfg=blue          ctermbg=NONE        cterm=NONE
 hi Conditional
-    \ guifg=#6699CC         guibg=NONE          gui=NONE
+    \ guifg=#96CBFE         guibg=NONE          gui=NONE
     \ ctermfg=blue          ctermbg=NONE        cterm=NONE  " if else end
 
 hi Todo
@@ -194,14 +194,14 @@ hi Type
     \ guifg=#FFFFB6         guibg=NONE          gui=NONE
     \ ctermfg=yellow        ctermbg=NONE        cterm=NONE
 hi Statement
-    \ guifg=#6699CC         guibg=NONE          gui=NONE
+    \ guifg=#96CBFE         guibg=NONE          gui=NONE
     \ ctermfg=lightblue     ctermbg=NONE        cterm=NONE
 
 hi Special
     \ guifg=#E18964         guibg=NONE          gui=NONE
     \ ctermfg=white         ctermbg=NONE        cterm=NONE
 hi Delimiter
-    \ guifg=#00A0A0         guibg=NONE          gui=NONE
+    \ guifg=#FFA560         guibg=NONE          gui=NONE
     \ ctermfg=cyan          ctermbg=NONE        cterm=NONE
 hi Operator
     \ guifg=#FFFFB6         guibg=NONE          gui=NONE
@@ -237,10 +237,10 @@ hi rubyEscape
     \ guifg=white           guibg=NONE          gui=NONE
     \ ctermfg=cyan          ctermbg=NONE        cterm=NONE
 hi rubyInterpolationDelimiter
-    \ guifg=#00A0A0         guibg=NONE          gui=NONE
+    \ guifg=#FFA560         guibg=NONE          gui=NONE
     \ ctermfg=blue          ctermbg=NONE        cterm=NONE
 hi rubyControl
-    \ guifg=#6699CC         guibg=NONE          gui=NONE
+    \ guifg=#96CBFE         guibg=NONE          gui=NONE
     \ ctermfg=blue          ctermbg=NONE        cterm=NONE  "and break, etc
 "hi rubyGlobalVariable
 "   \ guifg=#FFCCFF         guibg=NONE          gui=NONE
