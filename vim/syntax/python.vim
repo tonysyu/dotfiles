@@ -162,8 +162,8 @@ endif
 " Strings
 syn region pythonString		start=+[bB]\='+ skip=+\\\\\|\\'\|\\$+ excludenl end=+'+ end=+$+ keepend contains=pythonEscape,pythonEscapeError,@Spell
 syn region pythonString		start=+[bB]\="+ skip=+\\\\\|\\"\|\\$+ excludenl end=+"+ end=+$+ keepend contains=pythonEscape,pythonEscapeError,@Spell
-syn region pythonString		start=+[bB]\="""+ end=+"""+ keepend contains=pythonEscape,pythonEscapeError,pythonDocTest2,pythonSpaceError,@Spell
-syn region pythonString		start=+[bB]\='''+ end=+'''+ keepend contains=pythonEscape,pythonEscapeError,pythonDocTest,pythonSpaceError,@Spell
+syn region pythonDocString		start=+[bB]\="""+ end=+"""+ keepend contains=pythonEscape,pythonEscapeError,pythonDocTest2,pythonSpaceError,@Spell
+syn region pythonDocString		start=+[bB]\='''+ end=+'''+ keepend contains=pythonEscape,pythonEscapeError,pythonDocTest,pythonSpaceError,@Spell
 
 syn match  pythonEscape		+\\[abfnrtv'"\\]+ display contained
 syn match  pythonEscape		"\\\o\o\=\o\=" display contained
@@ -314,59 +314,61 @@ if version >= 508 || !exists("did_python_syn_inits")
     command -nargs=+ HiLink hi def link <args>
   endif
 
-  HiLink pythonStatement	Statement
-  HiLink pythonPreCondit	Statement
-  HiLink pythonFunction		Function
-  HiLink pythonConditional	Conditional
-  HiLink pythonRepeat		Repeat
-  HiLink pythonException	Exception
-  HiLink pythonOperator		Operator
+  HiLink pythonStatement            Statement
+  HiLink pythonPreCondit            Statement
+  HiLink pythonFunction             Function
+  HiLink pythonConditional          Conditional
+  HiLink pythonRepeat               Repeat
+  HiLink pythonException            Exception
+  HiLink pythonOperator             Operator
 
-  HiLink pythonDecorator	Define
-  HiLink pythonDottedName	Function
-  HiLink pythonDot          Normal
+  HiLink pythonDecorator            Define
+  HiLink pythonDottedName           Function
+  HiLink pythonDot                  Normal
 
-  HiLink pythonComment		Comment
-  HiLink pythonCoding		Special
-  HiLink pythonRun		Special
-  HiLink pythonTodo		Todo
+  HiLink pythonComment              Comment
+  HiLink pythonCoding               Special
+  HiLink pythonRun                  Special
+  HiLink pythonTodo                 Todo
 
-  HiLink pythonError		Error
-  HiLink pythonIndentError	Error
-  HiLink pythonSpaceError	Error
+  HiLink pythonError                Error
+  HiLink pythonIndentError          Error
+  HiLink pythonSpaceError           Error
 
-  HiLink pythonString		String
-  HiLink pythonUniString	String
-  HiLink pythonRawString	String
-  HiLink pythonUniRawString	String
+  HiLink pythonString               String
+  HiLink pythonUniString            String
+  HiLink pythonRawString            String
+  HiLink pythonUniRawString         String
 
-  HiLink pythonEscape			Special
-  HiLink pythonEscapeError		Error
-  HiLink pythonUniEscape		Special
-  HiLink pythonUniEscapeError		Error
-  HiLink pythonUniRawEscape		Special
+  HiLink pythonDocString            Comment
+
+  HiLink pythonEscape               Special
+  HiLink pythonEscapeError          Error
+  HiLink pythonUniEscape            Special
+  HiLink pythonUniEscapeError       Error
+  HiLink pythonUniRawEscape         Special
   HiLink pythonUniRawEscapeError	Error
 
-  HiLink pythonStrFormatting	Special
-  HiLink pythonStrFormat    	Special
-  HiLink pythonStrTemplate	    Special
+  HiLink pythonStrFormatting        Special
+  HiLink pythonStrFormat            Special
+  HiLink pythonStrTemplate          Special
 
-  HiLink pythonDocTest		Special
-  HiLink pythonDocTest2		Special
+  HiLink pythonDocTest              Special
+  HiLink pythonDocTest2             Special
 
-  HiLink pythonNumber		Number
-  HiLink pythonHexNumber	Number
-  HiLink pythonOctNumber	Number
-  HiLink pythonBinNumber	Number
-  HiLink pythonFloat		Float
-  HiLink pythonOctError	    Error
-  HiLink pythonHexError		Error
-  HiLink pythonBinError		Error
+  HiLink pythonNumber               Number
+  HiLink pythonHexNumber            Number
+  HiLink pythonOctNumber            Number
+  HiLink pythonBinNumber            Number
+  HiLink pythonFloat                Float
+  HiLink pythonOctError             Error
+  HiLink pythonHexError             Error
+  HiLink pythonBinError             Error
 
-  HiLink pythonBuiltinObj	Keyword
-  HiLink pythonBuiltinFunc	Function
+  HiLink pythonBuiltinObj           Keyword
+  HiLink pythonBuiltinFunc          Function
 
-  HiLink pythonExClass	Structure
+  HiLink pythonExClass              Structure
 
   delcommand HiLink
 endif
