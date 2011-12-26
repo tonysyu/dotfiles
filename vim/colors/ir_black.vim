@@ -1,5 +1,6 @@
-" ir_black color scheme
+" Modified version of ir_black color scheme
 " More at: http://blog.infinitered.com
+
 
 
 " *****************************************************************************
@@ -14,7 +15,7 @@
 "  comments: #7C7C7C  124:124:124
 "  keywords: #B5DCFE  150:203:254
 "  operators: white
-"  class: #FFFFB6  255:255:182
+"  class: #FFFF99  255:255:182
 "  method declaration name: #FFD2A7  255:210:167
 "  regular expression: #E9C062  233:192:98
 "    regexp alternate: #FF8000  255:128:0
@@ -45,7 +46,7 @@
 " Black     #4E4E4E     #7C7C7C
 " Red       #FF6C60     #FFB6B0
 " Green     #A8FF60     #CEFFAB
-" Yellow    #FFFFB6     #FFFFCB
+" Yellow    #FFFF99     #FFFFCB
 " Blue      #96CBFE     #B5DCFE
 " Magenta   #FF73FD     #FBC2FF
 " Cyan      #C6C5FE     #DFDFFE
@@ -166,7 +167,6 @@ hi String
 hi Number
     \ guifg=#FBC2FF         guibg=NONE          gui=NONE
     \ ctermfg=magenta       ctermbg=NONE        cterm=NONE
-
 hi Keyword
     \ guifg=#B5DCFE         guibg=NONE          gui=NONE
     \ ctermfg=blue          ctermbg=NONE        cterm=NONE
@@ -176,14 +176,12 @@ hi PreProc
 hi Conditional
     \ guifg=#96CBFE         guibg=NONE          gui=NONE
     \ ctermfg=blue          ctermbg=NONE        cterm=NONE  " if else end
-
 hi Todo
     \ guifg=#8f8f8f         guibg=NONE          gui=NONE
     \ ctermfg=red           ctermbg=NONE        cterm=NONE
 hi Constant
     \ guifg=#99CC99         guibg=NONE          gui=NONE
     \ ctermfg=cyan          ctermbg=NONE        cterm=NONE
-
 hi Identifier
     \ guifg=#C6C5FE         guibg=NONE          gui=NONE
     \ ctermfg=cyan          ctermbg=NONE        cterm=NONE
@@ -191,21 +189,18 @@ hi Function
     \ guifg=#FFD2A7         guibg=NONE          gui=NONE
     \ ctermfg=brown         ctermbg=NONE        cterm=NONE
 hi Type
-    \ guifg=#FFFFB6         guibg=NONE          gui=NONE
+    \ guifg=#FFFF99         guibg=NONE          gui=NONE
     \ ctermfg=yellow        ctermbg=NONE        cterm=NONE
 hi Statement
     \ guifg=#96CBFE         guibg=NONE          gui=NONE
     \ ctermfg=lightblue     ctermbg=NONE        cterm=NONE
-
 hi Special
     \ guifg=#E18964         guibg=NONE          gui=NONE
     \ ctermfg=white         ctermbg=NONE        cterm=NONE
 hi Delimiter
     \ guifg=#FFA560         guibg=NONE          gui=NONE
     \ ctermfg=cyan          ctermbg=NONE        cterm=NONE
-hi Operator
-    \ guifg=#FFFFB6         guibg=NONE          gui=NONE
-    \ ctermfg=white         ctermbg=NONE        cterm=NONE
+
 
 hi link Character       Constant
 hi link Boolean         Constant
@@ -217,6 +212,7 @@ hi link Include         PreProc
 hi link Define          PreProc
 hi link Macro           PreProc
 hi link PreCondit       PreProc
+hi link Operator        Type
 hi link StorageClass    Type
 hi link Structure       Type
 hi link Typedef         Type
