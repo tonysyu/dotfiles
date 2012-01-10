@@ -201,6 +201,20 @@ hi Delimiter
     \ guifg=#FFA560         guibg=NONE          gui=NONE
     \ ctermfg=cyan          ctermbg=NONE        cterm=NONE
 
+" VimDiff highlighting
+hi DiffAdd
+    \ guifg=#181818         guibg=#cae682       gui=NONE
+    \ ctermfg=black         ctermbg=green       cterm=NONE
+hi DiffChange
+    \ guifg=#181818         guibg=#7C7C7C       gui=NONE
+    \ ctermfg=black         ctermbg=gray        cterm=NONE
+hi DiffDelete
+    \ guifg=#181818         guibg=#FF6C60       gui=NONE
+    \ ctermfg=black         ctermbg=red         cterm=NONE
+hi DiffText
+    \ guifg=#181818         guibg=#FFFF99       gui=NONE
+    \ ctermfg=black         ctermbg=yellow      cterm=NONE
+
 
 hi link Character       Constant
 hi link Boolean         Constant
