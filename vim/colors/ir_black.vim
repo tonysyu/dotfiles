@@ -100,7 +100,7 @@ hi Title
     \ guifg=#f6f3e8         guibg=NONE          gui=bold
     \ ctermfg=NONE          ctermbg=NONE        cterm=NONE
 hi Visual
-    \ guifg=NONE            guibg=#262D51       gui=NONE
+    \ guifg=NONE            guibg=#6097B9       gui=NONE
     \ ctermfg=NONE          ctermbg=NONE        cterm=REVERSE
 
 hi SpecialKey
