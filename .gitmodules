@@ -61,3 +61,6 @@
 [submodule "vim/bundle/tlib"]
 	path = vim/bundle/tlib
 	url = https://github.com/tomtom/tlib_vim.git
+[submodule "vim/bundle/latex-box"]
+	path = vim/bundle/latex-box
+	url = https://github.com/vim-scripts/LaTeX-Box.git
