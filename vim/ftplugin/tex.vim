@@ -19,7 +19,9 @@ let tlist_tex_settings = 'latex;l:labels;s:sections;t:subsections;u:subsubsectio
 " Add ‘-’ and ‘:’ to keywords
 setlocal iskeyword=@,48-57,_,-,:,192-255
 
-nnoremap <leader>l :w<CR>:silent !/Applications/Skim.app/Contents/SharedSupport/displayline <C-r>=line('.')<CR> %<.pdf %<CR>
+nnoremap <leader>r :w<CR> :Latexmk<CR>
+
+"nnoremap <leader>l :w<CR>:silent !/Applications/Skim.app/Contents/SharedSupport/displayline <C-r>=line('.')<CR> %<.pdf %<CR>
 
 "let g:Tex_MainFileExpression = 'MainFile(modifier)'
 "function! MainFile(fmod)
