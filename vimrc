@@ -134,6 +134,9 @@ nmap <silent> <leader>dw <C-w>= :set wrap<CR> <C-w><C-w> :set wrap<CR>
 " jj in insert mode will change to normal mode
 inoremap jj <ESC>
 
+" Shortcut for OmniComplete
+imap <C-c> <C-x><C-o>
+
 " reflow paragraph (i.e. remove end of lines)
 nnoremap Q gqap
 " reflow selected text
@@ -187,11 +190,10 @@ nmap _$ :call Preserve("%s/\\s\\+$//e")<CR>
 " ====================
 
 " Ignore files for Command-T
-set wildignore+=*.o,*.so,*.bmp,*.gif,*.tif,*.jpg,*.png,*.pdf,*.mat,*.npz,*.aux,*.bbl,*.blg,*.log
+set wildignore+=*.o,*.so,*.bmp,*.gif,*.tif,*.jpg,*.png,*.pdf,*.mat,*.npz,*.aux,*.bbl,*.blg,*.log,*.key
 
 " Default VCS prefix is ',c' which conflicts with NERD commenter
 let VCSCommandMapPrefix = ',v'
-
 
 " Launch lusty juggler (which lists buffers, hence "b")
 nmap <silent> <leader>b <leader>lj
