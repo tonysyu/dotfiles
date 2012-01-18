@@ -32,3 +32,15 @@ nnoremap <leader>r :w<CR> :Latexmk<CR>
     "endif
 "endif
 
+" Latex-box customization.
+let g:LatexBox_viewer = '/Applications/Preview.app/Contents/MacOS/Preview'
+
+" begin and end environment
+imap <buffer> [[ \begin{
+imap <buffer> ]] <Plug>LatexCloseCurEnv
+
+" Wrap visual selection in a new environment
+vmap <leader>ee <Plug>LatexEnvWrapSelection
+" Change environment
+nmap <leader>ee <Plug>LatexChangeEnv
+
