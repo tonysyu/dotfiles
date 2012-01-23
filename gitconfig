@@ -1,0 +1,21 @@
+[user]
+	name = Tony S Yu
+    email = tsyu80@gmail.com
+[color]
+    diff = auto
+    status = auto
+    branch = auto
+	ui = auto
+[core]
+    excludesfile = /Users/Tony/.gitignore
+	editor = /usr/bin/vim
+	pager = less -r
+[gui]
+	fontui = -family Inconsolata -size 12 -weight normal -slant roman -underline 0 -overstrike 0
+	fontdiff = -family Inconsolata -size 12 -weight normal -slant roman -underline 0 -overstrike 0
+[github]
+	user = tonysyu
+[alias]
+    co = checkout
+    wdiff = diff --word-diff
+
