@@ -61,3 +61,6 @@
 [submodule "vim/bundle/latex-box"]
 	path = vim/bundle/latex-box
 	url = https://github.com/vim-scripts/LaTeX-Box.git
+[submodule "vim/bundle/markdown"]
+	path = vim/bundle/markdown
+	url = https://github.com/tpope/vim-markdown.git
