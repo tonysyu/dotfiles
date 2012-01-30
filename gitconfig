@@ -18,4 +18,5 @@
 [alias]
     co = checkout
     wdiff = diff --word-diff
+    sdiff = diff --staged
 
