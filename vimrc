@@ -69,6 +69,7 @@ set gdefault                    " make substitutions global by default
 autocmd BufNewFile,BufRead,BufFilePost *.cir set filetype=spice
 autocmd BufNewFile,BufRead,BufFilePost *.txt set filetype=rst
 autocmd BufNewFile,BufRead,BufFilePost *.tex set filetype=tex
+autocmd BufNewFile,BufRead,BufFilePost *.css_t set filetype=css
 
 autocmd BufLeave,FocusLost silent! wall " save when focus is lost
 " Since I'm auto-saving (above), don't save backup and swap files.
@@ -125,6 +126,8 @@ nnoremap <leader>D "*D
 " Quickly edit/reload the vimrc file
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
+
+" search and replace
 nnoremap <leader>ss :%s/
 vnoremap <leader>ss :s/
 
@@ -141,6 +144,10 @@ imap <C-c> <C-x><C-o>
 nnoremap Q gqap
 " reflow selected text
 vnoremap Q gq
+
+" Reparse syntax
+noremap <leader>sy <Esc>:syntax sync fromstart<CR>
+inoremap <leader>sy <C-o>:syntax sync fromstart<CR>
 
 " FUNCTIONS
 " =========
