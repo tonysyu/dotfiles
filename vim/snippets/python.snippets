@@ -10,6 +10,10 @@ snippet attrs
 	Attributes
 	----------
 
+snippet see
+	See Also
+	--------
+
 snippet funcs
 	Functions
 	---------
@@ -22,6 +26,8 @@ snippet np
 	import numpy as np
 snippet plt
 	import matplotlib.pyplot as plt
+snippet mpl
+	import matplotlib as mpl
 snippet pq
 	import quantities as pq
 snippet const
@@ -36,6 +42,9 @@ snippet cb
 	import cookbook as cb
 snippet watch
 	with cb.stopwatch():
+snippet deprecate
+	from yutils import deprecate
+	@deprecate('${1:function to use instead}')
 snippet prof
 	from yutils.testing import profile
 	profile('${1:code to profile}')
@@ -50,6 +59,9 @@ snippet dec
 			val = func(*args, **kwargs)
 			return val
 		return wrapped
+snippet catch_warnings
+	with warnings.catch_warnings():
+		warnings.simplefilter("ignore")
 snippet utf8
 	# -*- coding: utf-8 -*-
 snippet ax
@@ -57,3 +69,6 @@ snippet ax
 
 snippet todo
 	#TODO: 
+snippet all
+	__all__ = ['${1}']
+
