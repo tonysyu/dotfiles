@@ -7,8 +7,8 @@ setlocal softtabstop=3               " back space removes up-to 3 spaces
 noremap  <C-h>0 yyPVr#yyjp
 inoremap <C-h>0 <esc>yyPVr#yyjpA
 " Chapters
-noremap  <C-h>1 yyPVr*yyjp
-inoremap <C-h>1 <esc>yyPVr*yyjpA
+noremap  <C-h>1 yyPVr=yyjp
+inoremap <C-h>1 <esc>yyPVr=yyjpA
 " Section Level 1
 noremap  <C-h>2 yypVr=
 inoremap <C-h>2 <esc>yypVr=A
