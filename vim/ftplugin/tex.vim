@@ -33,7 +33,7 @@ nnoremap <leader>r :w<CR>:Latexmk<CR>
 "endif
 
 " Latex-box customization.
-let g:LatexBox_viewer = '/Applications/Preview.app/Contents/MacOS/Preview'
+let g:LatexBox_viewer = 'open'
 
 " begin and end environment
 imap <buffer> [[ \begin{
