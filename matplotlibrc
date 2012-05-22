@@ -16,6 +16,7 @@ legend.numpoints: 1
 
 axes.color_cycle : b, r, k, y, g, m, c
 image.cmap : gray
+image.interpolation : none
 
 # CMU fonts from http://sourceforge.net/projects/cm-unicode/files/
 # You probably need to clear ~/.matplotlib/fontList.cache before use.
