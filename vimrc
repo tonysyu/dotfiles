@@ -69,6 +69,7 @@ set gdefault                    " make substitutions global by default
 autocmd BufNewFile,BufRead,BufFilePost *.cir set filetype=spice
 autocmd BufNewFile,BufRead,BufFilePost *.txt set filetype=rst
 autocmd BufNewFile,BufRead,BufFilePost *.tex set filetype=tex
+autocmd BufNewFile,BufRead,BufFilePost *.cls set filetype=tex
 autocmd BufNewFile,BufRead,BufFilePost *.css_t set filetype=css
 
 autocmd BufLeave,FocusLost silent! wall " save when focus is lost
@@ -198,6 +199,8 @@ nmap _$ :call Preserve("%s/\\s\\+$//e")<CR>
 
 " Ignore files for Command-T
 set wildignore+=*.o,*.so,*.bmp,*.gif,*.tif,*.jpg,*.png,*.pdf,*.mat,*.npz,*.aux,*.bbl,*.blg,*.log,*.key
+" IPython auto-generated files
+set wildignore+=shadowhist,kernel*.json
 
 " Default VCS prefix is ',c' which conflicts with NERD commenter
 let VCSCommandMapPrefix = ',v'
