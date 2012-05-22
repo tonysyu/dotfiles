@@ -7,7 +7,7 @@ c = get_config()
 #------------------------------------------------------------------------------
 
 # IPythonQtConsoleApp will inherit config from: BaseIPythonApplication,
-# Application
+# Application, IPythonConsoleApp
 
 # The IPython profile to use.
 # c.IPythonQtConsoleApp.profile = u'default'
@@ -18,6 +18,9 @@ c = get_config()
 # Set the log level by value or name.
 # c.IPythonQtConsoleApp.log_level = 30
 
+# Path to the ssh key to use for logging in to the ssh server.
+# c.IPythonQtConsoleApp.sshkey = ''
+
 # Use a plaintext widget instead of rich text (plain can't print/save).
 # c.IPythonQtConsoleApp.plain = False
 
@@ -26,8 +29,19 @@ c = get_config()
 # to connect to the Kernel, so be careful!
 # c.IPythonQtConsoleApp.ip = '127.0.0.1'
 
-# Whether to connect to an already running Kernel.
-# c.IPythonQtConsoleApp.existing = False
+# JSON file in which to store connection info [default: kernel-<pid>.json]
+# 
+# This file will contain the IP, ports, and authentication key needed to connect
+# clients to this kernel. By default, this file will be created in the security-
+# dir of the current profile, but can be specified by absolute path.
+# c.IPythonQtConsoleApp.connection_file = ''
+
+# Connect to an already running kernel
+# c.IPythonQtConsoleApp.existing = ''
+
+# Create a massive crash report when IPython enconters what may be an internal
+# error.  The default is to append a short message to the usual traceback
+# c.IPythonQtConsoleApp.verbose_crash = False
 
 # path to a custom CSS stylesheet
 # c.IPythonQtConsoleApp.stylesheet = ''
@@ -40,6 +54,9 @@ c = get_config()
 # $HOME/.ipython. This options can also be specified through the environment
 # variable IPYTHON_DIR.
 # c.IPythonQtConsoleApp.ipython_dir = u'/Users/Tony/.ipython'
+
+# The SSH server to use to connect to the kernel.
+# c.IPythonQtConsoleApp.sshserver = ''
 
 # Use a pure Python kernel instead of an IPython kernel.
 # c.IPythonQtConsoleApp.pure = False
@@ -56,6 +73,9 @@ c = get_config()
 
 # set the shell (XREP) port [default: random]
 # c.IPythonQtConsoleApp.shell_port = 0
+
+# Whether to create profile dir if it doesn't exist
+# c.IPythonQtConsoleApp.auto_create = False
 
 # Whether to overwrite existing config files when copying
 # c.IPythonQtConsoleApp.overwrite = False
@@ -78,9 +98,15 @@ c = get_config()
 # Set the IP or interface on which the kernel will listen.
 # c.IPKernelApp.ip = '127.0.0.1'
 
-# Pre-load matplotlib and numpy for interactive use, selecting a particular
-# matplotlib backend and loop integration.
-#c.IPKernelApp.pylab = 'inline'
+# 
+# c.IPKernelApp.parent_appname = u''
+
+# Create a massive crash report when IPython enconters what may be an internal
+# error.  The default is to append a short message to the usual traceback
+# c.IPKernelApp.verbose_crash = False
+
+# Run the module as a script.
+# c.IPKernelApp.module_to_run = ''
 
 # set the shell (XREP) port [default: random]
 # c.IPKernelApp.shell_port = 0
@@ -121,12 +147,20 @@ c = get_config()
 # The IPython profile to use.
 # c.IPKernelApp.profile = u'default'
 
-# 
-# c.IPKernelApp.parent_appname = u''
+# Pre-load matplotlib and numpy for interactive use, selecting a particular
+# matplotlib backend and loop integration.
+# c.IPKernelApp.pylab = None
 
 # kill this process if its parent dies.  On Windows, the argument specifies the
 # HANDLE of the parent process, otherwise it is simply boolean.
 # c.IPKernelApp.parent = 0
+
+# JSON file in which to store connection info [default: kernel-<pid>.json]
+# 
+# This file will contain the IP, ports, and authentication key needed to connect
+# clients to this kernel. By default, this file will be created in the security-
+# dir of the current profile, but can be specified by absolute path.
+# c.IPKernelApp.connection_file = ''
 
 # If true, an 'import *' is done from numpy and pylab, when using pylab
 # c.IPKernelApp.pylab_import_all = True
@@ -180,6 +214,9 @@ c = get_config()
 # The font size. If unconfigured, Qt will be entrusted with the size of the
 # font.
 c.IPythonWidget.font_size = 11
+
+# Whether to draw information calltips on open-parentheses.
+# c.IPythonWidget.enable_calltips = True
 
 # Use a list widget instead of plain text output for tab completion.
 # c.IPythonWidget.gui_completion = False
@@ -257,25 +294,25 @@ c.IPythonWidget.font_size = 11
 # 
 # c.ZMQInteractiveShell.history_length = 10000
 
-# 
-# c.ZMQInteractiveShell.separate_in = '\n'
+# Don't call post-execute functions that have failed in the past.
+# c.ZMQInteractiveShell.disable_failing_post_execute = False
+
+# Show rewritten input, e.g. for autocall.
+# c.ZMQInteractiveShell.show_rewritten_input = True
 
 # Set the color scheme (NoColor, Linux, or LightBG).
 c.ZMQInteractiveShell.colors = 'Linux'
 
-# Autoindent IPython code entered interactively.
-# c.ZMQInteractiveShell.autoindent = True
-
 # 
-# c.ZMQInteractiveShell.readline_omit__names = 2
+# c.ZMQInteractiveShell.separate_in = '\n'
 
-# 
+# Deprecated, use PromptManager.in2_template
 # c.ZMQInteractiveShell.prompt_in2 = '   .\\D.: '
 
 # 
 # c.ZMQInteractiveShell.separate_out = ''
 
-# 
+# Deprecated, use PromptManager.in_template
 # c.ZMQInteractiveShell.prompt_in1 = 'In [\\#]: '
 
 # Enable deep (recursive) reloading by default. IPython can use the deep_reload
@@ -286,31 +323,28 @@ c.ZMQInteractiveShell.colors = 'Linux'
 # normal reload(), but deep_reload will still be available as dreload().
 # c.ZMQInteractiveShell.deep_reload = False
 
-# 
-# c.ZMQInteractiveShell.debug = False
-
 # Make IPython automatically call any callable object even if you didn't type
 # explicit parentheses. For example, 'str 43' becomes 'str(43)' automatically.
 # The value can be '0' to disable the feature, '1' for 'smart' autocall, where
 # it is not applied if there are no more arguments on the line, and '2' for
 # 'full' autocall, where all callable objects are automatically called (even if
-# no arguments are present). The default is '1'.
-# c.ZMQInteractiveShell.autocall = 1
+# no arguments are present).
+# c.ZMQInteractiveShell.autocall = 0
 
 # 
 # c.ZMQInteractiveShell.separate_out2 = ''
 
-# 
+# Deprecated, use PromptManager.justify
 # c.ZMQInteractiveShell.prompts_pad_left = True
 
 # 
 # c.ZMQInteractiveShell.readline_parse_and_bind = ['tab: complete', '"\\C-l": clear-screen', 'set show-all-if-ambiguous on', '"\\C-o": tab-insert', '"\\C-r": reverse-search-history', '"\\C-s": forward-search-history', '"\\C-p": history-search-backward', '"\\C-n": history-search-forward', '"\\e[A": history-search-backward', '"\\e[B": history-search-forward', '"\\C-k": kill-line', '"\\C-u": unix-line-discard']
 
-# 
-# c.ZMQInteractiveShell.wildcards_case_sensitive = True
+# Enable magic commands to be called without the leading %.
+# c.ZMQInteractiveShell.automagic = True
 
 # 
-# c.ZMQInteractiveShell.readline_merge_completions = True
+# c.ZMQInteractiveShell.debug = False
 
 # 
 # c.ZMQInteractiveShell.object_info_string_level = 0
@@ -327,11 +361,11 @@ c.ZMQInteractiveShell.colors = 'Linux'
 # The name of the logfile to use.
 # c.ZMQInteractiveShell.logfile = ''
 
-# Enable magic commands to be called without the leading %.
-# c.ZMQInteractiveShell.automagic = True
-
 # 
-# c.ZMQInteractiveShell.readline_use = True
+# c.ZMQInteractiveShell.wildcards_case_sensitive = True
+
+# Save multi-line entries as one entry in readline history
+# c.ZMQInteractiveShell.multiline_history = True
 
 # Start logging to the given file in append mode.
 # c.ZMQInteractiveShell.logappend = ''
@@ -342,7 +376,7 @@ c.ZMQInteractiveShell.colors = 'Linux'
 # 
 # c.ZMQInteractiveShell.quiet = False
 
-# 
+# Deprecated, use PromptManager.out_template
 # c.ZMQInteractiveShell.prompt_out = 'Out[\\#]: '
 
 # Set the size of the output cache.  The default is 1000, you can change it
@@ -381,8 +415,8 @@ c.ZMQInteractiveShell.colors = 'Linux'
 # The Session object handles building messages and sending them with ZMQ sockets
 # or ZMQStream objects.  Objects can communicate with each other over the
 # network via Session objects, and only need to work with the dict-based IPython
-# message spec. The Session will handle  serialization/deserialization,
-# security, and metadata.
+# message spec. The Session will handle serialization/deserialization, security,
+# and metadata.
 # 
 # Sessions support configurable serialiization via packer/unpacker traits, and
 # signing with HMAC digests via the key/keyfile traits.
@@ -421,7 +455,7 @@ c.ZMQInteractiveShell.colors = 'Linux'
 # c.Session.packer = 'json'
 
 # The UUID identifying this session.
-# c.Session.session = ''
+# c.Session.session = u''
 
 # execution key, for extra authentication.
 # c.Session.key = ''

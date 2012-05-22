@@ -3,138 +3,6 @@
 c = get_config()
 
 #------------------------------------------------------------------------------
-# TerminalIPythonApp configuration
-#------------------------------------------------------------------------------
-
-# TerminalIPythonApp will inherit config from: BaseIPythonApplication,
-# Application, InteractiveShellApp
-
-# Execute the given command string.
-# c.TerminalIPythonApp.code_to_run = ''
-
-# The IPython profile to use.
-# c.TerminalIPythonApp.profile = u'default'
-
-# Set the log level by value or name.
-# c.TerminalIPythonApp.log_level = 30
-
-# lines of code to run at IPython startup.
-# c.TerminalIPythonApp.exec_lines = []
-
-# Enable GUI event loop integration ('qt', 'wx', 'gtk').
-# c.TerminalIPythonApp.gui = None
-
-# Pre-load matplotlib and numpy for interactive use, selecting a particular
-# matplotlib backend and loop integration.
-c.TerminalIPythonApp.pylab = 'qt'
-# Don't pollute namespace with numpy and matplotlib
-c.TerminalIPythonApp.pylab_import_all = False
-
-# Suppress warning messages about legacy config files
-# c.TerminalIPythonApp.ignore_old_config = False
-
-# If a command or file is given via the command-line, e.g. 'ipython foo.py
-# c.TerminalIPythonApp.force_interact = False
-
-# The name of the IPython directory. This directory is used for logging
-# configuration (through profiles), history storage, etc. The default is usually
-# $HOME/.ipython. This options can also be specified through the environment
-# variable IPYTHON_DIR.
-# c.TerminalIPythonApp.ipython_dir = u'/Users/Tony/.ipython'
-
-# Whether to display a banner upon starting IPython.
-# c.TerminalIPythonApp.display_banner = True
-
-# Start IPython quickly by skipping the loading of config files.
-# c.TerminalIPythonApp.quick = False
-
-# A list of dotted module names of IPython extensions to load.
-# c.TerminalIPythonApp.extensions = []
-
-# Whether to install the default config files into the profile dir. If a new
-# profile is being created, and IPython contains config files for that profile,
-# then they will be staged into the new directory.  Otherwise, default config
-# files will be automatically generated.
-# c.TerminalIPythonApp.copy_config_files = False
-
-# dotted module name of an IPython extension to load.
-# c.TerminalIPythonApp.extra_extension = ''
-
-# List of files to run at IPython startup.
-# c.TerminalIPythonApp.exec_files = []
-
-# Whether to overwrite existing config files when copying
-# c.TerminalIPythonApp.overwrite = False
-
-# A file to be run
-# c.TerminalIPythonApp.file_to_run = ''
-
-#------------------------------------------------------------------------------
-# TerminalIPythonApp configuration
-#------------------------------------------------------------------------------
-
-# TerminalIPythonApp will inherit config from: BaseIPythonApplication,
-# Application, InteractiveShellApp
-
-# Execute the given command string.
-# c.TerminalIPythonApp.code_to_run = ''
-
-# The IPython profile to use.
-# c.TerminalIPythonApp.profile = u'default'
-
-# Set the log level by value or name.
-# c.TerminalIPythonApp.log_level = 30
-
-# lines of code to run at IPython startup.
-# c.TerminalIPythonApp.exec_lines = []
-
-# Enable GUI event loop integration ('qt', 'wx', 'gtk').
-# c.TerminalIPythonApp.gui = None
-
-# Pre-load matplotlib and numpy for interactive use, selecting a particular
-# matplotlib backend and loop integration.
-# c.TerminalIPythonApp.pylab = None
-
-# Suppress warning messages about legacy config files
-# c.TerminalIPythonApp.ignore_old_config = False
-
-# If a command or file is given via the command-line, e.g. 'ipython foo.py
-# c.TerminalIPythonApp.force_interact = False
-
-# The name of the IPython directory. This directory is used for logging
-# configuration (through profiles), history storage, etc. The default is usually
-# $HOME/.ipython. This options can also be specified through the environment
-# variable IPYTHON_DIR.
-# c.TerminalIPythonApp.ipython_dir = u'/Users/Tony/.ipython'
-
-# Whether to display a banner upon starting IPython.
-# c.TerminalIPythonApp.display_banner = True
-
-# Start IPython quickly by skipping the loading of config files.
-# c.TerminalIPythonApp.quick = False
-
-# A list of dotted module names of IPython extensions to load.
-# c.TerminalIPythonApp.extensions = []
-
-# Whether to install the default config files into the profile dir. If a new
-# profile is being created, and IPython contains config files for that profile,
-# then they will be staged into the new directory.  Otherwise, default config
-# files will be automatically generated.
-# c.TerminalIPythonApp.copy_config_files = False
-
-# dotted module name of an IPython extension to load.
-# c.TerminalIPythonApp.extra_extension = ''
-
-# List of files to run at IPython startup.
-# c.TerminalIPythonApp.exec_files = []
-
-# Whether to overwrite existing config files when copying
-# c.TerminalIPythonApp.overwrite = False
-
-# A file to be run
-# c.TerminalIPythonApp.file_to_run = ''
-
-#------------------------------------------------------------------------------
 # InteractiveShellApp configuration
 #------------------------------------------------------------------------------
 
@@ -152,17 +20,98 @@ c.TerminalIPythonApp.pylab_import_all = False
 # lines of code to run at IPython startup.
 # c.InteractiveShellApp.exec_lines = []
 
+# If true, an 'import *' is done from numpy and pylab, when using pylab
+# c.InteractiveShellApp.pylab_import_all = True
+
 # A list of dotted module names of IPython extensions to load.
 # c.InteractiveShellApp.extensions = []
+
+# Run the module as a script.
+# c.InteractiveShellApp.module_to_run = ''
 
 # dotted module name of an IPython extension to load.
 # c.InteractiveShellApp.extra_extension = ''
 
 # List of files to run at IPython startup.
-#c.InteractiveShellApp.exec_files = ['extras.py']
+# c.InteractiveShellApp.exec_files = []
 
 # A file to be run
 # c.InteractiveShellApp.file_to_run = ''
+
+#------------------------------------------------------------------------------
+# TerminalIPythonApp configuration
+#------------------------------------------------------------------------------
+
+# TerminalIPythonApp will inherit config from: BaseIPythonApplication,
+# Application, InteractiveShellApp
+
+# Execute the given command string.
+# c.TerminalIPythonApp.code_to_run = ''
+
+# The IPython profile to use.
+# c.TerminalIPythonApp.profile = u'default'
+
+# Set the log level by value or name.
+# c.TerminalIPythonApp.log_level = 30
+
+# Whether to display a banner upon starting IPython.
+# c.TerminalIPythonApp.display_banner = True
+
+# lines of code to run at IPython startup.
+# c.TerminalIPythonApp.exec_lines = []
+
+# Enable GUI event loop integration ('qt', 'wx', 'gtk', 'glut', 'pyglet').
+c.TerminalIPythonApp.gui = 'qt'
+
+# Pre-load matplotlib and numpy for interactive use, selecting a particular
+# matplotlib backend and loop integration.
+# c.TerminalIPythonApp.pylab = None
+
+# Suppress warning messages about legacy config files
+# c.TerminalIPythonApp.ignore_old_config = False
+
+# Create a massive crash report when IPython enconters what may be an internal
+# error.  The default is to append a short message to the usual traceback
+# c.TerminalIPythonApp.verbose_crash = False
+
+# If a command or file is given via the command-line, e.g. 'ipython foo.py
+# c.TerminalIPythonApp.force_interact = False
+
+# If true, an 'import *' is done from numpy and pylab, when using pylab
+c.TerminalIPythonApp.pylab_import_all = False
+
+# The name of the IPython directory. This directory is used for logging
+# configuration (through profiles), history storage, etc. The default is usually
+# $HOME/.ipython. This options can also be specified through the environment
+# variable IPYTHON_DIR.
+# c.TerminalIPythonApp.ipython_dir = u'/Users/Tony/.ipython'
+
+# Run the module as a script.
+# c.TerminalIPythonApp.module_to_run = ''
+
+# Start IPython quickly by skipping the loading of config files.
+# c.TerminalIPythonApp.quick = False
+
+# A list of dotted module names of IPython extensions to load.
+# c.TerminalIPythonApp.extensions = []
+
+# Whether to install the default config files into the profile dir. If a new
+# profile is being created, and IPython contains config files for that profile,
+# then they will be staged into the new directory.  Otherwise, default config
+# files will be automatically generated.
+# c.TerminalIPythonApp.copy_config_files = False
+
+# dotted module name of an IPython extension to load.
+# c.TerminalIPythonApp.extra_extension = ''
+
+# List of files to run at IPython startup.
+# c.TerminalIPythonApp.exec_files = []
+
+# Whether to overwrite existing config files when copying
+# c.TerminalIPythonApp.overwrite = False
+
+# A file to be run
+# c.TerminalIPythonApp.file_to_run = ''
 
 #------------------------------------------------------------------------------
 # TerminalInteractiveShell configuration
@@ -181,8 +130,11 @@ c.TerminalIPythonApp.pylab_import_all = False
 # 
 # c.TerminalInteractiveShell.history_length = 10000
 
-# 
-# c.TerminalInteractiveShell.separate_in = '\n'
+# Don't call post-execute functions that have failed in the past.
+# c.TerminalInteractiveShell.disable_failing_post_execute = False
+
+# Show rewritten input, e.g. for autocall.
+# c.TerminalInteractiveShell.show_rewritten_input = True
 
 # Set the color scheme (NoColor, Linux, or LightBG).
 # c.TerminalInteractiveShell.colors = 'LightBG'
@@ -195,12 +147,15 @@ c.TerminalIPythonApp.pylab_import_all = False
 c.TerminalInteractiveShell.readline_omit__names = 2
 
 # 
+# c.TerminalInteractiveShell.separate_in = '\n'
+
+# Deprecated, use PromptManager.in2_template
 # c.TerminalInteractiveShell.prompt_in2 = '   .\\D.: '
 
 # 
 # c.TerminalInteractiveShell.separate_out = ''
 
-# 
+# Deprecated, use PromptManager.in_template
 # c.TerminalInteractiveShell.prompt_in1 = 'In [\\#]: '
 
 # Enable deep (recursive) reloading by default. IPython can use the deep_reload
@@ -211,16 +166,13 @@ c.TerminalInteractiveShell.readline_omit__names = 2
 # normal reload(), but deep_reload will still be available as dreload().
 # c.TerminalInteractiveShell.deep_reload = False
 
-# 
-# c.TerminalInteractiveShell.debug = False
-
 # Make IPython automatically call any callable object even if you didn't type
 # explicit parentheses. For example, 'str 43' becomes 'str(43)' automatically.
 # The value can be '0' to disable the feature, '1' for 'smart' autocall, where
 # it is not applied if there are no more arguments on the line, and '2' for
 # 'full' autocall, where all callable objects are automatically called (even if
-# no arguments are present). The default is '1'.
-# c.TerminalInteractiveShell.autocall = 1
+# no arguments are present).
+# c.TerminalInteractiveShell.autocall = 0
 
 # Number of lines of your screen, used to control printing of very long strings.
 # Strings longer than this number of lines will be sent through a pager instead
@@ -235,11 +187,11 @@ c.TerminalInteractiveShell.readline_omit__names = 2
 # Set the editor used by IPython (default to $EDITOR/vi/notepad).
 # c.TerminalInteractiveShell.editor = 'vi'
 
-# 
+# Deprecated, use PromptManager.justify
 # c.TerminalInteractiveShell.prompts_pad_left = True
 
 # The part of the banner to be printed before the profile
-# c.TerminalInteractiveShell.banner1 = 'Python 2.6.1 (r261:67515, Jun 24 2010, 21:47:49) \nType "copyright", "credits" or "license" for more information.\n\nIPython 0.11 -- An enhanced Interactive Python.\n?         -> Introduction and overview of IPython\'s features.\n%quickref -> Quick reference.\nhelp      -> Python\'s own help system.\nobject?   -> Details about \'object\', use \'object??\' for extra details.\n'
+# c.TerminalInteractiveShell.banner1 = 'Python 2.6.1 (r261:67515, Jun 24 2010, 21:47:49) \nType "copyright", "credits" or "license" for more information.\n\nIPython 0.13.dev -- An enhanced Interactive Python.\n?         -> Introduction and overview of IPython\'s features.\n%quickref -> Quick reference.\nhelp      -> Python\'s own help system.\nobject?   -> Details about \'object\', use \'object??\' for extra details.\n'
 
 # 
 # c.TerminalInteractiveShell.readline_parse_and_bind = ['tab: complete', '"\\C-l": clear-screen', 'set show-all-if-ambiguous on', '"\\C-o": tab-insert', '"\\C-r": reverse-search-history', '"\\C-s": forward-search-history', '"\\C-p": history-search-backward', '"\\C-n": history-search-forward', '"\\e[A": history-search-backward', '"\\e[B": history-search-forward', '"\\C-k": kill-line', '"\\C-u": unix-line-discard']
@@ -254,7 +206,7 @@ c.TerminalInteractiveShell.readline_omit__names = 2
 # c.TerminalInteractiveShell.wildcards_case_sensitive = True
 
 # 
-# c.TerminalInteractiveShell.readline_merge_completions = True
+# c.TerminalInteractiveShell.debug = False
 
 # Set to confirm when you try to exit IPython with an EOF (Control-D in Unix,
 # Control-Z/Enter in Windows). By typing 'exit' or 'quit', you can force a
@@ -279,6 +231,9 @@ c.TerminalInteractiveShell.readline_omit__names = 2
 # Enable magic commands to be called without the leading %.
 # c.TerminalInteractiveShell.automagic = True
 
+# Save multi-line entries as one entry in readline history
+# c.TerminalInteractiveShell.multiline_history = True
+
 # 
 # c.TerminalInteractiveShell.readline_use = True
 
@@ -297,7 +252,7 @@ c.TerminalInteractiveShell.readline_omit__names = 2
 # 
 # c.TerminalInteractiveShell.object_info_string_level = 0
 
-# 
+# Deprecated, use PromptManager.out_template
 # c.TerminalInteractiveShell.prompt_out = 'Out[\\#]: '
 
 # Set the size of the output cache.  The default is 1000, you can change it
@@ -310,6 +265,27 @@ c.TerminalInteractiveShell.readline_omit__names = 2
 
 # Automatically call the pdb debugger after every exception.
 # c.TerminalInteractiveShell.pdb = False
+
+#------------------------------------------------------------------------------
+# PromptManager configuration
+#------------------------------------------------------------------------------
+
+# This is the primary interface for producing IPython's prompts.
+
+# Output prompt. '\#' will be transformed to the prompt number
+# c.PromptManager.out_template = 'Out[\\#]: '
+
+# Continuation prompt.
+# c.PromptManager.in2_template = '   .\\D.: '
+
+# If True (default), each prompt will be right-aligned with the preceding one.
+# c.PromptManager.justify = True
+
+# Input prompt.  '\#' will be transformed to the prompt number
+# c.PromptManager.in_template = 'In [\\#]: '
+
+# 
+# c.PromptManager.color_scheme = 'Linux'
 
 #------------------------------------------------------------------------------
 # ProfileDir configuration
@@ -333,10 +309,10 @@ c.TerminalInteractiveShell.readline_omit__names = 2
 
 # The default pretty-printer.
 # 
-# This uses :mod:`IPython.external.pretty` to compute the format data of the
-# object. If the object cannot be pretty printed, :func:`repr` is used. See the
-# documentation of :mod:`IPython.external.pretty` for details on how to write
-# pretty printers.  Here is a simple example::
+# This uses :mod:`IPython.lib.pretty` to compute the format data of the object.
+# If the object cannot be pretty printed, :func:`repr` is used. See the
+# documentation of :mod:`IPython.lib.pretty` for details on how to write pretty
+# printers.  Here is a simple example::
 # 
 #     def dtype_pprinter(obj, p, cycle):
 #         if cycle:
@@ -378,3 +354,35 @@ c.PlainTextFormatter.float_precision = '%0.3g'
 
 # 
 # c.PlainTextFormatter.singleton_printers = {}
+
+#------------------------------------------------------------------------------
+# IPCompleter configuration
+#------------------------------------------------------------------------------
+
+# Extension of the completer class with IPython-specific features
+
+# IPCompleter will inherit config from: Completer
+
+# Instruct the completer to omit private method names
+# 
+# Specifically, when completing on ``object.<tab>``.
+# 
+# When 2 [default]: all names that start with '_' will be excluded.
+# 
+# When 1: all 'magic' names (``__foo__``) will be excluded.
+# 
+# When 0: nothing will be excluded.
+# c.IPCompleter.omit__names = 2
+
+# Whether to merge completion results into a single list
+# 
+# If False, only the completion results from the first non-empty completer will
+# be returned.
+# c.IPCompleter.merge_completions = True
+
+# Activate greedy completion
+# 
+# This will enable completion on elements of lists, results of function calls,
+# etc., but can be unsafe because the code is actually evaluated on TAB.
+# c.IPCompleter.greedy = False
+
