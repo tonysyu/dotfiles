@@ -1,6 +1,6 @@
 ip = get_ipython()
 
-def main():
+def _main():
     def import_quantities(self, arg):
         ip.ex('import quantities as pq')
     ip.define_magic('pq', import_quantities)
@@ -29,5 +29,8 @@ def main():
         ip.ex('import scipy.ndimage as ndimg')
     ip.define_magic('ndimg', import_ndimg)
 
-main()
+_main()
+
+import numpy as np
+import matplotlib.pyplot as plt
 
