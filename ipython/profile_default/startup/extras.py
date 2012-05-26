@@ -31,6 +31,3 @@ def _main():
 
 _main()
 
-import numpy as np
-import matplotlib.pyplot as plt
-

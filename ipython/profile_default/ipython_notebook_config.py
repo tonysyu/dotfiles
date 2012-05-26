@@ -160,7 +160,7 @@ c = get_config()
 
 # Pre-load matplotlib and numpy for interactive use, selecting a particular
 # matplotlib backend and loop integration.
-# c.IPKernelApp.pylab = None
+c.IPKernelApp.pylab = 'inline'
 
 # kill this process if its parent dies.  On Windows, the argument specifies the
 # HANDLE of the parent process, otherwise it is simply boolean.
