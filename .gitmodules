@@ -73,3 +73,6 @@
 [submodule "vim/bundle/ipython"]
 	path = vim/bundle/ipython
 	url = https://github.com/ivanov/vim-ipython.git
+[submodule "vim/bundle/repeat"]
+	path = vim/bundle/repeat
+	url = git@github.com:tpope/vim-repeat.git
