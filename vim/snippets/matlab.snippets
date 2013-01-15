@@ -1,0 +1,26 @@
+
+snippet parse
+	p = inputParser();
+	p.addParamValue('${1}', ${2});
+	p.parse(varargin{:});
+	cfg = p.Results;
+snippet params
+	Parameters
+	% ----------
+snippet keys
+	Keyword Parameters
+	% ------------------
+snippet returns
+	Returns
+	% -------
+snippet testsuite
+	function test_suite = test_${1:function}
+	    % Tests for ${2:function}.
+	    %
+	    % This test file requires requires the MATLAB xunit package.
+	    initTestSuite;
+	
+	function test_basic()
+	    ${3}
+
+
