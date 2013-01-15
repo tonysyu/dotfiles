@@ -32,6 +32,8 @@ snippet ref
 
 snippet np
 	import numpy as np
+snippet pd
+	import pandas as pd
 snippet plt
 	import matplotlib.pyplot as plt
 snippet mpl
@@ -44,12 +46,23 @@ snippet sio
 	import skimage.io as sio
 snippet ndimg
 	import scipy.ndimage as ndimg
+snippet tts
+	import traits.api as tts
+snippet chaco
+	import chaco.api as chaco
+snippet enable
+	import enable.api as enable
+snippet enaml
+	import enaml
+	with enaml.imports():
+		from ${1:module} import ${2}
 snippet assert_close
 	from numpy.testing import assert_array_almost_equal as assert_close
 snippet cb
 	import cookbook as cb
 snippet watch
-	with cb.stopwatch():
+	import yutils.testing
+	with yutils.testing.stopwatch():
 snippet deprecate
 	from yutils import deprecate
 	@deprecate('${1:function to use instead}')
@@ -77,6 +90,9 @@ snippet utf8
 snippet ax
 	ax = ax if ax is not None else plt.gca()
 
+snippet gallery
+	import matplotlib.pyplot as plt; plt.rcdefaults()
+	from mpltools import style; style.use('gallery')
 snippet todo
 	#TODO: 
 snippet all
@@ -85,4 +101,12 @@ snippet nptest
 	if __name__ == '__main__':
 	    import numpy.testing
 	    numpy.testing.run_module_suite()
+snippet video
+	.. raw:: html
+
+	   <video controls="controls">
+		   <source src="${1}.webm" type="video/webm" />
+		   Video display requires video tag and webm support.
+	   </video>
+
 
