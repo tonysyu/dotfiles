@@ -71,6 +71,7 @@ autocmd BufNewFile,BufRead,BufFilePost *.txt set filetype=rst
 autocmd BufNewFile,BufRead,BufFilePost *.tex set filetype=tex
 autocmd BufNewFile,BufRead,BufFilePost *.cls set filetype=tex
 autocmd BufNewFile,BufRead,BufFilePost *.css_t set filetype=css
+autocmd BufNewFile,BufRead,BufFilePost *.enaml set filetype=enaml
 
 autocmd BufLeave,FocusLost silent! wall " save when focus is lost
 " Since I'm auto-saving (above), don't save backup and swap files.
@@ -132,14 +133,40 @@ nmap <silent> <leader>sv :so $MYVIMRC<CR>
 nnoremap <leader>ss :%s/
 vnoremap <leader>ss :s/
 
+" add space around equals signs with no surrounding space
+nnoremap <leader>s= :%s/\(\S\)=\(\S\)/\1 = \2/<CR>
+vnoremap <leader>s= :s/\(\S\)=\(\S\)/\1 = \2/<CR>
+
+" add space after comma with no surrounding space
+nnoremap <leader>s, :%s/\(\S\),\(\S\)/\1, \2/<CR>
+vnoremap <leader>s, :s/\(\S\),\(\S\)/\1, \2/<CR>
+
+" add space around * with no surrounding space
+nnoremap <leader>s* :%s/\(\S\)\*\(\S\)/\1 * \2/<CR>
+vnoremap <leader>s* :s/\(\S\)\*\(\S\)/\1 * \2/<CR>
+
+" add space around .* (Matlab) with no surrounding space
+nnoremap <leader>s.* :%s/\(\S\)\.\*\(\S\)/\1 .* \2/<CR>
+vnoremap <leader>s.* :s/\(\S\)\.\*\(\S\)/\1 .* \2/<CR>
+
+" add space around + with no surrounding space
+nnoremap <leader>s+ :%s/\(\S\)+\(\S\)/\1 + \2/<CR>
+vnoremap <leader>s+ :s/\(\S\)+\(\S\)/\1 + \2/<CR>
+"
+" add space around - with no surrounding space
+nnoremap <leader>s- :%s/\(\S\)-\(\S\)/\1 - \2/<CR>
+vnoremap <leader>s- :s/\(\S\)-\(\S\)/\1 - \2/<CR>
+
+
+
 " wrap both vimdiff windows
 nmap <silent> <leader>dw <C-w>= :set wrap<CR> <C-w><C-w> :set wrap<CR>
 
 " jj in insert mode will change to normal mode
 inoremap jj <ESC>
 
-" Shortcut for OmniComplete
-imap <C-c> <C-x><C-o>
+" Shortcut for vim-ipython's completefunc mapping
+imap <C-c> <C-x><C-u>
 
 " reflow paragraph (i.e. remove end of lines)
 nnoremap Q gqap
@@ -198,7 +225,7 @@ nmap _$ :call Preserve("%s/\\s\\+$//e")<CR>
 " ====================
 
 " Ignore files for Command-T
-set wildignore+=*.o,*.so,*.bmp,*.gif,*.tif,*.jpg,*.png,*.pdf,*.mat,*.npz,*.aux,*.bbl,*.blg,*.log,*.key
+set wildignore+=*.o,*.so,*.bmp,*.gif,*.tif,*.jpg,*.png,*.pdf,*.mat,*.npz,*.aux,*.bbl,*.blg,*.log,*.key,*.pyc,*.fdb_latexmk
 " IPython auto-generated files
 set wildignore+=shadowhist,kernel*.json
 
@@ -227,7 +254,17 @@ nnoremap <Leader>gd :Gdiff<cr>
 "switch back to current file and closes fugitive buffer
 nnoremap <Leader>gf :diffoff!<cr><c-w>h:bd<cr>
 
+let g:NERDCustomDelimiters = {
+    \ 'python': { 'left': '# ' },
+    \ 'enaml': { 'left': '# ' },
+\ }
 " syntax/python.vim gets run before ftplugin/python.vim, so we must set this
 " highlight option in vimrc instead of ftplugin.
 let g:python_highlight_all = 1
+" Default rename command <leader>r clashes with my run command
+let g:jedi#rename_command = '<leader>jr'
+let g:jedi#get_definition_command = '<leader>jd'
+let g:jedi#goto_command = '<leader>jg'
+let g:jedi#related_names_command = '<leader>jn'
+let g:jedi#pydoc = '<leader>jk'
 
