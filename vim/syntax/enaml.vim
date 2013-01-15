@@ -1,0 +1,1 @@
+/Users/Tony/python/devel/enthought/enaml/tools/vim/syntax/enaml.vim
