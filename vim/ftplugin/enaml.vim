@@ -7,6 +7,6 @@ function! RunEnaml()
     !enaml-run %
     cd `=current`
 endfunction
-nnoremap <silent> <leader>r :call RunEnaml()<CR>
+nnoremap <buffer> <silent> <leader>r :call RunEnaml()<CR>
 
 

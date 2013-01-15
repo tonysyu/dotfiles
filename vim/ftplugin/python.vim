@@ -16,7 +16,7 @@ function! RunPython()
     !python %
     cd `=current`
 endfunction
-nnoremap <silent> <leader>r :call RunPython()<CR>
+nnoremap <buffer> <silent> <leader>r :call RunPython()<CR>
 
 " Section headings in docstrings.
 " Parts
