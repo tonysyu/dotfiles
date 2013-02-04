@@ -8,6 +8,11 @@ set foldlevel=99
 " pyflakes quickfix window will override other quickfix windows
 let g:pyflakes_use_quickfix = 0
 
+" Disable lint messages.
+leg g:pymode_lint_cwindow = 0
+let g:pymode_lint_message = 0
+" Turn off python-mode's run script which is giving uninformative RuntimeError.
+let g:pymode_run = 0
 " Save script, run script in it's directory, and return to working directory
 function! RunPython()
     write
