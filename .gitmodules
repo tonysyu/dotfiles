@@ -52,9 +52,6 @@
 [submodule "vim/bundle/minyankring"]
 	path = vim/bundle/minyankring
 	url = https://github.com/the-isz/MinYankRing.vim.git
-[submodule "vim/bundle/snipmate-snippets"]
-	path = vim/bundle/snipmate-snippets
-	url = git@github.com:tonysyu/snipmate-snippets.git
 [submodule "vim/bundle/tlib"]
 	path = vim/bundle/tlib
 	url = https://github.com/tomtom/tlib_vim.git
