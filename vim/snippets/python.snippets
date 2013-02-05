@@ -73,6 +73,8 @@ snippet ipdb
 	from IPython.core.debugger import Tracer; Tracer(colors='Linux')()
 snippet qtpdb
 	from yutils.testing import qt4_pdb; qt4_pdb()()
+snippet stack
+	import traceback; traceback.print_stack()
 snippet ishell
 	import IPython.frontend.terminal.embed as _e; _e.InteractiveShellEmbed()()
 snippet dec
