@@ -8,6 +8,7 @@
 *.un~
 .netrwhist
 tags
+.ropeproject
 
 # Python related
 *.prof
@@ -16,6 +17,7 @@ tags
 *.so
 *.o
 .coverage
+__enamlcache__
 
 # LaTeX related
 *.fdb_latexmk
