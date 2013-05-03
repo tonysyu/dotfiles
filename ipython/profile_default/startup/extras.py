@@ -1,6 +1,12 @@
 ip = get_ipython()
 
+
 def _main():
+    import numpy as np
+    from StringIO import StringIO
+
+    from yutils import print_ctree
+
     def import_quantities(self, arg):
         ip.ex('import quantities as pq')
     ip.define_magic('pq', import_quantities)
@@ -29,5 +35,25 @@ def _main():
         ip.ex('import scipy.ndimage as ndimg')
     ip.define_magic('ndimg', import_ndimg)
 
-_main()
+    import line_profiler
+    ip.define_magic('lprun', line_profiler.magic_lprun)
 
+    def array_paste(self, arg):
+        array_text = ip.hooks.clipboard_get()
+        try:
+            array = np.genfromtxt(StringIO(array_text))
+        except ValueError:
+            print "Clipboard text does not look like an array:"
+            print "~" * 60
+            print array_text
+            print "~" * 60
+            raise
+        return array
+    ip.define_magic('array_paste', array_paste)
+
+    def ptree(self, arg):
+        obj = globals()[arg]
+        return print_ctree(obj)
+    ip.define_magic('ptree', ptree)
+
+_main()
