@@ -30,6 +30,10 @@ snippet ref
 	References
 	----------
 
+snippet pp
+	from pprint import pprint as pp
+snippet glob
+	from glob import glob
 snippet np
 	import numpy as np
 snippet pd
@@ -61,8 +65,8 @@ snippet assert_close
 snippet cb
 	import cookbook as cb
 snippet watch
-	import yutils.testing
-	with yutils.testing.stopwatch():
+	import yutils
+	with yutils.stopwatch():
 snippet deprecate
 	from yutils import deprecate
 	@deprecate('${1:function to use instead}')
@@ -77,6 +81,10 @@ snippet stack
 	import traceback; traceback.print_stack()
 snippet ishell
 	import IPython.frontend.terminal.embed as _e; _e.InteractiveShellEmbed()()
+snippet wx
+	from traits.etsconfig.api import ETSConfig; ETSConfig.toolkit = 'wx'
+snippet qt
+	from traits.etsconfig.api import ETSConfig; ETSConfig.toolkit = 'qt4'
 snippet dec
 	def wrapper(func):
 		# @functools.wraps(func)
@@ -89,6 +97,12 @@ snippet catch_warnings
 		warnings.simplefilter("ignore")
 snippet utf8
 	# -*- coding: utf-8 -*-
+snippet copyright
+	#------------------------------------------------------------------------------
+	#  Copyright (c) 2013, Enthought, Inc.
+	#  All rights reserved.
+	#------------------------------------------------------------------------------
+
 snippet ax
 	ax = ax if ax is not None else plt.gca()
 
@@ -96,13 +110,39 @@ snippet gallery
 	import matplotlib.pyplot as plt; plt.rcdefaults()
 	from mpltools import style; style.use('gallery')
 snippet todo
-	#TODO: 
+	# TODO: 
+snippet fix
+	# FIXME: 
 snippet all
 	__all__ = ['${1}']
 snippet nptest
 	if __name__ == '__main__':
-	    import numpy.testing
-	    numpy.testing.run_module_suite()
+	    from numpy import testing
+	    testing.run_module_suite()
+snippet doctest
+	if __name__ == '__main__':
+	    import doctest
+	    doctest.testmod()
+snippet argparse
+	#!/usr/bin/env python
+	"""
+	${1:Description}
+	"""
+	import argparse
+
+
+	def main():
+	    formatter = argparse.ArgumentDefaultsHelpFormatter
+	    parser = argparse.ArgumentParser(description=__doc__,
+	                                     formatter_class=formatter)
+	    parser.add_argument('${2:--kwarg}', default=${3:'value'},
+	                        help='${4:help}')
+
+	    args = parser.parse_args()
+
+
+	if __name__ == '__main__':
+	    main()
 snippet video
 	.. raw:: html
 
