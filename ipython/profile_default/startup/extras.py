@@ -5,7 +5,6 @@ def _main():
     import numpy as np
     from StringIO import StringIO
 
-    from yutils import print_ctree
 
     def import_quantities(self, arg):
         ip.ex('import quantities as pq')
@@ -35,9 +34,6 @@ def _main():
         ip.ex('import scipy.ndimage as ndimg')
     ip.define_magic('ndimg', import_ndimg)
 
-    import line_profiler
-    ip.define_magic('lprun', line_profiler.magic_lprun)
-
     def array_paste(self, arg):
         array_text = ip.hooks.clipboard_get()
         try:
@@ -51,6 +47,7 @@ def _main():
         return array
     ip.define_magic('array_paste', array_paste)
 
+    from yutils import print_ctree
     def ptree(self, arg):
         obj = globals()[arg]
         return print_ctree(obj)
