@@ -30,6 +30,8 @@ snippet ref
 	References
 	----------
 
+snippet cm
+	from contextlib import contextmanager
 snippet pp
 	from pprint import pprint as pp
 snippet glob
@@ -102,7 +104,13 @@ snippet copyright
 	#  Copyright (c) 2013, Enthought, Inc.
 	#  All rights reserved.
 	#------------------------------------------------------------------------------
-
+snippet #-
+	#-------------------------------------------------------------------------
+snippet #=
+	#=========================================================================
+snippet here
+	import os
+	local_dir = os.path.dirname(os.path.abspath(__file__))
 snippet ax
 	ax = ax if ax is not None else plt.gca()
 
@@ -135,8 +143,10 @@ snippet argparse
 	    formatter = argparse.ArgumentDefaultsHelpFormatter
 	    parser = argparse.ArgumentParser(description=__doc__,
 	                                     formatter_class=formatter)
-	    parser.add_argument('${2:--kwarg}', default=${3:'value'},
-	                        help='${4:help}')
+	    parser.add_argument('${2:arg}',
+	                        help="${4:help}")
+	    parser.add_argument('${5:--kwarg}', default=${6:'value'},
+	                        help="${7:help}")
 
 	    args = parser.parse_args()
 
