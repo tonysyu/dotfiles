@@ -228,7 +228,7 @@ nmap _$ :call Preserve("%s/\\s\\+$//e")<CR>
 " Ignore files for Command-T
 set wildignore+=*.o,*.so,*.bmp,*.gif,*.tif,*.jpg,*.png,*.pdf,*.mat,*.npz,*.aux,*.bbl,*.blg,*.log,*.key,*.pyc,*.fdb_latexmk
 " IPython auto-generated files
-set wildignore+=shadowhist,kernel*.json
+set wildignore+=shadowhist,kernel*.json,__enamlcache__
 
 " Default VCS prefix is ',c' which conflicts with NERD commenter
 let VCSCommandMapPrefix = ',v'
