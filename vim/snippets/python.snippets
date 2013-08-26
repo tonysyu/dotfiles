@@ -75,8 +75,9 @@ snippet deprecate
 snippet prof
 	from yutils.testing import profile
 	profile('${1:code to profile}')
-snippet ipdb
-	from IPython.core.debugger import Tracer; Tracer(colors='Linux')()
+snippet memprof
+	from memory_profiler import profile
+	@profile
 snippet qtpdb
 	from yutils.testing import qt4_pdb; qt4_pdb()()
 snippet stack
@@ -125,8 +126,7 @@ snippet all
 	__all__ = ['${1}']
 snippet nptest
 	if __name__ == '__main__':
-	    from numpy import testing
-	    testing.run_module_suite()
+	    np.testing.run_module_suite()
 snippet doctest
 	if __name__ == '__main__':
 	    import doctest
