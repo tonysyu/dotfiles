@@ -21,6 +21,13 @@ alias build_inplace='python setup.py build_ext --inplace'
 alias build_clean='find . -name *.so -or -name *.pyc | xargs rm; rm -rf build'
 alias pstats='python -m pstats'
 
+# Change to Python's site-packages directory.
+function cdsite {
+  cd "$(python -c "import site; \
+    print site.getsitepackages()[0]"
+  )"
+}
+
 # Change to the directory for a given python module
 function cdpy {
   cd "$(python -c "import os.path as p, ${1}; \
@@ -38,6 +45,9 @@ function quickprof {
 # Git-specific tweaks
 # -------------------
 
+# Count the total number of commits for a branch.
+alias git-count="git log --pretty=format:'x' | wc -l"
+
 # git tab completion
 source '/Applications/Xcode.app/Contents/Developer/usr/share/git-core/git-completion.bash'
 
@@ -48,7 +58,12 @@ function parse_git_dirty {
 function parse_git_branch {
   git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/(\1$(parse_git_dirty))/"
 }
-export PS1='\n\u:\w\[\033[0;33m\]$(parse_git_branch)\[\033[0;m\]\n$ '
+
+RED='\[\033[1;31m\]'
+GREEN='\[\033[0;32m\]'
+YELLOW='\[\033[0;33m\]'
+NO_COLOR='\[\033[0m\]'
+export PS1='\n\u:\w'$YELLOW'$(parse_git_branch)\n'$RED'$ '$NO_COLOR
 
 # ---------------------------
 # Application-specific tweaks
