@@ -1,22 +1,26 @@
 [user]
-	name = Tony S Yu
+    name = Tony S Yu
     email = tsyu80@gmail.com
+[github]
+	user = tonysyu
 [color]
     diff = auto
     status = auto
     branch = auto
-	ui = auto
+    ui = auto
 [core]
     excludesfile = ~/.gitignore
-	editor = /usr/bin/vim
-	pager = less -r
+    editor = /usr/bin/vim
+    pager = less -r
+[push]
+    default = simple
 [gui]
-	fontui = -family Inconsolata -size 12 -weight normal -slant roman -underline 0 -overstrike 0
-	fontdiff = -family Inconsolata -size 12 -weight normal -slant roman -underline 0 -overstrike 0
-[github]
-	user = tonysyu
+    fontui = -family Inconsolata -size 12 -weight normal -slant roman -underline 0 -overstrike 0
+    fontdiff = -family Inconsolata -size 12 -weight normal -slant roman -underline 0 -overstrike 0
 [alias]
+    st = status
     co = checkout
-    wdiff = diff --word-diff
+    del = branch --delete
     sdiff = diff --staged
-
+    wdiff = diff --word-diff
+    prlog = log --grep 'Merge pull request'
