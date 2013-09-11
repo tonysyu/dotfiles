@@ -7,7 +7,7 @@
     branch = auto
 	ui = auto
 [core]
-    excludesfile = /Users/Tony/.gitignore
+    excludesfile = ~/.gitignore
 	editor = /usr/bin/vim
 	pager = less -r
 [gui]
