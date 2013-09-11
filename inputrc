@@ -1,0 +1,3 @@
+# Map shift-right-arrow and shift-left-arrow in iTerm2
+"\e[1;2C": forward-word
+"\e[1;2D": backward-word
