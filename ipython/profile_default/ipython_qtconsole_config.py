@@ -265,7 +265,7 @@ c.IPythonWidget.font_size = 11
 
 # The maximum number of lines of text before truncation. Specifying a non-
 # positive number disables text truncation (not recommended).
-# c.IPythonWidget.buffer_size = 500
+c.IPythonWidget.buffer_size = 5000
 
 # 
 # c.IPythonWidget.history_lock = False
