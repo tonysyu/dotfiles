@@ -1,7 +1,11 @@
 "remove vi compatibility (this should be first since it has side effects)
 set nocompatible
 " syntax highlighting on
+
+" Set vim to use colorschemes with 256 colors
+set t_Co=256
 colorscheme ir_black
+"
 syntax on
 " use pathogen to handle bundles
 filetype off
@@ -16,7 +20,6 @@ let mapleader=","
 let maplocalleader=","
 " let semicolon start EX-mode (a.k.a. command mode)
 "nnoremap ; :
-
 set showcmd                     " show keys pressed in normal mode
 set showmode                    " display mode in Insert, Replace or Visual
 set cursorline                  " highlight current line
