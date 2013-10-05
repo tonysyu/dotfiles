@@ -2,6 +2,9 @@
 # General shell tweaks
 # --------------------
 
+# Use Vi bindings
+set -o vi
+
 # Customize path
 export PATH=$HOME/bin:$HOME/code/bin:$PATH
 
