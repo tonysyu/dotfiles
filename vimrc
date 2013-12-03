@@ -76,6 +76,7 @@ autocmd BufNewFile,BufRead,BufFilePost *.tex set filetype=tex
 autocmd BufNewFile,BufRead,BufFilePost *.cls set filetype=tex
 autocmd BufNewFile,BufRead,BufFilePost *.css_t set filetype=css
 autocmd BufNewFile,BufRead,BufFilePost *.enaml set filetype=enaml
+autocmd BufNewFile,BufRead,BufFilePost *.json set filetype=javascript
 
 autocmd BufLeave,FocusLost silent! wall " save when focus is lost
 " Since I'm auto-saving (above), don't save backup and swap files.
@@ -103,6 +104,10 @@ vnoremap j gj
 vnoremap k gk
 vnoremap $ g$
 vnoremap ^ g^
+
+" Quick navigation up and down
+nnoremap <leader>j 10j
+nnoremap <leader>k 10k
 
 " Navigate buffers
 nnoremap <C-h> <C-w>h
@@ -162,6 +167,8 @@ nnoremap <leader>s- :%s/\(\S\)-\(\S\)/\1 - \2/<CR>
 vnoremap <leader>s- :s/\(\S\)-\(\S\)/\1 - \2/<CR>
 
 
+" Close buffer window, preserving split if it exists
+nnoremap <leader>w :bp\|bd #<CR>
 
 " wrap both vimdiff windows
 nmap <silent> <leader>dw <C-w>= :set wrap<CR> <C-w><C-w> :set wrap<CR>
@@ -231,7 +238,7 @@ nmap _$ :call Preserve("%s/\\s\\+$//e")<CR>
 " Ignore files for Command-T
 set wildignore+=*.o,*.so,*.bmp,*.gif,*.tif,*.jpg,*.png,*.pdf,*.mat,*.npz,*.aux,*.bbl,*.blg,*.log,*.key,*.pyc,*.fdb_latexmk
 " IPython auto-generated files
-set wildignore+=shadowhist,kernel*.json,__enamlcache__
+set wildignore+=shadowhist,kernel*.json,__enamlcache__,build
 
 " Default VCS prefix is ',c' which conflicts with NERD commenter
 let VCSCommandMapPrefix = ',v'
