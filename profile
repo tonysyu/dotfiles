@@ -19,10 +19,16 @@ export LSCOLORS=ExFxCxDxBxegedabagacad
 # Activate Canopy virtual environment
 source $HOME/Library/Enthought/Canopy_64bit/User/bin/activate
 
+export ETS_TOOLKIT=qt4
+alias ets_qt='export ETS_TOOLKIT=qt4'
+alias ets_wx='export ETS_TOOLKIT=wx'
+alias ets_tk='echo $ETS_TOOLKIT'
+
 # Shortcuts for common operations
 alias build_inplace='python setup.py build_ext --inplace'
 alias build_clean='find . -name *.so -or -name *.pyc | xargs rm; rm -rf build'
 alias pstats='python -m pstats'
+alias remove_pyc='find . -name "*.pyc" -exec rm -rf {} \;'
 
 # Change to Python's site-packages directory.
 function cdsite {
