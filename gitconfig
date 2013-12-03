@@ -24,3 +24,4 @@
     sdiff = diff --staged
     wdiff = diff --word-diff
     prlog = log --grep 'Merge pull request'
+	qlog = log --pretty=oneline --abbrev-commit --graph
