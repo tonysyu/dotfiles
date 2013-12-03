@@ -87,9 +87,11 @@ snippet stack
 snippet ishell
 	import IPython.frontend.terminal.embed as _e; _e.InteractiveShellEmbed()()
 snippet wx
-	from traits.etsconfig.api import ETSConfig; ETSConfig.toolkit = 'wx'
+	from traits.etsconfig.api import ETSConfig
+	ETSConfig.toolkit = 'wx'
 snippet qt
-	from traits.etsconfig.api import ETSConfig; ETSConfig.toolkit = 'qt4'
+	from traits.etsconfig.api import ETSConfig
+	ETSConfig.toolkit = 'qt4'
 snippet dec
 	def wrapper(func):
 		# @functools.wraps(func)
