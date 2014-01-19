@@ -56,3 +56,5 @@ backends
 config
 kwargs
 refactors
+plugins
+plugin
