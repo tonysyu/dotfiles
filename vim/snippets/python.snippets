@@ -63,7 +63,7 @@ snippet enaml
 	with enaml.imports():
 		from ${1:module} import ${2}
 snippet assert_close
-	from numpy.testing import assert_array_almost_equal as assert_close
+	from numpy.testing import assert_allclose
 snippet cb
 	import cookbook as cb
 snippet watch
@@ -134,7 +134,12 @@ snippet all
 	__all__ = ['${1}']
 snippet nptest
 	if __name__ == '__main__':
-	    np.testing.run_module_suite()
+	    from numpy import testing
+	    testing.run_module_suite()
+snippet nose
+	if __name__ == '__main__':
+	    import nose
+	    nose.runmodule()
 snippet doctest
 	if __name__ == '__main__':
 	    import doctest
