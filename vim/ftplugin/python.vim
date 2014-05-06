@@ -25,6 +25,18 @@ function! RunPython()
 endfunction
 nnoremap <buffer> <silent> <leader>r :call RunPython()<CR>
 
+" Run nosetests on current file.
+function! RunNosetests()
+    write
+    let current = getcwd()
+    cd %:p:h
+    !nosetests --with-doctest %
+    cd `=current`
+endfunction
+nnoremap <buffer> <silent> <leader>n :call RunNosetests()<CR>
+
+
+
 " Section headings in docstrings.
 " Parts
 noremap  <C-h>0 yyPVr#yyjp
@@ -41,4 +53,3 @@ inoremap <C-h>3 <esc>yypVr-A
 " Section Level 3
 noremap  <C-h>4 yypVr^
 inoremap <C-h>4 <esc>yypVr^A
-

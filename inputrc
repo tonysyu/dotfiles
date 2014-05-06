@@ -1,3 +1,8 @@
 # Map shift-right-arrow and shift-left-arrow in iTerm2
 "\e[1;2C": forward-word
 "\e[1;2D": backward-word
+# History search based on current input
+"\e[A": history-search-backward
+"\e[B": history-search-forward
+set show-all-if-ambiguous on
+set completion-ignore-case on
