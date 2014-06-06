@@ -37,7 +37,7 @@ nnoremap <buffer> <silent> <leader>n :call RunNosetests()<CR>
 
 
 
-" Section headings in docstrings.
+" Section headings for reStructuredText
 " Parts
 noremap  <C-h>0 yyPVr#yyjp
 inoremap <C-h>0 <esc>yyPVr#yyjpA
@@ -51,5 +51,5 @@ inoremap <C-h>2 <esc>yypVr=A
 noremap  <C-h>3 yypVr-
 inoremap <C-h>3 <esc>yypVr-A
 " Section Level 3
-noremap  <C-h>4 yypVr^
-inoremap <C-h>4 <esc>yypVr^A
+noremap  <C-h>4 yypVr.
+inoremap <C-h>4 <esc>yypVr.A
