@@ -236,7 +236,7 @@ nmap _$ :call Preserve("%s/\\s\\+$//e")<CR>
 " ====================
 
 " Ignore files for Command-T
-set wildignore+=*.o,*.so,*.bmp,*.gif,*.tif,*.jpg,*.png,*.pdf,*.mat,*.npz,*.aux,*.bbl,*.blg,*.log,*.key,*.pyc,*.fdb_latexmk
+set wildignore+=*.o,*.so,*.bmp,*.gif,*.tif,*.jpg,*.png,*.pdf,*.mat,*.npz,*.aux,*.bbl,*.blg,*.log,*.key,*.pyc,*.fdb_latexmk,*.egg-info
 " IPython auto-generated files
 set wildignore+=shadowhist,kernel*.json,__enamlcache__,build
 
