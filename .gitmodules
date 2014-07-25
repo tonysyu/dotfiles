@@ -19,9 +19,6 @@
 [submodule "vim/bundle/lustyjuggler"]
 	path = vim/bundle/lustyjuggler
 	url = git://github.com/vim-scripts/LustyJuggler.git
-[submodule "vim/bundle/matchit"]
-	path = vim/bundle/matchit
-	url = git://github.com/tsaleh/vim-matchit.git
 [submodule "vim/bundle/reload"]
 	path = vim/bundle/reload
 	url = git://github.com/vim-scripts/reload.vim.git
