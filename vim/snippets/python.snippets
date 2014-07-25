@@ -175,5 +175,15 @@ snippet video
 		   <source src="${1}.webm" type="video/webm" />
 		   Video display requires video tag and webm support.
 	   </video>
+snippet traittest
+	from traits.testing.unittest_tools import UnittestTools
 
+	from unittest import TestCase
+
+
+	class TestTools(TestCase, UnittestTools):
+
+	    def test_something(self):
+	        with self.assertTraitChanges(traits_object, 'trait_name', count=1):
+	            pass
 
