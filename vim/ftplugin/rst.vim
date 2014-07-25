@@ -16,6 +16,6 @@ inoremap <C-h>2 <esc>yypVr=A
 noremap  <C-h>3 yypVr-
 inoremap <C-h>3 <esc>yypVr-A
 " Section Level 3
-noremap  <C-h>4 yypVr^
+noremap  <C-h>4 yypVr~
 inoremap <C-h>4 <esc>yypVr^A
 
