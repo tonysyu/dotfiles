@@ -149,7 +149,7 @@ c = get_config()
 
 # Pre-load matplotlib and numpy for interactive use, selecting a particular
 # matplotlib backend and loop integration.
-# c.IPKernelApp.pylab = None
+# c.IPKernelApp.pylab = 'auto'
 
 # kill this process if its parent dies.  On Windows, the argument specifies the
 # HANDLE of the parent process, otherwise it is simply boolean.
@@ -301,7 +301,7 @@ c.IPythonWidget.buffer_size = 5000
 # c.ZMQInteractiveShell.show_rewritten_input = True
 
 # Set the color scheme (NoColor, Linux, or LightBG).
-c.ZMQInteractiveShell.colors = 'Linux'
+# c.ZMQInteractiveShell.colors = 'Linux'
 
 # 
 # c.ZMQInteractiveShell.separate_in = '\n'

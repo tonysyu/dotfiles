@@ -160,7 +160,7 @@ c = get_config()
 
 # Pre-load matplotlib and numpy for interactive use, selecting a particular
 # matplotlib backend and loop integration.
-c.IPKernelApp.pylab = 'inline'
+# c.IPKernelApp.pylab = 'inline'
 
 # kill this process if its parent dies.  On Windows, the argument specifies the
 # HANDLE of the parent process, otherwise it is simply boolean.
@@ -174,7 +174,7 @@ c.IPKernelApp.pylab = 'inline'
 # c.IPKernelApp.connection_file = ''
 
 # If true, an 'import *' is done from numpy and pylab, when using pylab
-c.IPKernelApp.pylab_import_all = False
+# c.IPKernelApp.pylab_import_all = False
 
 # The name of the IPython directory. This directory is used for logging
 # configuration (through profiles), history storage, etc. The default is usually
