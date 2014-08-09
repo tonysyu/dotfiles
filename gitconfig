@@ -10,7 +10,7 @@
     ui = auto
 [core]
     excludesfile = ~/.gitignore
-    editor = /usr/bin/vim
+    editor = mvim -v
     pager = less -r
 [push]
     default = simple
