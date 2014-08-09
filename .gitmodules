@@ -91,3 +91,6 @@
 [submodule "vim/bundle/jedi-vim"]
 	path = vim/bundle/jedi-vim
 	url = https://github.com/davidhalter/jedi-vim.git
+[submodule "vim/bundle/vim-ragtag.git"]
+	path = vim/bundle/vim-ragtag.git
+	url = https://github.com/tpope/vim-ragtag.git
