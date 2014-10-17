@@ -31,7 +31,7 @@ function! RunNosetests()
     write
     let current = getcwd()
     cd %:p:h
-    !nosetests --with-doctest %
+    !nosetests --logging-level=INFO --with-doctest %
     cd `=current`
 endfunction
 nnoremap <buffer> <silent> <leader>n :call RunNosetests()<CR>
