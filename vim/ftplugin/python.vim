@@ -8,6 +8,12 @@ set foldlevel=99
 " pyflakes quickfix window will override other quickfix windows
 let g:pyflakes_use_quickfix = 0
 
+" Turn off rope completion which is really slow.
+let g:pymode_syntax_slow_sync = 0
+let g:pymode_rope_completion = 0
+let g:pymode_rope_complete_on_dot = 0
+
+
 " Disable pdb break point key
 let g:pymode_breakpoint = 0
 " Disable lint messages.
