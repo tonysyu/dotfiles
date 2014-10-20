@@ -3,7 +3,10 @@ ip = get_ipython()
 
 def _main():
     import numpy as np
-    from StringIO import StringIO
+    try:
+        from StringIO import StringIO
+    except:
+        from io import StringIO
 
 
     def import_quantities(self, arg):
@@ -39,10 +42,10 @@ def _main():
         try:
             array = np.genfromtxt(StringIO(array_text))
         except ValueError:
-            print "Clipboard text does not look like an array:"
-            print "~" * 60
-            print array_text
-            print "~" * 60
+            print("Clipboard text does not look like an array:")
+            print("~" * 60)
+            print(array_text)
+            print("~" * 60)
             raise
         return array
     ip.define_magic('array_paste', array_paste)
