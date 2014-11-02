@@ -19,6 +19,10 @@ export LSCOLORS=ExFxCxDxBxegedabagacad
 # Activate Canopy virtual environment
 source $HOME/Library/Enthought/Canopy_64bit/User/bin/activate
 
+# Fix vim issues "ImportError: No module named site". Requires MacVim's mvim
+# command on the path.
+alias vim='mvim -v'
+
 export ETS_TOOLKIT=qt4
 alias ets_qt='export ETS_TOOLKIT=qt4'
 alias ets_wx='export ETS_TOOLKIT=wx'
