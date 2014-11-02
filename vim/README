@@ -2,11 +2,9 @@ External bundles should be added using git's submodule command:
 
     git submodule add `git_path` vim/bundle/`bundle_name`
 
-To update specific bundles, change to the bundle directory and run:
-
-    git pull origin master
+For a freshly cloned dotfiles repo initialize then :
 
 To update all bundles, go to the root directory and run:
 
-    git submodule foreach git pull origin master
+    git submodule update
 
