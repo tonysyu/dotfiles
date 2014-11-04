@@ -4,8 +4,10 @@ set nocompatible
 
 " Set vim to use colorschemes with 256 colors
 set t_Co=256
-colorscheme ir_black
-"
+colorscheme zenburn
+let g:zenburn_high_Contrast=1
+colors zenburn
+
 syntax on
 " use pathogen to handle bundles
 filetype off
@@ -209,7 +211,7 @@ endfunction
 command! EditSyntax call s:EditVimConfig('syntax')
 command! EditPlugin call s:EditVimConfig('ftplugin')
 command! EditSnippet call s:EditVimConfig('snippets', '.snippets')
-command! EditColors edit ~/.vim/colors/ir_black.vim
+command! EditColors edit ~/.vim/colors/zenburn.vim
 
 " Show syntax highlighting groups for word under cursor (Ctrl-Shift-P)
 nmap <C-S-P> :call <SID>SynStack()<CR>

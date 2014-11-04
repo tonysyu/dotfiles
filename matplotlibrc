@@ -1,6 +1,7 @@
 ### MATPLOTLIBRC Configuration file
-backend: QT4Agg
-backend.qt4: PySide
+backend: Agg
+#backend: QT4Agg
+#backend.qt4: PySide
 
 # auto placement of legend
 legend.loc : best
