@@ -4,6 +4,8 @@ External bundles should be added using git's submodule command:
 
 For a freshly cloned dotfiles repo initialize then :
 
+    git submodule init
+
 To update all bundles, go to the root directory and run:
 
     git submodule update

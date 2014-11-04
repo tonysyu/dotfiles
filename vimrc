@@ -209,7 +209,7 @@ endfunction
 command! EditSyntax call s:EditVimConfig('syntax')
 command! EditPlugin call s:EditVimConfig('ftplugin')
 command! EditSnippet call s:EditVimConfig('snippets', '.snippets')
-command! EditColors edit ~/.vim/colors/busybee.vim
+command! EditColors edit ~/.vim/colors/ir_black.vim
 
 " Show syntax highlighting groups for word under cursor (Ctrl-Shift-P)
 nmap <C-S-P> :call <SID>SynStack()<CR>
@@ -246,6 +246,15 @@ endif
 set wildignore+=*.o,*.so,*.bmp,*.gif,*.tif,*.jpg,*.png,*.pdf,*.mat,*.npz,*.aux,*.bbl,*.blg,*.log,*.key,*.pyc,*.fdb_latexmk,*.egg-info,*.png.map,*.egg
 " IPython auto-generated files
 set wildignore+=shadowhist,kernel*.json,__enamlcache__,build
+
+" Ctrl-P
+:let g:ctrlp_map = '<Leader>t'
+:let g:ctrlp_match_window_bottom = 0
+:let g:ctrlp_match_window_reversed = 0
+:let g:ctrlp_custom_ignore = '\v\~$|\.(o|swp|pyc|wav|mp3|ogg|blend)$|(^|[/\\])\.(hg|git|bzr)($|[/\\])|__init__\.py'
+:let g:ctrlp_working_path_mode = 0
+:let g:ctrlp_dotfiles = 0
+:let g:ctrlp_switch_buffer = 0
 
 " Default VCS prefix is ',c' which conflicts with NERD commenter
 let VCSCommandMapPrefix = ',v'
