@@ -6,6 +6,7 @@ set nocompatible
 set t_Co=256
 colorscheme zenburn
 let g:zenburn_high_Contrast=1
+let g:zenburn_old_Visual = 1
 colors zenburn
 
 syntax on
@@ -250,7 +251,7 @@ set wildignore+=*.o,*.so,*.bmp,*.gif,*.tif,*.jpg,*.png,*.pdf,*.mat,*.npz,*.aux,*
 set wildignore+=shadowhist,kernel*.json,__enamlcache__,build
 
 " Ctrl-P
-:let g:ctrlp_map = '<Leader>t'
+:let g:ctrlp_map = '<leader>t'
 :let g:ctrlp_match_window_bottom = 0
 :let g:ctrlp_match_window_reversed = 0
 :let g:ctrlp_custom_ignore = '\v\~$|\.(o|swp|pyc|wav|mp3|ogg|blend)$|(^|[/\\])\.(hg|git|bzr)($|[/\\])|__init__\.py'
