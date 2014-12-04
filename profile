@@ -76,6 +76,7 @@ GREEN='\[\033[0;32m\]'
 YELLOW='\[\033[0;33m\]'
 NO_COLOR='\[\033[0m\]'
 export PS1='\n\u:\w'$YELLOW'$(parse_git_branch)\n'$RED'$ '$NO_COLOR
+export _OLD_VIRTUAL_PS1=$PS1
 
 # ---------------------------
 # Application-specific tweaks
