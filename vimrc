@@ -7,7 +7,6 @@ set t_Co=256
 colorscheme zenburn
 let g:zenburn_high_Contrast=1
 let g:zenburn_old_Visual = 1
-colors zenburn
 
 syntax on
 " use pathogen to handle bundles
