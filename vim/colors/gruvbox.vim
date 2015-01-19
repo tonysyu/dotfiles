@@ -539,7 +539,7 @@ if has("spell")
 	" Not capitalised word
 	call s:HL('SpellCap',   'none', 'none', 'undercurl', 'red')
 	" Not recognized word
-	call s:HL('SpellBad',   'none', 'none', 'undercurl', 'blue')
+	call s:HL('SpellBad',   'none', 'none', 'undercurl', 'orange')
 	" Wrong spelling for selected region
 	call s:HL('SpellLocal', 'none', 'none', 'undercurl', 'aqua')
 	" Rare word
