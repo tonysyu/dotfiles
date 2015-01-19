@@ -4,9 +4,8 @@ set nocompatible
 
 " Set vim to use colorschemes with 256 colors
 set t_Co=256
-colorscheme zenburn
-let g:zenburn_high_Contrast=1
-let g:zenburn_old_Visual = 1
+set background=dark
+colorscheme gruvbox
 
 syntax on
 " use pathogen to handle bundles
