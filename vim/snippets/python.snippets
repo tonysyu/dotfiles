@@ -122,8 +122,8 @@ snippet ##
 	#  ${1} interface
 	# -------------------------------------------------------------------------
 snippet here
-	import os
-	local_dir = os.path.dirname(os.path.abspath(__file__))
+	import os.path as pth
+	LOCAL_DIR = pth.dirname(pth.abspath(__file__))
 snippet ax
 	ax = ax if ax is not None else plt.gca()
 
@@ -203,15 +203,15 @@ snippet setup.py
 
 
 	setup(
-		name = package_name,
-		version = info['__version__'],
-		author = 'Tony S. Yu',
-		author_email = 'tsyu80@gmail.com',
-		maintainer = 'Tony S. Yu',
-		maintainer_email = 'tsyu80@gmail.com',
-		description = '${2:Description}',
-		include_package_data = True,
-		install_requires = info['__requires__'],
-		license = 'BSD',
-		packages = find_packages(),
+		name=package_name,
+		version=info['__version__'],
+		author='Tony S. Yu',
+		author_email='tsyu80@gmail.com',
+		maintainer='Tony S. Yu',
+		maintainer_email='tsyu80@gmail.com',
+		description='${2:Description}',
+		include_package_data=True,
+		install_requires=info['__requires__'],
+		license='BSD',
+		packages=find_packages(),
 	)
