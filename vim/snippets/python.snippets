@@ -113,6 +113,11 @@ snippet copyright
 	#  Copyright (c) 2013, Enthought, Inc.
 	#  All rights reserved.
 	# -----------------------------------------------------------------------------
+snippet confidential
+	#
+	# This file is confidential and NOT open source. Do not distribute.
+	#
+
 snippet #-
 	# -------------------------------------------------------------------------
 snippet #=
@@ -177,6 +182,11 @@ snippet video
 		   <source src="${1}.webm" type="video/webm" />
 		   Video display requires video tag and webm support.
 	   </video>
+
+snippet noisy_traits_exceptions
+	from traits.api import push_exception_handler
+	push_exception_handler(reraise_exceptions=True)
+
 snippet traittest
 	from traits.testing.unittest_tools import UnittestTools
 
