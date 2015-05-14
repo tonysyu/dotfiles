@@ -62,3 +62,7 @@ plugin
 welltags
 welltag
 toolbar
+serializer
+serializable
+serializers
+DataFrame
