@@ -5,7 +5,7 @@ set nocompatible
 " Set vim to use colorschemes with 256 colors
 set t_Co=256
 set background=dark
-colorscheme gruvbox
+colorscheme monokai
 
 syntax on
 " use pathogen to handle bundles
