@@ -34,6 +34,9 @@ snippet cm
 	from contextlib import contextmanager
 snippet cname
 	__class__.__name__
+snippet future
+	from __future__ import (absolute_import, division,
+	                        print_function, unicode_literals)
 snippet pp
 	from pprint import pprint as pp
 snippet glob
@@ -68,6 +71,8 @@ snippet enaml
 		from ${1:module} import ${2}
 snippet assert_close
 	from numpy.testing import assert_allclose
+snippet assert_equal
+	from nose.tools import assert_equal
 snippet cb
 	import cookbook as cb
 snippet watch
