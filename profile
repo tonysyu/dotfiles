@@ -16,17 +16,12 @@ export LSCOLORS=ExFxCxDxBxegedabagacad
 # Python-specific tweaks
 # ----------------------
 
-# Activate Canopy virtual environment
-source $HOME/Library/Enthought/Canopy_64bit/User/bin/activate
+# Activate Anaconda virtual environment
+source $HOME/anaconda/bin/activate default
 
 # Fix vim issues "ImportError: No module named site". Requires MacVim's mvim
 # command on the path.
 alias vim='mvim -v'
-
-export ETS_TOOLKIT=qt4
-alias ets_qt='export ETS_TOOLKIT=qt4'
-alias ets_wx='export ETS_TOOLKIT=wx'
-alias ets_tk='echo $ETS_TOOLKIT'
 
 # Shortcuts for common operations
 alias build_inplace='python setup.py build_ext --inplace'
@@ -78,6 +73,7 @@ YELLOW='\[\033[0;33m\]'
 NO_COLOR='\[\033[0m\]'
 export PS1='\n\u:\w'$YELLOW'$(parse_git_branch)\n'$RED'$ '$NO_COLOR
 export _OLD_VIRTUAL_PS1=$PS1
+export CONDA_OLD_PS1=$PS1
 
 # ---------------------------
 # Application-specific tweaks
