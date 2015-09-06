@@ -22,6 +22,14 @@ call vundle#begin()
 " Let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
+" Vim enhancement plugins:
+Plugin 'tpope/vim-sensible'
+Plugin 'vim-scripts/Rename'
+Plugin 'scrooloose/syntastic'
+Plugin 'itchyny/lightline.vim'
+Plugin 'tomtom/tlib_vim'  "Required for vim-snipmate
+Plugin 'MarcWeber/vim-addon-mw-utils'  " Required for vim-snippets
+
 " General editing plugins:
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'the-isz/MinYankRing.vim'
@@ -29,13 +37,6 @@ Plugin 'tpope/vim-repeat'
 Plugin 'garbas/vim-snipmate'
 Plugin 'honza/vim-snippets'
 Plugin 'bronson/vim-trailing-whitespace'
-
-" Vim enhancement plugins:
-Plugin 'vim-scripts/Rename'
-Plugin 'scrooloose/syntastic'
-Plugin 'itchyny/lightline.vim'
-Plugin 'tomtom/tlib_vim'  "Required for vim-snipmate
-Plugin 'MarcWeber/vim-addon-mw-utils'  " Required for vim-snippets
 
 " Search and navigation plugins:
 Plugin 'tpope/vim-surround'
@@ -64,21 +65,12 @@ let mapleader=","
 let maplocalleader=","
 " let semicolon start EX-mode (a.k.a. command mode)
 "nnoremap ; :
-set showcmd                     " show keys pressed in normal mode
 set showmode                    " display mode in Insert, Replace or Visual
 set cursorline                  " highlight current line
-set laststatus=2                " always display statusline
 set wildmode=longest,list,full  " change tab-completion to be more like BASH
-set wildmenu                    " show alternate command-line completion
-set scrolloff=3                 " minimum number of lines above/below current
-" Allow backspacing over autoindent, line breaks and start of insert action
-set backspace=indent,eol,start
-set autoindent
-"set smartindent                 " not Python-friendly: wants brackets
 
 " Whitespace
 " set list                        " show whitespace (negates linebreak)
-set listchars=tab:▸\ ,eol:¬     " set tab and end of line characters
 set tabstop=4                   " tab is 4 spaces
 set shiftwidth=4                " indentation in normal mode is 4 spaces
 set softtabstop=4               " back space removes up-to 4 spaces
@@ -100,9 +92,7 @@ endif
 
 " Search customization
 " ====================
-" Change search regex to match those in Python
-set incsearch                   " turn on incremental search
-set nohlsearch                  " don't highlight search words
+"set nohlsearch                  " don't highlight search words
 set gdefault                    " make substitutions global by default
 " toggle search matches when entering/leaving insert mode
 "autocmd InsertEnter * :set nohlsearch
