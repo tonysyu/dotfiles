@@ -63,3 +63,7 @@ welltags
 welltag
 toolbar
 regexes
+serializer
+serializable
+serializers
+DataFrame
