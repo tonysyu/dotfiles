@@ -1,13 +1,6 @@
-External bundles should be added using git's submodule command:
+This vim configuration uses Vundle to manage vim plugins. When downloading this
+for the first time, run the following from this directory
 
-    git submodule add `git_path` vim/bundle/`bundle_name`
+   git clone https://github.com/VundleVim/Vundle.vim.git bundle/Vundle.vim
 
-For a freshly cloned dotfiles repo (or a bundle added from remote changes to
-dotfiles) initialize and then update:
-
-    git submodule init
-
-To update all bundles, go to the root directory and run:
-
-    git submodule update
-
+Then, open vim and run `:PluginInstall`.

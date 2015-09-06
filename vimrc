@@ -8,11 +8,54 @@ set background=dark
 colorscheme monokai
 
 syntax on
-" use pathogen to handle bundles
+
+
+" Start of vundle configuration
+" -----------------------------------------------------------------------------
 filetype off
-call pathogen#helptags()
-call pathogen#runtime_append_all_bundles()
-filetype plugin indent on
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" Let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+
+" General editing plugins:
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'the-isz/MinYankRing.vim'
+Plugin 'tpope/vim-repeat'
+Plugin 'garbas/vim-snipmate'
+Plugin 'honza/vim-snippets'
+Plugin 'bronson/vim-trailing-whitespace'
+
+" Vim enhancement plugins:
+Plugin 'vim-scripts/Rename'
+Plugin 'scrooloose/syntastic'
+Plugin 'itchyny/lightline.vim'
+Plugin 'tomtom/tlib_vim'  "Required for vim-snipmate
+Plugin 'MarcWeber/vim-addon-mw-utils'  " Required for vim-snippets
+
+" Search and navigation plugins:
+Plugin 'tpope/vim-surround'
+Plugin 'vim-scripts/LustyJuggler'
+Plugin 'bronson/vim-visual-star-search'
+Plugin 'kien/ctrlp.vim'
+
+" Git plugins:
+Plugin 'tpope/vim-fugitive'
+Plugin 'airblade/vim-gitgutter'
+
+Plugin 'tpope/vim-markdown'
+Plugin 'hallettj/jslint.vim'
+Plugin 'tpope/vim-ragtag'
+Plugin 'mattn/emmet-vim'
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+" =============================================================================
 
 set modelines=0                 " don't add configuration lines to files
 
