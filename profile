@@ -2,9 +2,6 @@
 # General shell tweaks
 # --------------------
 
-# Use Vi bindings
-set -o vi
-
 # Customize path
 export PATH=$HOME/bin:$HOME/code/bin:$PATH
 
@@ -15,9 +12,6 @@ export LSCOLORS=ExFxCxDxBxegedabagacad
 # ----------------------
 # Python-specific tweaks
 # ----------------------
-
-# Activate Anaconda virtual environment
-source $HOME/anaconda/bin/activate default
 
 # Fix vim issues "ImportError: No module named site". Requires MacVim's mvim
 # command on the path.
@@ -33,7 +27,7 @@ alias grinpy='grin -I*.py'
 # Change to Python's site-packages directory.
 function cdsite {
   cd "$(python -c "import site; \
-    print site.getsitepackages()[0]"
+    print(site.getsitepackages()[0])"
   )"
 }
 
