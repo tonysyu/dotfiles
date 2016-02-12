@@ -23,12 +23,16 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 " Vim enhancement plugins:
+Plugin 'MarcWeber/vim-addon-mw-utils'  " Required for vim-snippets
+Plugin 'scrooloose/syntastic'
+Plugin 'tomtom/tlib_vim'  "Required for vim-snipmate
+Plugin 'tpope/vim-dispatch'
 Plugin 'tpope/vim-sensible'
 Plugin 'vim-scripts/Rename'
-Plugin 'scrooloose/syntastic'
+
+" UI enhancement plugins:
 Plugin 'itchyny/lightline.vim'
-Plugin 'tomtom/tlib_vim'  "Required for vim-snipmate
-Plugin 'MarcWeber/vim-addon-mw-utils'  " Required for vim-snippets
+Plugin 'nathanaelkane/vim-indent-guides'
 
 " General editing plugins:
 Plugin 'scrooloose/nerdcommenter'
@@ -43,11 +47,13 @@ Plugin 'tpope/vim-surround'
 Plugin 'vim-scripts/LustyJuggler'
 Plugin 'bronson/vim-visual-star-search'
 Plugin 'kien/ctrlp.vim'
+Plugin 'tmhedberg/matchit'
 
 " Git plugins:
 Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
 
+" Language-specific plugins
 Plugin 'tpope/vim-markdown'
 Plugin 'hallettj/jslint.vim'
 Plugin 'tpope/vim-ragtag'
