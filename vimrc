@@ -29,6 +29,7 @@ Plugin 'tomtom/tlib_vim'  "Required for vim-snipmate
 Plugin 'tpope/vim-dispatch'
 Plugin 'tpope/vim-sensible'
 Plugin 'vim-scripts/Rename'
+Plugin 'jiangxincode/vim-kite'
 
 " UI enhancement plugins:
 Plugin 'itchyny/lightline.vim'
@@ -55,9 +56,10 @@ Plugin 'airblade/vim-gitgutter'
 
 " Language-specific plugins
 Plugin 'tpope/vim-markdown'
-Plugin 'hallettj/jslint.vim'
 Plugin 'tpope/vim-ragtag'
 Plugin 'mattn/emmet-vim'
+Plugin 'mxw/vim-jsx'
+Plugin 'jaxbot/syntastic-react'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -82,6 +84,11 @@ set shiftwidth=4                " indentation in normal mode is 4 spaces
 set softtabstop=4               " back space removes up-to 4 spaces
 set expandtab                   " expand tabs to spaces
 
+" Search
+" Use case-insensitive search if all lowercase. Otherwise case sensitive.
+set ignorecase
+set smartcase
+
 " line width and indenting
 set wrap
 set linebreak                   " set list and set linebreak conflict!
@@ -98,6 +105,7 @@ endif
 
 " Search customization
 " ====================
+
 "set nohlsearch                  " don't highlight search words
 set gdefault                    " make substitutions global by default
 " toggle search matches when entering/leaving insert mode
@@ -303,6 +311,10 @@ nnoremap <Leader>- :call FillLine("-")<cr>
 set wildignore+=*.o,*.so,*.bmp,*.gif,*.tif,*.jpg,*.png,*.pdf,*.mat,*.npz,*.aux,*.bbl,*.blg,*.log,*.key,*.pyc,*.fdb_latexmk,*.egg-info,*.png.map,*.egg
 " IPython auto-generated files
 set wildignore+=shadowhist,kernel*.json,__enamlcache__,build
+
+" Syntastic
+let g:syntastic_javascript_checkers = ['jsxhint']
+let g:syntastic_javascript_jsxhint_exec = 'jsx-jshint-wrapper'
 
 " Ctrl-P
 :let g:ctrlp_map = '<leader>t'
