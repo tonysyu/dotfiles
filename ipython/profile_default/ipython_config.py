@@ -186,6 +186,7 @@ c.TerminalInteractiveShell.readline_omit__names = 2
 
 # Set the editor used by IPython (default to $EDITOR/vi/notepad).
 # c.TerminalInteractiveShell.editor = 'vi'
+c.TerminalInteractiveShell.editing_mode = 'vi'
 
 # Deprecated, use PromptManager.justify
 # c.TerminalInteractiveShell.prompts_pad_left = True
