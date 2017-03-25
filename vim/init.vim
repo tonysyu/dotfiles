@@ -39,12 +39,12 @@ set smartcase
 " line width and indenting
 set wrap
 set linebreak                   " set list and set linebreak conflict!
-set textwidth=79
+set textwidth=99
 set formatoptions=qrn1
 
 set number                  	" show line numbers
 set relativenumber          	" number lines relative to current line
-set colorcolumn=80          	" add line marking column
+set colorcolumn=100         	" add line marking column
 set undofile                	" allow undo across file sessions
 set undodir=~/.config/nvim/undo/
 set tags+=./.ctags
