@@ -52,14 +52,7 @@ set tags+=.ctags
 
 " Search customization
 " ====================
-
-"set nohlsearch                  " don't highlight search words
 set gdefault                    " make substitutions global by default
-" toggle search matches when entering/leaving insert mode
-"autocmd InsertEnter * :set nohlsearch
-"autocmd InsertLeave * :set hlsearch
-" turn off search with key command
-"nnoremap <silent> <leader><space> :nohlsearch<CR>
 
 " Change to directory of active buffer
 "autocmd BufEnter * if bufname("") !~ "^\[A-Za-z0-9\]*://" | lcd %:p:h | endif
@@ -124,43 +117,17 @@ nnoremap <leader>d "*d
 vnoremap <leader>d "*d
 nnoremap <leader>D "*D
 
-" Insert lines without going insert mode (screws up quickfix)
-"nnoremap <S-Enter> O<Esc>
-"nnoremap <CR> o<Esc>
 " Commands
 " ========
 " Quickly edit/reload the vimrc file
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
+" Quickly edit bundles file
+nmap <silent> <leader>eb :e ~/.config/nvim/init/bundles.vim<CR>
 
 " search and replace
 nnoremap <leader>ss :%s/
 vnoremap <leader>ss :s/
-
-" add space around equals signs with no surrounding space
-nnoremap <leader>s= :%s/\(\S\)=\(\S\)/\1 = \2/<CR>
-vnoremap <leader>s= :s/\(\S\)=\(\S\)/\1 = \2/<CR>
-
-" add space after comma with no surrounding space
-nnoremap <leader>s, :%s/\(\S\),\(\S\)/\1, \2/<CR>
-vnoremap <leader>s, :s/\(\S\),\(\S\)/\1, \2/<CR>
-
-" add space around * with no surrounding space
-nnoremap <leader>s* :%s/\(\S\)\*\(\S\)/\1 * \2/<CR>
-vnoremap <leader>s* :s/\(\S\)\*\(\S\)/\1 * \2/<CR>
-
-" add space around .* (Matlab) with no surrounding space
-nnoremap <leader>s.* :%s/\(\S\)\.\*\(\S\)/\1 .* \2/<CR>
-vnoremap <leader>s.* :s/\(\S\)\.\*\(\S\)/\1 .* \2/<CR>
-
-" add space around + with no surrounding space
-nnoremap <leader>s+ :%s/\(\S\)+\(\S\)/\1 + \2/<CR>
-vnoremap <leader>s+ :s/\(\S\)+\(\S\)/\1 + \2/<CR>
-"
-" add space around - with no surrounding space
-nnoremap <leader>s- :%s/\(\S\)-\(\S\)/\1 - \2/<CR>
-vnoremap <leader>s- :s/\(\S\)-\(\S\)/\1 - \2/<CR>
-
 
 " Close buffer window, preserving split if it exists
 nnoremap <leader>w :bp\|bd #<CR>
@@ -223,41 +190,11 @@ function! <SID>SynStack()
     echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
 endfunction
 
-function! Preserve(command)
-  " Preparation: save last search, and cursor position.
-  let _s=@/
-  let l = line(".")
-  let c = col(".")
-  " Do the business:
-  execute a:command
-  " Clean up: restore previous search history, and cursor position
-  let @/=_s
-  call cursor(l, c)
-endfunction
-nmap _$ :call Preserve("%s/\\s\\+$//e")<CR>
-
 " Change cursor shape between insert and normal mode in iTerm2.app
 if $TERM_PROGRAM =~ "iTerm"
     let &t_SI = "\<Esc>]50;CursorShape=1\x7" " Vertical bar in insert mode
     let &t_EI = "\<Esc>]50;CursorShape=0\x7" " Block in normal mode
 endif
-
-" fill rest of line with characters
-function! FillLine( str )
-    " set tw to the desired total length
-    let tw = &textwidth
-    if tw==0 | let tw = 80 | endif
-    " strip trailing spaces first
-    .s/[[:space:]]*$//
-    " calculate total number of 'str's to insert
-    let reps = (tw - col("$")) / len(a:str)
-    " insert them, if there's room, removing trailing spaces (though forcing
-    " there to be one)
-    if reps > 0
-        .s/$/\=(' '.repeat(a:str, reps))/
-    endif
-endfunction
-nnoremap <Leader>- :call FillLine("-")<cr>
 
 " Plugin Customization
 " ====================
