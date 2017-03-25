@@ -185,6 +185,15 @@ inoremap <leader>sy <C-o>:syntax sync fromstart<CR>
 
 " FUNCTIONS
 " =========
+function! s:InsertDate(day_offset)
+    let l:time = localtime() + (24 * 3600 * a:day_offset)
+    let l:line=line(".")
+    call setline(l:line, strftime('%A, %d %B %Y', l:time))
+    unlet l:line
+endfunction
+
+command! TodaysDate call s:InsertDate(0)
+command! TomorrowsDate call s:InsertDate(1)
 
 " delete current buffer without destroying split window
 " (use function b/c I don't know how to string commands together)
