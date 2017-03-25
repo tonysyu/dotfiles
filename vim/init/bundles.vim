@@ -5,7 +5,6 @@ call neobundle#begin(expand('~/.config/nvim/bundle/'))
 NeoBundleFetch 'Shougo/neobundle.vim'
 
 " Vim enhancement plugins:
-NeoBundle 'MarcWeber/vim-addon-mw-utils'  " Required for vim-snippets
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'Valloric/YouCompleteMe'
 NeoBundle 'tpope/vim-dispatch'
