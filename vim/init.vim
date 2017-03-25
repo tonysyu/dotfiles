@@ -47,6 +47,8 @@ set relativenumber          	" number lines relative to current line
 set colorcolumn=80          	" add line marking column
 set undofile                	" allow undo across file sessions
 set undodir=~/.config/nvim/undo/
+set tags+=./.ctags
+set tags+=.ctags
 
 " Search customization
 " ====================
