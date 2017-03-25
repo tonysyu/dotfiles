@@ -298,6 +298,19 @@ nnoremap <Leader>gd :Gdiff<cr>
 "switch back to current file and closes fugitive buffer
 nnoremap <Leader>gf :diffoff!<cr><c-w>h:bd<cr>
 
+" YouCompleteMe
+let g:ycm_collect_identifiers_from_tags_files = 1 " Let YCM read tags from Ctags file
+let g:ycm_use_ultisnips_completer = 1 " Default 1, just ensure
+let g:ycm_seed_identifiers_with_syntax = 1 " Completion for programming language's keyword
+let g:ycm_complete_in_comments = 1 " Completion in comments
+let g:ycm_complete_in_strings = 1 " Completion in string
+
+" UltiSnips
+let g:UltiSnipsExpandTrigger       = "<c-j>"
+let g:UltiSnipsJumpForwardTrigger  = "<c-j>"
+let g:UltiSnipsJumpBackwardTrigger = "<c-p>"
+let g:UltiSnipsListSnippets        = "<c-k>" "List possible snippets based on current file
+
 let g:NERDCustomDelimiters = {
     \ 'python': { 'left': '# ' },
     \ 'enaml': { 'left': '# ' },
@@ -305,10 +318,5 @@ let g:NERDCustomDelimiters = {
 " syntax/python.vim gets run before ftplugin/python.vim, so we must set this
 " highlight option in vimrc instead of ftplugin.
 let g:python_highlight_all = 1
-" Default rename command <leader>r clashes with my run command
-let g:jedi#rename_command = '<leader>jr'
-let g:jedi#get_definition_command = '<leader>jd'
-let g:jedi#goto_command = '<leader>jg'
-let g:jedi#related_names_command = '<leader>jn'
-let g:jedi#pydoc = '<leader>jk'
 
+let g:syntastic_python_flake8_config_file='.flake8'
