@@ -27,7 +27,7 @@ NeoBundle 'tpope/vim-surround'
 NeoBundle 'bronson/vim-visual-star-search'
 NeoBundle 'kien/ctrlp.vim'
 NeoBundle 'tmhedberg/matchit'
-NeoBundle 'mileszs/ack.vim'
+NeoBundle 'mhinz/vim-grepper'
 
 " Git plugins:
 NeoBundle 'tpope/vim-fugitive'

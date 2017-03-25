@@ -283,11 +283,13 @@ nnoremap <leader>b :CtrlPBuffer<cr>
 nnoremap <leader>r :CtrlPMRUFiles<cr>
 nnoremap <leader>k :CtrlPTag<cr>
 
+" vim-grepper
+nnoremap <leader>ga :Grepper<cr>
+nnoremap <leader>gg :Grepper -tool git<cr>
+
+
 " Default VCS prefix is ',c' which conflicts with NERD commenter
 let VCSCommandMapPrefix = ',v'
-
-" Quick Ack-vim usage (note that space at the end makes it use easier)
-nmap <leader>a :Ack 
 
 let Tlist_Ctags_Cmd = '/usr/local/bin/ctags'
 
