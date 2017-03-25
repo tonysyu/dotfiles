@@ -280,6 +280,9 @@ let g:syntastic_javascript_jsxhint_exec = 'jsx-jshint-wrapper'
 :let g:ctrlp_dotfiles = 0
 :let g:ctrlp_switch_buffer = 0
 
+" Unite
+nnoremap <leader>b :<C-u>Unite -buffer-name=buffer  buffer<cr>
+
 " Default VCS prefix is ',c' which conflicts with NERD commenter
 let VCSCommandMapPrefix = ',v'
 

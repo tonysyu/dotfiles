@@ -29,6 +29,8 @@ NeoBundle 'bronson/vim-visual-star-search'
 NeoBundle 'kien/ctrlp.vim'
 NeoBundle 'tmhedberg/matchit'
 NeoBundle 'mileszs/ack.vim'
+NeoBundle 'yegappan/mru'
+NeoBundle 'Shougo/unite.vim'
 
 " Git plugins:
 NeoBundle 'tpope/vim-fugitive'
