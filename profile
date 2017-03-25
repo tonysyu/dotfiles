@@ -60,9 +60,6 @@ function quickprof {
 # Count the total number of commits for a branch.
 alias git-count="git log --pretty=format:'x' | wc -l"
 
-# git tab completion
-source '/Applications/Xcode.app/Contents/Developer/usr/share/git-core/git-completion.bash'
-
 # Parse git branch state and display at prompt
 function parse_git_dirty {
   [[ $(git status 2> /dev/null | tail -n1 | awk '{print $1}') != "nothing" ]] && echo "*"
