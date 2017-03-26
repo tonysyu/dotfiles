@@ -1,0 +1,3 @@
+--ignore-file=match:^\..*
+--ignore-dir=build
+--ignore-dir=migrations
