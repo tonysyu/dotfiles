@@ -28,6 +28,7 @@ NeoBundle 'bronson/vim-visual-star-search'
 NeoBundle 'kien/ctrlp.vim'
 NeoBundle 'tmhedberg/matchit'
 NeoBundle 'mhinz/vim-grepper'
+NeoBundle 'padde/jump.vim'
 
 " Git plugins:
 NeoBundle 'tpope/vim-fugitive'
