@@ -1,7 +1,7 @@
 .DS_Store
 *.tmproj
 *.orig
-*.ctags
+*.tags
 *~
 
 # Vim related

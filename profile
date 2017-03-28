@@ -12,8 +12,8 @@ export LSCOLORS=ExFxCxDxBxegedabagacad
 function refresh-ctags () {
     # Ensure that we're creating tags in the root of a git repository.
     if [ -d "./.git" ]; then
-        ctags -R -o ./.ctags
-        echo "Updated .ctags directory."
+        ctags -R -o ./.tags
+        echo "Updated .tags directory."
     else
         echo "refresh-ctags must be run in directory containing .git directory."
     fi

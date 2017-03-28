@@ -47,8 +47,7 @@ set relativenumber          	" number lines relative to current line
 set colorcolumn=100         	" add line marking column
 set undofile                	" allow undo across file sessions
 set undodir=~/.config/nvim/undo/
-set tags+=./.ctags
-set tags+=.ctags
+set tags+=.tags;~              " The trailing ';~' tells vim to search parent directories upto ~.
 
 " Search customization
 " ====================
@@ -220,8 +219,8 @@ let g:ctrlp_working_path_mode = 0
 let g:ctrlp_dotfiles = 0
 let g:ctrlp_switch_buffer = 0
 nnoremap <leader>b :CtrlPBuffer<cr>
-nnoremap <leader>r :CtrlPMRUFiles<cr>
-nnoremap <leader>k :CtrlPTag<cr>
+nnoremap <leader>cr :CtrlPMRUFiles<cr>
+nnoremap <leader>ct :CtrlPTag<cr>
 
 " vim-grepper
 nnoremap <leader>ga :Grepper<cr>
