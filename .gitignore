@@ -1,5 +1,7 @@
 ipython/profile_default/db/*
 ipython/profile_default/history.sqlite
-vim/syntax/enaml.vim
-vim/spell/en.utf-8.add.spl
 vim/bundle
+vim/repos
+vim/spell/en.utf-8.add.spl
+vim/syntax/enaml.vim
+vim/undo
