@@ -29,6 +29,7 @@ NeoBundle 'kien/ctrlp.vim'
 NeoBundle 'tmhedberg/matchit'
 NeoBundle 'mhinz/vim-grepper'
 NeoBundle 'padde/jump.vim'
+NeoBundle 'ap/vim-buftabline'
 
 " Git plugins:
 NeoBundle 'tpope/vim-fugitive'

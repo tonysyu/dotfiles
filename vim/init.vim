@@ -222,10 +222,17 @@ nnoremap <leader>b :CtrlPBuffer<cr>
 nnoremap <leader>cr :CtrlPMRUFiles<cr>
 nnoremap <leader>ct :CtrlPTag<cr>
 
+" vim-buftabline
+" Use Chrome's keyboard shortcuts for tab navigation (Command-Option-<Arrow>).
+nnoremap <D-M-Right> :bn<CR>
+nnoremap <D-M-Left> :bp<CR>
+
+
 " vim-grepper
 nnoremap <leader>ga :Grepper<cr>
+nnoremap <leader>gw :Grepper -cword<cr>
+nnoremap <leader>gb :Grepper-buffers<cr>
 nnoremap <leader>gg :Grepper -tool git<cr>
-
 
 " Default VCS prefix is ',c' which conflicts with NERD commenter
 let VCSCommandMapPrefix = ',v'
@@ -236,7 +243,6 @@ nmap <silent> <leader>nt :NERDTreeToggle<CR>
 
 " Shortcuts for fugitive.vim plugin
 nnoremap <Leader>gs :Gstatus<cr>
-nnoremap <Leader>gw :Gwrite<cr>
 nnoremap <Leader>gc :Gcommit<cr>
 nnoremap <Leader>gd :Gdiff<cr>
 "switch back to current file and closes fugitive buffer
