@@ -1,14 +1,12 @@
 ### MATPLOTLIBRC Configuration file
 #backend: Agg
-backend: QT4Agg
+backend: QT5Agg
 #backend.qt4: PySide
 
 # auto placement of legend
 legend.loc : best
 # Use single marker to represent line (e.g., '--o--' instead of 'o---o')
 legend.numpoints: 1
-
-axes.color_cycle : black, red, steelblue, gold, darkorchid, yellowgreen, darkorange, silver, darkturquoise, hotpink, mediumblue
 
 image.cmap : gray
 image.interpolation : none
