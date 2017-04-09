@@ -199,6 +199,15 @@ endif
 " Plugin Customization
 " ====================
 
+" vim-indent-guides Settings
+
+let g:indent_guides_enable_on_vim_startup = 1
+let g:indent_guides_auto_colors = 0
+let g:indent_guides_guide_size = 4
+
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=#202020 ctermbg=234
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#303030 ctermbg=236
+
 " Ignore files for Command-T
 set wildignore+=*.o,*.so,*.bmp,*.gif,*.tif,*.jpg,*.png,*.pdf,*.mat,*.npz,*.aux,*.bbl,*.blg,*.log,*.key,*.pyc,*.fdb_latexmk,*.egg-info,*.png.map,*.egg
 " IPython auto-generated files
@@ -225,6 +234,7 @@ nnoremap <leader>ct :CtrlPTag<cr>
 
 " vim-buftabline
 " Use Chrome's keyboard shortcuts for tab navigation (Command-Option-<Arrow>).
+" This doesn't work in the terminal, since moving between terminal tabs takes precendence
 nnoremap <D-M-Right> :bn<CR>
 nnoremap <D-M-Left> :bp<CR>
 
