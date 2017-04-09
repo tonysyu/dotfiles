@@ -19,13 +19,11 @@ function refresh-ctags () {
     fi
 }
 
+alias vim='nvim'
+
 # ----------------------
 # Python-specific tweaks
 # ----------------------
-
-# Fix vim issues "ImportError: No module named site". Requires MacVim's mvim
-# command on the path.
-alias vim='mvim -v'
 
 # Shortcuts for common operations
 alias build_inplace='python setup.py build_ext --inplace'
