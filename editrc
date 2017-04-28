@@ -1,0 +1,4 @@
+# Non-GNU utilities use this config instead of inputrc
+# Use vi keybindings
+bind -v
+bind \\t rl_complete
