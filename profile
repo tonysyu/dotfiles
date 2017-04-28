@@ -18,7 +18,14 @@ function refresh-ctags () {
     fi
 }
 
-alias ls='ls --color=auto -hF'
+# Test whether --color is an allowed option for 'ls'
+eval 'ls --color > /dev/null 2>&1'
+if [ $? -eq 0 ]; then
+    alias ls='ls -hF --color=auto'
+else
+    alias ls='ls -hFG'
+fi
+
 alias vim='nvim'
 
 # ----------------------
