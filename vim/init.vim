@@ -181,6 +181,8 @@ command! EditPlugin call s:EditVimConfig('ftplugin')
 command! EditSnippet call s:EditVimConfig('snippets', '.snippets')
 command! EditColors edit ~/.vim/colors/zenburn.vim
 
+nnoremap <leader>ep :echo expand('%:p')<CR>
+
 " Show syntax highlighting groups for word under cursor (Ctrl-Shift-P)
 nmap <C-S-P> :call <SID>SynStack()<CR>
 function! <SID>SynStack()
@@ -218,17 +220,17 @@ let g:syntastic_javascript_checkers = ['jsxhint']
 let g:syntastic_javascript_jsxhint_exec = 'jsx-jshint-wrapper'
 
 " Ctrl-P
-let g:ctrlp_map = '<leader>t'
 let g:ctrlp_match_window_bottom = 0
 let g:ctrlp_match_window_reversed = 0
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\v[\/]\.(bzr|git|hg|svn)$|node_modules$',
-  \ 'file': '\v\~$|\.(o|swp|pyc|wav|mp3|ogg|blend)$|__init__\.py',
+  \ 'file': '\v\~$|\.(o|swp|pyc|wav|mp3|ogg|blend)$',
   \ }
 let g:ctrlp_working_path_mode = 0
 let g:ctrlp_dotfiles = 0
 let g:ctrlp_switch_buffer = 0
 nnoremap <leader>b :CtrlPBuffer<cr>
+nnoremap <leader>t :CtrlPMixed<cr>
 nnoremap <leader>cr :CtrlPMRUFiles<cr>
 nnoremap <leader>ct :CtrlPTag<cr>
 
@@ -237,7 +239,6 @@ nnoremap <leader>ct :CtrlPTag<cr>
 " This doesn't work in the terminal, since moving between terminal tabs takes precendence
 nnoremap <D-M-Right> :bn<CR>
 nnoremap <D-M-Left> :bp<CR>
-
 
 " vim-grepper
 nnoremap <leader>ga :Grepper<cr>
@@ -258,6 +259,8 @@ nnoremap <Leader>gc :Gcommit<cr>
 nnoremap <Leader>gd :Gdiff<cr>
 "switch back to current file and closes fugitive buffer
 nnoremap <Leader>gf :diffoff!<cr><c-w>h:bd<cr>
+" Use vertical splits for Gdiff (this affects all diffs, not just fugitive's)
+set diffopt+=vertical
 
 " YouCompleteMe
 let g:ycm_collect_identifiers_from_tags_files = 1 " Let YCM read tags from Ctags file
