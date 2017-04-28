@@ -7,7 +7,6 @@ export PATH=$HOME/bin:$HOME/code/bin:$PATH
 
 # Colorize terminal
 export CLICOLOR=1
-export LSCOLORS=ExFxCxDxBxegedabagacad
 
 function refresh-ctags () {
     # Ensure that we're creating tags in the root of a git repository.
@@ -19,6 +18,7 @@ function refresh-ctags () {
     fi
 }
 
+alias ls='ls --color=auto -hF'
 alias vim='nvim'
 
 # ----------------------
@@ -26,11 +26,10 @@ alias vim='nvim'
 # ----------------------
 
 # Shortcuts for common operations
-alias build_inplace='python setup.py build_ext --inplace'
-alias build_clean='find . -name *.so -or -name *.pyc | xargs rm; rm -rf build'
+alias build-inplace='python setup.py build_ext --inplace'
+alias build-clean='find . -name *.so -or -name *.pyc | xargs rm; rm -rf build'
 alias pstats='python -m pstats'
-alias remove_pyc='find . -name "*.pyc" -exec rm -rf {} \;'
-alias grinpy='grin -I*.py'
+alias remove-pycache='find . | grep -E "(__pycache__|\.pyc$)" | xargs rm -rf'
 
 # Change to Python's site-packages directory.
 function cdsite {
