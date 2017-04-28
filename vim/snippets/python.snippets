@@ -211,6 +211,8 @@ snippet log
 	import logging
 
 	log = logging.getLogger(__name__)
+snippet _LOG
+	_LOG = logging.getLogger('application')
 snippet setup.py
 	from os.path import join
 	from setuptools import setup, find_packages
@@ -262,3 +264,11 @@ snippet log-file
 
 	filename = pth.expanduser(pth.join('~', 'debug.log'))
 	logging.basicConfig(filename=filename, level=logging.DEBUG)
+snippet djuser
+	from django.contrib.auth.models import User
+snippet djmodels
+	from django.db import models
+snippet djmessages
+	from django.contrib import messages
+snippet djsettings
+	from django.conf import settings
