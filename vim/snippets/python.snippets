@@ -266,6 +266,8 @@ snippet log-file
 	logging.basicConfig(filename=filename, level=logging.DEBUG)
 snippet djuser
 	from django.contrib.auth.models import User
+snippet djlogin
+	from django.contrib.auth.decorators import login_required
 snippet djmodels
 	from django.db import models
 snippet djmessages
