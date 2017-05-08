@@ -1,4 +1,5 @@
 --ignore-file=match:^\..*
 --ignore-file=match:\.min\.map$
+--ignore-file=match:\.*.po$
 --ignore-dir=build
 --ignore-dir=migrations
