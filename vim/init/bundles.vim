@@ -42,6 +42,7 @@ NeoBundle 'tpope/vim-ragtag'
 NeoBundle 'mattn/emmet-vim'
 NeoBundle 'mxw/vim-jsx'
 NeoBundle 'jaxbot/syntastic-react'
+NeoBundle 'alvan/vim-closetag'
 
 call neobundle#end()
 

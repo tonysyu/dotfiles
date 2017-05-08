@@ -218,6 +218,9 @@ set wildignore+=shadowhist,kernel*.json,__enamlcache__,build
 " vim-jsx
 let g:jsx_ext_required = 0  " Use vim-jsx for all .js files
 
+" vim-closetag
+let g:closetag_filenames = "*.html,*.js"
+
 " Syntastic
 let g:syntastic_javascript_checkers = ['jsxhint']
 let g:syntastic_javascript_jsxhint_exec = 'jsx-jshint-wrapper'
