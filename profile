@@ -28,6 +28,10 @@ fi
 
 alias vim='nvim'
 
+function findext() {
+    find . -regextype posix-egrep -regex ".*\.($1)$"
+}
+
 # ----------------------
 # Python-specific tweaks
 # ----------------------
