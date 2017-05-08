@@ -36,6 +36,7 @@ set expandtab                   " expand tabs to spaces
 " Use case-insensitive search if all lowercase. Otherwise case sensitive.
 set ignorecase
 set smartcase
+set wildignorecase              " Ignore case in file searches (e.g. in ex mode)
 
 " line width and indenting
 set wrap
