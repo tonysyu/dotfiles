@@ -215,6 +215,9 @@ set wildignore+=*.o,*.so,*.bmp,*.gif,*.tif,*.jpg,*.png,*.pdf,*.mat,*.npz,*.aux,*
 " IPython auto-generated files
 set wildignore+=shadowhist,kernel*.json,__enamlcache__,build
 
+" vim-jsx
+let g:jsx_ext_required = 0  " Use vim-jsx for all .js files
+
 " Syntastic
 let g:syntastic_javascript_checkers = ['jsxhint']
 let g:syntastic_javascript_jsxhint_exec = 'jsx-jshint-wrapper'
