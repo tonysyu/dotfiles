@@ -246,6 +246,8 @@ nnoremap <leader>ct :CtrlPTag<cr>
 " This doesn't work in the terminal, since moving between terminal tabs takes precendence
 nnoremap <D-M-Right> :bn<CR>
 nnoremap <D-M-Left> :bp<CR>
+let g:buftabline_numbers = 1
+let g:buftabline_separators = 1
 
 " vim-grepper
 nnoremap <leader>ga :Grepper<cr>
@@ -279,11 +281,11 @@ let g:ycm_complete_in_strings = 1 " Completion in string
 " Experimentally integrate YouCompleteMe with vim-multiple-cursors, otherwise
 " the numerous Cursor events cause great slowness
 " (https://github.com/kristijanhusak/vim-multiple-cursors/issues/4)
-function Multiple_cursors_before()
+function! Multiple_cursors_before()
   let s:old_ycm_whitelist = g:ycm_filetype_whitelist
   let g:ycm_filetype_whitelist = {}
 endfunction
-function Multiple_cursors_after()
+function! Multiple_cursors_after()
   let g:ycm_filetype_whitelist = s:old_ycm_whitelist
 endfunction
 
