@@ -302,3 +302,36 @@ let g:NERDCustomDelimiters = {
 let g:python_highlight_all = 1
 
 let g:syntastic_python_flake8_config_file='.flake8'
+
+" Django centric commands
+
+let g:last_relative_dir = ''
+command! Djmodel call s:DjRelatedFile("models.py")
+command! Djviews call s:DjRelatedFile("views.py")
+command! Djurls call s:DjRelatedFile("urls.py")
+command! Djadmin call s:DjRelatedFile("admin.py")
+command! Djtests call s:DjRelatedFile("tests.py")
+
+function! s:DjRelatedFile(file)
+    " This is to check that the directory looks djangoish
+    if filereadable(expand("%:h"). '/models.py') || isdirectory(expand("%:h") . "/templatetags/")
+        exec "edit %:h/" . a:file
+        let g:last_relative_dir = expand("%:h") . '/'
+        return ''
+    endif
+    if g:last_relative_dir != ''
+        exec "edit " . g:last_relative_dir . a:file
+        return ''
+    endif
+    echo "Cant determine where relative file is : " . a:file
+    return ''
+endfun
+
+function! SetDjAppDir()
+    if filereadable(expand("%:h"). '/models.py') || isdirectory(expand("%:h") . "/templatetags/")
+        let g:last_relative_dir = expand("%:h") . '/'
+        return ''
+    endif
+endfun
+
+autocmd BufEnter *.py call SetDjAppDir()
