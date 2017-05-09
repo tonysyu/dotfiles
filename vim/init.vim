@@ -242,12 +242,8 @@ nnoremap <leader>cr :CtrlPMRUFiles<cr>
 nnoremap <leader>ct :CtrlPTag<cr>
 
 " vim-buftabline
-" Use Chrome's keyboard shortcuts for tab navigation (Command-Option-<Arrow>).
-" This doesn't work in the terminal, since moving between terminal tabs takes precendence
-nnoremap <D-M-Right> :bn<CR>
-nnoremap <D-M-Left> :bp<CR>
-nnoremap <C-S-j> :bn<CR>
-nnoremap <C-S-k> :bp<CR>
+nnoremap <D-M-j> :bn<CR>
+nnoremap <D-M-k> :bp<CR>
 let g:buftabline_numbers = 1
 let g:buftabline_separators = 1
 
