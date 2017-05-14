@@ -258,8 +258,6 @@ let VCSCommandMapPrefix = ',v'
 
 let Tlist_Ctags_Cmd = '/usr/local/bin/ctags'
 
-nmap <silent> <leader>nt :NERDTreeToggle<CR>
-
 " Shortcuts for fugitive.vim plugin
 nnoremap <Leader>gs :Gstatus<cr>
 nnoremap <Leader>gc :Gcommit<cr>
