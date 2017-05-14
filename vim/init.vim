@@ -242,8 +242,8 @@ nnoremap <leader>cr :CtrlPMRUFiles<cr>
 nnoremap <leader>ct :CtrlPTag<cr>
 
 " vim-buftabline
-nnoremap <D-M-j> :bn<CR>
-nnoremap <D-M-k> :bp<CR>
+nnoremap <D-M-k> :bn<CR>
+nnoremap <D-M-j> :bp<CR>
 let g:buftabline_numbers = 1
 let g:buftabline_separators = 1
 
