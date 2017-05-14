@@ -13,6 +13,7 @@ NeoBundle 'vim-scripts/Rename'
 " UI enhancement plugins:
 NeoBundle 'itchyny/lightline.vim'
 NeoBundle 'nathanaelkane/vim-indent-guides'
+NeoBundle 'Shougo/junkfile.vim'
 
 " General editing plugins:
 NeoBundle 'scrooloose/nerdcommenter'
