@@ -8,7 +8,7 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'Valloric/YouCompleteMe'
 NeoBundle 'tpope/vim-dispatch'
-NeoBundle 'vim-scripts/Rename'
+NeoBundle 'tpope/vim-eunuch'
 
 " UI enhancement plugins:
 NeoBundle 'itchyny/lightline.vim'
