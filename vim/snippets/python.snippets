@@ -274,3 +274,10 @@ snippet djmessages
 	from django.contrib import messages
 snippet djsettings
 	from django.conf import settings
+snippet djdefmigrate
+	def ${1:migrate}(apps, schema_editor):
+		${2:ModelClass} = apps.get_model('${3:app}', '${4:$2}')
+snippet djcontext
+	def get_context_data(self, *args, **kwargs):
+		context = super(${1}, self).get_context_data(*args, **kwargs)
+		return context

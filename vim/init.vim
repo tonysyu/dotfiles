@@ -311,6 +311,8 @@ command! Djviews call s:DjRelatedFile("views.py")
 command! Djurls call s:DjRelatedFile("urls.py")
 command! Djadmin call s:DjRelatedFile("admin.py")
 command! Djtests call s:DjRelatedFile("tests.py")
+command! Djmigrations call s:DjRelatedFile("migrations/")
+command! Djtemplates call s:DjRelatedFile("templates/")
 
 function! s:DjRelatedFile(file)
     " This is to check that the directory looks djangoish
