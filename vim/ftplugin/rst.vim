@@ -1,8 +1,3 @@
-
-setlocal tabstop=4                   " tab is 4 spaces
-setlocal shiftwidth=4                " indentation in normal mode is 4 spaces
-setlocal softtabstop=4               " back space removes up-to 4 spaces
-
 " Section headings for reStructuredText
 " Parts
 noremap  <leader>0 yyPVr#yyjp
