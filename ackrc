@@ -4,4 +4,5 @@
 --ignore-file=match:\.*.log$
 --ignore-file=match:\.*.json.\d{4}-\d{2}-\d{2}_\d{2}
 --ignore-dir=build
+--ignore-dir=logs_local
 --ignore-dir=webpack_bundles
