@@ -44,6 +44,20 @@ endfunction
 nnoremap <buffer> <silent> <leader>n :call RunNosetests()<CR>
 
 
+function! GetCurrentPythonClass()
+    call search('^\s*class ', 'sbe')
+    let class = expand('<cword>')
+    normal ''
+    return class
+endfunction
+
+function! GetCurrentPythonMethod()
+    call search('^\s*def ', 'sbe')
+    let method = expand('<cword>')
+    normal ''
+    return method
+endfunction
+
 
 " Section headings for reStructuredText
 " Parts
