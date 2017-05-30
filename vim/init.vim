@@ -151,6 +151,8 @@ vnoremap Q gq
 noremap <leader>sy <Esc>:syntax sync fromstart<CR>
 inoremap <leader>sy <C-o>:syntax sync fromstart<CR>
 
+command! CdHere :cd %:p:h
+
 " FUNCTIONS
 " =========
 function! s:InsertDate(day_offset)
