@@ -46,6 +46,7 @@ NeoBundle 'mattn/emmet-vim'
 NeoBundle 'mxw/vim-jsx'
 NeoBundle 'jaxbot/syntastic-react'
 NeoBundle 'alvan/vim-closetag'
+NeoBundle 'vim-scripts/confluencewiki.vim'
 
 call neobundle#end()
 
