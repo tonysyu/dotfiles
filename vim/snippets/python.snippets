@@ -266,7 +266,10 @@ snippet log-file
 	logging.basicConfig(filename=filename, level=logging.DEBUG)
 
 snippet super
-	return super(`GetCurrentPythonClass()`, self).`GetCurrentPythonMethod()`(*args, **kwargs)
+	result = super(`GetCurrentPythonClass()`, self).`GetCurrentPythonMethod()`(*args, **kwargs)
+	return result
+snippet **
+	*args, **kwargs):
 snippet djuser
 	from django.contrib.auth.models import User
 snippet djlogin
