@@ -5,7 +5,7 @@ set nocompatible
 " Set vim to use colorschemes with 256 colors
 set t_Co=256
 set background=dark
-colorscheme monokai
+colorscheme molokai
 
 let g:python_host_prog = expand('~/.pyenv/versions/neovim2/bin/python')
 let g:python3_host_prog = expand('~/.pyenv/versions/neovim3/bin/python')
