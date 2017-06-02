@@ -65,7 +65,8 @@ autocmd BufNewFile,BufRead,BufFilePost *.cls set filetype=tex
 autocmd BufNewFile,BufRead,BufFilePost *.css_t set filetype=css
 autocmd BufNewFile,BufRead,BufFilePost *.enaml set filetype=enaml
 autocmd BufNewFile,BufRead,BufFilePost *.json set filetype=javascript
-autocmd FileType html setlocal shiftwidth=2 tabstop=2
+autocmd FileType html setlocal shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType htmldjango setlocal shiftwidth=2 tabstop=2 softtabstop=2
 
 autocmd BufLeave,FocusLost silent! wall " save when focus is lost
 " Since I'm auto-saving (above), don't save backup and swap files.
@@ -182,7 +183,7 @@ endfunction
 command! EditSyntax call s:EditVimConfig('syntax')
 command! EditPlugin call s:EditVimConfig('ftplugin')
 command! EditSnippet call s:EditVimConfig('snippets', '.snippets')
-command! EditColors edit ~/.vim/colors/zenburn.vim
+command! EditColors edit ~/.config/nvim/colors/monokai.vim
 
 nnoremap <leader>ep :echo expand('%:p')<CR>
 
@@ -293,6 +294,10 @@ let g:UltiSnipsJumpForwardTrigger  = "<c-j>"
 let g:UltiSnipsJumpBackwardTrigger = "<c-p>"
 let g:UltiSnipsListSnippets        = "<c-k>" "List possible snippets based on current file
 
+" vim-surround
+let g:surround_{char2nr('w')} = "{{\r}}"
+let g:surround_{char2nr('%')} = "{%\r%}"
+
 let g:NERDCustomDelimiters = {
     \ 'python': { 'left': '# ' },
     \ 'enaml': { 'left': '# ' },
@@ -306,11 +311,12 @@ let g:syntastic_python_flake8_config_file='.flake8'
 " Django centric commands
 
 let g:last_relative_dir = ''
-command! Djmodel call s:DjRelatedFile("models.py")
-command! Djviews call s:DjRelatedFile("views.py")
-command! Djurls call s:DjRelatedFile("urls.py")
 command! Djadmin call s:DjRelatedFile("admin.py")
+command! Djforms call s:DjRelatedFile("forms.py")
+command! Djmodels call s:DjRelatedFile("models.py")
 command! Djtests call s:DjRelatedFile("tests.py")
+command! Djurls call s:DjRelatedFile("urls.py")
+command! Djviews call s:DjRelatedFile("views.py")
 command! Djmigrations call s:DjRelatedFile("migrations/")
 command! Djtemplates call s:DjRelatedFile("templates/")
 
