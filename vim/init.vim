@@ -137,9 +137,6 @@ nnoremap <leader>w :bp\|bd #<CR>
 " wrap both vimdiff windows
 nmap <silent> <leader>dw <C-w>= :set wrap<CR> <C-w><C-w> :set wrap<CR>
 
-" jj in insert mode will change to normal mode
-inoremap jj <ESC>
-
 " Shortcut for vim-ipython's completefunc mapping
 imap <C-c> <C-x><C-u>
 
