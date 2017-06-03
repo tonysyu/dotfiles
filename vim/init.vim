@@ -131,23 +131,10 @@ nmap <silent> <leader>eb :e ~/.config/nvim/init/bundles.vim<CR>
 nnoremap <leader>ss :%s/
 vnoremap <leader>ss :s/
 
-" Close buffer window, preserving split if it exists
-nnoremap <leader>w :bp\|bd #<CR>
-
-" wrap both vimdiff windows
-nmap <silent> <leader>dw <C-w>= :set wrap<CR> <C-w><C-w> :set wrap<CR>
-
-" Shortcut for vim-ipython's completefunc mapping
-imap <C-c> <C-x><C-u>
-
 " reflow paragraph (i.e. remove end of lines)
 nnoremap Q gqap
 " reflow selected text
 vnoremap Q gq
-
-" Reparse syntax
-noremap <leader>sy <Esc>:syntax sync fromstart<CR>
-inoremap <leader>sy <C-o>:syntax sync fromstart<CR>
 
 command! CdHere :cd %:p:h
 
@@ -266,12 +253,6 @@ nnoremap <leader>gg :Grepper -tool git<cr>
 
 let Tlist_Ctags_Cmd = '/usr/local/bin/ctags'
 
-" Shortcuts for fugitive.vim plugin
-nnoremap <Leader>gs :Gstatus<cr>
-nnoremap <Leader>gc :Gcommit<cr>
-nnoremap <Leader>gd :Gdiff<cr>
-"switch back to current file and closes fugitive buffer
-nnoremap <Leader>gf :diffoff!<cr><c-w>h:bd<cr>
 " Use vertical splits for Gdiff (this affects all diffs, not just fugitive's)
 set diffopt+=vertical
 
