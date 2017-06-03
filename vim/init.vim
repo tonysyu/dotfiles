@@ -205,6 +205,17 @@ endif
 " Plugin Customization
 " ====================
 
+" incsearch.vim settings
+" https://vi.stackexchange.com/a/8742
+set hlsearch
+let g:incsearch#auto_nohlsearch = 1
+map n  <Plug>(incsearch-nohl-n)
+map N  <Plug>(incsearch-nohl-N)
+map *  <Plug>(incsearch-nohl-*)
+map #  <Plug>(incsearch-nohl-#)
+map g* <Plug>(incsearch-nohl-g*)
+map g# <Plug>(incsearch-nohl-g#)
+
 " vim-indent-guides Settings
 
 let g:indent_guides_enable_on_vim_startup = 1

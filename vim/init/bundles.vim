@@ -14,6 +14,7 @@ NeoBundle 'tpope/vim-eunuch'
 NeoBundle 'itchyny/lightline.vim'
 NeoBundle 'nathanaelkane/vim-indent-guides'
 NeoBundle 'Shougo/junkfile.vim'
+NeoBundle 'haya14busa/incsearch.vim'
 
 " General editing plugins:
 NeoBundle 'scrooloose/nerdcommenter'
