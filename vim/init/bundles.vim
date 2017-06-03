@@ -39,6 +39,7 @@ NeoBundle 'jeetsukumaran/vim-filebeagle'
 " Git plugins:
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'airblade/vim-gitgutter'
+NeoBundle 'junegunn/gv.vim'
 
 " Language-specific plugins
 NeoBundle 'tpope/vim-markdown'
