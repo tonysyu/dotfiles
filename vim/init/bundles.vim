@@ -17,8 +17,8 @@ NeoBundle 'Shougo/junkfile.vim'
 NeoBundle 'haya14busa/incsearch.vim'
 
 " General editing plugins:
-NeoBundle 'scrooloose/nerdcommenter'
 NeoBundle 'the-isz/MinYankRing.vim'
+NeoBundle 'tpope/vim-commentary'
 NeoBundle 'tpope/vim-repeat'
 NeoBundle 'SirVer/ultisnips'
 NeoBundle 'honza/vim-snippets'

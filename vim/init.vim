@@ -267,9 +267,6 @@ nnoremap <leader>gw :Grepper -cword<cr>
 nnoremap <leader>gb :Grepper-buffers<cr>
 nnoremap <leader>gg :Grepper -tool git<cr>
 
-" Default VCS prefix is ',c' which conflicts with NERD commenter
-let VCSCommandMapPrefix = ',v'
-
 let Tlist_Ctags_Cmd = '/usr/local/bin/ctags'
 
 " Shortcuts for fugitive.vim plugin
@@ -309,10 +306,6 @@ let g:UltiSnipsListSnippets        = "<c-k>" "List possible snippets based on cu
 let g:surround_{char2nr('w')} = "{{\r}}"
 let g:surround_{char2nr('%')} = "{%\r%}"
 
-let g:NERDCustomDelimiters = {
-    \ 'python': { 'left': '# ' },
-    \ 'enaml': { 'left': '# ' },
-\ }
 " syntax/python.vim gets run before ftplugin/python.vim, so we must set this
 " highlight option in vimrc instead of ftplugin.
 let g:python_highlight_all = 1
