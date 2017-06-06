@@ -190,6 +190,10 @@ endif
 " Plugin Customization
 " ====================
 
+let g:ale_linters = {
+\   'javascript': ['eslint'],
+\}
+
 " incsearch.vim settings
 " https://vi.stackexchange.com/a/8742
 set hlsearch
