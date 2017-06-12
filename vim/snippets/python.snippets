@@ -212,7 +212,7 @@ snippet log
 
 	log = logging.getLogger(__name__)
 snippet _LOG
-	_LOG = logging.getLogger('application')
+	_LOG = logging.getLogger(__name__)
 snippet setup.py
 	from os.path import join
 	from setuptools import setup, find_packages
