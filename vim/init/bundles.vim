@@ -48,6 +48,7 @@ NeoBundle 'mattn/emmet-vim'
 NeoBundle 'mxw/vim-jsx'
 NeoBundle 'alvan/vim-closetag'
 NeoBundle 'vim-scripts/confluencewiki.vim'
+NeoBundle 'tweekmonster/django-plus.vim'
 
 call neobundle#end()
 
