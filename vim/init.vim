@@ -205,6 +205,15 @@ map #  <Plug>(incsearch-nohl-#)
 map g* <Plug>(incsearch-nohl-g*)
 map g# <Plug>(incsearch-nohl-g#)
 
+" vim-schlepp
+vmap <up> <Plug>SchleppUp
+vmap <down> <Plug>SchleppDown
+vmap <left> <Plug>SchleppLeft
+vmap <right> <Plug>SchleppRight
+vmap D <Plug>SchleppDup
+let g:Schlepp#allowSquishingLines = 1
+let g:Schlepp#allowSquishingBlocks = 1
+
 " vim-indent-guides Settings
 
 let g:indent_guides_enable_on_vim_startup = 1

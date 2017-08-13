@@ -25,6 +25,7 @@ NeoBundle 'honza/vim-snippets'
 NeoBundle 'bronson/vim-trailing-whitespace'
 NeoBundle 'jiangmiao/auto-pairs'
 NeoBundle 'terryma/vim-multiple-cursors'
+NeoBundle 'zirrostig/vim-schlepp'
 
 " Search and navigation plugins:
 NeoBundle 'tpope/vim-surround'
