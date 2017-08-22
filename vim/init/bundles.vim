@@ -50,6 +50,7 @@ NeoBundle 'mxw/vim-jsx'
 NeoBundle 'alvan/vim-closetag'
 NeoBundle 'vim-scripts/confluencewiki.vim'
 NeoBundle 'tweekmonster/django-plus.vim'
+NeoBundle 'Vimjas/vim-python-pep8-indent'
 
 call neobundle#end()
 
