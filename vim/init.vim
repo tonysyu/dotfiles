@@ -109,17 +109,6 @@ nnoremap <C-l> <C-w>l
 " Toggle between two, most-recent buffers
 nnoremap <leader><leader> <c-^>
 
-" Yank and paste from clipboard
-nnoremap <leader>y "*y
-vnoremap <leader>y "*y
-nnoremap <leader>Y "*Y
-nnoremap <leader>p "*p
-vnoremap <leader>p "*p
-nnoremap <leader>P "*P
-nnoremap <leader>d "*d
-vnoremap <leader>d "*d
-nnoremap <leader>D "*D
-
 " Commands
 " ========
 " Quickly edit/reload the vimrc file
