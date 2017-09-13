@@ -17,6 +17,7 @@ NeoBundle 'Shougo/junkfile.vim'
 NeoBundle 'haya14busa/incsearch.vim'
 
 " General editing plugins:
+NeoBundle 'christoomey/vim-system-copy'
 NeoBundle 'the-isz/MinYankRing.vim'
 NeoBundle 'tpope/vim-commentary'
 NeoBundle 'tpope/vim-repeat'
@@ -25,10 +26,14 @@ NeoBundle 'honza/vim-snippets'
 NeoBundle 'bronson/vim-trailing-whitespace'
 NeoBundle 'jiangmiao/auto-pairs'
 NeoBundle 'terryma/vim-multiple-cursors'
+NeoBundle 'vim-scripts/ReplaceWithRegister'
 NeoBundle 'zirrostig/vim-schlepp'
 
-" Search and navigation plugins:
+" Motion and text-object plugins:
+NeoBundle 'michaeljsmith/vim-indent-object'
 NeoBundle 'tpope/vim-surround'
+
+" Search and navigation plugins:
 NeoBundle 'bronson/vim-visual-star-search'
 NeoBundle 'kien/ctrlp.vim'
 NeoBundle 'tmhedberg/matchit'
