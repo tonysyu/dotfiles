@@ -7,28 +7,28 @@ Installation
 ------------
 
 - Clone repo:
-
+    ```
     git clone git@github.com:tonysyu/dotfiles.git
-
+    ```
     - or, if you're not me:
-
+        ```
         git clone https://github.com/tonysyu/dotfiles.git
-
+        ```
 - Link bash profile:
     - Add `source ~/dotfiles/profile` to your `.profile` (or `.bash_profile`).
 - Link `inputrc`:
-
+    ```
     cd ~
     ln -s ~/dotfiles/inputrc .inputrc
-
+    ```
 - Link vim files
-
+    ```
     mkdir ~/.config
     cd ~/.config
     ln -s ~/dotfiles/vim nvim
-
+    ```
 - Install python for neovim
-
+    ```
     pyenv install 2.7.13
     pyenv install 3.6.2
 
@@ -42,10 +42,12 @@ Installation
     pyenv activate neovim3
     pip install neovim
     pip install flake8
-
+    ```
 - Install vim bundles
+    ```
     curl https://raw.githubusercontent.com/Shougo/neobundle.vim/master/bin/install.sh > install.sh
     sh install.sh
     rm install.sh
     cd ~/dotfiles/vim/bundle/YouCompleteMe
     ./install.py
+    ```
