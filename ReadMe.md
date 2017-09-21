@@ -16,10 +16,11 @@ Installation
         ```
 - Link bash profile:
     - Add `source ~/dotfiles/profile` to your `.profile` (or `.bash_profile`).
-- Link `inputrc`:
+- Link `inputrc` and `editrc`:
     ```
     cd ~
     ln -s ~/dotfiles/inputrc .inputrc
+    ln -s ~/dotfiles/editrc .editrc
     ```
 - Link vim files
     ```

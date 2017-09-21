@@ -96,6 +96,12 @@ vnoremap k gk
 vnoremap $ g$
 vnoremap ^ g^
 
+" vim line-object from https://vi.stackexchange.com/a/6102/12878
+xnoremap il g_o0
+onoremap il :normal vil<CR>
+xnoremap al $o0
+onoremap al :normal val<CR>
+
 " Quick navigation up and down
 nnoremap <leader>j 10j
 nnoremap <leader>k 10k
