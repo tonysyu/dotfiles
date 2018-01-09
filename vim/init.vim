@@ -66,8 +66,8 @@ autocmd BufNewFile,BufRead,BufFilePost *.css_t set filetype=css
 autocmd BufNewFile,BufRead,BufFilePost *.enaml set filetype=enaml
 autocmd BufNewFile,BufRead,BufFilePost *.json set filetype=javascript
 autocmd BufNewFile,BufRead,BufFilePost *.wiki set filetype=confluencewiki
-autocmd FileType html setlocal shiftwidth=2 tabstop=2 softtabstop=2
-autocmd FileType htmldjango setlocal shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType html setlocal shiftwidth=4 tabstop=4 softtabstop=4
+autocmd FileType htmldjango setlocal shiftwidth=4 tabstop=4 softtabstop=4
 
 autocmd BufLeave,FocusLost silent! wall " save when focus is lost
 " Since I'm auto-saving (above), don't save backup and swap files.
