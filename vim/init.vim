@@ -334,3 +334,8 @@ function! SetDjAppDir()
 endfun
 
 autocmd BufEnter *.py call SetDjAppDir()
+
+" Allow project-specific `.nvimrc` files, but disable unsafe commands
+" See https://andrew.stwrt.ca/posts/project-specific-vimrc/
+set exrc
+set secure
