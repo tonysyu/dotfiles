@@ -13,7 +13,7 @@
     editor = nvim
 	pager = diff-so-fancy | less --tabs=4 -RFX
 [push]
-    default = simple
+	default = current
 [gui]
     fontui = -family Inconsolata -size 12 -weight normal -slant roman -underline 0 -overstrike 0
     fontdiff = -family Inconsolata -size 12 -weight normal -slant roman -underline 0 -overstrike 0
