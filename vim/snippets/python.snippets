@@ -81,6 +81,8 @@ snippet watch
 snippet deprecate
 	from yutils import deprecate
 	@deprecate('${1:function to use instead}')
+snippet pylint
+	# pylint: disable=${1}
 snippet prof
 	from yutils.testing import profile
 	profile('${1:code to profile}')
