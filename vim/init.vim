@@ -238,7 +238,7 @@ let g:ctrlp_map = '<leader>t'
 let g:ctrlp_match_window_bottom = 0
 let g:ctrlp_match_window_reversed = 0
 let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/]\.(bzr|git|hg|svn)$|node_modules$',
+  \ 'dir':  '\v[\/]\.(bzr|git|hg|svn)$|data$|htmlcov$|node_modules$',
   \ 'file': '\v\~$|\.(o|swp|pyc|wav|mp3|ogg|blend)$',
   \ }
 let g:ctrlp_working_path_mode = 0
