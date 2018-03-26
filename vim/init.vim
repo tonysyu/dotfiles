@@ -185,6 +185,9 @@ endif
 " Plugin Customization
 " ====================
 
+" Project-level exuberant tags
+let g:easytags_dynamic_files = 1
+
 let g:ale_linters = {
 \   'javascript': ['eslint'],
 \}
@@ -259,8 +262,6 @@ nnoremap <leader>ga :Grepper<cr>
 nnoremap <leader>gw :Grepper -cword<cr>
 nnoremap <leader>gb :Grepper-buffers<cr>
 nnoremap <leader>gg :Grepper -tool git<cr>
-
-let Tlist_Ctags_Cmd = '/usr/local/bin/ctags'
 
 " Use vertical splits for Gdiff (this affects all diffs, not just fugitive's)
 set diffopt+=vertical

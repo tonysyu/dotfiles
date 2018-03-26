@@ -41,6 +41,8 @@ NeoBundle 'mhinz/vim-grepper'
 NeoBundle 'padde/jump.vim'
 NeoBundle 'ap/vim-buftabline'
 NeoBundle 'jeetsukumaran/vim-filebeagle'
+NeoBundle 'xolox/vim-misc'
+NeoBundle 'xolox/vim-easytags'
 
 " Git plugins:
 NeoBundle 'tpope/vim-fugitive'
