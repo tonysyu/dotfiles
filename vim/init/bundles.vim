@@ -19,6 +19,7 @@ NeoBundle 'haya14busa/incsearch.vim'
 " General editing plugins:
 NeoBundle 'christoomey/vim-system-copy'
 NeoBundle 'the-isz/MinYankRing.vim'
+NeoBundle 'tpope/vim-abolish'
 NeoBundle 'tpope/vim-commentary'
 NeoBundle 'tpope/vim-repeat'
 NeoBundle 'SirVer/ultisnips'
