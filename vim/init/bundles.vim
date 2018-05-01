@@ -17,6 +17,7 @@ NeoBundle 'Shougo/junkfile.vim'
 NeoBundle 'haya14busa/incsearch.vim'
 
 " General editing plugins:
+NeoBundle 'AndrewRadev/splitjoin.vim'
 NeoBundle 'christoomey/vim-system-copy'
 NeoBundle 'the-isz/MinYankRing.vim'
 NeoBundle 'tpope/vim-abolish'
