@@ -5,6 +5,7 @@
 --ignore-file=match:\.*.pack.js$
 --ignore-file=match:\.*.json.\d{4}-\d{2}-\d{2}_\d{2}
 --ignore-file=match:^coverage.xml$
+--ignore-dir=.eggs
 --ignore-dir=build
 --ignore-dir=htmlcov
 --ignore-dir=logs_local
