@@ -8,8 +8,13 @@ Prerequisites
 
 ### Optional
 
-The vim configuration here uses [ripgrep](https://github.com/BurntSushi/ripgrep) for grep-like search. To install on OSX, run
+The vim configuration here uses following libraries:
+- [fd](https://github.com/sharkdp/fd) to replace the `find` command
+- [ripgrep](https://github.com/BurntSushi/ripgrep) for grep-like search
+- [fzf](https://github.com/junegunn/fzf#usage) for fuzzy-file-finding (like [command-t](https://github.com/wincent/command-t), [ctrlp](https://github.com/kien/ctrlp.vim))
 
+    $ brew install fd
+    $ brew install fzf
     $ brew install ripgrep
 
 Installation

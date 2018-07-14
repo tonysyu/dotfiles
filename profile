@@ -27,15 +27,6 @@ else
 fi
 
 alias vim='nvim'
-alias f='find . -iname'
-function findwildcard() {
-    find . -iname "*$1*"
-}
-alias fw='findwildcard'
-
-function findext() {
-    find . -regextype posix-egrep -regex ".*\.($1)$"
-}
 
 # ----------------------
 # Python-specific tweaks

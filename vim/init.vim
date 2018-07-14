@@ -183,6 +183,7 @@ endif
 " ====================
 
 " Project-level exuberant tags
+" ......................................................................
 let g:easytags_async=1
 let g:easytags_auto_highlight=0
 let g:easytags_dynamic_files = 1
@@ -192,6 +193,7 @@ let g:ale_linters = {
 \}
 
 " incsearch.vim settings
+" ......................................................................
 " https://vi.stackexchange.com/a/8742
 set hlsearch
 let g:incsearch#auto_nohlsearch = 1
@@ -212,6 +214,7 @@ let g:Schlepp#allowSquishingLines = 1
 let g:Schlepp#allowSquishingBlocks = 1
 
 " vim-indent-guides Settings
+" ......................................................................
 
 let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_auto_colors = 0
@@ -226,17 +229,20 @@ set wildignore+=*.o,*.so,*.bmp,*.gif,*.tif,*.jpg,*.png,*.pdf,*.mat,*.npz,*.aux,*
 set wildignore+=shadowhist,kernel*.json,__enamlcache__,build
 
 " vim-jsx
+" ......................................................................
 let g:jsx_ext_required = 0  " Use vim-jsx for all .js files
 
 " vim-closetag
+" ......................................................................
 let g:closetag_filenames = "*.html,*.js"
 
 " Syntastic
+" ......................................................................
 let g:syntastic_javascript_checkers = ['jsxhint']
 let g:syntastic_javascript_jsxhint_exec = 'jsx-jshint-wrapper'
 
 " Ctrl-P
-let g:ctrlp_map = '<leader>t'
+" ......................................................................
 let g:ctrlp_match_window_bottom = 0
 let g:ctrlp_match_window_reversed = 0
 let g:ctrlp_custom_ignore = {
@@ -246,11 +252,30 @@ let g:ctrlp_custom_ignore = {
 let g:ctrlp_working_path_mode = 0
 let g:ctrlp_dotfiles = 0
 let g:ctrlp_switch_buffer = 0
-nnoremap <leader>b :CtrlPBuffer<cr>
 nnoremap <leader>cr :CtrlPMRUFiles<cr>
 nnoremap <leader>ct :CtrlPTag<cr>
 
+" vim-fzf
+" ......................................................................
+nnoremap <leader>t :FZF<cr>
+nnoremap <leader>b :Buffers<cr>
+
+" Mapping selecting mappings
+nmap <leader><tab> <plug>(fzf-maps-n)
+xmap <leader><tab> <plug>(fzf-maps-x)
+omap <leader><tab> <plug>(fzf-maps-o)
+
+" Insert mode completion
+imap <c-x><c-k> <plug>(fzf-complete-word)
+imap <c-x><c-f> <plug>(fzf-complete-path)
+imap <c-x><c-j> <plug>(fzf-complete-file-ag)
+imap <c-x><c-l> <plug>(fzf-complete-line)
+
+" Advanced customization using autoload functions
+inoremap <expr> <c-x><c-k> fzf#vim#complete#word({'left': '15%'})
+
 " vim-buftabline
+" ......................................................................
 nnoremap <D-M-k> :bn<CR>
 nnoremap <D-M-j> :bp<CR>
 let g:buftabline_numbers = 1
@@ -260,6 +285,7 @@ let g:buftabline_separators = 1
 set diffopt+=vertical
 
 " YouCompleteMe
+" ......................................................................
 let g:ycm_collect_identifiers_from_tags_files = 1 " Let YCM read tags from Ctags file
 let g:ycm_use_ultisnips_completer = 1 " Default 1, just ensure
 let g:ycm_seed_identifiers_with_syntax = 1 " Completion for programming language's keyword
@@ -278,15 +304,19 @@ function! Multiple_cursors_after()
 endfunction
 
 " UltiSnips
+" ......................................................................
 let g:UltiSnipsExpandTrigger       = "<c-j>"
 let g:UltiSnipsJumpForwardTrigger  = "<c-j>"
 let g:UltiSnipsJumpBackwardTrigger = "<c-p>"
 let g:UltiSnipsListSnippets        = "<c-k>" "List possible snippets based on current file
 
 " vim-surround
+" ......................................................................
 let g:surround_{char2nr('w')} = "{{\r}}"
 let g:surround_{char2nr('%')} = "{%\r%}"
 
+" Python
+" ......................................................................
 " syntax/python.vim gets run before ftplugin/python.vim, so we must set this
 " highlight option in vimrc instead of ftplugin.
 let g:python_highlight_all = 1
@@ -294,6 +324,7 @@ let g:python_highlight_all = 1
 let g:syntastic_python_flake8_config_file='.flake8'
 
 " Django centric commands
+" ......................................................................
 
 let g:last_relative_dir = ''
 command! Djadmin call s:DjRelatedFile("admin.py")
