@@ -52,13 +52,14 @@ NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'junegunn/gv.vim'
 
 " Language-specific plugins
-NeoBundle 'tpope/vim-markdown'
-NeoBundle 'tpope/vim-ragtag'
+NeoBundle 'alvan/vim-closetag'
 NeoBundle 'mattn/emmet-vim'
 NeoBundle 'mxw/vim-jsx'
-NeoBundle 'alvan/vim-closetag'
-NeoBundle 'vim-scripts/confluencewiki.vim'
+NeoBundle 'posva/vim-vue'
+NeoBundle 'tpope/vim-markdown'
+NeoBundle 'tpope/vim-ragtag'
 NeoBundle 'tweekmonster/django-plus.vim'
+NeoBundle 'vim-scripts/confluencewiki.vim'
 NeoBundle 'Vimjas/vim-python-pep8-indent'
 
 call neobundle#end()
