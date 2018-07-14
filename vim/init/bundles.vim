@@ -36,13 +36,13 @@ NeoBundle 'michaeljsmith/vim-indent-object'
 NeoBundle 'tpope/vim-surround'
 
 " Search and navigation plugins:
-NeoBundle 'bronson/vim-visual-star-search'
-NeoBundle 'kien/ctrlp.vim'
-NeoBundle 'tmhedberg/matchit'
-NeoBundle 'mhinz/vim-grepper'
-NeoBundle 'padde/jump.vim'
 NeoBundle 'ap/vim-buftabline'
+NeoBundle 'bronson/vim-visual-star-search'
 NeoBundle 'jeetsukumaran/vim-filebeagle'
+NeoBundle 'jremmen/vim-ripgrep'
+NeoBundle 'kien/ctrlp.vim'
+NeoBundle 'padde/jump.vim'
+NeoBundle 'tmhedberg/matchit'
 NeoBundle 'xolox/vim-misc'
 NeoBundle 'xolox/vim-easytags'
 

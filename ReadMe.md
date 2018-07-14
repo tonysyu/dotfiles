@@ -3,6 +3,15 @@ Configuration files *nix
 
 I use Mac Os, so your mileage might vary on Linux systems.
 
+Prerequisites
+-------------
+
+### Optional
+
+The vim configuration here uses [ripgrep](https://github.com/BurntSushi/ripgrep) for grep-like search. To install on OSX, run
+
+    $ brew install ripgrep
+
 Installation
 ------------
 

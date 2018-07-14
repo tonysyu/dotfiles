@@ -256,12 +256,6 @@ nnoremap <D-M-j> :bp<CR>
 let g:buftabline_numbers = 1
 let g:buftabline_separators = 1
 
-" vim-grepper
-nnoremap <leader>ga :Grepper<cr>
-nnoremap <leader>gw :Grepper -cword<cr>
-nnoremap <leader>gb :Grepper-buffers<cr>
-nnoremap <leader>gg :Grepper -tool git<cr>
-
 " Use vertical splits for Gdiff (this affects all diffs, not just fugitive's)
 set diffopt+=vertical
 
