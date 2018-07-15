@@ -257,7 +257,7 @@ nnoremap <leader>ct :CtrlPTag<cr>
 
 " vim-fzf
 " ......................................................................
-nnoremap <leader>t :FZF<cr>
+nnoremap <leader>t :GitFiles<cr>
 nnoremap <leader>b :Buffers<cr>
 
 " Mapping selecting mappings
