@@ -49,9 +49,10 @@ NeoBundle 'xolox/vim-misc'
 NeoBundle 'xolox/vim-easytags'
 
 " Git plugins:
-NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'junegunn/gv.vim'
+NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'tpope/vim-unimpaired'
 
 " Language-specific plugins
 NeoBundle 'alvan/vim-closetag'
