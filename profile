@@ -27,6 +27,7 @@ else
 fi
 
 alias vim='nvim'
+alias vimdiff='nvim -d'
 
 # ----------------------
 # Python-specific tweaks
