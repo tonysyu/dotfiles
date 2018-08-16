@@ -77,9 +77,11 @@ function parse_git_branch {
 
 RED='\[\033[1;31m\]'
 GREEN='\[\033[0;32m\]'
+LIME='\[\033[1;32m\]'
 YELLOW='\[\033[0;33m\]'
+CYAN='\[\033[1;34m\]'
 NO_COLOR='\[\033[0m\]'
-export PS1='\n\u:\w'$YELLOW'$(parse_git_branch)\n'$RED'$ '$NO_COLOR
+export PS1='\n'$LIME'\u'$NO_COLOR':'$CYAN'\w'$YELLOW'$(parse_git_branch)\n'$RED'$ '$NO_COLOR
 export _OLD_VIRTUAL_PS1=$PS1
 export CONDA_OLD_PS1=$PS1
 
