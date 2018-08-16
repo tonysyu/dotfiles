@@ -26,8 +26,10 @@ else
     alias ls='ls -hFG'
 fi
 
-alias vim='nvim'
-alias vimdiff='nvim -d'
+if hash nvim 2>/dev/null; then
+    alias vim='nvim'
+    alias vimdiff='nvim -d'
+fi
 
 # ----------------------
 # Python-specific tweaks
