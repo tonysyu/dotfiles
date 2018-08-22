@@ -45,25 +45,27 @@ Installation
     ```
 - Install python for neovim
     ```
-    pyenv install 2.7.13
-    pyenv install 3.6.2
+    pyenv install 2.7.15
+    pyenv install 3.6.6
 
-    pyenv virtualenv 2.7.13 neovim2
-    pyenv virtualenv 3.6.2 neovim3
+    pyenv virtualenv 2.7.15 neovim2
+    pyenv virtualenv 3.6.6 neovim3
 
     pyenv activate neovim2
-    pip install neovim
-    pip install flake8
+    pip install flake8 neovim pylint==1.9.*
 
     pyenv activate neovim3
-    pip install neovim
-    pip install flake8
+    pip install flake8 neovim pylint
     ```
 - Install vim bundles
     ```
     curl https://raw.githubusercontent.com/Shougo/neobundle.vim/master/bin/install.sh > install.sh
     sh install.sh
     rm install.sh
+    ```
+- Complete installation of bundles by opening `nvim` and accepting update request from NeoBundle at
+  startup. Then navigate to `YouCompleteMe` bundle and build:
+    ```
     cd ~/dotfiles/vim/bundle/YouCompleteMe
     ./install.py
     ```
