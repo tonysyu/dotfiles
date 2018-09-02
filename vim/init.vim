@@ -56,17 +56,23 @@ set gdefault                    " make substitutions global by default
 "autocmd BufEnter * if bufname("") !~ "^\[A-Za-z0-9\]*://" | lcd %:p:h | endif
 "
 " Filetype mappings
-autocmd BufNewFile,BufRead,BufFilePost *.txt set filetype=rst
-autocmd BufNewFile,BufRead,BufFilePost *.tex set filetype=tex
-autocmd BufNewFile,BufRead,BufFilePost *.cls set filetype=tex
-autocmd BufNewFile,BufRead,BufFilePost *.css_t set filetype=css
-autocmd BufNewFile,BufRead,BufFilePost *.enaml set filetype=enaml
-autocmd BufNewFile,BufRead,BufFilePost *.json set filetype=javascript
-autocmd BufNewFile,BufRead,BufFilePost *.wiki set filetype=confluencewiki
-autocmd FileType html setlocal shiftwidth=4 tabstop=4 softtabstop=4
-autocmd FileType htmldjango setlocal shiftwidth=4 tabstop=4 softtabstop=4
+augroup filetype_mappings
+    autocmd!
+    autocmd BufNewFile,BufRead,BufFilePost *.txt set filetype=rst
+    autocmd BufNewFile,BufRead,BufFilePost *.tex set filetype=tex
+    autocmd BufNewFile,BufRead,BufFilePost *.cls set filetype=tex
+    autocmd BufNewFile,BufRead,BufFilePost *.css_t set filetype=css
+    autocmd BufNewFile,BufRead,BufFilePost *.enaml set filetype=enaml
+    autocmd BufNewFile,BufRead,BufFilePost *.json set filetype=javascript
+    autocmd BufNewFile,BufRead,BufFilePost *.wiki set filetype=confluencewiki
+    autocmd FileType html setlocal shiftwidth=4 tabstop=4 softtabstop=4
+    autocmd FileType htmldjango setlocal shiftwidth=4 tabstop=4 softtabstop=4
+augroup END
 
-autocmd BufLeave,FocusLost silent! wall " save when focus is lost
+augroup autosave
+    autocmd!
+    autocmd BufLeave,FocusLost silent! wall " save when focus is lost
+augroup END
 " Since I'm auto-saving (above), don't save backup and swap files.
 set nobackup
 set nowritebackup
@@ -220,8 +226,11 @@ let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_auto_colors = 0
 let g:indent_guides_guide_size = 4
 
-autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=#202020 ctermbg=234
-autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#303030 ctermbg=236
+augroup indent_guides_config
+    autocmd!
+    autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=#202020 ctermbg=234
+    autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#303030 ctermbg=236
+augroup END
 
 " Ignore files for Command-T
 set wildignore+=*.o,*.so,*.bmp,*.gif,*.tif,*.jpg,*.png,*.pdf,*.mat,*.npz,*.aux,*.bbl,*.blg,*.log,*.key,*.pyc,*.fdb_latexmk,*.egg-info,*.png.map,*.egg
@@ -361,7 +370,10 @@ function! SetDjAppDir()
     endif
 endfun
 
-autocmd BufEnter *.py call SetDjAppDir()
+augroup django_config
+    autocmd!
+    autocmd BufEnter *.py call SetDjAppDir()
+augroup END
 
 " Allow project-specific `.nvimrc` files, but disable unsafe commands
 " See https://andrew.stwrt.ca/posts/project-specific-vimrc/
