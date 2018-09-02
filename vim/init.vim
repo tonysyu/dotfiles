@@ -241,20 +241,6 @@ let g:closetag_filenames = "*.html,*.js"
 let g:syntastic_javascript_checkers = ['jsxhint']
 let g:syntastic_javascript_jsxhint_exec = 'jsx-jshint-wrapper'
 
-" Ctrl-P
-" ......................................................................
-let g:ctrlp_match_window_bottom = 0
-let g:ctrlp_match_window_reversed = 0
-let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/]\.(bzr|git|hg|svn)$|data$|htmlcov$|node_modules$',
-  \ 'file': '\v\~$|\.(o|swp|pyc|wav|mp3|ogg|blend)$',
-  \ }
-let g:ctrlp_working_path_mode = 0
-let g:ctrlp_dotfiles = 0
-let g:ctrlp_switch_buffer = 0
-nnoremap <leader>cr :CtrlPMRUFiles<cr>
-nnoremap <leader>ct :CtrlPTag<cr>
-
 " vim-fzf
 " ......................................................................
 nnoremap <leader>t :GitFiles<cr>
