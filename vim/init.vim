@@ -269,10 +269,23 @@ imap <c-x><c-l> <plug>(fzf-complete-line)
 " Advanced customization using autoload functions
 inoremap <expr> <c-x><c-k> fzf#vim#complete#word({'left': '15%'})
 
+" Case-insensitive ripgrep search
+command! -bang -nargs=* Rgi
+    \ call fzf#vim#grep("rg --column --line-number --no-heading --color=always --ignore-case ".shellescape(<q-args>),
+    \                   1, <bang>0)
+
 " Ripgrep search for word-under cursor
-nnoremap <silent> <leader>rr :Rg <c-r><c-w><cr>
+nnoremap <silent> <leader>// :Rg <c-r><c-w><cr>
+" Ripgrep search for visual selection
+vnoremap <silent> <leader>// y:Rg <c-r>"<cr>
 " Ripgrep search for word-under cursor, surrounded by word boundaries
-nnoremap <silent> <leader>rw :Rg \b<c-r><c-w>\b<cr>
+nnoremap <silent> <leader>/w :Rg \b<c-r><c-w>\b<cr>
+" Ripgrep search for word-under cursor, surrounded by word boundaries
+vnoremap <silent> <leader>/w y:Rg \b<c-r>"\b<cr>
+" Ripgrep search for word-under cursor
+nnoremap <silent> <leader>/i :Rgi <c-r><c-w><cr>
+" Ripgrep search for visual selection
+vnoremap <silent> <leader>/i y:Rgi <c-r>"<cr>
 
 " lightline.vim
 " ......................................................................
