@@ -260,6 +260,11 @@ imap <c-x><c-l> <plug>(fzf-complete-line)
 " Advanced customization using autoload functions
 inoremap <expr> <c-x><c-k> fzf#vim#complete#word({'left': '15%'})
 
+" Ripgrep search for word-under cursor
+nnoremap <silent> <leader>rr :Rg <c-r><c-w><cr>
+" Ripgrep search for word-under cursor, surrounded by word boundaries
+nnoremap <silent> <leader>rw :Rg \b<c-r><c-w>\b<cr>
+
 " lightline.vim
 " ......................................................................
 let g:lightline = {
