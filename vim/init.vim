@@ -335,6 +335,11 @@ let g:python_highlight_all = 1
 
 let g:syntastic_python_flake8_config_file='.flake8'
 
+" SimpylFold
+" ......................................................................
+
+let g:SimpylFold_docstring_preview = 1
+
 " Django centric commands
 " ......................................................................
 
