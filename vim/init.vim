@@ -52,9 +52,6 @@ set tags+=.tags;~              " The trailing ';~' tells vim to search parent di
 " ====================
 set gdefault                    " make substitutions global by default
 
-" Change to directory of active buffer
-"autocmd BufEnter * if bufname("") !~ "^\[A-Za-z0-9\]*://" | lcd %:p:h | endif
-"
 " Filetype mappings
 augroup filetype_mappings
     autocmd!
@@ -83,12 +80,6 @@ set hidden
 " Confirm before quitting if a modified buffer is hidden
 set confirm
 
-" Disable arrow keys
-nnoremap <up> <nop>
-nnoremap <down> <nop>
-nnoremap <left> <nop>
-nnoremap <right> <nop>
-
 " Change j and k to move by screen line instead of file line (wrapped lines)
 nnoremap j gj
 nnoremap k gk
@@ -101,13 +92,9 @@ vnoremap ^ g^
 
 " vim line-object from https://vi.stackexchange.com/a/6102/12878
 xnoremap il g_o0
-onoremap il :normal vil<CR>
+onoremap il :normal! vil<CR>
 xnoremap al $o0
-onoremap al :normal val<CR>
-
-" Quick navigation up and down
-nnoremap <leader>j 10j
-nnoremap <leader>k 10k
+onoremap al :normal! val<CR>
 
 " Navigate buffers
 nnoremap <C-h> <C-w>h
@@ -118,13 +105,11 @@ nnoremap <C-l> <C-w>l
 " Toggle between two, most-recent buffers
 nnoremap <leader><leader> <c-^>
 
-" Commands
-" ========
 " Quickly edit/reload the vimrc file
-nmap <silent> <leader>ev :e $MYVIMRC<CR>
-nmap <silent> <leader>sv :so $MYVIMRC<CR>
+nnoremap <silent> <leader>ev :e $MYVIMRC<CR>
+nnoremap <silent> <leader>sv :so $MYVIMRC<CR>
 " Quickly edit bundles file
-nmap <silent> <leader>eb :e ~/.config/nvim/init/bundles.vim<CR>
+nnoremap <silent> <leader>eb :e ~/.config/nvim/init/bundles.vim<CR>
 
 " search and replace
 nnoremap <leader>ss :%s/
@@ -166,12 +151,12 @@ endfunction
 command! EditSyntax call s:EditVimConfig('syntax')
 command! EditPlugin call s:EditVimConfig('ftplugin')
 command! EditSnippet call s:EditVimConfig('snippets', '.snippets')
-command! EditColors edit ~/.config/nvim/colors/monokai.vim
+command! EditColors edit ~/.config/nvim/colors/molokai.vim
 
 nnoremap <leader>ep :echo expand('%:p')<CR>
 
 " Show syntax highlighting groups for word under cursor (Ctrl-Shift-P)
-nmap <C-S-P> :call <SID>SynStack()<CR>
+nnoremap <C-S-P> :call <SID>SynStack()<CR>
 function! <SID>SynStack()
     if !exists("*synstack")
         return
@@ -200,6 +185,9 @@ let g:ale_linters = {
 
 " incsearch.vim settings
 " ......................................................................
+map /  <Plug>(incsearch-forward)
+map ?  <Plug>(incsearch-backward)
+map g/ <Plug>(incsearch-stay)
 " https://vi.stackexchange.com/a/8742
 set hlsearch
 let g:incsearch#auto_nohlsearch = 1
