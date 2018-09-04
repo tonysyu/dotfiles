@@ -5,9 +5,10 @@ call neobundle#begin(expand('~/.config/nvim/bundle/'))
 NeoBundleFetch 'Shougo/neobundle.vim'
 
 " Vim enhancement plugins:
-NeoBundle 'Valloric/YouCompleteMe'
+NeoBundle 'editorconfig/editorconfig-vim'
 NeoBundle 'tpope/vim-dispatch'
 NeoBundle 'tpope/vim-eunuch'
+NeoBundle 'Valloric/YouCompleteMe'
 NeoBundle 'w0rp/ale'
 
 " UI enhancement plugins:
@@ -55,6 +56,7 @@ NeoBundle 'tpope/vim-unimpaired'
 " Language-specific plugins
 NeoBundle 'alvan/vim-closetag'
 NeoBundle 'chrisbra/Colorizer'
+NeoBundle 'chrisbra/csv.vim'
 NeoBundle 'duganchen/vim-soy'
 NeoBundle 'mattn/emmet-vim'
 NeoBundle 'mxw/vim-jsx'
