@@ -39,6 +39,7 @@ NeoBundle 'tpope/vim-surround'
 " Search and navigation plugins:
 NeoBundle 'ap/vim-buftabline'
 NeoBundle 'bronson/vim-visual-star-search'
+NeoBundle 'easymotion/vim-easymotion'
 NeoBundle 'jeetsukumaran/vim-filebeagle'
 NeoBundle 'junegunn/fzf'
 NeoBundle 'junegunn/fzf.vim'
