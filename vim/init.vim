@@ -116,6 +116,9 @@ nnoremap <silent> <leader>eb :e ~/.config/nvim/init/bundles.vim<CR>
 nnoremap <leader>ss :%s/
 vnoremap <leader>ss :s/
 
+" case insensitive incsearch
+nnoremap c/ /\c
+
 " reflow paragraph (i.e. remove end of lines)
 nnoremap Q gqap
 " reflow selected text
