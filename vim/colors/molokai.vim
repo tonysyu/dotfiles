@@ -56,7 +56,7 @@ hi Ignore          guifg=#808080 guibg=bg
 hi IncSearch       guifg=#C4BE89 guibg=#000000
 
 hi Keyword         guifg=#F92672               gui=bold
-hi Label           guifg=#E6DB74               gui=none
+hi Label           guifg=#F92672               gui=none
 hi Macro           guifg=#C4BE89               gui=italic
 hi SpecialKey      guifg=#66D9EF               gui=italic
 
@@ -173,7 +173,7 @@ if &t_Co > 255
    hi IncSearch       ctermfg=193 ctermbg=16
 
    hi keyword         ctermfg=197               cterm=bold
-   hi Label           ctermfg=229               cterm=none
+   hi Label           ctermfg=197               cterm=none
    hi Macro           ctermfg=193
    hi SpecialKey      ctermfg=81
 

@@ -60,7 +60,6 @@ augroup filetype_mappings
     autocmd BufNewFile,BufRead,BufFilePost *.cls set filetype=tex
     autocmd BufNewFile,BufRead,BufFilePost *.css_t set filetype=css
     autocmd BufNewFile,BufRead,BufFilePost *.enaml set filetype=enaml
-    autocmd BufNewFile,BufRead,BufFilePost *.json set filetype=javascript
     autocmd BufNewFile,BufRead,BufFilePost *.wiki set filetype=confluencewiki
     autocmd FileType html setlocal shiftwidth=4 tabstop=4 softtabstop=4
     autocmd FileType htmldjango setlocal shiftwidth=4 tabstop=4 softtabstop=4
