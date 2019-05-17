@@ -101,6 +101,9 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
+" Ctrl-/ to start case-insensitive search
+nnoremap <C-/> :/\c
+
 " Disable most-recent buffer toggle to avoid conflicts with easymotion
 " Toggle between two, most-recent buffers
 " nnoremap <leader><leader> <c-^>
@@ -259,6 +262,7 @@ imap <c-x><c-l> <plug>(fzf-complete-line)
 
 " Advanced customization using autoload functions
 inoremap <expr> <c-x><c-k> fzf#vim#complete#word({'left': '15%'})
+
 
 " Case-insensitive ripgrep search
 command! -bang -nargs=* Rgi
