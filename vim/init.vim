@@ -189,6 +189,9 @@ let g:ale_linters = {
 \   'javascript': ['eslint'],
 \}
 
+" Disable this to prevent noticeable pause (See https://github.com/w0rp/ale/issues/2021)
+let g:ale_virtualenv_dir_names = []
+
 " incsearch.vim settings
 " ......................................................................
 map /  <Plug>(incsearch-forward)
