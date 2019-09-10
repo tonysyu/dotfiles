@@ -92,5 +92,8 @@ export CONDA_OLD_PS1=$PS1
 # Application-specific tweaks
 # ---------------------------
 
+# Save fzf history. Press Ctrl-P to cycle through old searches.
+export FZF_DEFAULT_OPTS="--history=$HOME/.fzf_history"
+
 # autojump-generated snippet
 [[ -s ~/.autojump/etc/profile.d/autojump.bash ]] && . ~/.autojump/etc/profile.d/autojump.bash
