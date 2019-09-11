@@ -56,10 +56,12 @@ NeoBundle 'tpope/vim-unimpaired'
 
 " Language-specific plugins
 NeoBundle 'alvan/vim-closetag'
+NeoBundle 'cespare/vim-toml'
 NeoBundle 'chrisbra/Colorizer'
 NeoBundle 'chrisbra/csv.vim'
 NeoBundle 'duganchen/vim-soy'
 NeoBundle 'elzr/vim-json'
+NeoBundle 'gu-fan/riv.vim'
 NeoBundle 'mattn/emmet-vim'
 NeoBundle 'mxw/vim-jsx'
 NeoBundle 'posva/vim-vue'
