@@ -1,10 +1,16 @@
-Configuration files *nix
-========================
+Configuration files \*nix
+=========================
 
 I use Mac Os, so your mileage might vary on Linux systems.
 
 Prerequisites
 -------------
+
+Much of these repository is specifically geared toward configuring vim, or more specifically,
+neovim. First you'll need to [install
+neovim](https://github.com/neovim/neovim/wiki/Installing-Neovim#macos--os-x):
+
+    $ brew install nvim
 
 ### Optional
 
@@ -45,17 +51,8 @@ Installation
     ```
 - Install python for neovim
     ```
-    pyenv install 2.7.15
-    pyenv install 3.6.6
-
-    pyenv virtualenv 2.7.15 neovim2
-    pyenv virtualenv 3.6.6 neovim3
-
-    pyenv activate neovim2
-    pip install flake8 neovim pylint==1.9.*
-
-    pyenv activate neovim3
-    pip install flake8 neovim pylint
+    pip2 install pynvim
+    pip3 install pynvim
     ```
 - Install vim bundles
     ```
@@ -63,9 +60,6 @@ Installation
     sh install.sh
     rm install.sh
     ```
-- Complete installation of bundles by opening `nvim` and accepting update request from NeoBundle at
-  startup. Then navigate to `YouCompleteMe` bundle and build:
-    ```
-    cd ~/dotfiles/vim/bundle/YouCompleteMe
-    ./install.py
-    ```
+- [Install `coc.nvim`](https://github.com/neoclide/coc.nvim/wiki/Install-coc.nvim)
+- Install language servers for `coc.nvim` (within vim):
+    - `:CocInstall coc-python`

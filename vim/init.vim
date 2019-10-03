@@ -9,9 +9,6 @@ colorscheme molokai
 " Fix terminal colors in vimr (https://github.com/qvacua/vimr/issues/719)
 set termguicolors
 
-let g:python_host_prog = expand('~/.pyenv/versions/neovim2/bin/python')
-let g:python3_host_prog = expand('~/.pyenv/versions/neovim3/bin/python')
-
 syntax on
 
 source ~/.config/nvim/init/bundles.vim
