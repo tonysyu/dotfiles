@@ -57,7 +57,7 @@ NeoBundle 'alvan/vim-closetag'
 NeoBundle 'cespare/vim-toml'
 NeoBundle 'chrisbra/Colorizer'
 NeoBundle 'chrisbra/csv.vim'
-NeoBundle 'neoclide/coc.nvim'
+NeoBundle 'neoclide/coc.nvim', 'release', { 'build': { 'others': 'git checkout release' } }
 NeoBundle 'duganchen/vim-soy'
 NeoBundle 'elzr/vim-json'
 NeoBundle 'gu-fan/riv.vim'
