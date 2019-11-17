@@ -178,6 +178,14 @@ endif
 " Plugin Customization
 " ====================
 
+" Vimwiki configuration
+" ......................................................................
+let g:vimwiki_list = [
+    \{'path': '$HOME/Dropbox/wiki',
+    \ 'syntax': 'markdown',
+    \ 'ext': 'md'}]
+let g:vimwiki_global_ext = 0 " make sure vimwiki doesn't own all .md files
+
 " Project-level exuberant tags
 " ......................................................................
 let g:easytags_async=1

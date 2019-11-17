@@ -70,6 +70,7 @@ NeoBundle 'tpope/vim-ragtag'
 NeoBundle 'tweekmonster/django-plus.vim'
 NeoBundle 'vim-scripts/confluencewiki.vim'
 NeoBundle 'Vimjas/vim-python-pep8-indent'
+NeoBundle 'vimwiki/vimwiki'
 
 call neobundle#end()
 
