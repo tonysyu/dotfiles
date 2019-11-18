@@ -62,6 +62,7 @@ augroup filetype_mappings
     autocmd BufNewFile,BufRead,BufFilePost *.wiki set filetype=confluencewiki
     autocmd FileType html setlocal shiftwidth=4 tabstop=4 softtabstop=4
     autocmd FileType htmldjango setlocal shiftwidth=4 tabstop=4 softtabstop=4
+    autocmd FileType python let b:coc_root_patterns = ['manage.py', '.git', '.env']
 augroup END
 
 augroup autosave
