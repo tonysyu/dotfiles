@@ -8,28 +8,23 @@ export PATH=$HOME/bin:$HOME/code/bin:$PATH
 # Colorize terminal
 export CLICOLOR=1
 
-function refresh-ctags () {
-    # Ensure that we're creating tags in the root of a git repository.
-    if [ -d "./.git" ]; then
-        ctags -R -o ./.tags
-        echo "Updated .tags directory."
-    else
-        echo "refresh-ctags must be run in directory containing .git directory."
-    fi
+# Replace ls with exa (https://github.com/ogham/exa)
+alias ls='exa'
+
+function lst () {
+    exa --tree --level="${@:-2}"
 }
 
-# Test whether --color is an allowed option for 'ls'
-eval 'ls --color > /dev/null 2>&1'
-if [ $? -eq 0 ]; then
-    alias ls='ls -hF --color=auto'
-else
-    alias ls='ls -hFG'
-fi
+# -----------
+# Text editor
+# -----------
 
 if hash nvim 2>/dev/null; then
     alias vim='nvim'
     alias vimdiff='nvim -d'
 fi
+
+export EDITOR=vim
 
 # ----------------------
 # Python-specific tweaks
