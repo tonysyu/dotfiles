@@ -187,6 +187,12 @@ let g:vimwiki_list = [
     \ 'ext': 'md'}]
 let g:vimwiki_global_ext = 0 " make sure vimwiki doesn't own all .md files
 
+" riv plugin configuration
+" ......................................................................
+" Avoid maxmempattern error in riv
+" See https://github.com/gu-fan/riv.vim/issues/144#issuecomment-537056690
+set mmp=2000
+
 " Project-level exuberant tags
 " ......................................................................
 let g:easytags_async=1
