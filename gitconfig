@@ -11,7 +11,7 @@
 [core]
     excludesfile = ~/.gitignore
     editor = nvim
-	pager = diff-so-fancy | less --tabs=4 -RFX
+    pager = delta
 [push]
 	default = current
 [gui]
@@ -26,16 +26,15 @@
     prlog = log --grep 'Merge pull request'
 	qlog = log --pretty=oneline --abbrev-commit --graph --decorate
     delm = "!f() { git checkout --quiet master && git branch --merged | grep --invert-match '\\*' | xargs -n 1 git branch --delete; git checkout --quiet @{-1}; }; f"
-    vdiff = difftool --no-prompt --tool=diffmerge
-    vmerge = mergetool --no-prompt --tool=diffmerge
 
-[difftool "diffmerge"]
-    cmd = diffmerge \"$LOCAL\" \"$REMOTE\"
+[interactive]
+    diffFilter = delta --color-only
 
-[mergetool "diffmerge"]
-    cmd = "diffmerge --merge --result=\"$MERGED\" \"$LOCAL\" \"$(if test -f \"$BASE\"; then echo \"$BASE\"; else echo \"$LOCAL\"; fi)\" \"$REMOTE\""
-    trustExitCode = true
-[diff]
-    tool = diffmerge
-[merge]
-    tool = diffmerge
+[delta]
+    features = line-numbers decorations
+    whitespace-error-style = 22 reverse
+
+[delta "decorations"]
+    commit-decoration-style = bold yellow box ul
+    file-style = bold yellow ul
+    file-decoration-style = none
