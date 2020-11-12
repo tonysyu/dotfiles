@@ -36,6 +36,7 @@ Installation
         ```
 - Link bash profile:
     - Add `source ~/dotfiles/profile` to your `.profile` (or `.bash_profile`).
+    - Add `source ~/dotfiles/zshrc` to your `.zshrc`
 - Link `inputrc`, `editrc`, `ackrc`:
     ```
     cd ~
