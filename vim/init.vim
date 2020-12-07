@@ -462,3 +462,9 @@ augroup END
 " See https://andrew.stwrt.ca/posts/project-specific-vimrc/
 set exrc
 set secure
+
+" Typescript
+" ......................................................................
+
+" Override default link to Error for some reserved words (e.g import) peitalin/vim-jsx-typescript
+hi link typescriptReserved Keyword
