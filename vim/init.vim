@@ -128,6 +128,9 @@ vnoremap Q gq
 
 command! CdHere :cd %:p:h
 
+" Set up python provider. See https://neovim.io/doc/user/provider.html
+let g:python3_host_prog = '$HOME/.pyenv/versions/py3nvim/bin/python'
+
 " FUNCTIONS
 " =========
 function! s:InsertDate(day_offset)

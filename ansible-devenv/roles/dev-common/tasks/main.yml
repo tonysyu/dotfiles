@@ -12,3 +12,7 @@
 # Python is a dev-common dependency because neovim relies on it
 - name: Set up python through pyenv
   import_tasks: python.yml
+
+# Neovim setup needs to run after python setup
+- name: Set up neovim
+  import_tasks: neovim.yml
