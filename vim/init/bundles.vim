@@ -59,6 +59,7 @@ NeoBundle 'chrisbra/Colorizer'
 NeoBundle 'chrisbra/csv.vim'
 NeoBundle 'neoclide/coc.nvim', 'release', { 'build': { 'others': 'git checkout release' } }
 NeoBundle 'duganchen/vim-soy'
+NeoBundle 'elixir-editors/vim-elixir'
 NeoBundle 'elzr/vim-json'
 NeoBundle 'gu-fan/riv.vim'
 NeoBundle 'jxnblk/vim-mdx-js'
