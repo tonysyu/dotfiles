@@ -14,6 +14,7 @@ To build (or update) the development environment, just run the following in this
 ```sh
 make
 ```
+
 Underneath the hood, this just runs the following:
 ```sh
 ansible-playbook main.yml -i hosts.yml

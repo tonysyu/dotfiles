@@ -1,0 +1,5 @@
+homebrew_packages:
+- pyenv
+
+pyenv_python_versions:
+- 3.9.1

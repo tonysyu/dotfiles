@@ -1,2 +1,14 @@
 ---
 # Generic dev tools
+
+- name: Install homebrew packages
+  homebrew:
+    name: '{{ item }}'
+    state: latest
+  loop: '{{ homebrew_packages }}'
+  tags:
+  - brew
+
+# Python is a dev-common dependency because neovim relies on it
+- name: Set up python through pyenv
+  import_tasks: python.yml
