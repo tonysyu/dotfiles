@@ -1,6 +1,8 @@
 ---
-- name: Install homebrew cask packages
-  command: brew install --cask {{ item }}
+- name: Install homebrew cask apps
+  homebrew_cask:
+    name: '{{ item }}'
+    state: latest
   loop: '{{ homebrew_cask_apps }}'
   tags:
-  - brew
+  - cask

@@ -9,9 +9,33 @@
   tags:
   - brew
 
+- name: Install homebrew cask apps
+  homebrew_cask:
+    name: '{{ item }}'
+    state: latest
+  loop: '{{ homebrew_cask_apps }}'
+  tags:
+  - cask
+
 # Python is a dev-common dependency because neovim relies on it
 - name: Set up python through pyenv
   import_tasks: python.yml
+  tags:
+  - python
+  - neovim
+
+- name: Install and setup nvm
+  shell: |
+    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash
+    source ~/.nvm/nvm.sh
+    nvm install {{ node_version }}
+    nvm alias default {{ node_version }}
+    nvm use {{ node_version }}
+  args:
+    creates: "{{ ansible_env.HOME }}/.nvm/nvm.sh"
+  tags:
+  - neovim
+  - node
 
 # Neovim setup needs to run after python setup
 - name: Set up neovim

@@ -2,7 +2,7 @@
 
 # See neovim docs: https://neovim.io/doc/user/provider.html
 - name: Set up neovim python provider
-  command: >
+  shell: |
     pyenv virtualenv {{ pyenv_python_versions|first }} py3nvim
     pyenv activate py3nvim
     pip install pynvim
@@ -10,5 +10,12 @@
   failed_when: >
     pyenv_install_result.rc != 0 and
     pyenv_install_result.stderr is not match("pyenv-virtualenv.* already exists")
+  tags:
+  - neovim
+
+# See neovim docs: https://neovim.io/doc/user/provider.html
+- name: Set up neovim node provider
+  shell: |
+    npm install -g neovim
   tags:
   - neovim
