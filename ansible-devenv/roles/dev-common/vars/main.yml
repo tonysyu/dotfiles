@@ -1,5 +1,24 @@
 homebrew_packages:
+- autojump
+- bat
+- comby
+- exa
+- fd
+- fzf
+- git
+- git-delta
+- htop
+- httpie
+- jq
+- mdcat
+- neovim
+- nvm
 - pyenv
+- pyenv-virtualenv
+- ripgrep
+- semgrep
+- tree
+- wget
 
 pyenv_python_versions:
 - 3.9.1
