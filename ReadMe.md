@@ -17,12 +17,6 @@ Installation
         ```
 - Link bash profile:
     - Add `source ~/dotfiles/zshrc` to your `.zshrc`
-- Link `inputrc`, `editrc`:
-    ```sh
-    cd ~
-    ln -s ~/dotfiles/inputrc .inputrc
-    ln -s ~/dotfiles/editrc .editrc
-    ```
 - Link vim files
     ```sh
     mkdir ~/.config
