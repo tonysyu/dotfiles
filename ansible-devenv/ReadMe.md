@@ -4,9 +4,8 @@
 
 **Install ansible**
 ```sh
-pipx install ansible --include-deps
+brew install ansible
 ```
-Without `--include-deps`, the `ansible` command-line tool will not be installed. (See [github issue](https://github.com/pipxproject/pipx/issues/547))
 
 ## Usage
 
