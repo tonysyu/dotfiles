@@ -133,7 +133,7 @@ command! CdHere :cd %:p:h
 " See https://neovim.io/doc/user/provider.html
 let g:coc_node_path = expand('~/.nvm/versions/node/v14.15.4/bin/node')
 let g:node_host_prog = expand('~/.nvm/versions/node/v14.15.4/bin/neovim-node-host')
-let g:python3_host_prog = expand('~/.pyenv/versions/py3nvim/bin/python')
+let g:python3_host_prog = expand('~/.venv/py3nvim/bin/python')
 
 " FUNCTIONS
 " =========

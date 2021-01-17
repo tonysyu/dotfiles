@@ -17,13 +17,6 @@
   tags:
   - cask
 
-# Python is a dev-common dependency because neovim relies on it
-- name: Set up python through pyenv
-  import_tasks: python.yml
-  tags:
-  - python
-  - neovim
-
 - name: Install and setup nvm
   shell: |
     curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash

@@ -12,8 +12,8 @@ homebrew_packages:
 - jq
 - mdcat
 - neovim
-- pyenv
-- pyenv-virtualenv
+- python@3.8
+- python@3.9
 - ripgrep
 - semgrep
 - tree
@@ -24,5 +24,6 @@ homebrew_cask_apps:
 
 node_version: v14.15.4
 
-pyenv_python_versions:
-- 3.9.1
+python_executable: python3.9
+
+python_venv_root: "~/.venv/"
