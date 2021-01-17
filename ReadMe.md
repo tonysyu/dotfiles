@@ -15,8 +15,6 @@ Installation
         ```sh
         git clone https://github.com/tonysyu/dotfiles.git
         ```
-- Link bash profile:
-    - Add `source ~/dotfiles/zshrc` to your `.zshrc`
 - Use ansible to set up dev environment
     ```sh
     brew install ansible
