@@ -4,7 +4,7 @@
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
-ZSH_THEME="amuse"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Use hyphen-insensitive completion.
 # Case-sensitive completion must be off. _ and - will be interchangeable.

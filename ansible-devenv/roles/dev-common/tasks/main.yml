@@ -1,22 +1,6 @@
 ---
 # Generic dev tools
 
-- name: Ensure .zshrc exists
-  ansible.builtin.file:
-    dest: "~/.zshrc"
-    state: touch
-    modification_time: preserve
-    access_time: preserve
-  tags:
-    - zsh
-
-- name: Ensure .zshrc sources ~/dotfiles/zshrc
-  ansible.builtin.lineinfile:
-    dest: "~/.zshrc"
-    line: "source ~/dotfiles/zshrc"
-  tags:
-    - zsh
-
 - name: Install homebrew packages
   homebrew:
     name: '{{ item }}'

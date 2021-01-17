@@ -1,0 +1,21 @@
+---
+
+- name: Ensure .zshrc exists
+  ansible.builtin.file:
+    dest: "~/.zshrc"
+    state: touch
+    modification_time: preserve
+    access_time: preserve
+
+- name: Ensure .zshrc sources ~/dotfiles/zshrc
+  ansible.builtin.lineinfile:
+    dest: "~/.zshrc"
+    line: "source ~/dotfiles/zshrc"
+
+- name: Clone powerlevel10k theme
+  vars:
+    theme_dir: "{{ lookup('env','ZSH_CUSTOM') | default('~/.oh-my-zsh/custom', true) }}/themes"
+  git:
+    repo: 'https://gitee.com/romkatv/powerlevel10k.git'
+    dest: "{{ theme_dir }}/powerlevel10k"
+    depth: "1"

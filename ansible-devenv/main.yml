@@ -2,6 +2,9 @@
 - hosts: all
   roles:
   - common
+  - role: zsh
+    tags:
+    - zsh
   - dev-common
   - role: dev-neovim
     tags:
