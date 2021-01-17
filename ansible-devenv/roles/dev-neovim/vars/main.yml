@@ -1,0 +1,7 @@
+homebrew_packages:
+- neovim
+
+homebrew_cask_apps:
+- vimr
+
+python_venv_root: "~/.venv/"

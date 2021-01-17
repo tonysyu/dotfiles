@@ -3,3 +3,6 @@
   roles:
   - common
   - dev-common
+  - role: dev-neovim
+    tags:
+    - neovim

@@ -29,7 +29,3 @@
   tags:
   - neovim
   - node
-
-# Neovim setup needs to run after python setup
-- name: Set up neovim
-  import_tasks: neovim.yml

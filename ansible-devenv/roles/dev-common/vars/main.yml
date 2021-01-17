@@ -11,7 +11,6 @@ homebrew_packages:
 - httpie
 - jq
 - mdcat
-- neovim
 - python@3.8
 - python@3.9
 - ripgrep
@@ -19,11 +18,8 @@ homebrew_packages:
 - tree
 - wget
 
-homebrew_cask_apps:
-- vimr
+homebrew_cask_apps: []
 
 node_version: v14.15.4
 
 python_executable: python3.9
-
-python_venv_root: "~/.venv/"

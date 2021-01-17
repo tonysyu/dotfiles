@@ -1,9 +1,27 @@
 ---
 
+- name: Install homebrew packages
+  homebrew:
+    name: '{{ item }}'
+    state: latest
+  loop: '{{ homebrew_packages }}'
+  tags:
+  - brew
+
+- name: Install homebrew cask apps
+  homebrew_cask:
+    name: '{{ item }}'
+    state: latest
+  loop: '{{ homebrew_cask_apps }}'
+  tags:
+  - cask
+
 - name: Ensure python venv directory exists
   file:
     path: "{{ python_venv_root }}"
     state: directory
+  tags:
+  - python
 
 # See neovim docs: https://neovim.io/doc/user/provider.html
 - name: Set up neovim python provider
@@ -14,11 +32,11 @@
   args:
     creates: "{{ python_venv_root }}/py3nvim"
   tags:
-  - neovim
+  - python
 
 # See neovim docs: https://neovim.io/doc/user/provider.html
 - name: Set up neovim node provider
   shell: |
     npm install -g neovim
   tags:
-  - neovim
+  - node
