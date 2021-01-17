@@ -1,86 +1,78 @@
-set runtimepath+=~/.config/nvim/bundle/neobundle.vim/
-call neobundle#begin(expand('~/.config/nvim/bundle/'))
-
-" Let NeoBundle manage NeoBundle
-NeoBundleFetch 'Shougo/neobundle.vim'
+" Use non-standard 'plugged' directory as suggested by vim-plug docs
+" See https://github.com/junegunn/vim-plug
+call plug#begin('~/dotfiles/vim/plugged')
 
 " Vim enhancement plugins:
-NeoBundle 'editorconfig/editorconfig-vim'
-NeoBundle 'tpope/vim-dispatch'
-NeoBundle 'tpope/vim-eunuch'
-NeoBundle 'w0rp/ale'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'tpope/vim-dispatch'
+Plug 'tpope/vim-eunuch'
+Plug 'w0rp/ale'
 
 " UI enhancement plugins:
-NeoBundle 'itchyny/lightline.vim'
-NeoBundle 'nathanaelkane/vim-indent-guides'
-NeoBundle 'Shougo/junkfile.vim'
-NeoBundle 'haya14busa/incsearch.vim'
+Plug 'itchyny/lightline.vim'
+Plug 'nathanaelkane/vim-indent-guides'
+Plug 'Shougo/junkfile.vim'
+Plug 'haya14busa/incsearch.vim'
 
 " General editing plugins:
-NeoBundle 'AndrewRadev/splitjoin.vim'
-NeoBundle 'christoomey/vim-system-copy'
-NeoBundle 'tpope/vim-abolish'
-NeoBundle 'tpope/vim-commentary'
-NeoBundle 'tpope/vim-repeat'
-NeoBundle 'SirVer/ultisnips'
-NeoBundle 'honza/vim-snippets'
-NeoBundle 'bronson/vim-trailing-whitespace'
-NeoBundle 'jiangmiao/auto-pairs'
-NeoBundle 'terryma/vim-multiple-cursors'
-NeoBundle 'vim-scripts/ReplaceWithRegister'
-NeoBundle 'zirrostig/vim-schlepp'
+Plug 'AndrewRadev/splitjoin.vim'
+Plug 'christoomey/vim-system-copy'
+Plug 'tpope/vim-abolish'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-repeat'
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+Plug 'bronson/vim-trailing-whitespace'
+Plug 'jiangmiao/auto-pairs'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'vim-scripts/ReplaceWithRegister'
+Plug 'zirrostig/vim-schlepp'
 
 " Motion and text-object plugins:
-NeoBundle 'michaeljsmith/vim-indent-object'
-NeoBundle 'tpope/vim-surround'
+Plug 'michaeljsmith/vim-indent-object'
+Plug 'tpope/vim-surround'
 
 " Search and navigation plugins:
-NeoBundle 'ap/vim-buftabline'
-NeoBundle 'bronson/vim-visual-star-search'
-NeoBundle 'easymotion/vim-easymotion'
-NeoBundle 'jeetsukumaran/vim-filebeagle'
-NeoBundle 'junegunn/fzf'
-NeoBundle 'junegunn/fzf.vim'
-NeoBundle 'padde/jump.vim'
-NeoBundle 'tmhedberg/matchit'
-NeoBundle 'xolox/vim-misc'
-NeoBundle 'xolox/vim-easytags'
+Plug 'ap/vim-buftabline'
+Plug 'bronson/vim-visual-star-search'
+Plug 'easymotion/vim-easymotion'
+Plug 'jeetsukumaran/vim-filebeagle'
+Plug 'junegunn/fzf'
+Plug 'junegunn/fzf.vim'
+Plug 'padde/jump.vim'
+Plug 'tmhedberg/matchit'
+Plug 'xolox/vim-misc'
+Plug 'xolox/vim-easytags'
 
 " Git plugins:
-NeoBundle 'airblade/vim-gitgutter'
-NeoBundle 'junegunn/gv.vim'
-NeoBundle 'tpope/vim-fugitive'
-NeoBundle 'tpope/vim-unimpaired'
+Plug 'airblade/vim-gitgutter'
+Plug 'junegunn/gv.vim'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-unimpaired'
 
 " Language-specific plugins
-NeoBundle 'alvan/vim-closetag'
-NeoBundle 'cespare/vim-toml'
-NeoBundle 'chrisbra/Colorizer'
-NeoBundle 'chrisbra/csv.vim'
-NeoBundle 'neoclide/coc.nvim', 'release', { 'build': { 'others': 'git checkout release' } }
-NeoBundle 'duganchen/vim-soy'
-NeoBundle 'elixir-editors/vim-elixir'
-NeoBundle 'elzr/vim-json'
-NeoBundle 'gu-fan/riv.vim'
-NeoBundle 'jxnblk/vim-mdx-js'
-NeoBundle 'leafgarland/typescript-vim'
-NeoBundle 'mattn/emmet-vim'
-NeoBundle 'mxw/vim-jsx'
-NeoBundle 'peitalin/vim-jsx-typescript'
-NeoBundle 'posva/vim-vue'
-NeoBundle 'styled-components/vim-styled-components'
-NeoBundle 'tmhedberg/SimpylFold'
-NeoBundle 'tpope/vim-markdown'
-NeoBundle 'tpope/vim-ragtag'
-NeoBundle 'tweekmonster/django-plus.vim'
-NeoBundle 'vim-scripts/confluencewiki.vim'
-NeoBundle 'Vimjas/vim-python-pep8-indent'
-NeoBundle 'vimwiki/vimwiki'
+Plug 'alvan/vim-closetag'
+Plug 'cespare/vim-toml'
+Plug 'chrisbra/Colorizer'
+Plug 'chrisbra/csv.vim'
+Plug 'neoclide/coc.nvim', 'release'
+Plug 'duganchen/vim-soy'
+Plug 'elixir-editors/vim-elixir'
+Plug 'elzr/vim-json'
+Plug 'gu-fan/riv.vim'
+Plug 'jxnblk/vim-mdx-js'
+Plug 'leafgarland/typescript-vim'
+Plug 'mattn/emmet-vim'
+Plug 'mxw/vim-jsx'
+Plug 'peitalin/vim-jsx-typescript'
+Plug 'posva/vim-vue'
+Plug 'styled-components/vim-styled-components'
+Plug 'tmhedberg/SimpylFold'
+Plug 'tpope/vim-markdown'
+Plug 'tpope/vim-ragtag'
+Plug 'tweekmonster/django-plus.vim'
+Plug 'vim-scripts/confluencewiki.vim'
+Plug 'Vimjas/vim-python-pep8-indent'
+Plug 'vimwiki/vimwiki'
 
-call neobundle#end()
-
-filetype plugin indent on
-
-" If there are uninstalled bundles found on startup,
-" this will conveniently prompt you to install them.
-NeoBundleCheck
+call plug#end()
