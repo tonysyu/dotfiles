@@ -25,7 +25,6 @@ plugins=(
     autojump
     git
     nvm
-    pyenv
     vi-mode
 )
 
