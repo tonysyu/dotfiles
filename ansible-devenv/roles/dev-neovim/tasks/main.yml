@@ -16,6 +16,17 @@
   tags:
   - cask
 
+- name: Ensure .config directory exists
+  file:
+    path: "~/.config"
+    state: directory
+
+- name: Link neovim config
+  file:
+    src: "~/dotfiles/vim"
+    dest: "~/.config/nvim"
+    state: link
+
 - name: Ensure python venv directory exists
   file:
     path: "{{ python_venv_root }}"

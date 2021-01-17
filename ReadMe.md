@@ -17,12 +17,6 @@ Installation
         ```
 - Link bash profile:
     - Add `source ~/dotfiles/zshrc` to your `.zshrc`
-- Link vim files
-    ```sh
-    mkdir ~/.config
-    cd ~/.config
-    ln -s ~/dotfiles/vim nvim
-    ```
 - Use ansible to set up dev environment
     ```sh
     brew install ansible
