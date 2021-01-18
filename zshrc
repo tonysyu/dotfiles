@@ -57,6 +57,9 @@ source $(dirname -- $0)/vim/aliases.zsh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+alias ls='exa'
+alias ll='exa -l'
+
 # Directory-colors
 # Copied from https://unix.stackexchange.com/a/91978
 if whence dircolors >/dev/null; then
