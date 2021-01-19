@@ -14,6 +14,7 @@ homebrew_packages:
 - python@3.8
 - python@3.9
 - ripgrep
+- sd
 - semgrep
 - tree
 - wget
