@@ -26,6 +26,7 @@ plugins=(
     git
     nvm
     vi-mode
+    zsh-autosuggestions
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -59,6 +60,9 @@ source $(dirname -- $0)/vim/aliases.zsh
 
 alias ls='exa'
 alias ll='exa -l'
+
+# vi-mode: Cursor changes between insert and normal mode
+VI_MODE_SET_CURSOR=true
 
 # Directory-colors
 # Copied from https://unix.stackexchange.com/a/91978

@@ -17,3 +17,8 @@
     repo: "https://gitee.com/romkatv/powerlevel10k.git"
     dest: "{{ custom_dir }}/themes/powerlevel10k"
     depth: "1"
+
+- name: Clone zsh-autosuggestions plugin
+  git:
+    repo: "https://github.com/zsh-users/zsh-autosuggestions"
+    dest: "{{ custom_dir }}/plugins/zsh-autosuggestions"
