@@ -13,9 +13,7 @@
     line: "source ~/dotfiles/zshrc"
 
 - name: Clone powerlevel10k theme
-  vars:
-    theme_dir: "{{ lookup('env','ZSH_CUSTOM') | default('~/.oh-my-zsh/custom', true) }}/themes"
   git:
-    repo: 'https://gitee.com/romkatv/powerlevel10k.git'
-    dest: "{{ theme_dir }}/powerlevel10k"
+    repo: "https://gitee.com/romkatv/powerlevel10k.git"
+    dest: "{{ custom_dir }}/themes/powerlevel10k"
     depth: "1"

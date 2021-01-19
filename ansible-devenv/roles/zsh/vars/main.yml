@@ -1,0 +1,3 @@
+---
+
+custom_dir: "{{ lookup('env','ZSH_CUSTOM') | default('~/.oh-my-zsh/custom', true) }}"
