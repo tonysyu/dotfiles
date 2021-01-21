@@ -54,12 +54,10 @@ set gdefault                    " make substitutions global by default
 " Filetype mappings
 augroup filetype_mappings
     autocmd!
-    autocmd BufNewFile,BufRead,BufFilePost *.txt set filetype=rst
+    autocmd BufNewFile,BufRead,BufFilePost *.txt set filetype=markdown
     autocmd BufNewFile,BufRead,BufFilePost *.tex set filetype=tex
     autocmd BufNewFile,BufRead,BufFilePost *.cls set filetype=tex
     autocmd BufNewFile,BufRead,BufFilePost *.css_t set filetype=css
-    autocmd BufNewFile,BufRead,BufFilePost *.enaml set filetype=enaml
-    autocmd BufNewFile,BufRead,BufFilePost *.wiki set filetype=confluencewiki
     autocmd FileType html setlocal shiftwidth=4 tabstop=4 softtabstop=4
     autocmd FileType htmldjango setlocal shiftwidth=4 tabstop=4 softtabstop=4
     autocmd FileType python let b:coc_root_patterns = ['manage.py', '.git', '.env']
