@@ -1,4 +1,9 @@
 {
-    "python.pythonPath": "python3",
+    "coc.preferences.formatOnSaveFiletypes": ["python"],
+    "python.formatting.provider": "black",
+    "python.linting.flake8Enabled": true,
+    "python.linting.pylintEnabled": false,
+    "python.pythonPath": "~/.venv/py3nvim/bin/python",
+    "python.setLinter": "flake8",
     "prettier.eslintIntegration": true
 }

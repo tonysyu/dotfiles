@@ -5,3 +5,8 @@ homebrew_cask_apps:
 - vimr
 
 python_venv_root: "~/.venv/"
+
+venv_pip_packages:
+- black
+- pynvim
+- flake8
