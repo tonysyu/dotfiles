@@ -3,16 +3,16 @@
 call plug#begin('~/dotfiles/vim/plugged')
 
 " Vim enhancement plugins:
+Plug 'dense-analysis/ale'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-eunuch'
-Plug 'w0rp/ale'
 
 " UI enhancement plugins:
+Plug 'haya14busa/incsearch.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'Shougo/junkfile.vim'
-Plug 'haya14busa/incsearch.vim'
 
 " General editing plugins:
 Plug 'AndrewRadev/splitjoin.vim'
