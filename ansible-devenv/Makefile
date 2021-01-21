@@ -1,4 +1,5 @@
 all:
+	ansible-galaxy collection install -r requirements.yml
 	ansible-playbook main.yml -i hosts.yml
 
 neovim:
