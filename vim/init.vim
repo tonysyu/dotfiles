@@ -51,6 +51,8 @@ set tags+=.tags;~              " The trailing ';~' tells vim to search parent di
 " ====================
 set gdefault                    " make substitutions global by default
 
+source ~/.config/nvim/init/search_and_nav.vim
+
 " Filetype mappings
 augroup filetype_mappings
     autocmd!
@@ -77,27 +79,11 @@ set hidden
 " Confirm before quitting if a modified buffer is hidden
 set confirm
 
-" Change j and k to move by screen line instead of file line (wrapped lines)
-nnoremap j gj
-nnoremap k gk
-nnoremap $ g$
-nnoremap ^ g^
-vnoremap j gj
-vnoremap k gk
-vnoremap $ g$
-vnoremap ^ g^
-
 " vim line-object from https://vi.stackexchange.com/a/6102/12878
 xnoremap il g_o0
 onoremap il :normal! vil<CR>
 xnoremap al $o0
 onoremap al :normal! val<CR>
-
-" Navigate buffers
-nnoremap <C-h> <C-w>h
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
 
 " Ctrl-/ to start case-insensitive search
 nnoremap <C-/> :/\c
@@ -111,13 +97,6 @@ nnoremap <silent> <leader>ev :e $MYVIMRC<CR>
 nnoremap <silent> <leader>sv :so $MYVIMRC<CR>
 " Quickly edit bundles file
 nnoremap <silent> <leader>eb :e ~/.config/nvim/init/bundles.vim<CR>
-
-" search and replace
-nnoremap <leader>ss :%s/
-vnoremap <leader>ss :s/
-
-" case insensitive incsearch
-nnoremap c/ /\c
 
 " reflow paragraph (i.e. remove end of lines)
 nnoremap Q gqap
@@ -180,18 +159,6 @@ if $TERM_PROGRAM =~ "iTerm"
     let &t_SI = "\<Esc>]50;CursorShape=1\x7" " Vertical bar in insert mode
     let &t_EI = "\<Esc>]50;CursorShape=0\x7" " Block in normal mode
 endif
-
-" Run a given vim command on the results of alt from a given path.
-" See usage below.
-command! -nargs=* AltFile call AltFile(expand('%'), ':e')
-function! AltFile(path, vim_command)
-  let l:alternate = system("alt " . a:path)
-  if empty(l:alternate)
-    echo "No alternate file for " . a:path . " exists!"
-  else
-    exec a:vim_command . " " . l:alternate
-  endif
-endfunction
 
 " Set tabwidth
 " from http://stackoverflow.com/questions/1562336/tab-vs-space-preferences-in-vim
@@ -270,21 +237,6 @@ let g:ale_linters = {
 " Disable this to prevent noticeable pause (See https://github.com/w0rp/ale/issues/2021)
 let g:ale_virtualenv_dir_names = []
 
-" incsearch.vim settings
-" ......................................................................
-map /  <Plug>(incsearch-forward)
-map ?  <Plug>(incsearch-backward)
-map g/ <Plug>(incsearch-stay)
-" https://vi.stackexchange.com/a/8742
-set hlsearch
-let g:incsearch#auto_nohlsearch = 1
-map n  <Plug>(incsearch-nohl-n)
-map N  <Plug>(incsearch-nohl-N)
-map *  <Plug>(incsearch-nohl-*)
-map #  <Plug>(incsearch-nohl-#)
-map g* <Plug>(incsearch-nohl-g*)
-map g# <Plug>(incsearch-nohl-g#)
-
 " vim-schlepp
 vmap <up> <Plug>SchleppUp
 vmap <down> <Plug>SchleppDown
@@ -319,44 +271,6 @@ let g:jsx_ext_required = 0  " Use vim-jsx for all .js files
 " vim-closetag
 " ......................................................................
 let g:closetag_filenames = "*.html,*.js"
-
-" vim-fzf
-" ......................................................................
-nnoremap <leader>t :GitFiles<cr>
-nnoremap <leader>b :Buffers<cr>
-
-" Mapping selecting mappings
-nmap <leader><tab> <plug>(fzf-maps-n)
-xmap <leader><tab> <plug>(fzf-maps-x)
-omap <leader><tab> <plug>(fzf-maps-o)
-
-" Insert mode completion
-imap <c-x><c-k> <plug>(fzf-complete-word)
-imap <c-x><c-f> <plug>(fzf-complete-path)
-imap <c-x><c-j> <plug>(fzf-complete-file-ag)
-imap <c-x><c-l> <plug>(fzf-complete-line)
-
-" Advanced customization using autoload functions
-inoremap <expr> <c-x><c-k> fzf#vim#complete#word({'left': '15%'})
-
-
-" Case-insensitive ripgrep search
-command! -bang -nargs=* Rgi
-    \ call fzf#vim#grep("rg --column --line-number --no-heading --color=always --ignore-case ".shellescape(<q-args>),
-    \                   1, <bang>0)
-
-" Ripgrep search for word-under cursor
-nnoremap <silent> <leader>// :Rg <c-r><c-w><cr>
-" Ripgrep search for visual selection
-vnoremap <silent> <leader>// y:Rg <c-r>"<cr>
-" Ripgrep search for word-under cursor, surrounded by word boundaries
-nnoremap <silent> <leader>/w :Rg \b<c-r><c-w>\b<cr>
-" Ripgrep search for word-under cursor, surrounded by word boundaries
-vnoremap <silent> <leader>/w y:Rg \b<c-r>"\b<cr>
-" Ripgrep search for word-under cursor
-nnoremap <silent> <leader>/i :Rgi <c-r><c-w><cr>
-" Ripgrep search for visual selection
-vnoremap <silent> <leader>/i y:Rgi <c-r>"<cr>
 
 " lightline.vim
 " ......................................................................
