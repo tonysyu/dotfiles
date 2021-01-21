@@ -1,5 +1,12 @@
 ---
 
+- name: Tap required Homebrew repositories
+  community.general.homebrew_tap:
+    name: '{{ item }}'
+  loop: '{{ homebrew_taps }}'
+  tags:
+  - brew
+
 - name: Install homebrew packages
   homebrew:
     name: '{{ item }}'

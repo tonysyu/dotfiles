@@ -1,5 +1,9 @@
+homebrew_taps:
+- uptech/homebrew-oss
+
 homebrew_packages:
 - neovim
+- uptech/oss/alt
 
 homebrew_cask_apps:
 - vimr
