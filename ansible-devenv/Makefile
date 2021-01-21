@@ -4,3 +4,6 @@ all:
 
 neovim:
 	ansible-playbook main.yml -i hosts.yml -t neovim
+
+no-casks:
+	ansible-playbook main.yml -i hosts.yml --skip-tags cask
