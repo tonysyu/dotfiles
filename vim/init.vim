@@ -322,11 +322,6 @@ let g:jsx_ext_required = 0  " Use vim-jsx for all .js files
 " ......................................................................
 let g:closetag_filenames = "*.html,*.js"
 
-" Syntastic
-" ......................................................................
-let g:syntastic_javascript_checkers = ['jsxhint']
-let g:syntastic_javascript_jsxhint_exec = 'jsx-jshint-wrapper'
-
 " vim-fzf
 " ......................................................................
 nnoremap <leader>t :GitFiles<cr>
@@ -404,8 +399,6 @@ let g:surround_{char2nr('%')} = "{%\r%}"
 " syntax/python.vim gets run before ftplugin/python.vim, so we must set this
 " highlight option in vimrc instead of ftplugin.
 let g:python_highlight_all = 1
-
-let g:syntastic_python_flake8_config_file='.flake8'
 
 " SimpylFold
 " ......................................................................
