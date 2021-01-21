@@ -374,25 +374,6 @@ let g:buftabline_separators = 1
 " Use vertical splits for Gdiff (this affects all diffs, not just fugitive's)
 set diffopt+=vertical
 
-" YouCompleteMe
-" ......................................................................
-let g:ycm_collect_identifiers_from_tags_files = 1 " Let YCM read tags from Ctags file
-let g:ycm_use_ultisnips_completer = 1 " Default 1, just ensure
-let g:ycm_seed_identifiers_with_syntax = 1 " Completion for programming language's keyword
-let g:ycm_complete_in_comments = 1 " Completion in comments
-let g:ycm_complete_in_strings = 1 " Completion in string
-
-" Experimentally integrate YouCompleteMe with vim-multiple-cursors, otherwise
-" the numerous Cursor events cause great slowness
-" (https://github.com/kristijanhusak/vim-multiple-cursors/issues/4)
-function! Multiple_cursors_before()
-  let s:old_ycm_whitelist = g:ycm_filetype_whitelist
-  let g:ycm_filetype_whitelist = {}
-endfunction
-function! Multiple_cursors_after()
-  let g:ycm_filetype_whitelist = s:old_ycm_whitelist
-endfunction
-
 " UltiSnips
 " ......................................................................
 let g:UltiSnipsExpandTrigger       = "<c-j>"
@@ -417,46 +398,6 @@ let g:syntastic_python_flake8_config_file='.flake8'
 " ......................................................................
 
 let g:SimpylFold_docstring_preview = 1
-
-" Django centric commands
-" ......................................................................
-
-let g:last_relative_dir = ''
-command! Djadmin call s:DjRelatedFile("admin.py")
-command! Djforms call s:DjRelatedFile("forms.py")
-command! Djmodels call s:DjRelatedFile("models.py")
-command! Djtests call s:DjRelatedFile("tests.py")
-command! Djurls call s:DjRelatedFile("urls.py")
-command! Djviews call s:DjRelatedFile("views.py")
-command! Djmigrations call s:DjRelatedFile("migrations/")
-command! Djtemplates call s:DjRelatedFile("templates/")
-
-function! s:DjRelatedFile(file)
-    " This is to check that the directory looks djangoish
-    if filereadable(expand("%:h"). '/models.py') || isdirectory(expand("%:h") . "/templatetags/")
-        exec "edit %:h/" . a:file
-        let g:last_relative_dir = expand("%:h") . '/'
-        return ''
-    endif
-    if g:last_relative_dir != ''
-        exec "edit " . g:last_relative_dir . a:file
-        return ''
-    endif
-    echo "Cant determine where relative file is : " . a:file
-    return ''
-endfun
-
-function! SetDjAppDir()
-    if filereadable(expand("%:h"). '/models.py') || isdirectory(expand("%:h") . "/templatetags/")
-        let g:last_relative_dir = expand("%:h") . '/'
-        return ''
-    endif
-endfun
-
-augroup django_config
-    autocmd!
-    autocmd BufEnter *.py call SetDjAppDir()
-augroup END
 
 " Allow project-specific `.nvimrc` files, but disable unsafe commands
 " See https://andrew.stwrt.ca/posts/project-specific-vimrc/
