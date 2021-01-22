@@ -30,3 +30,9 @@ let g:jsx_ext_required = 0  " Use vim-jsx for all .js files
 
 " Override default link to Error for some reserved words (e.g import) peitalin/vim-jsx-typescript
 hi link typescriptReserved Keyword
+
+" riv plugin configuration
+" ......................................................................
+" Avoid maxmempattern error in riv
+" See https://github.com/gu-fan/riv.vim/issues/144#issuecomment-537056690
+set mmp=2000

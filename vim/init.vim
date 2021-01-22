@@ -52,6 +52,7 @@ set tags+=.tags;~              " The trailing ';~' tells vim to search parent di
 set gdefault                    " make substitutions global by default
 
 source ~/.config/nvim/init/search_and_nav.vim
+source ~/.config/nvim/init/languages.vim
 
 augroup autosave
     autocmd!
@@ -195,20 +196,6 @@ endfunction
 
 " Plugin Customization
 " ====================
-
-" Vimwiki configuration
-" ......................................................................
-let g:vimwiki_list = [
-    \{'path': '$HOME/Dropbox/wiki',
-    \ 'syntax': 'markdown',
-    \ 'ext': 'md'}]
-let g:vimwiki_global_ext = 0 " make sure vimwiki doesn't own all .md files
-
-" riv plugin configuration
-" ......................................................................
-" Avoid maxmempattern error in riv
-" See https://github.com/gu-fan/riv.vim/issues/144#issuecomment-537056690
-set mmp=2000
 
 " Project-level exuberant tags
 " ......................................................................

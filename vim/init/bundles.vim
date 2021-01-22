@@ -71,8 +71,6 @@ Plug 'tmhedberg/SimpylFold'
 Plug 'tpope/vim-markdown'
 Plug 'tpope/vim-ragtag'
 Plug 'tweekmonster/django-plus.vim'
-Plug 'vim-scripts/confluencewiki.vim'
 Plug 'Vimjas/vim-python-pep8-indent'
-Plug 'vimwiki/vimwiki'
 
 call plug#end()
