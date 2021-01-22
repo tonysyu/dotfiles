@@ -53,18 +53,6 @@ set gdefault                    " make substitutions global by default
 
 source ~/.config/nvim/init/search_and_nav.vim
 
-" Filetype mappings
-augroup filetype_mappings
-    autocmd!
-    autocmd BufNewFile,BufRead,BufFilePost *.txt set filetype=markdown
-    autocmd BufNewFile,BufRead,BufFilePost *.tex set filetype=tex
-    autocmd BufNewFile,BufRead,BufFilePost *.cls set filetype=tex
-    autocmd BufNewFile,BufRead,BufFilePost *.css_t set filetype=css
-    autocmd FileType html setlocal shiftwidth=4 tabstop=4 softtabstop=4
-    autocmd FileType htmldjango setlocal shiftwidth=4 tabstop=4 softtabstop=4
-    autocmd FileType python let b:coc_root_patterns = ['manage.py', '.git', '.env']
-augroup END
-
 augroup autosave
     autocmd!
     autocmd BufLeave,FocusLost silent! wall " save when focus is lost
@@ -102,8 +90,6 @@ nnoremap <silent> <leader>eb :e ~/.config/nvim/init/bundles.vim<CR>
 nnoremap Q gqap
 " reflow selected text
 vnoremap Q gq
-
-command! CdHere :cd %:p:h
 
 " NeoVim providers
 " ================
@@ -264,10 +250,6 @@ set wildignore+=*.o,*.so,*.bmp,*.gif,*.tif,*.jpg,*.png,*.pdf,*.mat,*.npz,*.aux,*
 " IPython auto-generated files
 set wildignore+=shadowhist,kernel*.json,__enamlcache__,build
 
-" vim-jsx
-" ......................................................................
-let g:jsx_ext_required = 0  " Use vim-jsx for all .js files
-
 " vim-closetag
 " ......................................................................
 let g:closetag_filenames = "*.html,*.js"
@@ -306,24 +288,7 @@ let g:UltiSnipsListSnippets        = "<c-k>" "List possible snippets based on cu
 let g:surround_{char2nr('w')} = "{{\r}}"
 let g:surround_{char2nr('%')} = "{%\r%}"
 
-" Python
-" ......................................................................
-" syntax/python.vim gets run before ftplugin/python.vim, so we must set this
-" highlight option in vimrc instead of ftplugin.
-let g:python_highlight_all = 1
-
-" SimpylFold
-" ......................................................................
-
-let g:SimpylFold_docstring_preview = 1
-
 " Allow project-specific `.nvimrc` files, but disable unsafe commands
 " See https://andrew.stwrt.ca/posts/project-specific-vimrc/
 set exrc
 set secure
-
-" Typescript
-" ......................................................................
-
-" Override default link to Error for some reserved words (e.g import) peitalin/vim-jsx-typescript
-hi link typescriptReserved Keyword

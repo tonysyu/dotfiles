@@ -21,6 +21,8 @@ vnoremap <leader>ss :s/
 " case insensitive incsearch
 nnoremap c/ /\c
 
+command! CdHere :cd %:p:h
+
 " incsearch.vim settings
 " ......................................................................
 map /  <Plug>(incsearch-forward)
