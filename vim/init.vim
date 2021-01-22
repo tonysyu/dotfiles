@@ -51,6 +51,7 @@ set tags+=.tags;~              " The trailing ';~' tells vim to search parent di
 " ====================
 set gdefault                    " make substitutions global by default
 
+source ~/.config/nvim/init/editing.vim
 source ~/.config/nvim/init/languages.vim
 source ~/.config/nvim/init/search_and_nav.vim
 source ~/.config/nvim/init/ui.vim
@@ -69,12 +70,6 @@ set hidden
 " Confirm before quitting if a modified buffer is hidden
 set confirm
 
-" vim line-object from https://vi.stackexchange.com/a/6102/12878
-xnoremap il g_o0
-onoremap il :normal! vil<CR>
-xnoremap al $o0
-onoremap al :normal! val<CR>
-
 " Ctrl-/ to start case-insensitive search
 nnoremap <C-/> :/\c
 
@@ -87,11 +82,6 @@ nnoremap <silent> <leader>ev :e $MYVIMRC<CR>
 nnoremap <silent> <leader>sv :so $MYVIMRC<CR>
 " Quickly edit bundles file
 nnoremap <silent> <leader>eb :e ~/.config/nvim/init/bundles.vim<CR>
-
-" reflow paragraph (i.e. remove end of lines)
-nnoremap Q gqap
-" reflow selected text
-vnoremap Q gq
 
 " NeoVim providers
 " ================
@@ -142,59 +132,6 @@ function! <SID>SynStack()
     echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
 endfunction
 
-" Change cursor shape between insert and normal mode in iTerm2.app
-if $TERM_PROGRAM =~ "iTerm"
-    let &t_SI = "\<Esc>]50;CursorShape=1\x7" " Vertical bar in insert mode
-    let &t_EI = "\<Esc>]50;CursorShape=0\x7" " Block in normal mode
-endif
-
-" Set tabwidth
-" from http://stackoverflow.com/questions/1562336/tab-vs-space-preferences-in-vim
-" http://vimcasts.org/episodes/tabs-and-spaces/ is also worth checking out
-command! -nargs=* Stab call Stab()
-function! Stab()
-  let l:tabstop = 1 * input('set shiftwidth=')
-
-  if l:tabstop > 0
-    " do we want expandtab as well?
-    let l:expandtab = confirm('set expandtab?', "&Yes\n&No\n&Cancel")
-    if l:expandtab == 3
-      " abort?
-      return
-    endif
-
-    let &l:sts = l:tabstop
-    let &l:ts = l:tabstop
-    let &l:sw = l:tabstop
-
-    if l:expandtab == 1
-      setlocal expandtab
-    else
-      setlocal noexpandtab
-    endif
-  endif
-
-  " show the selected options
-  try
-    echohl ModeMsg
-    echon 'set tabstop='
-    echohl Question
-    echon &l:ts
-    echohl ModeMsg
-    echon ' shiftwidth='
-    echohl Question
-    echon &l:sw
-    echohl ModeMsg
-    echon ' sts='
-    echohl Question
-    echon &l:sts . ' ' . (&l:et ? '  ' : 'no')
-    echohl ModeMsg
-    echon 'expandtab'
-  finally
-    echohl None
-  endtry
-endfunction
-
 " Plugin Customization
 " ====================
 
@@ -211,35 +148,10 @@ let g:ale_linters = {
 " Disable this to prevent noticeable pause (See https://github.com/w0rp/ale/issues/2021)
 let g:ale_virtualenv_dir_names = []
 
-" vim-schlepp
-vmap <up> <Plug>SchleppUp
-vmap <down> <Plug>SchleppDown
-vmap <left> <Plug>SchleppLeft
-vmap <right> <Plug>SchleppRight
-vmap D <Plug>SchleppDup
-let g:Schlepp#allowSquishingLines = 1
-let g:Schlepp#allowSquishingBlocks = 1
-
 " Ignore files for Command-T
 set wildignore+=*.o,*.so,*.bmp,*.gif,*.tif,*.jpg,*.png,*.pdf,*.mat,*.npz,*.aux,*.bbl,*.blg,*.log,*.key,*.pyc,*.fdb_latexmk,*.egg-info,*.png.map,*.egg
 " IPython auto-generated files
 set wildignore+=shadowhist,kernel*.json,__enamlcache__,build
-
-" vim-closetag
-" ......................................................................
-let g:closetag_filenames = "*.html,*.js"
-
-" UltiSnips
-" ......................................................................
-let g:UltiSnipsExpandTrigger       = "<c-j>"
-let g:UltiSnipsJumpForwardTrigger  = "<c-j>"
-let g:UltiSnipsJumpBackwardTrigger = "<c-p>"
-let g:UltiSnipsListSnippets        = "<c-k>" "List possible snippets based on current file
-
-" vim-surround
-" ......................................................................
-let g:surround_{char2nr('w')} = "{{\r}}"
-let g:surround_{char2nr('%')} = "{%\r%}"
 
 " Allow project-specific `.nvimrc` files, but disable unsafe commands
 " See https://andrew.stwrt.ca/posts/project-specific-vimrc/
