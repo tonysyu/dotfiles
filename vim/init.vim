@@ -51,8 +51,9 @@ set tags+=.tags;~              " The trailing ';~' tells vim to search parent di
 " ====================
 set gdefault                    " make substitutions global by default
 
-source ~/.config/nvim/init/search_and_nav.vim
 source ~/.config/nvim/init/languages.vim
+source ~/.config/nvim/init/search_and_nav.vim
+source ~/.config/nvim/init/ui.vim
 
 augroup autosave
     autocmd!
@@ -219,19 +220,6 @@ vmap D <Plug>SchleppDup
 let g:Schlepp#allowSquishingLines = 1
 let g:Schlepp#allowSquishingBlocks = 1
 
-" vim-indent-guides Settings
-" ......................................................................
-
-let g:indent_guides_enable_on_vim_startup = 1
-let g:indent_guides_auto_colors = 0
-let g:indent_guides_guide_size = 4
-
-augroup indent_guides_config
-    autocmd!
-    autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=#202020 ctermbg=234
-    autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#303030 ctermbg=236
-augroup END
-
 " Ignore files for Command-T
 set wildignore+=*.o,*.so,*.bmp,*.gif,*.tif,*.jpg,*.png,*.pdf,*.mat,*.npz,*.aux,*.bbl,*.blg,*.log,*.key,*.pyc,*.fdb_latexmk,*.egg-info,*.png.map,*.egg
 " IPython auto-generated files
@@ -240,28 +228,6 @@ set wildignore+=shadowhist,kernel*.json,__enamlcache__,build
 " vim-closetag
 " ......................................................................
 let g:closetag_filenames = "*.html,*.js"
-
-" lightline.vim
-" ......................................................................
-let g:lightline = {
-      \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
-      \ },
-      \ 'component_function': {
-      \   'gitbranch': 'fugitive#head'
-      \ },
-      \ }
-
-" vim-buftabline
-" ......................................................................
-nnoremap <D-M-k> :bn<CR>
-nnoremap <D-M-j> :bp<CR>
-let g:buftabline_numbers = 1
-let g:buftabline_separators = 1
-
-" Use vertical splits for Gdiff (this affects all diffs, not just fugitive's)
-set diffopt+=vertical
 
 " UltiSnips
 " ......................................................................
