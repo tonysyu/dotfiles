@@ -1,3 +1,14 @@
+" Common extensions
+let g:coc_global_extensions = [
+    \'coc-css',
+    \'coc-json',
+    \'coc-prettier',
+    \'coc-pyright',
+    \'coc-tabnine',
+    \'coc-tsserver',
+    \'coc-yaml'
+    \]
+
 " GoTo code navigation.
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gr <Plug>(coc-references)
