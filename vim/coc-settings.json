@@ -1,5 +1,6 @@
 {
     "coc.preferences.formatOnSaveFiletypes": ["python"],
+    "npm.binPath": "~/.nvm/versions/node/v14.15.4/bin/npm",
     "python.formatting.provider": "black",
     "python.linting.flake8Enabled": true,
     "python.linting.pylintEnabled": false,

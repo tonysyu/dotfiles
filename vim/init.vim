@@ -51,6 +51,7 @@ set tags+=.tags;~              " The trailing ';~' tells vim to search parent di
 " ====================
 set gdefault                    " make substitutions global by default
 
+source ~/.config/nvim/init/coc.vim
 source ~/.config/nvim/init/editing.vim
 source ~/.config/nvim/init/languages.vim
 source ~/.config/nvim/init/search_and_nav.vim

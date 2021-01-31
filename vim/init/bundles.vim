@@ -3,7 +3,6 @@
 call plug#begin('~/dotfiles/vim/plugged')
 
 " Vim enhancement plugins:
-Plug 'dense-analysis/ale'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-eunuch'
@@ -36,7 +35,6 @@ Plug 'tpope/vim-surround'
 Plug 'ap/vim-buftabline'
 Plug 'bronson/vim-visual-star-search'
 Plug 'easymotion/vim-easymotion'
-Plug 'ludovicchabant/vim-gutentags'
 Plug 'jeetsukumaran/vim-filebeagle'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
