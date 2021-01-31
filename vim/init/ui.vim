@@ -4,6 +4,11 @@ if $TERM_PROGRAM =~ "iTerm"
     let &t_EI = "\<Esc>]50;CursorShape=0\x7" " Block in normal mode
 endif
 
+
+" CHADtree
+" ......................................................................
+nnoremap <leader>v <cmd>CHADopen<cr>
+
 " vim-indent-guides Settings
 " ......................................................................
 

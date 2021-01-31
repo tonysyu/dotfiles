@@ -1,12 +1,13 @@
 homebrew_taps:
+- homebrew/cask-fonts
 - uptech/homebrew-oss
 
 homebrew_packages:
-- ctags
 - neovim
 - uptech/oss/alt
 
 homebrew_cask_apps:
+- font-inconsolata-nerd-font
 - vimr
 
 python_venv_root: "~/.venv/"

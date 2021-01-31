@@ -39,6 +39,7 @@ Plug 'liuchengxu/vista.vim'
 Plug 'jeetsukumaran/vim-filebeagle'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
+Plug 'ms-jpq/chadtree', {'branch': 'chad', 'do': 'python3 -m chadtree deps'}
 Plug 'padde/jump.vim'
 Plug 'tmhedberg/matchit'
 Plug 'xolox/vim-misc'
