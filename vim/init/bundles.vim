@@ -36,7 +36,6 @@ Plug 'ap/vim-buftabline'
 Plug 'bronson/vim-visual-star-search'
 Plug 'easymotion/vim-easymotion'
 Plug 'liuchengxu/vista.vim'
-Plug 'jeetsukumaran/vim-filebeagle'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'ms-jpq/chadtree', {'branch': 'chad', 'do': 'python3 -m chadtree deps'}

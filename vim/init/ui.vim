@@ -4,6 +4,19 @@ if $TERM_PROGRAM =~ "iTerm"
     let &t_EI = "\<Esc>]50;CursorShape=0\x7" " Block in normal mode
 endif
 
+command -bang -nargs=? QFix call QFixToggle(<bang>0)
+function! QFixToggle(forced)
+  if exists("g:qfix_win") && a:forced == 0
+    cclose
+    unlet g:qfix_win
+  else
+    copen 10
+    let g:qfix_win = bufnr("$")
+  endif
+endfunction
+" Toggle QuickFix pane (vt = "view quickfix")
+nnoremap <leader>vq <cmd>QFix<CR>
+
 " CHADtree
 " ......................................................................
 " Toggle Chadtree pane (vt = "view tree")
