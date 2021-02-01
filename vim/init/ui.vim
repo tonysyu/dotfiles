@@ -4,10 +4,16 @@ if $TERM_PROGRAM =~ "iTerm"
     let &t_EI = "\<Esc>]50;CursorShape=0\x7" " Block in normal mode
 endif
 
-
 " CHADtree
 " ......................................................................
-nnoremap <leader>v <cmd>CHADopen<cr>
+" Toggle Chadtree pane (vt = "view tree")
+nnoremap <leader>vt <cmd>CHADopen<cr>
+
+" Vista
+" ......................................................................
+let g:vista_default_executive = 'coc'
+"" Toggle Vista pane (vt = "view symbols")
+nnoremap <leader>vs <cmd>Vista!!<cr>
 
 " vim-indent-guides Settings
 " ......................................................................
