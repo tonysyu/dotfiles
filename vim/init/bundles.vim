@@ -23,9 +23,7 @@ Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'jiangmiao/auto-pairs'
-Plug 'terryma/vim-multiple-cursors'
 Plug 'vim-scripts/ReplaceWithRegister'
-Plug 'zirrostig/vim-schlepp'
 
 " Motion and text-object plugins:
 Plug 'michaeljsmith/vim-indent-object'
@@ -34,7 +32,6 @@ Plug 'tpope/vim-surround'
 " Search and navigation plugins:
 Plug 'ap/vim-buftabline'
 Plug 'bronson/vim-visual-star-search'
-Plug 'easymotion/vim-easymotion'
 Plug 'liuchengxu/vista.vim'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
