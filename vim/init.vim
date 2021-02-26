@@ -1,17 +1,15 @@
-"remove vi compatibility (this should be first since it has side effects)
-set nocompatible
-" syntax highlighting on
-
-" Set vim to use colorschemes with 256 colors
-set t_Co=256
-set background=dark
-colorscheme molokai
-" Fix terminal colors in vimr (https://github.com/qvacua/vimr/issues/719)
-set termguicolors
-
 syntax on
 
 source ~/.config/nvim/init/bundles.vim
+
+" Setup colorscheme (gruvbox installed in bundles.vim)
+set termguicolors
+set background=dark
+let g:gruvbox_contrast_dark="hard"
+" The following is recommended (https://github.com/morhetz/gruvbox/wiki/Installation)
+" but conflicts with semshi for python files
+" autocmd vimenter * ++nested colorscheme gruvbox
+colorscheme gruvbox
 
 set modelines=0                 " don't add configuration lines to files
 

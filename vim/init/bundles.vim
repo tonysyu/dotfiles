@@ -10,6 +10,7 @@ Plug 'tpope/vim-eunuch'
 " UI enhancement plugins:
 Plug 'haya14busa/incsearch.vim'
 Plug 'itchyny/lightline.vim'
+Plug 'morhetz/gruvbox'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'Shougo/junkfile.vim'
 
