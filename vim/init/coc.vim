@@ -1,6 +1,7 @@
 " Common extensions
 let g:coc_global_extensions = [
     \'coc-css',
+    \'coc-highlight',
     \'coc-json',
     \'coc-prettier',
     \'coc-pyright',
@@ -8,6 +9,10 @@ let g:coc_global_extensions = [
     \'coc-tsserver',
     \'coc-yaml'
     \]
+
+" coc-highlight: Highlight current word under cursor
+autocmd CursorMoved * silent call CocActionAsync('highlight')
+highlight CocHighlightText ctermfg=LightMagenta ctermfg=Black guifg=#ff00ff guibg=#000000
 
 " GoTo code navigation.
 nmap <silent> gd <Plug>(coc-definition)

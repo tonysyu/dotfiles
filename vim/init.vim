@@ -6,10 +6,8 @@ source ~/.config/nvim/init/bundles.vim
 set termguicolors
 set background=dark
 let g:gruvbox_contrast_dark="hard"
-" The following is recommended (https://github.com/morhetz/gruvbox/wiki/Installation)
-" but conflicts with semshi for python files
-" autocmd vimenter * ++nested colorscheme gruvbox
-colorscheme gruvbox
+" The following is recommended (https://github.com/morhetz/gruvbox/wiki/Installation):
+autocmd vimenter * ++nested colorscheme gruvbox
 
 set modelines=0                 " don't add configuration lines to files
 

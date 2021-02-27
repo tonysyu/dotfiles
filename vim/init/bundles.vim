@@ -61,7 +61,6 @@ Plug 'leafgarland/typescript-vim'
 Plug 'mattn/emmet-vim'
 Plug 'mxw/vim-jsx'
 Plug 'neoclide/coc.nvim', 'release'
-Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
 Plug 'peitalin/vim-jsx-typescript'
 Plug 'posva/vim-vue'
 Plug 'styled-components/vim-styled-components'
