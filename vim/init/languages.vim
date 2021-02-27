@@ -36,3 +36,9 @@ hi link typescriptReserved Keyword
 " Avoid maxmempattern error in riv
 " See https://github.com/gu-fan/riv.vim/issues/144#issuecomment-537056690
 set mmp=2000
+
+" emmet configuration
+" ......................................................................
+" Change leader key to something other than <C-Y>, which is used to confirm
+" completion results in coc.nvim
+let g:user_emmet_leader_key='<C-Z>'
