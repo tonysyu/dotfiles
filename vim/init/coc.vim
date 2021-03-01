@@ -16,7 +16,8 @@ highlight CocHighlightText ctermfg=LightMagenta ctermfg=Black guifg=#ff00ff guib
 
 " Use <cr> to confirm completion, `<C-g>u` means break undo chain at current position.
 " Coc only does snippet and additional edit on confirm.
-inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+" FIXME: This change seems to cause <Enter> to close pum, even if no completion is selected:
+" inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
 " GoTo code navigation.
 nmap <silent> gd <Plug>(coc-definition)
