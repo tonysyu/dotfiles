@@ -10,9 +10,10 @@ Plug 'tpope/vim-eunuch'
 " UI enhancement plugins:
 Plug 'haya14busa/incsearch.vim'
 Plug 'itchyny/lightline.vim'
+Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'morhetz/gruvbox'
-Plug 'nathanaelkane/vim-indent-guides'
 Plug 'Shougo/junkfile.vim'
+Plug 'Yggdroot/indentLine'
 
 " General editing plugins:
 Plug 'AndrewRadev/splitjoin.vim'
