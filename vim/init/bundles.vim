@@ -8,10 +8,12 @@ Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-eunuch'
 
 " UI enhancement plugins:
+Plug 'gerw/vim-HiLinkTrace'
 Plug 'haya14busa/incsearch.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'junegunn/vim-peekaboo'
+Plug 'sheerun/vim-polyglot'
 Plug 'Shougo/junkfile.vim'
 Plug 'tomasr/molokai'
 Plug 'Yggdroot/indentLine'

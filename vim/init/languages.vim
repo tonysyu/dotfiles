@@ -25,12 +25,6 @@ let g:SimpylFold_docstring_preview = 1
 " ......................................................................
 let g:jsx_ext_required = 0  " Use vim-jsx for all .js files
 
-" Typescript
-" ......................................................................
-
-" Override default link to Error for some reserved words (e.g import) peitalin/vim-jsx-typescript
-hi link typescriptReserved Keyword
-
 " riv plugin configuration
 " ......................................................................
 " Avoid maxmempattern error in riv

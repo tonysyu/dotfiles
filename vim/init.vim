@@ -47,6 +47,7 @@ set gdefault                    " make substitutions global by default
 
 source ~/.config/nvim/init/coc.vim
 source ~/.config/nvim/init/editing.vim
+source ~/.config/nvim/init/highlight.vim
 source ~/.config/nvim/init/languages.vim
 source ~/.config/nvim/init/search_and_nav.vim
 source ~/.config/nvim/init/ui.vim
@@ -117,15 +118,6 @@ command! EditSnippet call s:EditVimConfig('snippets', '.snippets')
 command! EditColors edit ~/.config/nvim/colors/molokai.vim
 
 nnoremap <leader>ep :echo expand('%:p')<CR>
-
-" Show syntax highlighting groups for word under cursor (Ctrl-Shift-P)
-nnoremap <C-S-P> :call <SID>SynStack()<CR>
-function! <SID>SynStack()
-    if !exists("*synstack")
-        return
-    endif
-    echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
-endfunction
 
 " Plugin Customization
 " ====================
