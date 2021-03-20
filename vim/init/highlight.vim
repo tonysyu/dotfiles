@@ -2,6 +2,14 @@
 "
 " vim-HiLinkTrace defines a :HLT command for displaying highlight groups
 
+" Generic syntax
+" ......................................................................
+" Invert colors of MatchParen in molokai colorscheme to avoid jumping cursor
+hi MatchParen      guifg=#FD971F guibg=#000000 gui=bold
+if &t_Co > 255
+   hi MatchParen   ctermfg=208 ctermbg=233  cterm=bold
+end
+
 " Elixir
 " ......................................................................
 hi link elixirBlockDefinition Statement

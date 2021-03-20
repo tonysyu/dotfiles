@@ -31,6 +31,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'vim-scripts/ReplaceWithRegister'
 
 " Motion and text-object plugins:
+Plug 'andymass/vim-matchup'
 Plug 'michaeljsmith/vim-indent-object'
 Plug 'tpope/vim-surround'
 
@@ -42,7 +43,6 @@ Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'ms-jpq/chadtree', {'branch': 'chad', 'do': 'python3 -m chadtree deps'}
 Plug 'padde/jump.vim'
-Plug 'tmhedberg/matchit'
 Plug 'xolox/vim-misc'
 
 " Git plugins:
