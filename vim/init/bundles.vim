@@ -12,8 +12,8 @@ Plug 'haya14busa/incsearch.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'junegunn/vim-peekaboo'
-Plug 'morhetz/gruvbox'
 Plug 'Shougo/junkfile.vim'
+Plug 'tomasr/molokai'
 Plug 'Yggdroot/indentLine'
 
 " General editing plugins:

@@ -2,11 +2,10 @@ syntax on
 
 source ~/.config/nvim/init/bundles.vim
 
-" Setup colorscheme (gruvbox installed in bundles.vim)
+" Setup colorscheme
 set termguicolors
 set background=dark
-let g:gruvbox_contrast_dark="hard"
-colorscheme gruvbox
+colorscheme molokai
 
 set modelines=0                 " don't add configuration lines to files
 
