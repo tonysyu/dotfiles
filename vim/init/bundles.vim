@@ -41,6 +41,7 @@ Plug 'bronson/vim-visual-star-search'
 Plug 'liuchengxu/vista.vim'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
+Plug 'justinmk/vim-sneak'
 Plug 'ms-jpq/chadtree', {'branch': 'chad', 'do': 'python3 -m chadtree deps'}
 Plug 'padde/jump.vim'
 Plug 'xolox/vim-misc'
