@@ -36,3 +36,10 @@ set mmp=2000
 " Change leader key to something other than <C-Y>, which is used to confirm
 " completion results in coc.nvim
 let g:user_emmet_leader_key='<C-Z>'
+
+" Fix for json and markdown and indentLine
+" ......................................................................
+" See https://vi.stackexchange.com/a/24396/12878
+let g:vim_json_syntax_conceal = 0
+let g:vim_markdown_conceal = 0
+let g:vim_markdown_conceal_code_blocks = 0
