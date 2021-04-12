@@ -34,7 +34,8 @@ source $(dirname -- $0)/vim/aliases.zsh
 
 # User configuration
 
-# export MANPATH="/usr/local/man:$MANPATH"
+# Use neovim as for `man` command
+export MANPAGER="nvim '+set background=dark' '+set ft=man' -"
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
