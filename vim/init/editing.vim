@@ -9,6 +9,10 @@ onoremap il :normal! vil<CR>
 xnoremap al $o0
 onoremap al :normal! val<CR>
 
+" search and replace
+nnoremap <leader>ss :%s/
+vnoremap <leader>ss :s/
+
 " vim-closetag
 " ......................................................................
 let g:closetag_filenames = "*.html,*.js"

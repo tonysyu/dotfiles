@@ -14,10 +14,6 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
-" search and replace
-nnoremap <leader>ss :%s/
-vnoremap <leader>ss :s/
-
 " case insensitive incsearch
 nnoremap c/ /\c
 
