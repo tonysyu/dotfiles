@@ -17,8 +17,11 @@ hi link elixirDefine Statement
 hi link elixirModuleDefine Statement
 hi link elixirPrivateDefine Statement
 
-" Typescript
+" Javascript / Typescript
 " ......................................................................
 
 " Override default link to Error for some reserved words (e.g import) peitalin/vim-jsx-typescript
 hi link typescriptReserved Keyword
+
+" Currently, vim-polyglot defines `javaScriptLineComment`, but doesn't link it to `Comment`
+hi link javaScriptLineComment Comment
