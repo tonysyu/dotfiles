@@ -4,13 +4,13 @@ call plug#begin('~/dotfiles/vim/plugged')
 
 " Vim enhancement plugins:
 Plug 'editorconfig/editorconfig-vim'
-Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-eunuch'
 
 " UI enhancement plugins:
 Plug 'gerw/vim-HiLinkTrace'
 Plug 'haya14busa/incsearch.vim'
 Plug 'itchyny/lightline.vim'
+Plug 'kshenoy/vim-signature'
 Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'junegunn/vim-peekaboo'
 Plug 'sheerun/vim-polyglot'
@@ -23,6 +23,7 @@ Plug 'AndrewRadev/splitjoin.vim'
 Plug 'christoomey/vim-system-copy'
 Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-repeat'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
