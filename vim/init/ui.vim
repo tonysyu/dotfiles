@@ -22,6 +22,13 @@ nnoremap <leader>vq <cmd>QFix<CR>
 " Toggle Chadtree pane (vt = "view tree")
 nnoremap <leader>vt <cmd>CHADopen<cr>
 
+
+" context.vim
+" ......................................................................
+" Avoid redraws to stop flickering with neovim (some artefacts may be visible)
+" Remove when upgrading to NeoVim 0.5
+let g:context_nvim_no_redraw = 1
+
 " Vista
 " ......................................................................
 let g:vista_default_executive = 'coc'

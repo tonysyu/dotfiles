@@ -16,6 +16,7 @@ Plug 'junegunn/vim-peekaboo'
 Plug 'sheerun/vim-polyglot'
 Plug 'Shougo/junkfile.vim'
 Plug 'tomasr/molokai'
+Plug 'wellle/context.vim'
 Plug 'Yggdroot/indentLine'
 
 " General editing plugins:
