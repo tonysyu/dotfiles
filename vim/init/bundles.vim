@@ -4,6 +4,12 @@ call plug#begin('~/dotfiles/vim/plugged')
 
 " Vim enhancement plugins:
 Plug 'editorconfig/editorconfig-vim'
+Plug 'kabouzeid/nvim-lspinstall'
+Plug 'neovim/nvim-lspconfig'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+
+" Filesystem plugins
+Plug 'Shougo/junkfile.vim'
 Plug 'tpope/vim-eunuch'
 
 " UI enhancement plugins:
@@ -13,8 +19,6 @@ Plug 'itchyny/lightline.vim'
 Plug 'kshenoy/vim-signature'
 Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'junegunn/vim-peekaboo'
-Plug 'sheerun/vim-polyglot'
-Plug 'Shougo/junkfile.vim'
 Plug 'tomasr/molokai'
 Plug 'Yggdroot/indentLine'
 
@@ -55,25 +59,8 @@ Plug 'tpope/vim-unimpaired'
 
 " Language-specific plugins
 Plug 'alvan/vim-closetag'
-Plug 'cespare/vim-toml'
 Plug 'chrisbra/Colorizer'
-Plug 'chrisbra/csv.vim'
-Plug 'duganchen/vim-soy'
-Plug 'elixir-editors/vim-elixir'
-Plug 'elzr/vim-json'
-Plug 'gu-fan/riv.vim'
-Plug 'jxnblk/vim-mdx-js'
-Plug 'leafgarland/typescript-vim'
 Plug 'mattn/emmet-vim'
-Plug 'mxw/vim-jsx'
-Plug 'neoclide/coc.nvim', 'release'
-Plug 'peitalin/vim-jsx-typescript'
-Plug 'posva/vim-vue'
-Plug 'styled-components/vim-styled-components'
-Plug 'tmhedberg/SimpylFold'
-Plug 'tpope/vim-markdown'
 Plug 'tpope/vim-ragtag'
-Plug 'tweekmonster/django-plus.vim'
-Plug 'Vimjas/vim-python-pep8-indent'
 
 call plug#end()

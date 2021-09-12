@@ -3,7 +3,9 @@ homebrew_taps:
 - uptech/homebrew-oss
 
 homebrew_packages:
+- luajit
 - neovim
+- tree-sitter
 - uptech/oss/alt
 
 homebrew_cask_apps:

@@ -34,18 +34,22 @@ set linebreak                   " set list and set linebreak conflict!
 set textwidth=99
 set formatoptions=qrn1
 
+" Folding
+set foldmethod=expr
+set foldexpr=nvim_treesitter#foldexpr()
+
 set number                  	" show line numbers
 set relativenumber          	" number lines relative to current line
 set colorcolumn=100         	" add line marking column
 set undofile                	" allow undo across file sessions
 set undodir=~/.config/nvim/undo/
-set tags+=.tags;~              " The trailing ';~' tells vim to search parent directories upto ~.
 
 " Search customization
 " ====================
 set gdefault                    " make substitutions global by default
 
-source ~/.config/nvim/init/coc.vim
+luafile ~/.config/nvim/init/lsp.lua
+luafile ~/.config/nvim/init/treesitter.lua
 source ~/.config/nvim/init/editing.vim
 source ~/.config/nvim/init/highlight.vim
 source ~/.config/nvim/init/languages.vim
