@@ -1,3 +1,7 @@
+local cmp = require('cmp')
+local lspconfig = require('lspconfig')
+local lspinstall = require('lspinstall')
+
 -- Attach keymappings to LSP servers
 -- See https://github.com/neovim/nvim-lspconfig#keybindings-and-completion
 local function on_attach(client, bufnr)
@@ -6,8 +10,8 @@ local function on_attach(client, bufnr)
     local opts = { noremap=true, silent=true }
 
     -- Definitions and references
-    buf_set_keymap('n', 'gD', '<Cmd>lua vim.lsp.buf.declaration()<CR>', opts)
-    buf_set_keymap('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
+    buf_set_keymap('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
+    buf_set_keymap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
     buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
     buf_set_keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
     buf_set_keymap('n', '<space>D', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
@@ -27,10 +31,10 @@ local function on_attach(client, bufnr)
 end
 
 local function setup_servers()
-    require('lspinstall').setup()
-    local servers = require('lspinstall').installed_servers()
+    lspinstall.setup()
+    local servers = lspinstall.installed_servers()
     for _, server in pairs(servers) do
-        require('lspconfig')[server].setup{
+        lspconfig[server].setup{
             on_attach = on_attach,
             flags = {
                 debounce_text_changes = 150,
@@ -42,12 +46,11 @@ end
 setup_servers()
 
 -- Automatically reload after `:LspInstall <server>` so we don't have to restart neovim
-require('lspinstall').post_install_hook = function ()
+lspinstall.post_install_hook = function ()
     setup_servers() -- reload installed servers
     vim.cmd("bufdo e") -- this triggers the FileType autocmd that starts the server
 end
 
-local cmp = require('cmp')
 cmp.setup({
     snippet = {
         expand = function(args)
