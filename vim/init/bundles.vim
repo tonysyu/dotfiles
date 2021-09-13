@@ -43,11 +43,11 @@ Plug 'tpope/vim-surround'
 " Search and navigation plugins:
 Plug 'ap/vim-buftabline'
 Plug 'liuchengxu/vista.vim'
-Plug 'junegunn/fzf'
-Plug 'junegunn/fzf.vim'
 Plug 'justinmk/vim-sneak'
 Plug 'ms-jpq/chadtree', {'branch': 'chad', 'do': 'python3 -m chadtree deps'}
 Plug 'nelstrom/vim-visual-star-search'
+Plug 'nvim-lua/plenary.nvim'  " Required by nvim-telescope
+Plug 'nvim-telescope/telescope.nvim'
 Plug 'padde/jump.vim'
 Plug 'xolox/vim-misc'
 

@@ -34,43 +34,14 @@ map #  <Plug>(incsearch-nohl-#)
 map g* <Plug>(incsearch-nohl-g*)
 map g# <Plug>(incsearch-nohl-g#)
 
-" vim-fzf
+" telescope
 " ......................................................................
-nnoremap <leader>t :GitFiles<cr>
-nnoremap <leader>b :Buffers<cr>
-
-" Mapping selecting mappings
-nmap <leader><tab> <plug>(fzf-maps-n)
-xmap <leader><tab> <plug>(fzf-maps-x)
-omap <leader><tab> <plug>(fzf-maps-o)
-
-" Insert mode completion
-imap <c-x><c-k> <plug>(fzf-complete-word)
-imap <c-x><c-f> <plug>(fzf-complete-path)
-imap <c-x><c-j> <plug>(fzf-complete-file-ag)
-imap <c-x><c-l> <plug>(fzf-complete-line)
-
-" Advanced customization using autoload functions
-inoremap <expr> <c-x><c-k> fzf#vim#complete#word({'left': '15%'})
-
-
-" Case-insensitive ripgrep search
-command! -bang -nargs=* Rgi
-    \ call fzf#vim#grep("rg --column --line-number --no-heading --color=always --ignore-case ".shellescape(<q-args>),
-    \                   1, <bang>0)
-
-" Ripgrep search for word-under cursor
-nnoremap <silent> <leader>// :Rg <c-r><c-w><cr>
-" Ripgrep search for visual selection
-vnoremap <silent> <leader>// y:Rg <c-r>"<cr>
-" Ripgrep search for word-under cursor, surrounded by word boundaries
-nnoremap <silent> <leader>/w :Rg \b<c-r><c-w>\b<cr>
-" Ripgrep search for word-under cursor, surrounded by word boundaries
-vnoremap <silent> <leader>/w y:Rg \b<c-r>"\b<cr>
-" Ripgrep search for word-under cursor
-nnoremap <silent> <leader>/i :Rgi <c-r><c-w><cr>
-" Ripgrep search for visual selection
-vnoremap <silent> <leader>/i y:Rgi <c-r>"<cr>
+nnoremap <leader>ff <cmd>lua require('telescope.builtin').git_files()<cr>
+nnoremap <leader>fF <cmd>lua require('telescope.builtin').find_files()<cr>
+nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep diff()<cr>
+nnoremap <leader>fG <cmd>lua require('telescope.builtin').grep_string()<cr>
+nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
+nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
 
 " Custom functions
 " ......................................................................
