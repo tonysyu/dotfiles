@@ -35,8 +35,9 @@ set textwidth=99
 set formatoptions=qrn1
 
 " Folding
-set foldmethod=expr
-set foldexpr=nvim_treesitter#foldexpr()
+" FIXME: Disable folding, which breaks syntax highlighting
+" set foldmethod=expr
+" set foldexpr=nvim_treesitter#foldexpr()
 
 set number                  	" show line numbers
 set relativenumber          	" number lines relative to current line
