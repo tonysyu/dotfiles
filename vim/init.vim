@@ -27,19 +27,6 @@ source ~/.config/nvim/init/languages.vim
 source ~/.config/nvim/init/search_and_nav.vim
 source ~/.config/nvim/init/ui.vim
 
-augroup autosave
-    autocmd!
-    autocmd BufLeave,FocusLost silent! wall " save when focus is lost
-augroup END
-" Since I'm auto-saving (above), don't save backup and swap files.
-set nobackup
-set nowritebackup
-set noswapfile
-
-" Allow switching from modified buffers (i.e. hidden buffers)
-set hidden
-" Confirm before quitting if a modified buffer is hidden
-set confirm
 
 " Ctrl-/ to start case-insensitive search
 nnoremap <C-/> :/\c

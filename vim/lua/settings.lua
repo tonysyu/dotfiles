@@ -14,6 +14,14 @@ opt.smartindent = true
 opt.undofile = true
 opt.undodir = '~/.config/nvim/undo/'
 
+-- Modified buffers, backups, and swap files
+-- ............................................................................
+opt.backup = false
+opt.writebackup = false
+opt.swapfile = false
+opt.hidden = true  -- Allow switching from modified buffers (i.e. hidden buffers)
+opt.confirm = true  -- Confirm before quitting if a modified buffer is hidden
+
 -- Fill column
 -- ............................................................................
 opt.textwidth = 99
