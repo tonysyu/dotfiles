@@ -2,52 +2,22 @@ syntax on
 
 source ~/.config/nvim/init/bundles.vim
 
+" change the mapleader from \ to ,
+let mapleader=","
+let maplocalleader=","
+
+luafile ~/.config/nvim/lua/settings.lua
+
 " Setup colorscheme
 set termguicolors
 set background=dark
 colorscheme molokai
 
-set modelines=0                 " don't add configuration lines to files
-
-" change the mapleader from \ to ,
-let mapleader=","
-let maplocalleader=","
-" let semicolon start EX-mode (a.k.a. command mode)
-"nnoremap ; :
-set showmode                    " display mode in Insert, Replace or Visual
-set cursorline                  " highlight current line
-set wildmode=longest,list,full  " change tab-completion to be more like BASH
-
-" Whitespace
-" set list                      " show whitespace (negates linebreak)
-set tabstop=4                   " tab is 4 spaces
-set shiftwidth=4                " indentation in normal mode is 4 spaces
-set softtabstop=4               " back space removes up-to 4 spaces
-set expandtab                   " expand tabs to spaces
-
 " Search
 set wildignorecase              " Ignore case in file searches (e.g. in ex mode)
 
 " line width and indenting
-set wrap
-set linebreak                   " set list and set linebreak conflict!
-set textwidth=99
 set formatoptions=qrn1
-
-" Folding
-" FIXME: Disable folding, which breaks syntax highlighting
-" set foldmethod=expr
-" set foldexpr=nvim_treesitter#foldexpr()
-
-set number                  	" show line numbers
-set relativenumber          	" number lines relative to current line
-set colorcolumn=100         	" add line marking column
-set undofile                	" allow undo across file sessions
-set undodir=~/.config/nvim/undo/
-
-" Search customization
-" ====================
-set gdefault                    " make substitutions global by default
 
 luafile ~/.config/nvim/init/lsp.lua
 luafile ~/.config/nvim/init/treesitter.lua
@@ -123,23 +93,3 @@ command! EditSnippet call s:EditVimConfig('snippets', '.snippets')
 command! EditColors edit ~/.config/nvim/colors/molokai.vim
 
 nnoremap <leader>ep :echo expand('%:p')<CR>
-
-" Plugin Customization
-" ====================
-
-let g:ale_linters = {
-\   'javascript': ['eslint'],
-\}
-
-" Disable this to prevent noticeable pause (See https://github.com/w0rp/ale/issues/2021)
-let g:ale_virtualenv_dir_names = []
-
-" Ignore files for Command-T
-set wildignore+=*.o,*.so,*.bmp,*.gif,*.tif,*.jpg,*.png,*.pdf,*.mat,*.npz,*.aux,*.bbl,*.blg,*.log,*.key,*.pyc,*.fdb_latexmk,*.egg-info,*.png.map,*.egg
-" IPython auto-generated files
-set wildignore+=shadowhist,kernel*.json,__enamlcache__,build
-
-" Allow project-specific `.nvimrc` files, but disable unsafe commands
-" See https://andrew.stwrt.ca/posts/project-specific-vimrc/
-set exrc
-set secure
