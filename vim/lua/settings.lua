@@ -39,8 +39,9 @@ opt.relativenumber = true
 
 -- Wildmenu (ex-mode completion)
 -- ............................................................................
-opt.wildmode = {'longest', 'list', 'full'}
+opt.wildignorecase = true  -- Ignore case in file searches
 opt.wildmenu = true
+opt.wildmode = {'longest', 'list', 'full'}
 
 -- Cursor
 -- ............................................................................
