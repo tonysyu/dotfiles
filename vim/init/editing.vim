@@ -1,31 +1,6 @@
-" reflow paragraph (i.e. remove end of lines)
-nnoremap Q gqap
-" reflow selected text
-vnoremap Q gq
-
-" vim line-object from https://vi.stackexchange.com/a/6102/12878
-xnoremap il g_o0
-onoremap il :normal! vil<CR>
-xnoremap al $o0
-onoremap al :normal! val<CR>
-
-" search and replace
-nnoremap <leader>ss :%s/
-vnoremap <leader>ss :s/
-
 " vim-closetag
 " ......................................................................
 let g:closetag_filenames = "*.html,*.js"
-
-" vim-schlepp
-" ......................................................................
-vmap <up> <Plug>SchleppUp
-vmap <down> <Plug>SchleppDown
-vmap <left> <Plug>SchleppLeft
-vmap <right> <Plug>SchleppRight
-vmap D <Plug>SchleppDup
-let g:Schlepp#allowSquishingLines = 1
-let g:Schlepp#allowSquishingBlocks = 1
 
 " vim-surround
 " ......................................................................

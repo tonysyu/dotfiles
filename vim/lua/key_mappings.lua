@@ -10,7 +10,9 @@ end
 
 local map = key_map_factory('', {})
 local nnoremap = key_map_factory('n', { noremap = true, silent = true })
+local onoremap = key_map_factory('o', { noremap = true, silent = true })
 local vnoremap = key_map_factory('v', { noremap = true, silent = true })
+local xnoremap = key_map_factory('x', { noremap = true, silent = true })
 
 -- Vim configuration helpers
 -- ............................................................................
@@ -42,6 +44,12 @@ vnoremap { 'k', 'gk' }
 vnoremap { '$', 'g$' }
 vnoremap { '^', 'g^' }
 
+-- vim line-object from https://vi.stackexchange.com/a/6102/12878
+xnoremap { 'il', 'g_o0' }
+onoremap { 'il', ':normal! vil<CR>' }
+xnoremap { 'al', '$o0' }
+onoremap { 'al', ':normal! val<CR>' }
+
 -- Split buffer navigation
 -- ............................................................................
 nnoremap { '<C-h>', '<C-w>h' }
@@ -49,8 +57,21 @@ nnoremap { '<C-j>', '<C-w>j' }
 nnoremap { '<C-k>', '<C-w>k' }
 nnoremap { '<C-l>', '<C-w>l' }
 
--- incsearch.vim settings
+
+-- Text formatting mappings
+-- ............................................................................
+-- reflow paragraph (i.e. remove end of lines)
+nnoremap { 'Q', 'gqap' }
+-- reflow selected text
+vnoremap { 'Q', 'gq' }
+
+-- File search mappings
 -- ......................................................................
+-- search and replace
+nnoremap { '<leader>ss', ':%s/' }
+vnoremap { '<leader>ss', ':s/' }
+
+-- incsearch.vim settings
 map { '/', '<Plug>(incsearch-forward)' }
 map { '?', '<Plug>(incsearch-backward)' }
 map { 'g/', '<Plug>(incsearch-stay)' }
