@@ -1,20 +1,25 @@
 local bind = vim.api.nvim_set_keymap
 local opts = { noremap = true, silent = true }
 
+local function nnoremap(args)
+    key, command = unpack(args)
+    return bind('n', key, command, opts)
+end
+
 -- Vim configuration helpers
 -- ............................................................................
 -- Quickly edit/reload the vimrc file
-bind('n', '<leader>ev', ':e $MYVIMRC<CR>', opts)
-bind('n', '<leader>sv', ':so $MYVIMRC<CR>', opts)
+nnoremap { '<leader>ev', ':e $MYVIMRC<CR>' }
+nnoremap { '<leader>sv', ':so $MYVIMRC<CR>' }
 -- Quickly edit bundles file
-bind('n', '<leader>eb', ':e ~/.config/nvim/init/bundles.vim<CR>', opts)
+nnoremap { '<leader>eb', ':e ~/.config/nvim/init/bundles.vim<CR>' }
 
 -- Buffer navigation
 -- ............................................................................
 -- Toggle between two, most-recent buffers
-bind('n', '<leader><leader>', '<c-^>', opts)
+nnoremap { '<leader><leader>', '<c-^>' }
 
 -- File info
 -- ............................................................................
 -- Show current path
-bind('n', '<leader>ep' ,":echo expand('%:p')<CR>", opts)
+nnoremap { '<leader>ep' ,":echo expand('%:p')<CR>" }
