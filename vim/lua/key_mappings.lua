@@ -16,8 +16,9 @@ local xnoremap = key_map_factory('x', { noremap = true, silent = true })
 
 -- Vim configuration helpers
 -- ............................................................................
--- Quickly edit/reload the vimrc file
-nnoremap { '<leader>ev', ':e $MYVIMRC<CR>' }
+-- Edit the vim configuration file (requires nvim-telescope)
+nnoremap { '<leader>ev', '<cmd>lua require("telescope.builtin").find_files({ search_dirs={ "~/.config/nvim/" } })<cr>' }
+-- Reload (source) the vim settings
 nnoremap { '<leader>sv', ':so $MYVIMRC<CR>' }
 -- Quickly edit bundles file
 nnoremap { '<leader>eb', ':e ~/.config/nvim/init/bundles.vim<CR>' }
@@ -66,7 +67,7 @@ nnoremap { 'Q', 'gqap' }
 vnoremap { 'Q', 'gq' }
 
 -- File search mappings
--- ......................................................................
+-- ............................................................................
 -- search and replace
 nnoremap { '<leader>ss', ':%s/' }
 vnoremap { '<leader>ss', ':s/' }
@@ -86,10 +87,12 @@ map { 'g*', '<Plug>(incsearch-nohl-g*)' }
 map { 'g#', '<Plug>(incsearch-nohl-g#)' }
 
 -- Telescope
--- ......................................................................
+-- ............................................................................
 nnoremap { '<leader>ff', '<cmd>lua require("telescope.builtin").git_files()<cr>' }
 nnoremap { '<leader>fF', '<cmd>lua require("telescope.builtin").find_files()<cr>' }
-nnoremap { '<leader>fg', '<cmd>lua require("telescope.builtin").live_grep diff()<cr>' }
+nnoremap { '<leader>fg', '<cmd>lua require("telescope.builtin").live_grep()<cr>' }
 nnoremap { '<leader>fG', '<cmd>lua require("telescope.builtin").grep_string()<cr>' }
 nnoremap { '<leader>fb', '<cmd>lua require("telescope.builtin").buffers()<cr>' }
 nnoremap { '<leader>fh', '<cmd>lua require("telescope.builtin").help_tags()<cr>' }
+nnoremap { '<leader>fm', '<cmd>lua require("telescope.builtin").marks()<cr>' }
+nnoremap { '<leader>fr', '<cmd>lua require("telescope.builtin").registers()<cr>' }
