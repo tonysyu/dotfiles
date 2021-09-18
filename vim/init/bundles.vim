@@ -26,7 +26,6 @@ Plug 'kshenoy/vim-signature'
 Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'junegunn/vim-peekaboo'
 Plug 'tomasr/molokai'
-Plug 'Yggdroot/indentLine'
 
 " General editing plugins:
 Plug 'AndrewRadev/splitjoin.vim'
@@ -50,7 +49,6 @@ Plug 'tpope/vim-surround'
 Plug 'ap/vim-buftabline'
 Plug 'liuchengxu/vista.vim'
 Plug 'justinmk/vim-sneak'
-Plug 'ms-jpq/chadtree', {'branch': 'chad', 'do': 'python3 -m chadtree deps'}
 Plug 'nelstrom/vim-visual-star-search'
 Plug 'nvim-lua/plenary.nvim'  " Required by nvim-telescope
 Plug 'nvim-telescope/telescope.nvim'
