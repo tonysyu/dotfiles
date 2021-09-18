@@ -1,4 +1,18 @@
+local cmd = vim.cmd
+local g = vim.g
 local opt = vim.opt
+
+-- Setup colorscheme
+-- ............................................................................
+cmd('colorscheme molokai')
+opt.background = 'dark'
+opt.termguicolors = true
+
+-- NeoVim providers
+-- ............................................................................
+-- See https://neovim.io/doc/user/provider.html
+g.node_host_prog = '~/.nvm/versions/node/v14.15.4/bin/neovim-node-host'
+g.python3_host_prog = '~/.venv/py3nvim/bin/python'
 
 -- Indentation
 -- ............................................................................
@@ -62,7 +76,7 @@ opt.secure = true
 
 -- File search configuration
 -- ............................................................................
-vim.opt.wildignore = {
+opt.wildignore = {
     -- Build files
     '*.a',
     '*.o',
