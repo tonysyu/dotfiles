@@ -7,6 +7,7 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'kabouzeid/nvim-lspinstall'
 Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'kyazdani42/nvim-web-devicons'
 
 " Completion plugins
 Plug 'hrsh7th/nvim-cmp'
