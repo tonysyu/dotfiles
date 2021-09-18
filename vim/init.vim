@@ -13,7 +13,7 @@ set termguicolors
 set background=dark
 colorscheme molokai
 
-luafile ~/.config/nvim/lua/load_config.lua
+luafile ~/.config/nvim/lua/load_tools_config.lua
 luafile ~/.config/nvim/lua/key_mappings.lua
 luafile ~/.config/nvim/lua/lsp.lua
 luafile ~/.config/nvim/lua/treesitter.lua

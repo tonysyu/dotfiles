@@ -45,13 +45,16 @@ Plug 'andymass/vim-matchup'
 Plug 'michaeljsmith/vim-indent-object'
 Plug 'tpope/vim-surround'
 
+" Telescope (search) plugins:
+Plug 'nvim-lua/plenary.nvim'  " Required by nvim-telescope
+Plug 'nvim-telescope/telescope.nvim'
+Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
+
 " Search and navigation plugins:
 Plug 'ap/vim-buftabline'
 Plug 'liuchengxu/vista.vim'
 Plug 'justinmk/vim-sneak'
 Plug 'nelstrom/vim-visual-star-search'
-Plug 'nvim-lua/plenary.nvim'  " Required by nvim-telescope
-Plug 'nvim-telescope/telescope.nvim'
 Plug 'padde/jump.vim'
 Plug 'xolox/vim-misc'
 
