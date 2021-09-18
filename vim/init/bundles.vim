@@ -11,9 +11,9 @@ Plug 'kyazdani42/nvim-web-devicons'
 
 " Completion plugins
 Plug 'hrsh7th/nvim-cmp'
-Plug 'hrsh7th/vim-vsnip'
 Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'quangnguyen30192/cmp-nvim-ultisnips'
 
 " Filesystem plugins
 Plug 'Shougo/junkfile.vim'

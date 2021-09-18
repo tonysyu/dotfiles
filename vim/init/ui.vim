@@ -14,7 +14,7 @@ function! QFixToggle(forced)
     let g:qfix_win = bufnr("$")
   endif
 endfunction
-" Toggle QuickFix pane (vt = "view quickfix")
+" Toggle QuickFix pane (vq = "view quickfix")
 nnoremap <leader>vq <cmd>QFix<CR>
 
 " Vista
