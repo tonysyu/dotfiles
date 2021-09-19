@@ -2,10 +2,10 @@ local opt = vim.opt
 local utils = require('utils')
 
 local map = utils.key_map_factory('', {})
-local nnoremap = utils.key_map_factory('n', { noremap = true, silent = true })
-local onoremap = utils.key_map_factory('o', { noremap = true, silent = true })
-local vnoremap = utils.key_map_factory('v', { noremap = true, silent = true })
-local xnoremap = utils.key_map_factory('x', { noremap = true, silent = true })
+local nnoremap = utils.key_map_factory('n', { noremap = true })
+local onoremap = utils.key_map_factory('o', { noremap = true })
+local vnoremap = utils.key_map_factory('v', { noremap = true })
+local xnoremap = utils.key_map_factory('x', { noremap = true })
 
 -- Vim configuration helpers
 -- ............................................................................

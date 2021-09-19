@@ -1,7 +1,7 @@
 local utils = require('utils')
 
-local noremap = utils.key_map_factory('', { noremap = true, silent = true })
-local inoremap = utils.key_map_factory('i', { noremap = true, silent = true })
+local noremap = utils.key_map_factory('', { noremap = true })
+local inoremap = utils.key_map_factory('i', { noremap = true })
 
 -- Section Level 1
 noremap { '<leader>1', 'yypVr=' }
