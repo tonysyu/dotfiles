@@ -117,3 +117,8 @@ opt.wildignore = {
 opt.foldmethod = 'expr'
 opt.foldexpr = 'nvim_treesitter#foldexpr()'
 opt.foldlevel = 99
+
+-- Diff
+-- ............................................................................
+-- Use vertical splits for Gdiff (and other diffs)
+opt.diffopt:append('vertical')

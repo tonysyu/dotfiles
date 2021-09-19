@@ -1,2 +1,5 @@
+require('tools.buftabline')
+require('tools.devicons')
 require('tools.indent-blankline')
+require('tools.lightline')
 require('tools.telescope')
