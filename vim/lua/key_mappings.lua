@@ -51,6 +51,7 @@ nnoremap { '<C-j>', '<C-w>j' }
 nnoremap { '<C-k>', '<C-w>k' }
 nnoremap { '<C-l>', '<C-w>l' }
 
+nnoremap { '<leader>vq', '<cmd>lua require("utils").toggle_quickfix()<CR>' }
 
 -- Text formatting mappings
 -- ............................................................................
