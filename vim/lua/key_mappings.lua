@@ -90,3 +90,4 @@ nnoremap { '<leader>fs', '<cmd>lua require("telescope.builtin").lsp_document_sym
 nnoremap { '<leader>fh', '<cmd>lua require("telescope.builtin").help_tags()<cr>' }
 nnoremap { '<leader>fm', '<cmd>lua require("telescope.builtin").marks()<cr>' }
 nnoremap { '<leader>fr', '<cmd>lua require("telescope.builtin").registers()<cr>' }
+nnoremap { '<leader>gb', '<cmd>lua require("telescope.builtin").git_branches()<cr>' }
