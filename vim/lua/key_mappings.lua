@@ -1,18 +1,11 @@
-local bind = vim.api.nvim_set_keymap
 local opt = vim.opt
+local utils = require('utils')
 
-local function key_map_factory(mapping_type, options)
-    return function(args)
-        key, command = unpack(args)
-        return bind(mapping_type, key, command, options)
-    end
-end
-
-local map = key_map_factory('', {})
-local nnoremap = key_map_factory('n', { noremap = true, silent = true })
-local onoremap = key_map_factory('o', { noremap = true, silent = true })
-local vnoremap = key_map_factory('v', { noremap = true, silent = true })
-local xnoremap = key_map_factory('x', { noremap = true, silent = true })
+local map = utils.key_map_factory('', {})
+local nnoremap = utils.key_map_factory('n', { noremap = true, silent = true })
+local onoremap = utils.key_map_factory('o', { noremap = true, silent = true })
+local vnoremap = utils.key_map_factory('v', { noremap = true, silent = true })
+local xnoremap = utils.key_map_factory('x', { noremap = true, silent = true })
 
 -- Vim configuration helpers
 -- ............................................................................
