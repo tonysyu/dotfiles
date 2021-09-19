@@ -17,12 +17,6 @@ endfunction
 " Toggle QuickFix pane (vq = "view quickfix")
 nnoremap <leader>vq <cmd>QFix<CR>
 
-" Vista
-" ......................................................................
-let g:vista_default_executive = 'nvim_lsp'
-"" Toggle Vista pane (vs = "view symbols")
-nnoremap <leader>vs <cmd>Vista!!<cr>
-
 " lightline.vim
 " ......................................................................
 let g:lightline = {

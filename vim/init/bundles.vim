@@ -54,7 +54,6 @@ Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 
 " Search and navigation plugins:
 Plug 'ap/vim-buftabline'
-Plug 'liuchengxu/vista.vim'
 Plug 'nelstrom/vim-visual-star-search'
 Plug 'padde/jump.vim'
 Plug 'xolox/vim-misc'
