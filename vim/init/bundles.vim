@@ -70,4 +70,7 @@ Plug 'chrisbra/Colorizer'
 Plug 'mattn/emmet-vim'
 Plug 'tpope/vim-ragtag'
 
+" Vim introspection and debugging
+Plug 'rafcamlet/nvim-luapad'
+
 call plug#end()

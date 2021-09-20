@@ -15,7 +15,5 @@ require('lsp')
 require('treesitter')
 
 -- Old vimscript files not-yet converted to lua
-source_vimscript('~/.config/nvim/init/editing.vim')
 source_vimscript('~/.config/nvim/init/highlight.vim')
-source_vimscript('~/.config/nvim/init/languages.vim')
 source_vimscript('~/.config/nvim/init/search_and_nav.vim')
