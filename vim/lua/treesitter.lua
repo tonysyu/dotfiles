@@ -29,4 +29,11 @@ configs.setup {
     indent = {
         enable = true,
     },
+    textsubjects = {
+        enable = true,
+        keymaps = {
+            ['.'] = 'textsubjects-smart',
+            [';'] = 'textsubjects-container-outer',
+        }
+    },
 }

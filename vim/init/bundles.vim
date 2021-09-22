@@ -45,6 +45,7 @@ Plug 'vim-scripts/ReplaceWithRegister'
 " Motion and text-object plugins:
 Plug 'andymass/vim-matchup'
 Plug 'michaeljsmith/vim-indent-object'
+Plug 'RRethy/nvim-treesitter-textsubjects'
 Plug 'tpope/vim-surround'
 
 " Telescope (search) plugins:
