@@ -8,6 +8,7 @@ configs.setup {
         "elixir",
         "elm",
         "go",
+        "heex",
         "html",
         "java",
         "javascript",
