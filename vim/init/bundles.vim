@@ -68,6 +68,7 @@ Plug 'tpope/vim-unimpaired'
 " Language-specific plugins
 Plug 'alvan/vim-closetag'
 Plug 'chrisbra/Colorizer'
+Plug 'elixir-editors/vim-elixir'
 Plug 'mattn/emmet-vim'
 Plug 'tpope/vim-ragtag'
 

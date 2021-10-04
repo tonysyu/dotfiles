@@ -2,13 +2,6 @@
 "
 " vim-HiLinkTrace defines a :HLT command for displaying highlight groups
 
-" Filetype mappings
-" ......................................................................
-" Map Embedded Elixir files to `heex` treesitter filetype
-autocmd BufNewFile,BufRead,BufFilePost *.html.eex set filetype=heex
-" Map Phoenix LiveView Embedded Elixir files to `heex` treesitter filetype
-autocmd BufNewFile,BufRead,BufFilePost *.html.leex set filetype=heex
-
 " Generic syntax
 " ......................................................................
 " Invert colors of MatchParen in molokai colorscheme to avoid jumping cursor
