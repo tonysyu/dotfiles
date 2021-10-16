@@ -3,7 +3,7 @@ local g = vim.g
 local opt = vim.opt
 
 
-opt.guifont = "Hack Nerd Font Mono:h14"
+opt.guifont = "Hack Nerd Font Mono:h12"
 
 -- Setup colorscheme
 -- ............................................................................

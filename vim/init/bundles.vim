@@ -4,10 +4,10 @@ call plug#begin('~/dotfiles/vim/plugged')
 
 " Vim enhancement plugins:
 Plug 'editorconfig/editorconfig-vim'
-Plug 'kabouzeid/nvim-lspinstall'
 Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'kyazdani42/nvim-web-devicons'
+Plug 'williamboman/nvim-lsp-installer'
 
 " Completion plugins
 Plug 'hrsh7th/nvim-cmp'
