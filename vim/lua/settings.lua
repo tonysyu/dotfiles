@@ -29,7 +29,6 @@ opt.smartindent = true
 -- Undo
 -- ............................................................................
 opt.undofile = true
-opt.undodir = '~/.config/nvim/undo/'
 
 -- Modified buffers, backups, and swap files
 -- ............................................................................
