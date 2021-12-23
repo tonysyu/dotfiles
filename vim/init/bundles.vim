@@ -22,7 +22,6 @@ Plug 'tpope/vim-eunuch'
 
 " UI enhancement plugins:
 Plug 'gerw/vim-HiLinkTrace'
-Plug 'haya14busa/incsearch.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'kshenoy/vim-signature'
 Plug 'lukas-reineke/indent-blankline.nvim'

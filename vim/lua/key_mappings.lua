@@ -66,20 +66,6 @@ vnoremap { 'Q', 'gq' }
 nnoremap { '<leader>ss', ':%s/' }
 vnoremap { '<leader>ss', ':s/' }
 
--- incsearch.vim settings
-map { '/', '<Plug>(incsearch-forward)' }
-map { '?', '<Plug>(incsearch-backward)' }
-map { 'g/', '<Plug>(incsearch-stay)' }
--- https://vi.stackexchange.com/a/8742
-opt.hlsearch = true
-vim.g['incsearch#auto_nohlsearch'] = 1
-map { 'n', '<Plug>(incsearch-nohl-n)' }
-map { 'N', '<Plug>(incsearch-nohl-N)' }
-map { '*', '<Plug>(incsearch-nohl-*)' }
-map { '#', '<Plug>(incsearch-nohl-#)' }
-map { 'g*', '<Plug>(incsearch-nohl-g*)' }
-map { 'g#', '<Plug>(incsearch-nohl-g#)' }
-
 -- Telescope
 -- ............................................................................
 nnoremap { '<leader>ff', '<cmd>lua require("telescope.builtin").git_files()<cr>' }
