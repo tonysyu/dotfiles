@@ -44,6 +44,16 @@ onoremap { 'il', ':normal! vil<CR>' }
 xnoremap { 'al', '$o0' }
 onoremap { 'al', ':normal! val<CR>' }
 
+-- Keep cursor fixed
+-- ............................................................................
+-- Keep cursor centered when jumping through search results (zz; zv opens folds)
+-- See https://youtu.be/hSHATqh8svM
+nnoremap { 'n', 'nzzzv' }
+nnoremap { 'N', 'Nzzzv' }
+-- Keep cursor in same position (instead of going to EOL) when joining lines.
+-- See https://youtu.be/hSHATqh8svM
+nnoremap { 'J', 'mzJ`z' }
+
 -- Split buffer navigation
 -- ............................................................................
 nnoremap { '<C-h>', '<C-w>h' }
