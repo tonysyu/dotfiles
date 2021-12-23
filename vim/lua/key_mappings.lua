@@ -44,6 +44,14 @@ onoremap { 'il', ':normal! vil<CR>' }
 xnoremap { 'al', '$o0' }
 onoremap { 'al', ':normal! val<CR>' }
 
+-- Move text line-by-line
+-- See https://youtu.be/hSHATqh8svM
+-- ............................................................................
+vnoremap { 'J', ":m '>+1<CR>gv=gv" }
+vnoremap { 'K', ":m '<-2<CR>gv=gv" }
+nnoremap { '<leader>j', ':m .+1<CR>==' }
+nnoremap { '<leader>k', ':m .-2<CR>==' }
+
 -- Keep cursor fixed
 -- ............................................................................
 -- Keep cursor centered when jumping through search results (zz; zv opens folds)
