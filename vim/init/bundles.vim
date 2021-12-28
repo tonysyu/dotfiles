@@ -21,6 +21,7 @@ Plug 'Shougo/junkfile.vim'
 Plug 'tpope/vim-eunuch'
 
 " UI enhancement plugins:
+Plug 'folke/trouble.nvim'
 Plug 'gerw/vim-HiLinkTrace'
 Plug 'itchyny/lightline.vim'
 Plug 'kshenoy/vim-signature'

@@ -96,3 +96,7 @@ nnoremap { '<leader>fm', '<cmd>lua require("telescope.builtin").marks()<cr>' }
 nnoremap { '<leader>fr', '<cmd>lua require("telescope.builtin").registers()<cr>' }
 nnoremap { '<leader>gb', '<cmd>lua require("telescope.builtin").git_branches()<cr>' }
 nnoremap { '/w', '<cmd>lua require("telescope.builtin").grep_string()<cr>' }
+
+-- Trouble
+-- ............................................................................
+nnoremap { '<space>d', ':Trouble document_diagnostics<CR>' }
