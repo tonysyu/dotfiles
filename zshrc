@@ -41,7 +41,7 @@ export PATH=/usr/local/opt/python@3.8/bin:$PATH
 export PATH=/usr/local/opt/python@3.9/bin:$PATH
 
 # Use neovim as for `man` command
-export MANPAGER="nvim '+set background=dark' '+set ft=man' -"
+export MANPAGER="nvim +Man!"
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
