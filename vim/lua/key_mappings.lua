@@ -99,4 +99,4 @@ nnoremap { '/w', '<cmd>lua require("telescope.builtin").grep_string()<cr>' }
 
 -- Trouble
 -- ............................................................................
-nnoremap { '<space>d', ':Trouble document_diagnostics<CR>' }
+nnoremap { '<space>d', ':TroubleToggle document_diagnostics<CR>' }
