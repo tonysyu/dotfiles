@@ -19,6 +19,7 @@ local function on_attach(client, bufnr)
     normal_map('gt', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
 
     -- Documentation
+    normal_map('ga', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
     normal_map('K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
     insert_map('<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
 
