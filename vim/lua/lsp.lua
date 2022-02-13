@@ -7,6 +7,7 @@ local lsp_installer = require('nvim-lsp-installer')
 -- See https://github.com/neovim/nvim-lspconfig#keybindings-and-completion
 local function on_attach(client, bufnr)
     local function normal_map(...) vim.api.nvim_buf_set_keymap(bufnr, 'n', ...) end
+    local function insert_map(...) vim.api.nvim_buf_set_keymap(bufnr, 'i', ...) end
 
     local opts = { noremap=true, silent=true }
 
@@ -19,7 +20,7 @@ local function on_attach(client, bufnr)
 
     -- Documentation
     normal_map('K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
-    normal_map('<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
+    insert_map('<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
 
     -- Diagnostics
     normal_map('[d', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>', opts)
