@@ -15,7 +15,7 @@ local function on_attach(client, bufnr)
     normal_map('gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
     normal_map('gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
     normal_map('gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
-    normal_map('<space>D', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
+    normal_map('gt', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
 
     -- Documentation
     normal_map('K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
