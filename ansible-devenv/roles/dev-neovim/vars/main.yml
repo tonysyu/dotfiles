@@ -18,3 +18,9 @@ venv_pip_packages:
 - black
 - flake8
 - pynvim
+
+npm_packages:
+- neovim
+- eslint
+- prettier
+- remark-language-server

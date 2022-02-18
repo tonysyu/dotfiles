@@ -14,8 +14,12 @@ opt.termguicolors = true
 -- NeoVim providers
 -- ............................................................................
 -- See https://neovim.io/doc/user/provider.html
-g.node_host_prog = '~/.nvm/versions/node/v14.15.4/bin/neovim-node-host'
-g.python3_host_prog = '~/.venv/py3nvim/bin/python'
+g.node_host_prog = vim.fn.expand('~/.nvm/versions/node/v14.15.4/bin/neovim-node-host')
+vim.fn.setenv('PATH',
+    vim.fn.getenv('PATH') .. ':' ..
+    vim.fn.expand('~/.nvm/versions/node/v14.15.4/bin')
+)
+g.python3_host_prog = vim.fn.expand('~/.venv/py3nvim/bin/python')
 
 -- Indentation
 -- ............................................................................

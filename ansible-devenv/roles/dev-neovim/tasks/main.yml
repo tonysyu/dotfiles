@@ -60,8 +60,11 @@
 
 
 # See neovim docs: https://neovim.io/doc/user/provider.html
-- name: Set up neovim node provider
-  shell: |
-    npm install -g neovim
+- name: Install npm packages for neovim
+  community.general.npm:
+    executable: ~/.nvm/versions/node/v14.15.4/bin/npm
+    name: "{{ item }}"
+    global: "yes"
+  loop: '{{ npm_packages }}'
   tags:
   - node
