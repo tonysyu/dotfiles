@@ -92,6 +92,7 @@ nnoremap { '<leader>fg', '<cmd>lua require("telescope.builtin").live_grep()<cr>'
 nnoremap { '<leader>fb', '<cmd>lua require("telescope.builtin").buffers()<cr>' }
 nnoremap { '<leader>fs', ':SymbolsOutline<cr>' }
 nnoremap { '<leader>fh', '<cmd>lua require("telescope.builtin").help_tags()<cr>' }
+nnoremap { '<leader>fc', '<cmd>lua require("telescope.builtin").commands()<cr>' }
 nnoremap { '<leader>fm', '<cmd>lua require("telescope.builtin").marks()<cr>' }
 nnoremap { '<leader>fr', '<cmd>lua require("telescope.builtin").registers()<cr>' }
 nnoremap { '<leader>gb', '<cmd>lua require("telescope.builtin").git_branches()<cr>' }
