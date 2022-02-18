@@ -27,6 +27,7 @@ Plug 'itchyny/lightline.vim'
 Plug 'kshenoy/vim-signature'
 Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'junegunn/vim-peekaboo'
+Plug 'simrat39/symbols-outline.nvim'
 Plug 'tomasr/molokai'
 
 " General editing plugins:
