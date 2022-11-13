@@ -1,4 +1,6 @@
 homebrew_cask_apps:
 - alfred
 - disk-inventory-x
+- dropbox
+- iterm2
 - rectangle
