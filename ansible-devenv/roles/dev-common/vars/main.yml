@@ -11,9 +11,10 @@ homebrew_packages:
 - httpie
 - jq
 - mdcat
-- python@3.7
+- nvm
 - python@3.8
 - python@3.9
+- python@3.10
 - ripgrep
 - sd
 - semgrep
@@ -22,6 +23,6 @@ homebrew_packages:
 
 homebrew_cask_apps: []
 
-node_version: v14.15.4
+node_version: lts/hydrogen
 
-python_executable: python3.9
+python_executable: python3.10

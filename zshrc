@@ -36,9 +36,9 @@ source $(dirname -- $0)/vim/aliases.zsh
 
 # Add homebrew python versions to path
 # Should match versions in ~/dotfiles/ansible-devenv/roles/dev-common/vars/main.yml
-export PATH=/usr/local/opt/python@3.7/bin:$PATH
 export PATH=/usr/local/opt/python@3.8/bin:$PATH
 export PATH=/usr/local/opt/python@3.9/bin:$PATH
+export PATH=/usr/local/opt/python@3.10/bin:$PATH
 
 # Use neovim as for `man` command
 export MANPAGER="nvim +Man!"

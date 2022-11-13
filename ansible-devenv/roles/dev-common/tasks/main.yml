@@ -19,8 +19,6 @@
 
 - name: Install and setup nvm
   shell: |
-    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash
-    source ~/.nvm/nvm.sh
     nvm install {{ node_version }}
     nvm alias default {{ node_version }}
     nvm use {{ node_version }}
