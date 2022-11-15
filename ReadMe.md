@@ -21,5 +21,3 @@ Installation
     cd ~/dotfiles/ansible-devenv
     make
     ```
-- Install language servers for `coc.nvim` (within vim):
-    - `:CocInstall coc-python`
