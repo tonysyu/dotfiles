@@ -23,6 +23,4 @@ homebrew_packages:
 
 homebrew_cask_apps: []
 
-node_version: lts/hydrogen
-
 python_executable: python3.10

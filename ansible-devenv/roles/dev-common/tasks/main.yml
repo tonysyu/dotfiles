@@ -16,14 +16,3 @@
   loop: '{{ homebrew_cask_apps }}'
   tags:
   - cask
-
-- name: Install and setup nvm
-  shell: |
-    nvm install {{ node_version }}
-    nvm alias default {{ node_version }}
-    nvm use {{ node_version }}
-  args:
-    creates: "{{ ansible_env.HOME }}/.nvm/nvm.sh"
-  tags:
-  - neovim
-  - node
