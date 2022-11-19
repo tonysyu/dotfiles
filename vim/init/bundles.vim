@@ -26,10 +26,12 @@ Plug 'tpope/vim-eunuch'
 Plug 'folke/trouble.nvim'
 Plug 'gerw/vim-HiLinkTrace'
 Plug 'itchyny/lightline.vim'
+Plug 'junegunn/vim-peekaboo'
 Plug 'kshenoy/vim-signature'
 Plug 'lukas-reineke/indent-blankline.nvim'
-Plug 'junegunn/vim-peekaboo'
+Plug 'mrjones2014/legendary.nvim'
 Plug 'simrat39/symbols-outline.nvim'
+Plug 'stevearc/dressing.nvim'
 Plug 'tomasr/molokai'
 
 " General editing plugins:
