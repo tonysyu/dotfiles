@@ -7,30 +7,25 @@ local mason_lspconfig = require('mason-lspconfig')
 -- Attach keymappings to LSP servers
 -- See https://github.com/neovim/nvim-lspconfig#keybindings-and-completion
 local function on_attach(client, bufnr)
-    local function normal_map(...) vim.api.nvim_buf_set_keymap(bufnr, 'n', ...) end
-    local function insert_map(...) vim.api.nvim_buf_set_keymap(bufnr, 'i', ...) end
-
-    local opts = { noremap=true, silent=true }
-
     -- Definitions and references
-    normal_map('gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
-    normal_map('gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
-    normal_map('gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
-    normal_map('gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
-    normal_map('gt', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
+    vim.keymap.set('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', { desc = 'Go to declaration' })
+    vim.keymap.set('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', { desc = 'Go to definition' })
+    vim.keymap.set('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', { desc = 'Go to implementation' })
+    vim.keymap.set('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', { desc = 'Go to references' })
+    vim.keymap.set('n', 'gt', '<cmd>lua vim.lsp.buf.type_definition()<CR>', { desc = 'Go to type definition' })
 
     -- Documentation
-    normal_map('ga', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
-    normal_map('K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
-    insert_map('<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
+    vim.keymap.set('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', { desc = 'Show documentation' })
+    vim.keymap.set('i', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', { desc = 'Show signature help' })
 
     -- Diagnostics
-    normal_map('[d', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>', opts)
-    normal_map(']d', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', opts)
+    vim.keymap.set('n', '[d', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>', { desc = 'Go to previous LSP diagnostic' })
+    vim.keymap.set('n', ']d', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', { desc = 'Go to next LSP diagnostic' })
 
     -- Editing
-    normal_map('<space>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
-    normal_map('<space>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
+    vim.keymap.set('n', '<space>sa', '<cmd>lua vim.lsp.buf.code_action()<CR>', { desc = 'Show LSP code action' })
+    vim.keymap.set('n', '<space>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', { desc = 'Rename' })
+    vim.keymap.set('n', '<space>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', { desc = 'Reformat' })
 end
 
 mason.setup()
