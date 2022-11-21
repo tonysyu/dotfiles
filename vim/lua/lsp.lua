@@ -8,24 +8,24 @@ local mason_lspconfig = require('mason-lspconfig')
 -- See https://github.com/neovim/nvim-lspconfig#keybindings-and-completion
 local function on_attach(client, bufnr)
     -- Definitions and references
-    vim.keymap.set('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', { desc = 'Go to declaration' })
-    vim.keymap.set('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', { desc = 'Go to definition' })
-    vim.keymap.set('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', { desc = 'Go to implementation' })
-    vim.keymap.set('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', { desc = 'Go to references' })
-    vim.keymap.set('n', 'gt', '<cmd>lua vim.lsp.buf.type_definition()<CR>', { desc = 'Go to type definition' })
+    vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, { desc = 'Go to declaration' })
+    vim.keymap.set('n', 'gd', vim.lsp.buf.definition, { desc = 'Go to definition' })
+    vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, { desc = 'Go to implementation' })
+    vim.keymap.set('n', 'gr', vim.lsp.buf.references, { desc = 'Go to references' })
+    vim.keymap.set('n', 'gt', vim.lsp.buf.type_definition, { desc = 'Go to type definition' })
 
     -- Documentation
-    vim.keymap.set('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', { desc = 'Show documentation' })
-    vim.keymap.set('i', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', { desc = 'Show signature help' })
+    vim.keymap.set('n', 'K', vim.lsp.buf.hover, { desc = 'Show documentation' })
+    vim.keymap.set('i', '<C-k>', vim.lsp.buf.signature_help, { desc = 'Show signature help' })
 
     -- Diagnostics
-    vim.keymap.set('n', '[d', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>', { desc = 'Go to previous LSP diagnostic' })
-    vim.keymap.set('n', ']d', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', { desc = 'Go to next LSP diagnostic' })
+    vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous LSP diagnostic' })
+    vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next LSP diagnostic' })
 
     -- Editing
-    vim.keymap.set('n', '<space>sa', '<cmd>lua vim.lsp.buf.code_action()<CR>', { desc = 'Show LSP code action' })
-    vim.keymap.set('n', '<space>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', { desc = 'Rename' })
-    vim.keymap.set('n', '<space>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', { desc = 'Reformat' })
+    vim.keymap.set('n', '<leader>va', vim.lsp.buf.code_action, { desc = 'View LSP code action' })
+    vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, { desc = 'Rename' })
+    vim.keymap.set('n', '<space>f', vim.lsp.buf.formatting, { desc = 'Reformat' })
 end
 
 mason.setup()

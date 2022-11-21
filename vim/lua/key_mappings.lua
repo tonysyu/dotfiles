@@ -1,20 +1,23 @@
+local telescope_builtin = require('telescope.builtin')
+local utils = require('utils')
+
 -- Code file search
 -- ............................................................................
-vim.keymap.set('n', '<leader>ff', '<cmd>lua require("telescope.builtin").git_files()<cr>', { desc = 'Find git files' })
-vim.keymap.set('n', '<leader>fF', '<cmd>lua require("telescope.builtin").find_files()<cr>', { desc = 'Find all files' })
-vim.keymap.set('n', '<leader>gb', '<cmd>lua require("telescope.builtin").git_branches()<cr>', { desc = 'Find git branches' })
+vim.keymap.set('n', '<leader>ff', telescope_builtin.git_files, { desc = 'Find git files' })
+vim.keymap.set('n', '<leader>fF', telescope_builtin.find_files, { desc = 'Find all files' })
+vim.keymap.set('n', '<leader>gb', telescope_builtin.git_branches, { desc = 'Find git branches' })
 
 -- Code text search
 -- ............................................................................
 vim.keymap.set('n', '<leader>fs', ':SymbolsOutline<cr>' , { desc = 'Find symbols' })
-vim.keymap.set('n', '<leader>fg', '<cmd>lua require("telescope.builtin").live_grep()<cr>', { desc = 'Find text using grep/search' })
-vim.keymap.set('n', '/w', '<cmd>lua require("telescope.builtin").grep_string()<cr>', { desc = 'Find string under cursor' })
+vim.keymap.set('n', '<leader>fg', telescope_builtin.live_grep, { desc = 'Find text using grep/search' })
+vim.keymap.set('n', '/w', telescope_builtin.grep_string, { desc = 'Find string under cursor' })
 vim.keymap.set('n', '<leader>ss', ':%s/', { desc = 'Find and replace using regex' })
 vim.keymap.set('v', '<leader>ss', ':s/', { desc = 'Find and replace using regex' })
 
 -- Buffer navigation
 -- ............................................................................
-vim.keymap.set('n', '<leader>fb', '<cmd>lua require("telescope.builtin").buffers()<cr>', { desc = 'Find buffer' })
+vim.keymap.set('n', '<leader>fb', telescope_builtin.buffers, { desc = 'Find buffer' })
 vim.keymap.set('n', '<leader><leader>', '<c-^>', { desc = 'Toggle between two, most-recent buffers' })
 
 -- Split buffer navigation
@@ -43,20 +46,20 @@ vim.keymap.set('n', '<leader>ep' ,":echo expand('%:p')<CR>", { desc = 'Show/echo
 
 -- View helper windows
 -- ............................................................................
-vim.keymap.set('n', '<leader>vq', '<cmd>lua require("utils").toggle_quickfix()<CR>', { desc = 'View/toggle quickfix window' })
+vim.keymap.set('n', '<leader>vq', utils.toggle_quickfix, { desc = 'View/toggle quickfix window' })
 vim.keymap.set('n', '<leader>vd', ':TroubleToggle document_diagnostics<CR>', { desc = 'View/toggle Trouble diagnostics' })
 
 -- Vim tool search
 -- ............................................................................
-vim.keymap.set('n', '<leader>fh', '<cmd>lua require("telescope.builtin").help_tags()<cr>', { desc = 'Find help tags' })
-vim.keymap.set('n', '<leader>fk', '<cmd>lua require("telescope.builtin").keymaps()<cr>' , { desc = 'Find keymappings/keybindings' })
-vim.keymap.set('n', '<leader>fc', '<cmd>lua require("telescope.builtin").commands()<cr>', { desc = 'Find commands' })
-vim.keymap.set('n', '<leader>fm', '<cmd>lua require("telescope.builtin").marks()<cr>', { desc = 'Find marks' })
-vim.keymap.set('n', '<leader>fr', '<cmd>lua require("telescope.builtin").registers()<cr>', { desc = 'Find registers' })
+vim.keymap.set('n', '<leader>fh', telescope_builtin.help_tags, { desc = 'Find help tags' })
+vim.keymap.set('n', '<D-p>', telescope_builtin.keymaps , { desc = 'Find keymappings/keybindings' })
+vim.keymap.set('n', '<leader>fc', telescope_builtin.commands, { desc = 'Find commands' })
+vim.keymap.set('n', '<leader>fm', telescope_builtin.marks, { desc = 'Find marks' })
+vim.keymap.set('n', '<leader>fr', telescope_builtin.registers, { desc = 'Find registers' })
 
 -- Vim configuration helpers
 -- ............................................................................
-vim.keymap.set('n', '<leader>ev', '<cmd>lua require("telescope.builtin").find_files({ search_dirs={ "~/.config/nvim/" } })<cr>', { desc = 'Find vim configuration file' })
+vim.keymap.set('n', '<leader>ev', function () telescope_builtin.find_files({ search_dirs={ "~/.config/nvim/" } }) end, { desc = 'Find vim configuration file' })
 vim.keymap.set('n', '<leader>sv', ':so $MYVIMRC<CR>', { desc = 'Reload (source) the vim settings' })
 vim.keymap.set('n', '<leader>eb', ':e ~/.config/nvim/init/bundles.vim<CR>', { desc = 'Quickly edit vim bundles file' })
 
