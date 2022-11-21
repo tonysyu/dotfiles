@@ -15,8 +15,7 @@ Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-nvim-lua'
-" See https://github.com/quangnguyen30192/cmp-nvim-ultisnips/issues/67
-" Plug 'quangnguyen30192/cmp-nvim-ultisnips'
+Plug 'quangnguyen30192/cmp-nvim-ultisnips'
 
 " Filesystem plugins
 Plug 'Shougo/junkfile.vim'
