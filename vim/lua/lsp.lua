@@ -3,6 +3,20 @@ local cmp_nvim_lsp = require('cmp_nvim_lsp')
 local lspconfig = require('lspconfig')
 local mason = require('mason')
 local mason_lspconfig = require('mason-lspconfig')
+local utils = require('utils')
+
+local custom_server_options = {}
+-- Avoid 'global vim is undefined' errors when editing neovim config files.
+-- See https://www.reddit.com/r/neovim/comments/khk335/lua_configuration_global_vim_is_undefined/
+custom_server_options['sumneko_lua'] = {
+    settings = {
+        Lua = {
+            diagnostics = {
+                globals = { 'vim' }
+            }
+        }
+    }
+}
 
 -- Attach keymappings to LSP servers
 -- See https://github.com/neovim/nvim-lspconfig#keybindings-and-completion
@@ -42,6 +56,8 @@ mason_lspconfig.setup_handlers({
                 vim.lsp.protocol.make_client_capabilities()
             ),
         }
+
+        utils.update_table(opts, custom_server_options[server_name])
 
         lspconfig[server_name].setup(opts)
         vim.cmd [[ do User LspAttachBuffers ]]

@@ -19,4 +19,15 @@ function M.toggle_quickfix()
     vim.cmd('copen')
 end
 
+
+
+function M.update_table(table_to_update, new_values)
+    if new_values == nil then
+        return
+    end
+    for k,v in pairs(new_values) do table_to_update[k] = v end
+end
+
+
+
 return M
