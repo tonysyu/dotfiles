@@ -9,9 +9,8 @@ vim.keymap.set('n', '<leader>gb', telescope_builtin.git_branches, { desc = 'Find
 
 -- Code text search
 -- ............................................................................
-vim.keymap.set('n', '<leader>fs', ':SymbolsOutline<cr>' , { desc = 'Find symbols' })
 vim.keymap.set('n', '<leader>fg', telescope_builtin.live_grep, { desc = 'Find text using grep/search' })
-vim.keymap.set('n', '/w', telescope_builtin.grep_string, { desc = 'Find string under cursor' })
+vim.keymap.set('n', '<leader>s*', telescope_builtin.grep_string, { desc = 'Find string under cursor' })
 vim.keymap.set('n', '<leader>ss', ':%s/', { desc = 'Find and replace using regex' })
 vim.keymap.set('v', '<leader>ss', ':s/', { desc = 'Find and replace using regex' })
 
@@ -46,6 +45,7 @@ vim.keymap.set('n', '<leader>ep' ,":echo expand('%:p')<CR>", { desc = 'Show/echo
 
 -- View helper windows
 -- ............................................................................
+vim.keymap.set('n', '<leader>vs', ':SymbolsOutline<cr>' , { desc = 'View/toggle symbols' })
 vim.keymap.set('n', '<leader>vq', utils.toggle_quickfix, { desc = 'View/toggle quickfix window' })
 vim.keymap.set('n', '<leader>vd', ':TroubleToggle document_diagnostics<CR>', { desc = 'View/toggle Trouble diagnostics' })
 
