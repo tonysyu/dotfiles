@@ -5,7 +5,6 @@ local utils = require('utils')
 -- ............................................................................
 vim.keymap.set('n', '<leader>ff', telescope_builtin.git_files, { desc = 'Find git files' })
 vim.keymap.set('n', '<leader>fF', telescope_builtin.find_files, { desc = 'Find all files' })
-vim.keymap.set('n', '<leader>gb', telescope_builtin.git_branches, { desc = 'Find git branches' })
 
 -- Code text search
 -- ............................................................................
@@ -13,6 +12,12 @@ vim.keymap.set('n', '<leader>fg', telescope_builtin.live_grep, { desc = 'Find te
 vim.keymap.set('n', '<leader>s*', telescope_builtin.grep_string, { desc = 'Find string under cursor' })
 vim.keymap.set('n', '<leader>ss', ':%s/', { desc = 'Find and replace using regex' })
 vim.keymap.set('v', '<leader>ss', ':s/', { desc = 'Find and replace using regex' })
+
+-- Git search
+-- ............................................................................
+vim.keymap.set('n', '<leader>gb', telescope_builtin.git_branches, { desc = 'Find/list git branches' })
+vim.keymap.set('n', '<leader>gc', telescope_builtin.git_commits, { desc = 'Find/list git commits' })
+vim.keymap.set('n', '<leader>gs', telescope_builtin.git_stash, { desc = 'Find/list git stash items' })
 
 -- Buffer navigation
 -- ............................................................................
