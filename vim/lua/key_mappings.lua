@@ -50,7 +50,7 @@ vim.keymap.set('n', '<leader>ep' ,":echo expand('%:p')<CR>", { desc = 'Show/echo
 
 -- View helper windows
 -- ............................................................................
-vim.keymap.set('n', '<leader>vs', ':SymbolsOutline<cr>' , { desc = 'View/toggle symbols' })
+vim.keymap.set('n', '<leader>vs', ':SymbolsOutline<cr>', { desc = 'View/toggle symbols' })
 vim.keymap.set('n', '<leader>vq', utils.toggle_quickfix, { desc = 'View/toggle quickfix window' })
 vim.keymap.set('n', '<leader>vd', ':TroubleToggle document_diagnostics<CR>', { desc = 'View/toggle Trouble diagnostics' })
 
