@@ -60,6 +60,7 @@ vim.keymap.set('n', '<leader>fh', telescope_builtin.help_tags, { desc = 'Find he
 vim.keymap.set('n', '<D-p>', telescope_builtin.keymaps , { desc = 'Find keymappings/keybindings' })
 vim.keymap.set('n', '<leader>fc', telescope_builtin.commands, { desc = 'Find commands' })
 vim.keymap.set('n', '<leader>fm', telescope_builtin.marks, { desc = 'Find marks' })
+vim.keymap.set('n', '<leader>fj', telescope_builtin.jumplist, { desc = 'Find in jump list' })
 vim.keymap.set('n', '<leader>fr', telescope_builtin.registers, { desc = 'Find registers' })
 
 -- Vim configuration helpers
