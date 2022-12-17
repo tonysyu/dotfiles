@@ -38,6 +38,11 @@ vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv", { desc = 'Move selected text up' })
 vim.keymap.set('n', '<leader>j', ':m .+1<CR>==', { desc = 'Move line down' })
 vim.keymap.set('n', '<leader>k', ':m .-2<CR>==', { desc = 'Move line up' })
 
+-- Yank to system clipboard
+-- ............................................................................
+vim.keymap.set("n", "<leader>y", "\"+y")
+vim.keymap.set("v", "<leader>y", "\"+y")
+vim.keymap.set("n", "<leader>Y", "\"+Y")
 
 -- Text formatting mappings
 -- ............................................................................

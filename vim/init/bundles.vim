@@ -34,7 +34,6 @@ Plug 'tomasr/molokai'
 
 " General editing plugins:
 Plug 'AndrewRadev/splitjoin.vim'
-Plug 'christoomey/vim-system-copy'
 Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-endwise'
