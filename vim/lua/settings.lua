@@ -24,21 +24,20 @@ opt.expandtab = true
 opt.autoindent = true
 opt.smartindent = true
 
--- Undo
--- ............................................................................
-opt.undofile = true
-
--- Modified buffers, backups, and swap files
+-- Modified buffers, backups, swap files, and undo
 -- ............................................................................
 opt.backup = false
 opt.writebackup = false
 opt.swapfile = false
 opt.hidden = true  -- Allow switching from modified buffers (i.e. hidden buffers)
 opt.confirm = true  -- Confirm before quitting if a modified buffer is hidden
+opt.autowriteall = true  -- Write/save file when switching buffers
+-- opt.undodir = os.getenv('HOME') .. './vim/undodir'
+opt.undofile = true
 
 -- Fill column
 -- ............................................................................
-opt.textwidth = 99
+opt.textwidth = 88
 opt.colorcolumn = '+1'
 
 -- Linebreak and wrap behavior
@@ -58,9 +57,11 @@ opt.wildignorecase = true  -- Ignore case in file searches
 opt.wildmenu = true
 opt.wildmode = {'longest', 'list', 'full'}
 
--- Cursor
+-- Cursor and scroll
 -- ............................................................................
-opt.cursorline = true
+opt.cursorline = true  -- Highlight line containing cursor
+opt.scrolloff = 8  -- Keep at least 8 lines above/below cursor when scrolling
+
 
 -- Whitespace
 -- ............................................................................
@@ -69,7 +70,7 @@ opt.listchars = { tab='» ', extends='›', precedes='‹', nbsp='·', trail='·
 
 -- Search
 -- ............................................................................
-opt.hlsearch = true
+opt.hlsearch = false
 opt.incsearch = true
 opt.ignorecase = true
 opt.smartcase = true
