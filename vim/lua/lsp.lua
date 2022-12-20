@@ -3,6 +3,7 @@ local cmp_nvim_lsp = require('cmp_nvim_lsp')
 local lspconfig = require('lspconfig')
 local mason = require('mason')
 local mason_lspconfig = require('mason-lspconfig')
+local telescope_builtin = require('telescope.builtin')
 local utils = require('utils')
 
 local custom_server_options = {}
@@ -27,6 +28,14 @@ local function on_attach(client, bufnr)
     vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, { desc = 'Go to implementation' })
     vim.keymap.set('n', 'gr', vim.lsp.buf.references, { desc = 'Go to references' })
     vim.keymap.set('n', 'gt', vim.lsp.buf.type_definition, { desc = 'Go to type definition' })
+
+    -- Code search
+    vim.keymap.set('n', '<leader>ss', telescope_builtin.lsp_dynamic_workspace_symbols, { desc = 'Find/search symbol through search input' })
+    vim.keymap.set('n', '<leader>fs', function ()
+        telescope_builtin.lsp_workspace_symbols {
+            query=vim.call('expand','<cword>')
+        }
+    end, { desc = 'Find symbol under cursor' })
 
     -- Documentation
     vim.keymap.set('n', 'K', vim.lsp.buf.hover, { desc = 'Show documentation' })

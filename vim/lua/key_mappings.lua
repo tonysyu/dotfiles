@@ -8,10 +8,10 @@ vim.keymap.set('n', '<leader>fF', telescope_builtin.find_files, { desc = 'Find a
 
 -- Code text search
 -- ............................................................................
-vim.keymap.set('n', '<leader>fg', telescope_builtin.live_grep, { desc = 'Find text using grep/search' })
-vim.keymap.set('n', '<leader>*', telescope_builtin.grep_string, { desc = 'Find string under cursor' })
-vim.keymap.set('n', '<leader>ss', ':%s/', { desc = 'Find and replace using regex' })
-vim.keymap.set('v', '<leader>ss', ':s/', { desc = 'Find and replace using regex' })
+vim.keymap.set('n', '<leader>sg', telescope_builtin.live_grep, { desc = 'Find/search text using grep/search' })
+vim.keymap.set('n', '<leader>*', telescope_builtin.grep_string, { desc = 'Find/search string under cursor' })
+vim.keymap.set('n', '<leader>S', ':%s/', { desc = 'Find/search and replace using regex' })
+vim.keymap.set('v', '<leader>S', ':s/', { desc = 'Find/search and replace using regex' })
 
 -- Git search
 -- ............................................................................
