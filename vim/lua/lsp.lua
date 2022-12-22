@@ -6,15 +6,25 @@ local mason_lspconfig = require('mason-lspconfig')
 local telescope_builtin = require('telescope.builtin')
 local utils = require('utils')
 
+-- Simple plugin setup
+require('fidget').setup()
+require("symbols-outline").setup()
+require("neodev").setup() -- IMPORTANT: must setup neodev BEFORE lspconfig
+
 local custom_server_options = {}
--- Avoid 'global vim is undefined' errors when editing neovim config files.
--- See https://www.reddit.com/r/neovim/comments/khk335/lua_configuration_global_vim_is_undefined/
 custom_server_options['sumneko_lua'] = {
     settings = {
         Lua = {
+            -- Avoid 'global vim is undefined' errors when editing neovim config files.
+            -- See https://www.reddit.com/r/neovim/comments/khk335/lua_configuration_global_vim_is_undefined/
             diagnostics = {
                 globals = { 'vim' }
-            }
+            },
+            -- Avoid luassert configuration popup
+            -- See https://github.com/sumneko/lua-language-server/discussions/1688
+            workspace = {
+                checkThirdParty = false,
+            },
         }
     }
 }

@@ -1,12 +1,4 @@
-local function source_vimscript(path)
-    vim.cmd('source ' .. path)
-end
-
-source_vimscript("~/.config/nvim/init/bundles.vim")
-
--- Set mapleader and localleader to comma
-vim.g.mapleader = ','
-vim.g.maplocalleader = ','
+require('packer-config')
 
 require('settings')
 require('tools')
@@ -15,5 +7,9 @@ require('lsp')
 require('treesitter')
 
 -- Old vimscript files not-yet converted to lua
+local function source_vimscript(path)
+  vim.cmd('source ' .. path)
+end
+
 source_vimscript('~/.config/nvim/init/highlight.vim')
 source_vimscript('~/.config/nvim/init/search_and_nav.vim')

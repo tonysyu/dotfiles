@@ -1,13 +1,15 @@
-local cmd = vim.cmd
 local g = vim.g
 local opt = vim.opt
 
+-- Set mapleader and localleader to comma
+g.mapleader = ','
+g.maplocalleader = ','
 
 opt.guifont = "Hack Nerd Font Mono:h12"
 
--- Setup colorscheme
+-- Colorscheme settings
 -- ............................................................................
-cmd('colorscheme molokai')
+-- Actual colorscheme configuration is in vim/after/plugin/ui-enhancements.lua
 opt.background = 'dark'
 opt.termguicolors = true
 
@@ -51,17 +53,20 @@ opt.showbreak = '↪'
 opt.number = true
 opt.relativenumber = true
 
--- Wildmenu (ex-mode completion)
+-- Editor completion (a.k.a. Insert mode completion)
+-- ............................................................................
+opt.completeopt = 'menuone,noselect' -- pretty completion experience
+
+-- Wildmenu (Ex-mode completion)
 -- ............................................................................
 opt.wildignorecase = true  -- Ignore case in file searches
 opt.wildmenu = true
-opt.wildmode = {'longest', 'list', 'full'}
+opt.wildmode = {'list:longest', 'list:full'}
 
 -- Cursor and scroll
 -- ............................................................................
 opt.cursorline = true  -- Highlight line containing cursor
 opt.scrolloff = 8  -- Keep at least 8 lines above/below cursor when scrolling
-
 
 -- Whitespace
 -- ............................................................................
