@@ -1,6 +1,9 @@
 local telescope_builtin = require('telescope.builtin')
 local utils = require('utils')
 
+-- Prefer `<leader>f` as keymap for find/search that requires input
+-- Prefer `<leader>s` as keymap for find/search that uses the current word
+
 -- Code file search
 -- ............................................................................
 vim.keymap.set('n', '<leader>ff', telescope_builtin.git_files, { desc = 'Find git files' })
@@ -8,7 +11,7 @@ vim.keymap.set('n', '<leader>fF', telescope_builtin.find_files, { desc = 'Find a
 
 -- Code text search
 -- ............................................................................
-vim.keymap.set('n', '<leader>sg', telescope_builtin.live_grep, { desc = 'Find/search text using grep/search' })
+vim.keymap.set('n', '<leader>fg', telescope_builtin.live_grep, { desc = 'Find/search text using grep/search' })
 vim.keymap.set('n', '<leader>*', telescope_builtin.grep_string, { desc = 'Find/search string under cursor' })
 vim.keymap.set('n', '<leader>S', ':%s/', { desc = 'Find/search and replace using regex' })
 vim.keymap.set('v', '<leader>S', ':s/', { desc = 'Find/search and replace using regex' })
@@ -61,12 +64,12 @@ vim.keymap.set('n', '<leader>vd', ':TroubleToggle document_diagnostics<CR>', { d
 
 -- Vim tool search
 -- ............................................................................
-vim.keymap.set('n', '<leader>fh', telescope_builtin.help_tags, { desc = 'Find help tags' })
-vim.keymap.set('n', '<D-p>', telescope_builtin.keymaps , { desc = 'Find keymappings/keybindings' })
-vim.keymap.set('n', '<leader>fc', telescope_builtin.commands, { desc = 'Find commands' })
-vim.keymap.set('n', '<leader>fm', telescope_builtin.marks, { desc = 'Find marks' })
-vim.keymap.set('n', '<leader>fj', telescope_builtin.jumplist, { desc = 'Find in jump list' })
-vim.keymap.set('n', '<leader>fr', telescope_builtin.registers, { desc = 'Find registers' })
+vim.keymap.set('n', '<leader>vh', telescope_builtin.help_tags, { desc = 'View help tags' })
+vim.keymap.set('n', '<D-p>', telescope_builtin.keymaps , { desc = 'View keymappings/keybindings' })
+vim.keymap.set('n', '<leader>vc', telescope_builtin.commands, { desc = 'View commands' })
+vim.keymap.set('n', '<leader>vm', telescope_builtin.marks, { desc = 'View marks' })
+vim.keymap.set('n', '<leader>vj', telescope_builtin.jumplist, { desc = 'View jump list' })
+vim.keymap.set('n', '<leader>vr', telescope_builtin.registers, { desc = 'View registers' })
 
 -- Vim configuration helpers
 -- ............................................................................

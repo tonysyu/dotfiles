@@ -24,14 +24,14 @@ custom_server_options['sumneko_lua'] = {
 local function on_attach(client, bufnr)
     -- Definitions and references
     vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, { desc = 'Go to declaration' })
-    vim.keymap.set('n', 'gd', vim.lsp.buf.definition, { desc = 'Go to definition' })
-    vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, { desc = 'Go to implementation' })
-    vim.keymap.set('n', 'gr', vim.lsp.buf.references, { desc = 'Go to references' })
-    vim.keymap.set('n', 'gt', vim.lsp.buf.type_definition, { desc = 'Go to type definition' })
+    vim.keymap.set('n', 'gd', telescope_builtin.lsp_definitions, { desc = 'Go to definition' })
+    vim.keymap.set('n', '<leader>si', telescope_builtin.lsp_implementations, { desc = 'Find/search implementation' })
+    vim.keymap.set('n', '<leader>sr', telescope_builtin.lsp_references, { desc = 'Find/search references' })
+    vim.keymap.set('n', '<leader>st', telescope_builtin.lsp_type_definitions, { desc = 'Find/search type definition' })
 
     -- Code search
-    vim.keymap.set('n', '<leader>ss', telescope_builtin.lsp_dynamic_workspace_symbols, { desc = 'Find/search symbol through search input' })
-    vim.keymap.set('n', '<leader>fs', function ()
+    vim.keymap.set('n', '<leader>fs', telescope_builtin.lsp_dynamic_workspace_symbols, { desc = 'Find/search symbol through search input' })
+    vim.keymap.set('n', '<leader>ss', function ()
         telescope_builtin.lsp_workspace_symbols {
             query=vim.call('expand','<cword>')
         }
