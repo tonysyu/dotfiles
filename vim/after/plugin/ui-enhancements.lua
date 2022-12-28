@@ -6,7 +6,12 @@ require('ofirkai').setup {
     LineNr = {
       bg = colorscheme.background,
       fg = '#444444',
-
+    },
+    ['@punctuation.delimiter'] = {
+      fg = colorscheme.red,
+    },
+    ['@text.literal'] = {
+      fg = '#aaaaaa',
     }
   }
 }
