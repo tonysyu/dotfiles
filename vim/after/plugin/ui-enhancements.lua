@@ -1,14 +1,22 @@
-vim.g.sonokai_colors_override = {
-  bg0={'#1a1a1a', '235'},
+local colorscheme = require('ofirkai').scheme
+colorscheme.background = '#1a1a1a'
+require('ofirkai').setup {
+  scheme = colorscheme,
+  custom_hlgroups = {
+    LineNr = {
+      bg = colorscheme.background,
+      fg = '#444444',
+
+    }
+  }
 }
-vim.cmd("colorscheme sonokai")
 
 require('nvim-web-devicons').setup()
 
 require('lualine').setup {
   options = {
     icons_enabled = false,
-    theme = 'sonokai',
+    theme = 'jellybeans',
     component_separators = '|',
     section_separators = '',
   },

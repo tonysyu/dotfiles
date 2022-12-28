@@ -114,6 +114,7 @@ require('packer').startup(function(use)
   use 'EdenEast/nightfox.nvim'
   use 'folke/tokyonight.nvim'
   use 'navarasu/onedark.nvim'
+  use 'ofirgall/ofirkai.nvim'
   use 'projekt0n/github-nvim-theme'
   use 'sainnhe/sonokai'
 
