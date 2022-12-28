@@ -1,16 +1,14 @@
-require('monokai').setup {
-  palette = {
-    name = 'monokai_pro',
-    base2 = '#1a1a1a', -- Use darker background color for more contrast
-  },
+vim.g.sonokai_colors_override = {
+  bg0={'#1a1a1a', '235'},
 }
+vim.cmd("colorscheme sonokai")
 
 require('nvim-web-devicons').setup()
 
 require('lualine').setup {
   options = {
     icons_enabled = false,
-    theme = 'jellybeans',
+    theme = 'sonokai',
     component_separators = '|',
     section_separators = '',
   },

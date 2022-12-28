@@ -90,12 +90,18 @@ require('packer').startup(function(use)
 
   -- UI enhancements (see vim/after/plugin/ui-enhancements.lua)
   -- ..........................................................................
-  use 'tanvirtin/monokai.nvim' -- Colorscheme/theme
-  use 'kyazdani42/nvim-web-devicons' -- Icons for languages, files, directories, etc.
-  use 'nvim-lualine/lualine.nvim' -- Fancier statusline
-  use 'lukas-reineke/indent-blankline.nvim' -- Add indentation guides even on blank lines
   use 'junegunn/vim-peekaboo' -- Display the content of registers
   use 'kshenoy/vim-signature' -- Display marks in the gutter
+  use 'kyazdani42/nvim-web-devicons' -- Icons for languages, files, directories, etc.
+  use 'lukas-reineke/indent-blankline.nvim' -- Add indentation guides even on blank lines
+  use 'nvim-lualine/lualine.nvim' -- Fancier statusline
+
+  -- Colorschemes/themes
+  use 'EdenEast/nightfox.nvim'
+  use 'folke/tokyonight.nvim'
+  use 'navarasu/onedark.nvim'
+  use 'projekt0n/github-nvim-theme'
+  use 'sainnhe/sonokai'
 
   -- Editor configuration
   -- ..........................................................................
