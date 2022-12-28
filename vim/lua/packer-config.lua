@@ -31,6 +31,20 @@ require('packer').startup(function(use)
   use "folke/neodev.nvim" -- Additional lua configuration, makes nvim stuff amazing
   use 'simrat39/symbols-outline.nvim' -- Side pane LSP symbols
 
+  --- Diagnostics
+  -- ..........................................................................
+  use {
+    "folke/trouble.nvim",
+    requires = "kyazdani42/nvim-web-devicons",
+    config = function()
+      require("trouble").setup {
+        -- your configuration comes here
+        -- or leave it empty to use the default settings
+        -- refer to the configuration section below
+      }
+    end
+  }
+
   -- Autocompletion
   -- ..........................................................................
   use {
