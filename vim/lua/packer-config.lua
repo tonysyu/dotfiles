@@ -92,7 +92,8 @@ require('packer').startup(function(use)
 
   -- Filesystem plugins
   -- ..........................................................................
-  use 'padde/jump.vim' -- Vim integration with autojump fuzzy directory matchers
+  use 'nanotee/zoxide.vim' -- Integrate with zoxide fuzzy directory matcher
+  use 'padde/jump.vim' -- Vim integration with autojump fuzzy directory matcher
   use 'Shougo/junkfile.vim' -- Quickly create junkfile
   use 'tpope/vim-eunuch' -- Unix shell commands for file/directory management
 

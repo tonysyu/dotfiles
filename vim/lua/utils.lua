@@ -28,6 +28,4 @@ function M.update_table(table_to_update, new_values)
     for k,v in pairs(new_values) do table_to_update[k] = v end
 end
 
-
-
 return M

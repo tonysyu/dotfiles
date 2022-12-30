@@ -21,6 +21,7 @@ homebrew_packages:
 - semgrep
 - tree
 - wget
+- zoxide
 
 homebrew_cask_apps: []
 

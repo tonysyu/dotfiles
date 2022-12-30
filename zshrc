@@ -68,6 +68,9 @@ export MANPAGER="nvim +Man!"
 alias ls='exa'
 alias ll='exa -l'
 
+# Initialize zoxide
+eval "$(zoxide init zsh)"
+
 # vi-mode: Cursor changes between insert and normal mode
 VI_MODE_SET_CURSOR=true
 
