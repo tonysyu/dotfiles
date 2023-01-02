@@ -124,7 +124,7 @@ require('packer').startup(function(use)
   use 'editorconfig/editorconfig-vim' -- Autodetect https://editorconfig.org/ files
   use 'tpope/vim-sleuth' -- Detect tabstop and shiftwidth automatically
 
-  -- General editing (see vim/after/plugin/general_editing.lua)
+  -- General editing (see vim/after/plugin/general-editing.lua)
   -- ..........................................................................
   use 'AndrewRadev/splitjoin.vim'
   use 'jiangmiao/auto-pairs'
