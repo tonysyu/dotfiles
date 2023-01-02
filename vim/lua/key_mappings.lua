@@ -15,6 +15,7 @@ vim.keymap.set('n', '<leader>fg', telescope_builtin.live_grep, { desc = 'Find/se
 vim.keymap.set('n', '<leader>*', telescope_builtin.grep_string, { desc = 'Find/search string under cursor' })
 vim.keymap.set('n', '<leader>S', ':%s/', { desc = 'Find/search and replace using regex' })
 vim.keymap.set('v', '<leader>S', ':s/', { desc = 'Find/search and replace using regex' })
+vim.keymap.set('n', '<leader>/', telescope_builtin.current_buffer_fuzzy_find, { desc = 'Fuzzy find/search in current buffer' })
 
 -- Git search
 -- ............................................................................
@@ -81,6 +82,11 @@ vim.keymap.set('n', '<leader>sv', ':so $MYVIMRC<CR>', { desc = 'Reload (source) 
 vim.keymap.set('n', '<leader>eb', ':e ~/.config/nvim/init/bundles.vim<CR>', { desc = 'Quickly edit vim bundles file' })
 
 
+-- ============================================================================
+-- Changes to default behavior (no descriptions, since these aren't commands)
+-- ============================================================================
+
+
 -- Line and column navigation
 -- ............................................................................
 -- Change j, k, ^, $ to move by screen line instead of file line (wrapped lines)
@@ -109,3 +115,9 @@ vim.keymap.set('n', 'N', 'Nzzzv')
 -- Keep cursor in same position (instead of going to EOL) when joining lines.
 -- See https://youtu.be/hSHATqh8svM
 vim.keymap.set('n', 'J', 'mzJ`z')
+
+-- Miscellaneous
+-- ............................................................................
+-- Disable default behavior of space (advance one to the right) since space is used a
+-- leader key for some commands.
+vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
