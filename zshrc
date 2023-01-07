@@ -67,6 +67,7 @@ export MANPAGER="nvim +Man!"
 
 alias ls='exa'
 alias ll='exa -l'
+alias lt='exa --tree --level=2'
 
 # Initialize zoxide
 eval "$(zoxide init zsh)"
