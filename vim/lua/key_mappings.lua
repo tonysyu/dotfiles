@@ -3,6 +3,7 @@ local utils = require('utils')
 
 -- Prefer `<leader>f` as keymap for find/search that requires input
 -- Prefer `<leader>s` as keymap for find/search that uses the current word
+-- Prefer `<leader>v` as keymap for viewing panes and find/search is vim-specific
 
 -- Code file search
 -- ............................................................................
@@ -16,6 +17,9 @@ vim.keymap.set('n', '<leader>*', telescope_builtin.grep_string, { desc = 'Find/s
 vim.keymap.set('n', '<leader>S', ':%s/', { desc = 'Find/search and replace using regex' })
 vim.keymap.set('v', '<leader>S', ':s/', { desc = 'Find/search and replace using regex' })
 vim.keymap.set('n', '<leader>/', telescope_builtin.current_buffer_fuzzy_find, { desc = 'Fuzzy find/search in current buffer' })
+
+-- Undo ignorecase for star search
+vim.keymap.set('n', '*', utils.find_current_word_without_ignorecase, { desc = 'Find/search current word under the cursor' })
 
 -- Git search
 -- ............................................................................
@@ -81,11 +85,9 @@ vim.keymap.set('n', '<leader>ev', function () telescope_builtin.find_files({ sea
 vim.keymap.set('n', '<leader>sv', ':so $MYVIMRC<CR>', { desc = 'Reload (source) the vim settings' })
 vim.keymap.set('n', '<leader>eb', ':e ~/.config/nvim/init/bundles.vim<CR>', { desc = 'Quickly edit vim bundles file' })
 
-
 -- ============================================================================
 -- Changes to default behavior (no descriptions, since these aren't commands)
 -- ============================================================================
-
 
 -- Line and column navigation
 -- ............................................................................

@@ -2,6 +2,16 @@ local bind = vim.api.nvim_set_keymap
 
 local M = {}
 
+function M.find_current_word_without_ignorecase()
+    -- Execute star search, undoing ignorecase 
+    -- Adapted from https://vi.stackexchange.com/a/4055/12878
+
+    -- Add current word to search register
+    vim.fn.setreg('/', '\\C\\<' .. vim.fn.expand('<cword>') .. '\\>')
+    -- Go to next match
+    vim.cmd('/')
+end
+
 function M.key_map_factory(mapping_type, options)
     return function(args)
         key, command = unpack(args)
