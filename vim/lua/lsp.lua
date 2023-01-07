@@ -5,6 +5,9 @@ local mason = require('mason')
 local mason_lspconfig = require('mason-lspconfig')
 local telescope_builtin = require('telescope.builtin')
 local utils = require('utils')
+local luasnip = require('luasnip')
+-- Load snipmate style snippets from snippets.
+require("luasnip.loaders.from_snipmate").lazy_load()
 
 -- Simple plugin setup
 require('fidget').setup()
@@ -82,8 +85,6 @@ mason_lspconfig.setup_handlers({
         vim.cmd [[ do User LspAttachBuffers ]]
     end
 })
-
-local luasnip = require 'luasnip'
 
 cmp.setup({
     snippet = {
