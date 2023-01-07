@@ -48,11 +48,9 @@ vim.keymap.set('n', '<leader>k', ':m .-2<CR>==', { desc = 'Move line up' })
 
 -- Yank/paste to system clipboard
 -- ............................................................................
-vim.keymap.set("n", "<leader>y", "\"+y")
-vim.keymap.set("v", "<leader>y", "\"+y")
-vim.keymap.set("n", "<leader>Y", "\"+Y")
-vim.keymap.set("n", "<leader>p", "\"+p")
-vim.keymap.set("v", "<leader>p", "\"+p")
+vim.keymap.set({'n', 'v'}, "<leader>y", "\"+y")
+vim.keymap.set('n', "<leader>Y", "\"+Y")
+vim.keymap.set({'n', 'v'}, "<leader>p", "\"+p")
 vim.keymap.set("n", "<leader>P", "\"+P")
 
 -- Text formatting mappings
@@ -120,6 +118,10 @@ vim.keymap.set('n', 'J', 'mzJ`z')
 
 -- Miscellaneous
 -- ............................................................................
--- Disable default behavior of space (advance one to the right) since space is used a
+-- Disable default behavior of space (advance one to the right) since space is used as a
 -- leader key for some commands.
+--
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
+-- Duplicate system paste to paste-without-formatting keymap used by other apps.
+-- This works in Vimr, but in iterm, this is overridden by a terminal command.
+vim.keymap.set({'i', 'n', 'v'}, '<S-D-v>', function () vim.cmd(':normal! "+p<CR>') end, { silent = true })
