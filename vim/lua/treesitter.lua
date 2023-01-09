@@ -14,6 +14,8 @@ configs.setup {
         "javascript",
         "json",
         "lua",
+        "markdown",
+        "markdown_inline",
         "python",
         "rst",
         "rust",
