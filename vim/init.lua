@@ -1,4 +1,4 @@
-require('packer-config')
+require('plugins')
 
 require('settings')
 require('tools')

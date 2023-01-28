@@ -1,10 +1,6 @@
 local g = vim.g
 local opt = vim.opt
 
--- Set mapleader and localleader to comma
-g.mapleader = ','
-g.maplocalleader = ','
-
 opt.guifont = "Hack Nerd Font Mono:h12"
 
 -- Colorscheme settings
