@@ -114,12 +114,12 @@ require("lazy").setup({
   'nvim-lualine/lualine.nvim', -- Fancier statusline
 
   -- Colorschemes/themes
-  'EdenEast/nightfox.nvim',
-  'folke/tokyonight.nvim',
-  'navarasu/onedark.nvim',
-  'ofirgall/ofirkai.nvim',
-  'projekt0n/github-nvim-theme',
-  'sainnhe/sonokai',
+  'ofirgall/ofirkai.nvim', -- Default colorscheme; don't lazy load
+  {'EdenEast/nightfox.nvim', lazy = true},
+  {'folke/tokyonight.nvim', lazy = true},
+  {'navarasu/onedark.nvim', lazy = true},
+  {'projekt0n/github-nvim-theme', lazy = true},
+  {'sainnhe/sonokai', lazy = true},
 
   -- Editor configuration
   -- ..........................................................................
