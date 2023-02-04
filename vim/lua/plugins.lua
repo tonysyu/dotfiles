@@ -75,6 +75,8 @@ require("lazy").setup({
       'nvim-treesitter/playground',
       -- Additional text objects via treesitter
       'nvim-treesitter/nvim-treesitter-textobjects',
+      -- Display code context
+      'nvim-treesitter/nvim-treesitter-context'
     }
   },
 

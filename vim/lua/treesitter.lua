@@ -1,4 +1,5 @@
 local configs = require('nvim-treesitter.configs')
+
 configs.setup {
     ensure_installed = {
         "bash",
@@ -85,4 +86,12 @@ configs.setup {
             },
         },
     },
+}
+
+-- Set up treesitter-context plugin to display code context
+vim.cmd[[hi TreesitterContextBottom gui=underline guisp=#5f0000 ]]
+vim.cmd[[hi TreesitterContext guibg=#444444]]
+
+require('treesitter-context').setup {
+    mode = 'topline',
 }
