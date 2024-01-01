@@ -66,12 +66,13 @@ vim.keymap.set('n', '<leader>ep' ,":echo expand('%:p')<CR>", { desc = 'Show/echo
 -- ............................................................................
 vim.keymap.set('n', '<leader>vs', ':SymbolsOutline<cr>', { desc = 'View/toggle symbols' })
 vim.keymap.set('n', '<leader>vq', utils.toggle_quickfix, { desc = 'View/toggle quickfix window' })
-vim.keymap.set('n', '<leader>vd', ':TroubleToggle document_diagnostics<CR>', { desc = 'View/toggle Trouble diagnostics' })
+vim.keymap.set('n', '<leader>vd', ':TroubleToggle document_diagnostics<CR>', { desc = 'View/toggle Trouble diagnostics for document' })
+vim.keymap.set('n', '<leader>vD', ':TroubleToggle workspace_diagnostics<CR>', { desc = 'View/toggle Trouble diagnostics for workspace' })
 
 -- Vim tool search
 -- ............................................................................
 vim.keymap.set('n', '<leader>vh', telescope_builtin.help_tags, { desc = 'View help tags' })
-vim.keymap.set('n', '<D-p>', telescope_builtin.keymaps , { desc = 'View keymappings/keybindings' })
+vim.keymap.set('n', '<leader>vk', telescope_builtin.keymaps , { desc = 'View keymappings/keybindings' })
 vim.keymap.set('n', '<leader>vc', telescope_builtin.commands, { desc = 'View commands' })
 vim.keymap.set('n', '<leader>vm', telescope_builtin.marks, { desc = 'View marks' })
 vim.keymap.set('n', '<leader>vj', telescope_builtin.jumplist, { desc = 'View jump list' })
