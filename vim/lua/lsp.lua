@@ -57,6 +57,7 @@ local function on_attach(client, bufnr)
     -- Diagnostics
     vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous LSP diagnostic' })
     vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next LSP diagnostic' })
+    vim.keymap.set('n', '<leader>dd', vim.diagnostic.open_float, { desc = 'Show line diagnostics' })
 
     -- Editing
     vim.keymap.set('n', '<leader>va', vim.lsp.buf.code_action, { desc = 'View LSP code action' })
