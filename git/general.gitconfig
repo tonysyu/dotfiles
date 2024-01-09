@@ -1,0 +1,33 @@
+[color]
+    diff = auto
+    status = auto
+    branch = auto
+    ui = auto
+[core]
+    excludesfile = ~/.gitignore
+    editor = nvim
+    pager = delta
+[push]
+	default = current
+[gui]
+    fontui = -family Inconsolata -size 12 -weight normal -slant roman -underline 0 -overstrike 0
+    fontdiff = -family Inconsolata -size 12 -weight normal -slant roman -underline 0 -overstrike 0
+[alias]
+    amend = commit --amend --no-edit
+    co = checkout
+    count-lines = "! git log --author=\"$1\" --pretty=tformat: --numstat | awk '{ add += $1; subs += $2; loc += $1 - $2 } END { printf \"added lines: %s, removed lines: %s, total lines: %s\\n\", add, subs, loc }' #"
+    del = branch --delete
+    delm = "!f() { git checkout --quiet master && git branch --merged | grep --invert-match '\\*' | xargs -n 1 git branch --delete; git checkout --quiet @{-1}; }; f"
+    sdiff = diff --staged
+    st = status
+    wdiff = diff --word-diff
+    prlog = log --grep 'Merge pull request'
+    qlog = log --pretty=oneline --abbrev-commit --graph --decorate
+[interactive]
+    diffFilter = delta --color-only
+[delta "decorations"]
+    commit-decoration-style = bold yellow box ul
+    file-style = bold yellow ul
+    file-decoration-style = none
+[init]
+	defaultBranch = main

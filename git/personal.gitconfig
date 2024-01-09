@@ -1,0 +1,5 @@
+[user]
+    name = Tony S Yu
+    email = tsyu80@gmail.com
+[include]
+    path = general.gitconfig
