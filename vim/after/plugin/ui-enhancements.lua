@@ -28,7 +28,4 @@ require('lualine').setup {
 }
 
 -- Set up indent-blankline
-require("ibl").setup {
-    indent = { char = "|" },
-    exclude = {buftypes = {"terminal"} },
-}
+require("ibl").setup()
