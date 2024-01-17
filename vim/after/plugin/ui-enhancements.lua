@@ -1,17 +1,10 @@
-local colorscheme = require('ofirkai').scheme
-colorscheme.background = '#1a1a1a'
-require('ofirkai').setup {
-  scheme = colorscheme,
-  custom_hlgroups = {
-    LineNr = {
-      bg = colorscheme.background,
-      fg = '#444444',
-    },
-    ['@punctuation.delimiter'] = {
-      fg = colorscheme.red,
-    },
-    ['@text.literal'] = {
-      fg = '#aaaaaa',
+vim.cmd.colorscheme "catppuccin"
+
+require("catppuccin").setup {
+  flavour = "mocha",
+  color_overrides = {
+    mocha = {
+      base = "#1a1a1a",
     }
   }
 }

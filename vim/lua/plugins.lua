@@ -116,7 +116,7 @@ require("lazy").setup({
   'nvim-lualine/lualine.nvim', -- Fancier statusline
 
   -- Colorschemes/themes
-  'ofirgall/ofirkai.nvim', -- Default colorscheme; don't lazy load
+  'catppuccin/nvim', -- Default colorscheme; don't lazy load
   {'EdenEast/nightfox.nvim', lazy = true},
   {'folke/tokyonight.nvim', lazy = true},
   {'navarasu/onedark.nvim', lazy = true},
