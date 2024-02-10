@@ -62,7 +62,7 @@ local function on_attach(client, bufnr)
     -- Editing
     vim.keymap.set('n', '<leader>va', vim.lsp.buf.code_action, { desc = 'View LSP code action' })
     vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, { desc = 'Rename' })
-    vim.keymap.set('n', '<space>f', vim.lsp.buf.formatting, { desc = 'Reformat' })
+    vim.keymap.set('n', '<space>f', vim.lsp.buf.format, { desc = 'Reformat', async = true })
 end
 
 mason.setup()
