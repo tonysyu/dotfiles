@@ -87,6 +87,10 @@ mason_lspconfig.setup_handlers({
     end
 })
 
+-- Configure completion
+-- Ensure completion options are displayed
+vim.opt.completeopt = "menu,menuone,noselect"
+-- Setup nvim-cmp (https://github.com/hrsh7th/nvim-cmp/)
 cmp.setup({
     snippet = {
         expand = function(args)
@@ -101,8 +105,10 @@ cmp.setup({
         -- Set `select` to `false` to only confirm explicitly selected items.
         ['<CR>'] = cmp.mapping.confirm({ select = true }),
     }),
-    sources = {
+    sources = cmp.config.sources({
         { name = 'nvim_lsp' },
         { name = "luasnip" },
-    }
+        { name = 'buffer' },
+        { name = 'path' },
+    })
 })
