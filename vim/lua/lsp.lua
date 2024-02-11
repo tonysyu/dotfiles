@@ -75,9 +75,7 @@ mason_lspconfig.setup_handlers({
             flags = {
                 debounce_text_changes = 150,
             },
-            capabilities = cmp_nvim_lsp.default_capabilities(
-                vim.lsp.protocol.make_client_capabilities()
-            ),
+            capabilities = cmp_nvim_lsp.default_capabilities(),
         }
 
         utils.update_table(opts, custom_server_options[server_name])

@@ -6,7 +6,10 @@ require("catppuccin").setup {
     mocha = {
       base = "#1a1a1a",
     }
-  }
+  },
+  integrations = {
+    treesitter_context = true,
+  },
 }
 
 require('nvim-web-devicons').setup()
