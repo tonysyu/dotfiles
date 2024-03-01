@@ -69,6 +69,9 @@ alias ls='exa'
 alias ll='exa -l'
 alias lt='exa --tree --level=2'
 
+# Gradle wrapper. Note that this overrides oh-my-zsh git plugin alias for `git remote`
+alias gr='./gradlew'
+
 # Initialize zoxide
 eval "$(zoxide init zsh)"
 
