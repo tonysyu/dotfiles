@@ -28,6 +28,12 @@ telescope.setup{
                 exclude = {1, -3, -2, -1},
             },
         },
+        mappings = {
+            i = {
+                ["<C-j>"] = require('telescope.actions').cycle_history_next,
+                ["<C-k>"] = require('telescope.actions').cycle_history_prev,
+            },
+        },
     },
     pickers = {
         buffers = {
