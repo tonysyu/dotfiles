@@ -43,10 +43,11 @@ local function on_attach(client, bufnr)
     vim.keymap.set('n', '<leader>st', telescope_builtin.lsp_type_definitions, { desc = 'Find/search type definition' })
 
     -- Code search
-    vim.keymap.set('n', '<leader>fs', telescope_builtin.lsp_dynamic_workspace_symbols, { desc = 'Find/search symbol through search input' })
-    vim.keymap.set('n', '<leader>ss', function ()
+    vim.keymap.set('n', '<leader>fs', telescope_builtin.lsp_dynamic_workspace_symbols,
+        { desc = 'Find/search symbol through search input' })
+    vim.keymap.set('n', '<leader>ss', function()
         telescope_builtin.lsp_workspace_symbols {
-            query=vim.call('expand','<cword>')
+            query = vim.call('expand', '<cword>')
         }
     end, { desc = 'Find symbol under cursor' })
 
@@ -64,7 +65,11 @@ local function on_attach(client, bufnr)
     vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, { desc = 'Rename' })
     vim.keymap.set('n', '<space>f', vim.lsp.buf.format, { desc = 'Reformat' })
 
-    vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.format()]]
+    if client.supports_method("textDocument/formatting") then
+        for _, ft in ipairs(client.config.filetypes) do
+            vim.cmd('autocmd BufWritePre *.' .. ft .. ' lua vim.lsp.buf.format()')
+        end
+    end
 end
 
 mason.setup()
