@@ -9,6 +9,10 @@ opt.guifont = "Hack Nerd Font Mono:h12"
 opt.background = 'dark'
 opt.termguicolors = true
 
+-- Custom Filetypes
+-- ............................................................................
+vim.filetype.add({ extension = { templ = "templ" } })
+
 -- NeoVim providers
 -- ............................................................................
 g.python3_host_prog = vim.fn.expand('~/.venv/py3nvim/bin/python')
