@@ -16,10 +16,12 @@ vim.keymap.set('n', '<leader>fg', telescope_builtin.live_grep, { desc = 'Find/se
 vim.keymap.set('n', '<leader>*', telescope_builtin.grep_string, { desc = 'Find/search string under cursor' })
 vim.keymap.set('n', '<leader>S', ':%s/', { desc = 'Find/search and replace using regex' })
 vim.keymap.set('v', '<leader>S', ':s/', { desc = 'Find/search and replace using regex' })
-vim.keymap.set('n', '<leader>/', telescope_builtin.current_buffer_fuzzy_find, { desc = 'Fuzzy find/search in current buffer' })
+vim.keymap.set('n', '<leader>/', telescope_builtin.current_buffer_fuzzy_find,
+    { desc = 'Fuzzy find/search in current buffer' })
 
 -- Undo ignorecase for star search
-vim.keymap.set('n', '*', utils.find_current_word_without_ignorecase, { desc = 'Find/search current word under the cursor' })
+vim.keymap.set('n', '*', utils.find_current_word_without_ignorecase,
+    { desc = 'Find/search current word under the cursor' })
 
 -- Git search
 -- ............................................................................
@@ -48,9 +50,9 @@ vim.keymap.set('n', '<leader>k', ':m .-2<CR>==', { desc = 'Move line up' })
 
 -- Yank/paste to system clipboard
 -- ............................................................................
-vim.keymap.set({'n', 'v'}, "<leader>y", "\"+y")
+vim.keymap.set({ 'n', 'v' }, "<leader>y", "\"+y")
 vim.keymap.set('n', "<leader>Y", "\"+Y")
-vim.keymap.set({'n', 'v'}, "<leader>p", "\"+p")
+vim.keymap.set({ 'n', 'v' }, "<leader>p", "\"+p")
 vim.keymap.set("n", "<leader>P", "\"+P")
 
 -- Text formatting mappings
@@ -60,19 +62,25 @@ vim.keymap.set('v', 'Q', 'gq', { desc = 'Reflow selected text' })
 
 -- Echo status info
 -- ............................................................................
-vim.keymap.set('n', '<leader>ep' ,":echo expand('%:p')<CR>", { desc = 'Show/echo current path' })
+vim.keymap.set('n', '<leader>ep', ":echo expand('%:p')<CR>", { desc = 'Show/echo current path' })
 
 -- View helper windows
 -- ............................................................................
 vim.keymap.set('n', '<leader>vs', ':SymbolsOutline<cr>', { desc = 'View/toggle symbols' })
 vim.keymap.set('n', '<leader>vq', utils.toggle_quickfix, { desc = 'View/toggle quickfix window' })
-vim.keymap.set('n', '<leader>vd', ':TroubleToggle document_diagnostics<CR>', { desc = 'View/toggle Trouble diagnostics for document' })
-vim.keymap.set('n', '<leader>vD', ':TroubleToggle workspace_diagnostics<CR>', { desc = 'View/toggle Trouble diagnostics for workspace' })
+vim.keymap.set('n', '<leader>vd', ':TroubleToggle document_diagnostics<CR>',
+    { desc = 'View/toggle Trouble diagnostics for document' })
+vim.keymap.set('n', '<leader>vD', ':TroubleToggle workspace_diagnostics<CR>',
+    { desc = 'View/toggle Trouble diagnostics for workspace' })
+vim.keymap.set('n', '<leader>vD', ':TroubleToggle workspace_diagnostics<CR>',
+    { desc = 'View/toggle Trouble diagnostics for workspace' })
+vim.keymap.set('n', '<F12>', ':FloatermToggle<CR>', { desc = 'View/toggle Floaterm', silent = true })
+vim.keymap.set('t', '<F12>', '<C-\\><C-n>:FloatermToggle<CR>', { desc = 'View/toggle Floaterm', silent = true })
 
 -- Vim tool search
 -- ............................................................................
 vim.keymap.set('n', '<leader>vh', telescope_builtin.help_tags, { desc = 'View help tags' })
-vim.keymap.set('n', '<leader>vk', telescope_builtin.keymaps , { desc = 'View keymappings/keybindings' })
+vim.keymap.set('n', '<leader>vk', telescope_builtin.keymaps, { desc = 'View keymappings/keybindings' })
 vim.keymap.set('n', '<leader>vc', telescope_builtin.commands, { desc = 'View commands' })
 vim.keymap.set('n', '<leader>vm', telescope_builtin.marks, { desc = 'View marks' })
 vim.keymap.set('n', '<leader>vj', telescope_builtin.jumplist, { desc = 'View jump list' })
@@ -80,7 +88,8 @@ vim.keymap.set('n', '<leader>vr', telescope_builtin.registers, { desc = 'View re
 
 -- Vim configuration helpers
 -- ............................................................................
-vim.keymap.set('n', '<leader>ev', function () telescope_builtin.find_files({ search_dirs={ "~/.config/nvim/" } }) end, { desc = 'Find vim configuration file' })
+vim.keymap.set('n', '<leader>ev', function() telescope_builtin.find_files({ search_dirs = { "~/.config/nvim/" } }) end,
+    { desc = 'Find vim configuration file' })
 vim.keymap.set('n', '<leader>sv', ':so $MYVIMRC<CR>', { desc = 'Reload (source) the vim settings' })
 vim.keymap.set('n', '<leader>eb', ':e ~/.config/nvim/init/bundles.vim<CR>', { desc = 'Quickly edit vim bundles file' })
 
@@ -125,4 +134,4 @@ vim.keymap.set('n', 'J', 'mzJ`z')
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 -- Duplicate system paste to paste-without-formatting keymap used by other apps.
 -- This works in Vimr, but in iterm, this is overridden by a terminal command.
-vim.keymap.set({'i', 'n', 'v'}, '<S-D-v>', function () vim.cmd(':normal! "+p<CR>') end, { silent = true })
+vim.keymap.set({ 'i', 'n', 'v' }, '<S-D-v>', function() vim.cmd(':normal! "+p<CR>') end, { silent = true })

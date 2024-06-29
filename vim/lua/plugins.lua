@@ -135,6 +135,9 @@ require("lazy").setup({
     }
   },
 
+  -- Terminal
+  { 'voldikss/vim-floaterm' },
+
   -- Editor configuration
   -- ..........................................................................
   'editorconfig/editorconfig-vim', -- Autodetect https://editorconfig.org/ files
