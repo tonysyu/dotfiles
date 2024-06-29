@@ -119,11 +119,21 @@ require("lazy").setup({
 
   -- Colorschemes/themes
   'catppuccin/nvim', -- Default colorscheme; don't lazy load
-  {'EdenEast/nightfox.nvim', lazy = true},
-  {'folke/tokyonight.nvim', lazy = true},
-  {'navarasu/onedark.nvim', lazy = true},
-  {'projekt0n/github-nvim-theme', lazy = true},
-  {'sainnhe/sonokai', lazy = true},
+  { 'EdenEast/nightfox.nvim', lazy = true },
+  { 'folke/tokyonight.nvim', lazy = true },
+  { 'navarasu/onedark.nvim', lazy = true },
+  { 'projekt0n/github-nvim-theme', lazy = true },
+  { 'sainnhe/sonokai', lazy = true },
+
+  -- Noice plugin for cmdline, messages, and popups
+  {
+    "folke/noice.nvim",
+    event = "VeryLazy",
+    dependencies = {
+      "MunifTanjim/nui.nvim",
+      "rcarriga/nvim-notify",
+    }
+  },
 
   -- Editor configuration
   -- ..........................................................................
