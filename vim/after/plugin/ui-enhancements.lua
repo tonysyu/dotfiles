@@ -25,10 +25,42 @@ require("noice").setup({
   },
   -- you can enable a preset for easier configuration
   presets = {
-    command_palette = true,       -- position the cmdline and popupmenu together
+    -- command_palette = true,       -- position the cmdline and popupmenu together
     long_message_to_split = true, -- long messages will be sent to a split
     inc_rename = false,           -- enables an input dialog for inc-rename.nvim
     lsp_doc_border = false,       -- add a border to hover docs and signature help
+  },
+  -- Display cmdline and menu together
+  -- see https://github.com/folke/noice.nvim/wiki/Configuration-Recipes#display-the-cmdline-and-popupmenu-together
+  views = {
+    cmdline_popup = {
+      position = {
+        row = 25,
+        col = "50%",
+      },
+      size = {
+        width = 60,
+        height = "auto",
+      },
+    },
+    popupmenu = {
+      relative = "editor",
+      position = {
+        row = 28, -- This should match the `cmdline_popup.position.row` + ~3
+        col = "50%",
+      },
+      size = {
+        width = 60,
+        height = 10,
+      },
+      border = {
+        style = "rounded",
+        padding = { 0, 1 },
+      },
+      win_options = {
+        winhighlight = { Normal = "Normal", FloatBorder = "DiagnosticInfo" },
+      },
+    },
   },
 })
 
