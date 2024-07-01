@@ -63,11 +63,12 @@ vim.keymap.set('v', 'Q', 'gq', { desc = 'Reflow selected text' })
 -- Filesystem mappings
 -- ............................................................................
 vim.keymap.set('n', '<leader>ep', ":echo expand('%:p')<CR>", { desc = 'Show/echo current path' })
+vim.keymap.set('n', '<leader>.', ':Neotree reveal<cr>', { desc = 'Show current file explorer' })
 
 -- View helper windows
 -- ............................................................................
 vim.keymap.set('n', '<leader>vs', ':SymbolsOutline<cr>', { desc = 'View/toggle symbols' })
-vim.keymap.set('n', '<leader>vf', ':Neotree reveal<cr>', { desc = 'View/toggle nvim-tree filesystem explorer' })
+vim.keymap.set('n', '<leader>vf', ':Neotree toggle reveal<cr>', { desc = 'View/toggle nvim-tree filesystem explorer' })
 vim.keymap.set('n', '<leader>vq', utils.toggle_quickfix, { desc = 'View/toggle quickfix window' })
 -- Diagnostics (errors, warnings)
 vim.keymap.set('n', '<leader>vd', ':Trouble diagnostics toggle filter.buf=0<CR>',
