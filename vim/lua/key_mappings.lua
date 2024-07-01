@@ -60,9 +60,10 @@ vim.keymap.set("n", "<leader>P", "\"+P")
 vim.keymap.set('n', 'Q', 'gqap', { desc = 'Reflow paragraph (i.e. remove end of lines)' })
 vim.keymap.set('v', 'Q', 'gq', { desc = 'Reflow selected text' })
 
--- Echo status info
+-- File/directory mappings
 -- ............................................................................
 vim.keymap.set('n', '<leader>ep', ":echo expand('%:p')<CR>", { desc = 'Show/echo current path' })
+
 
 -- View helper windows
 -- ............................................................................
