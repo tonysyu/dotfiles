@@ -89,6 +89,15 @@ require("lazy").setup({
   'elixir-editors/vim-elixir',
   'mattn/emmet-vim',
   'tpope/vim-ragtag',
+  {
+    "iamcco/markdown-preview.nvim",
+    cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+    build = "cd app && yarn install",
+    init = function()
+      vim.g.mkdp_filetypes = { "markdown" }
+    end,
+    ft = { "markdown" },
+  },
 
   -- Motion and text-object plugins
   -- ..........................................................................
