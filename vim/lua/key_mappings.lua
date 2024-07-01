@@ -60,21 +60,21 @@ vim.keymap.set("n", "<leader>P", "\"+P")
 vim.keymap.set('n', 'Q', 'gqap', { desc = 'Reflow paragraph (i.e. remove end of lines)' })
 vim.keymap.set('v', 'Q', 'gq', { desc = 'Reflow selected text' })
 
--- File/directory mappings
+-- Filesystem mappings
 -- ............................................................................
 vim.keymap.set('n', '<leader>ep', ":echo expand('%:p')<CR>", { desc = 'Show/echo current path' })
-
 
 -- View helper windows
 -- ............................................................................
 vim.keymap.set('n', '<leader>vs', ':SymbolsOutline<cr>', { desc = 'View/toggle symbols' })
+vim.keymap.set('n', '<leader>vf', ':Neotree reveal<cr>', { desc = 'View/toggle nvim-tree filesystem explorer' })
 vim.keymap.set('n', '<leader>vq', utils.toggle_quickfix, { desc = 'View/toggle quickfix window' })
-vim.keymap.set('n', '<leader>vd', ':TroubleToggle document_diagnostics<CR>',
-    { desc = 'View/toggle Trouble diagnostics for document' })
-vim.keymap.set('n', '<leader>vD', ':TroubleToggle workspace_diagnostics<CR>',
+-- Diagnostics (errors, warnings)
+vim.keymap.set('n', '<leader>vd', ':Trouble diagnostics toggle filter.buf=0<CR>',
+    { desc = 'View/toggle Trouble diagnostics for buffer' })
+vim.keymap.set('n', '<leader>vD', ':Trouble diagnostics toggle<CR>',
     { desc = 'View/toggle Trouble diagnostics for workspace' })
-vim.keymap.set('n', '<leader>vD', ':TroubleToggle workspace_diagnostics<CR>',
-    { desc = 'View/toggle Trouble diagnostics for workspace' })
+-- Terminal
 vim.keymap.set('n', '<F12>', ':FloatermToggle<CR>', { desc = 'View/toggle Floaterm', silent = true })
 vim.keymap.set('t', '<F12>', '<C-\\><C-n>:FloatermToggle<CR>', { desc = 'View/toggle Floaterm', silent = true })
 

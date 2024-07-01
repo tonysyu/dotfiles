@@ -110,8 +110,18 @@ require("lazy").setup({
   'nanotee/zoxide.vim',  -- Integrate with zoxide fuzzy directory matcher
   'padde/jump.vim',      -- Vim integration with autojump fuzzy directory matcher
   'Shougo/junkfile.vim', -- Quickly create junkfile
-  'stevearc/oil.nvim',   -- Filesystem navigation and editing (vim-vinegar alternative)
   'tpope/vim-eunuch',    -- Unix shell commands for file/directory management
+  -- Filesystem explorer
+  {
+    "nvim-neo-tree/neo-tree.nvim",
+    branch = "v3.x",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+      "MunifTanjim/nui.nvim",
+      -- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
+    }
+  },
 
   -- Git related plugins
   -- ..........................................................................
