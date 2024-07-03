@@ -1,6 +1,7 @@
 local telescope = require('telescope')
+local lga_actions = require("telescope-live-grep-args.actions")
 
-telescope.setup{
+telescope.setup {
     ensure_installed = {
         'graphql',
         'html',
@@ -25,7 +26,7 @@ telescope.setup{
         path_display = {
             shorten = {
                 -- Keep the first and last-three path parts unshortened
-                exclude = {1, -3, -2, -1},
+                exclude = { 1, -3, -2, -1 },
             },
         },
         mappings = {
@@ -40,5 +41,18 @@ telescope.setup{
             sort_mru = true,
         },
     },
+    extensions = {
+        live_grep_args = {
+            mappings = {
+                i = {
+                    -- Add quotes around search term to enable addition of args
+                    ["<C-'>"] = lga_actions.quote_prompt(),
+                    -- Add quotes around search term and start " --iglob " filter
+                    ["<C-i>"] = lga_actions.quote_prompt({ postfix = " --iglob " }),
+                },
+            },
+        }
+    }
 }
 pcall(telescope.load_extension, 'fzf')
+pcall(telescope.load_extension, 'live_grep_args')
