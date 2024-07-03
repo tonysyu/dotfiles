@@ -67,14 +67,15 @@ vim.keymap.set('n', '<leader>.', ':Neotree reveal<cr>', { desc = 'Show current f
 
 -- View helper windows
 -- ............................................................................
-vim.keymap.set('n', '<leader>vs', ':SymbolsOutline<cr>', { desc = 'View/toggle symbols' })
-vim.keymap.set('n', '<leader>vf', ':Neotree toggle reveal<cr>', { desc = 'View/toggle nvim-tree filesystem explorer' })
-vim.keymap.set('n', '<leader>vq', utils.toggle_quickfix, { desc = 'View/toggle quickfix window' })
+vim.keymap.set('n', '<leader>vs', ':SymbolsOutline<cr>', { desc = 'View/toggle symbols', silent = true })
+vim.keymap.set('n', '<leader>vf', ':Neotree toggle reveal<cr>',
+    { desc = 'View/toggle nvim-tree filesystem explorer', silent = true })
+vim.keymap.set('n', '<leader>vq', utils.toggle_quickfix, { desc = 'View/toggle quickfix window', silent = true })
 -- Diagnostics (errors, warnings)
 vim.keymap.set('n', '<leader>vd', ':Trouble diagnostics toggle filter.buf=0<CR>',
-    { desc = 'View/toggle Trouble diagnostics for buffer' })
+    { desc = 'View/toggle Trouble diagnostics for buffer', silent = true })
 vim.keymap.set('n', '<leader>vD', ':Trouble diagnostics toggle<CR>',
-    { desc = 'View/toggle Trouble diagnostics for workspace' })
+    { desc = 'View/toggle Trouble diagnostics for workspace', silent = true })
 -- Terminal
 vim.keymap.set('n', '<F12>', ':FloatermToggle<CR>', { desc = 'View/toggle Floaterm', silent = true })
 vim.keymap.set('t', '<F12>', '<C-\\><C-n>:FloatermToggle<CR>', { desc = 'View/toggle Floaterm', silent = true })
