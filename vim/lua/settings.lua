@@ -31,9 +31,9 @@ opt.smartindent = true
 opt.backup = false
 opt.writebackup = false
 opt.swapfile = false
-opt.hidden = true  -- Allow switching from modified buffers (i.e. hidden buffers)
-opt.confirm = true  -- Confirm before quitting if a modified buffer is hidden
-opt.autowriteall = true  -- Write/save file when switching buffers
+opt.hidden = true       -- Allow switching from modified buffers (i.e. hidden buffers)
+opt.confirm = true      -- Confirm before quitting if a modified buffer is hidden
+opt.autowriteall = true -- Write/save file when switching buffers
 -- opt.undodir = os.getenv('HOME') .. './vim/undodir'
 opt.undofile = true
 
@@ -59,23 +59,23 @@ opt.completeopt = 'menuone,noselect' -- pretty completion experience
 
 -- Wildmenu (Ex-mode completion)
 -- ............................................................................
-opt.wildignorecase = true  -- Ignore case in file searches
+opt.wildignorecase = true -- Ignore case in file searches
 opt.wildmenu = true
-opt.wildmode = {'list:longest', 'list:full'}
+opt.wildmode = { 'list:longest', 'list:full' }
 
 -- Cursor and scroll
 -- ............................................................................
-opt.cursorline = true  -- Highlight line containing cursor
-opt.scrolloff = 8  -- Keep at least 8 lines above/below cursor when scrolling
+opt.cursorline = true -- Highlight line containing cursor
+opt.scrolloff = 8     -- Keep at least 8 lines above/below cursor when scrolling
 
 -- Whitespace
 -- ............................................................................
 opt.list = true
-opt.listchars = { tab='» ', extends='›', precedes='‹', nbsp='·', trail='·' }
+opt.listchars = { tab = '» ', extends = '›', precedes = '‹', nbsp = '·', trail = '·' }
 
 -- Search
 -- ............................................................................
-opt.hlsearch = false
+opt.hlsearch = true
 opt.incsearch = true
 opt.ignorecase = true
 opt.smartcase = true
@@ -110,7 +110,7 @@ opt.wildignore = {
     '*.egg-info',
     '*.pyc',
     -- IPython files
-    'shadowhist','kernel*.json','__enamlcache__',
+    'shadowhist', 'kernel*.json', '__enamlcache__',
     -- LaTeX files
     '*.aux',
     '*.bbl',
