@@ -76,6 +76,9 @@ alias gw='./gradlew'
 # Initialize zoxide
 eval "$(zoxide init zsh)"
 
+# Initialize key bindings for fzf
+eval "$(fzf --zsh)"
+
 # vi-mode: Cursor changes between insert and normal mode
 VI_MODE_SET_CURSOR=true
 
