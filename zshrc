@@ -108,7 +108,7 @@ if test -f "$fzf_git_bin"; then
 else
   echo "Could not find $fzf_git_bin. Execute the following:"
   echo "cd ~/dotfiles"
-  echo "git submodule sync"
+  echo "git submodule update"
 fi
 
 # frg: Command to search files by ripgrep, refine with fzf, and open in vim:
