@@ -76,9 +76,6 @@ alias gw='./gradlew'
 # Initialize zoxide
 eval "$(zoxide init zsh)"
 
-# Initialize key bindings for fzf
-eval "$(fzf --zsh)"
-
 # vi-mode: Cursor changes between insert and normal mode
 VI_MODE_SET_CURSOR=true
 
@@ -93,6 +90,29 @@ else
   zstyle ':completion:*:default' list-colors ''
 fi
 
+# Initialize key bindings for fzf
+# See https://junegunn.github.io/fzf/installation/
+eval "$(fzf --zsh)"
+
+# Initialize fzf-git
+# Use <Ctrl-G><Ctrl-X> where X is
+#     F = Files
+#     B = Branches
+#     H = commit Hashes
+#     R = Remotes
+#     S = Stashes
+# See https://github.com/junegunn/fzf-git.sh?tab=readme-ov-file#list-of-bindings
+fzf_git_bin="$HOME/dotfiles/fzf-git.sh/fzf-git.sh"
+if test -f "$fzf_git_bin"; then
+  source "$fzf_git_bin"
+else
+  echo "Could not find $fzf_git_bin. Execute the following:"
+  echo "cd ~/dotfiles"
+  echo "git submodule sync"
+fi
+
+# frg: Command to search files by ripgrep, refine with fzf, and open in vim:
+# See https://junegunn.github.io/fzf/tips/ripgrep-integration/
 function frg {
     result=`rg --ignore-case --color=always --line-number --no-heading "$@" |
       fzf --ansi \
