@@ -30,22 +30,23 @@ plugins=(
 )
 
 source $ZSH/oh-my-zsh.sh
-source $(dirname -- $0)/vim/aliases.zsh
 
 # User configuration
 # ======================================================================================
 
+source $(dirname -- $0)/vim/init.zsh
+
 # Use starship prompt theme
 eval "$(starship init zsh)"
+
+# Initialize zoxide
+eval "$(zoxide init zsh)"
 
 # Add homebrew python versions to path
 # Should match versions in ~/dotfiles/ansible-devenv/roles/dev-common/vars/main.yml
 export PATH=/usr/local/opt/python@3.8/bin:$PATH
 export PATH=/usr/local/opt/python@3.9/bin:$PATH
 export PATH=/usr/local/opt/python@3.10/bin:$PATH
-
-# Use neovim as for `man` command
-export MANPAGER="nvim +Man!"
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -64,10 +65,6 @@ export MANPAGER="nvim +Man!"
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
 
 alias ls='exa'
 alias ll='exa -l'
@@ -77,23 +74,11 @@ alias lt='exa --tree --level=2'
 alias gr='./gradlew'
 alias gw='./gradlew'
 
-# Initialize zoxide
-eval "$(zoxide init zsh)"
-
 # vi-mode: Cursor changes between insert and normal mode
 VI_MODE_SET_CURSOR=true
 
-# Directory-colors
-# Copied from https://unix.stackexchange.com/a/91978
-if whence dircolors >/dev/null; then
-  eval "$(dircolors -b)"
-  zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
-  alias ls='ls --color'
-else
-  export CLICOLOR=1
-  zstyle ':completion:*:default' list-colors ''
-fi
-
+# fzf configuration
+# ======================================================================================
 # Initialize key bindings for fzf
 # See https://junegunn.github.io/fzf/installation/
 eval "$(fzf --zsh)"
