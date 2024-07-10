@@ -1,0 +1,15 @@
+# See https://starship.rs/config for configuration syntax and options
+
+[directory]
+truncate_to_repo = false
+
+[time]
+disabled = false
+
+[git_branch]
+symbol = ""
+format = "[$symbol $branch]($style)"
+
+[git_status]
+format = '([ $all_status$ahead_behind]($style) )'
+stashed = "≡"

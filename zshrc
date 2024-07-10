@@ -4,7 +4,7 @@
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
-ZSH_THEME="powerlevel10k/powerlevel10k"
+ZSH_THEME=""  # Clear out theme; this will be set by starship init, instead.
 
 # Use hyphen-insensitive completion.
 # Case-sensitive completion must be off. _ and - will be interchangeable.
@@ -33,6 +33,10 @@ source $ZSH/oh-my-zsh.sh
 source $(dirname -- $0)/vim/aliases.zsh
 
 # User configuration
+# ======================================================================================
+
+# Use starship prompt theme
+eval "$(starship init zsh)"
 
 # Add homebrew python versions to path
 # Should match versions in ~/dotfiles/ansible-devenv/roles/dev-common/vars/main.yml
