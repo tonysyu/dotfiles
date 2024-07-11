@@ -34,8 +34,6 @@ snippet cm
 	from contextlib import contextmanager
 snippet cname
 	__class__.__name__
-snippet future
-	from __future__ import absolute_import, division, print_function, unicode_literals
 snippet pp
 	from pprint import pprint as pp
 snippet glob
@@ -50,58 +48,27 @@ snippet plt
 	import matplotlib.pyplot as plt
 snippet mpl
 	import matplotlib as mpl
-snippet pq
-	import quantities as pq
-snippet const
-	import scipy.constants as const
 snippet sio
 	from skimage import io
 snippet ndimg
 	import scipy.ndimage as ndimg
-snippet tts
-	from traits.api import 
-snippet chaco
-	from chaco.api import 
-snippet enable
-	from enable.api import 
-snippet enaml
-	import enaml
-	with enaml.imports():
-		from ${1:module} import ${2}
 snippet assert_close
 	from numpy.testing import assert_allclose
 snippet assert_equal
 	from nose.tools import assert_equal
 snippet cb
 	import cookbook as cb
-snippet watch
-	from yutils.testing import stopwatch
-	with stopwatch():
-snippet deprecate
-	from yutils import deprecate
-	@deprecate('${1:function to use instead}')
 snippet pylint
 	# pylint: disable=${1}
-snippet prof
-	from yutils.testing import profile
-	profile('${1:code to profile}')
 snippet memprof
 	from memory_profiler import profile
 	@profile
 snippet ipy
 	from IPython import embed; embed()
-snippet qtpdb
-	from yutils.testing import qt4_pdb; qt4_pdb()()
 snippet stack
 	import traceback; traceback.print_stack()
 snippet ishell
 	import IPython.frontend.terminal.embed as _e; _e.InteractiveShellEmbed()()
-snippet wx
-	from traits.etsconfig.api import ETSConfig
-	ETSConfig.toolkit = 'wx'
-snippet qt
-	from traits.etsconfig.api import ETSConfig
-	ETSConfig.toolkit = 'qt4'
 snippet dec
 	def wrapper(func):
 		# @functools.wraps(func)
@@ -115,15 +82,6 @@ snippet catch_warnings
 snippet utf8
 	# -*- coding: utf-8 -*-
 	from __future__ import unicode_literals
-snippet copyright
-	# -----------------------------------------------------------------------------
-	#  Copyright (c) 2013, Enthought, Inc.
-	#  All rights reserved.
-	# -----------------------------------------------------------------------------
-snippet confidential
-	#
-	# This file is confidential and NOT open source. Do not distribute.
-	#
 
 snippet #-
 	# -------------------------------------------------------------------------
@@ -136,8 +94,6 @@ snippet ##
 snippet here
 	import os.path as pth
 	LOCAL_DIR = pth.dirname(pth.abspath(__file__))
-snippet ax
-	ax = ax if ax is not None else plt.gca()
 
 snippet gallery
 	import matplotlib.pyplot as plt; plt.rcdefaults()
@@ -186,90 +142,15 @@ snippet argparse
 
 	if __name__ == '__main__':
 	    main()
-snippet video
-	.. raw:: html
 
-	   <video controls="controls">
-		   <source src="${1}.webm" type="video/webm" />
-		   Video display requires video tag and webm support.
-	   </video>
-
-snippet noisy_traits_exceptions
-	from traits.api import push_exception_handler
-	push_exception_handler(reraise_exceptions=True)
-
-snippet traittest
-	from traits.testing.unittest_tools import UnittestTools
-
-	from unittest import TestCase
-
-
-	class TestTools(TestCase, UnittestTools):
-
-	    def test_something(self):
-	        with self.assertTraitChanges(traits_object, 'trait_name', count=1):
-	            pass
 snippet log
 	import logging
 
 	log = logging.getLogger(__name__)
 snippet _LOG
 	_LOG = logging.getLogger(__name__)
-snippet setup.py
-	from os.path import join
-	from setuptools import setup, find_packages
 
 
-	package_name = '${1:Package name}'
-	info = {}
-	execfile(join(package_name, '__init__.py'), info)
-
-
-	setup(
-		name=package_name,
-		version=info['__version__'],
-		author='Tony S. Yu',
-		author_email='tsyu80@gmail.com',
-		maintainer='Tony S. Yu',
-		maintainer_email='tsyu80@gmail.com',
-		description='${2:Description}',
-		include_package_data=True,
-		install_requires=info['__requires__'],
-		license='BSD',
-		packages=find_packages(),
-	)
-
-snippet log-console
-	import logging
-	import logging.config
-
-	logging.config.dictConfig({
-		'version': 1,
-		'handlers': {
-			'console': {
-				'class': 'logging.StreamHandler',
-				'level': 'INFO',
-			},
-		},
-		'loggers': {
-			__name__: {
-				'handlers': ['console'],
-				'level': 'INFO'
-			},
-		}
-	})
-	logger = logging.getLogger(__name__)
-
-snippet log-file
-	import logging
-	import os.path as pth
-
-	filename = pth.expanduser(pth.join('~', 'debug.log'))
-	logging.basicConfig(filename=filename, level=logging.DEBUG)
-
-snippet super
-	result = super(`GetCurrentPythonClass()`, self).`GetCurrentPythonMethod()`(*args, **kwargs)
-	return result
 snippet **
 	*args, **kwargs):
 
