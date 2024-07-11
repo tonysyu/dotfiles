@@ -1,15 +1,18 @@
 ---
 
 homebrew_packages:
-- starship
+- jandedobbeleer/oh-my-posh/oh-my-posh
 
 
 config_directories:
 - "~/.config"
+- "~/.config/ohmyposh"
 - "~/.config/zinit"
 
 link_configs:
 - src: "~/dotfiles/starship.toml"
   dest: "~/.config/starship.toml"
+- src: "~/dotfiles/ohmyposh.toml"
+  dest: "~/.config/ohmyposh/ohmyposh.toml"
 - src: "~/dotfiles/zinit"
   dest: "~/.config/zinit/zinit.git"

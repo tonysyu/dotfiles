@@ -19,8 +19,11 @@ done
 # ======================================================================================
 source $(dirname -- $0)/vim/init.zsh
 
-# Use starship prompt theme
-eval "$(starship init zsh)"
+# Initialize prompt theme
+# Wrap conditional, since default Apple terminal is not supported
+if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
+  eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/ohmyposh.toml)"
+fi
 
 # Initialize zoxide
 eval "$(zoxide init zsh)"
