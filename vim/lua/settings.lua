@@ -1,7 +1,7 @@
 local g = vim.g
 local opt = vim.opt
 
-opt.guifont = "Hack Nerd Font Mono:h12"
+opt.guifont = "Hack Nerd Font Mono:h13"
 
 -- Colorscheme settings
 -- ............................................................................
@@ -31,8 +31,8 @@ opt.smartindent = true
 opt.backup = false
 opt.writebackup = false
 opt.swapfile = false
-opt.hidden = true       -- Allow switching from modified buffers (i.e. hidden buffers)
-opt.confirm = true      -- Confirm before quitting if a modified buffer is hidden
+opt.hidden = true -- Allow switching from modified buffers (i.e. hidden buffers)
+opt.confirm = true -- Confirm before quitting if a modified buffer is hidden
 opt.autowriteall = true -- Write/save file when switching buffers
 -- opt.undodir = os.getenv('HOME') .. './vim/undodir'
 opt.undofile = true
@@ -66,7 +66,7 @@ opt.wildmode = { 'list:longest', 'list:full' }
 -- Cursor and scroll
 -- ............................................................................
 opt.cursorline = true -- Highlight line containing cursor
-opt.scrolloff = 8     -- Keep at least 8 lines above/below cursor when scrolling
+opt.scrolloff = 8 -- Keep at least 8 lines above/below cursor when scrolling
 
 -- Whitespace
 -- ............................................................................
