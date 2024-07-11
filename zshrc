@@ -1,39 +1,22 @@
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+# Initialize zinit and load plugins
+# ======================================================================================
+# zinit.git path should match what's in ./ansible-devenv/roles/zsh/vars/main.yml
+ZINIT_HOME="${HOME}/.config/zinit"
+source "${ZINIT_HOME}/zinit.git/zinit.zsh"
 
-# Path to your oh-my-zsh installation.
-export ZSH="$HOME/.oh-my-zsh"
-
-ZSH_THEME=""  # Clear out theme; this will be set by starship init, instead.
-
-# Use hyphen-insensitive completion.
-# Case-sensitive completion must be off. _ and - will be interchangeable.
-HYPHEN_INSENSITIVE="true"
-
-# Uncomment the following line if pasting URLs and other text is messed up.
-# DISABLE_MAGIC_FUNCTIONS="true"
-
-# Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
-
-# Which plugins would you like to load?
-# Standard plugins can be found in $ZSH/plugins/
-# Custom plugins may be added to $ZSH_CUSTOM/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
 plugins=(
-    autojump
-    git
-    nvm
-    vi-mode
-    zsh-autosuggestions
+  'zsh-users/zsh-autosuggestions'
+  'zsh-users/zsh-completions'
+  'zsh-users/zsh-syntax-highlighting'
+  'jeffreytse/zsh-vi-mode'
 )
-
-source $ZSH/oh-my-zsh.sh
+for repo in ${plugins[@]};
+  # ice depth=1 tells next command to limit history depth of git clone to 1 (most recent)
+  do zinit ice depth=1; zinit light $repo;
+done
 
 # User configuration
 # ======================================================================================
-
 source $(dirname -- $0)/vim/init.zsh
 
 # Use starship prompt theme
@@ -48,34 +31,12 @@ export PATH=/usr/local/opt/python@3.8/bin:$PATH
 export PATH=/usr/local/opt/python@3.9/bin:$PATH
 export PATH=/usr/local/opt/python@3.10/bin:$PATH
 
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-
 alias ls='exa'
 alias ll='exa -l'
 alias lt='exa --tree --level=2'
 
-# Gradle wrapper. Note that this overrides oh-my-zsh git plugin alias for `git remote`
 alias gr='./gradlew'
 alias gw='./gradlew'
-
-# vi-mode: Cursor changes between insert and normal mode
-VI_MODE_SET_CURSOR=true
 
 # fzf configuration
 # ======================================================================================

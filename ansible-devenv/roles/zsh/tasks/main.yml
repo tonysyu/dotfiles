@@ -1,5 +1,11 @@
 ---
 
+- name: Update dotfiles submodules
+  shell: |
+    git submodule update
+  args:
+    chdir: '..'
+
 - name: Ensure .zshrc exists
   ansible.builtin.file:
     dest: "~/.zshrc"
@@ -20,10 +26,11 @@
   tags:
   - brew
 
-- name: Ensure .config directory exists
+- name: Ensure .config directories exists
   file:
-    path: "~/.config"
+    path: '{{ item }}'
     state: directory
+  loop: '{{ config_directories }}'
 
 - name: Link configs
   file:
@@ -31,8 +38,3 @@
     dest: '{{ item.dest }}'
     state: link
   loop: '{{ link_configs }}'
-
-- name: Clone zsh-autosuggestions plugin
-  git:
-    repo: "https://github.com/zsh-users/zsh-autosuggestions"
-    dest: "{{ custom_dir }}/plugins/zsh-autosuggestions"

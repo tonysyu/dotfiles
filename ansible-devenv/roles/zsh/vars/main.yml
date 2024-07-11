@@ -1,11 +1,15 @@
 ---
 
-custom_dir: "{{ lookup('env','ZSH_CUSTOM') | default('~/.oh-my-zsh/custom', true) }}"
-
 homebrew_packages:
 - starship
 
 
+config_directories:
+- "~/.config"
+- "~/.config/zinit"
+
 link_configs:
 - src: "~/dotfiles/starship.toml"
   dest: "~/.config/starship.toml"
+- src: "~/dotfiles/zinit"
+  dest: "~/.config/zinit/zinit.git"

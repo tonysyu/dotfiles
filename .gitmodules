@@ -1,3 +1,6 @@
 [submodule "fzf-git.sh"]
 	path = fzf-git.sh
 	url = git@github.com:junegunn/fzf-git.sh.git
+[submodule "zinit"]
+	path = zinit
+	url = https://github.com/zdharma-continuum/zinit.git
