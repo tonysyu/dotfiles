@@ -108,7 +108,6 @@ require("lazy").setup({
   -- Filesystem plugins
   -- ..........................................................................
   'nanotee/zoxide.vim',  -- Integrate with zoxide fuzzy directory matcher
-  'padde/jump.vim',      -- Vim integration with autojump fuzzy directory matcher
   'Shougo/junkfile.vim', -- Quickly create junkfile
   'tpope/vim-eunuch',    -- Unix shell commands for file/directory management
   -- Filesystem explorer
