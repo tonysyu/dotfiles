@@ -1,10 +1,10 @@
 ---
 
 - name: Update dotfiles submodules
-  shell: |
-    git submodule update
+  ansible.builtin.shell: |
+    git submodule update --init
   args:
-    chdir: '..'
+    chdir: "~/dotfiles"
 
 - name: Ensure .zshrc exists
   ansible.builtin.file:
