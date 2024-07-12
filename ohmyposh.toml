@@ -9,34 +9,33 @@ pink = "#F5C2E7"
 lavender = "#B4BEFE"
 blue = "#89B4FA"
 
+# Main prompt: Used for user, path, and git info
 [[blocks]]
-alignment = "left"
 type = "prompt"
+alignment = "left"
+newline = true
 
     [[blocks.segments]]
-    foreground = "p:os"
-    style = "plain"
-    template = "{{.Icon}} "
-    type = "os"
-
-    [[blocks.segments]]
-    foreground = "p:blue"
-    style = "plain"
-    template = "{{ .UserName }}@{{ .HostName }} "
     type = "session"
+    style = "plain"
+    foreground = "p:blue"
+    template = "{{ .UserName }}@{{ .HostName }} "
 
     [[blocks.segments]]
-    foreground = "p:pink"
-    style = "plain"
-    template = "{{ .Path }} "
     type = "path"
+    style = "plain"
+    foreground = "p:pink"
+    template = "{{ .Path }}"
 
         [blocks.segments.properties]
-        folder_icon = "...."
+        folder_icon = "**"
         home_icon = "~"
         style = "agnoster_short"
+        max_depth = 3
 
     [[blocks.segments]]
+    type = "git"
+    style = "plain"
     foreground = "p:lavender"
     template = """ {{ .UpstreamIcon }}{{ .HEAD }}\
       {{ if .BranchStatus }} {{ .BranchStatus }}{{ end }}\
@@ -45,8 +44,6 @@ type = "prompt"
       {{ if .Staging.Changed }}  {{ .Staging.String }}{{ end }}\
       {{ if gt .StashCount 0 }} {{ .StashCount }}{{ end }}\
     """
-    style = "plain"
-    type = "git"
 
         [blocks.segments.properties]
         fetch_stash_count = true
@@ -62,19 +59,64 @@ type = "prompt"
         revert_icon = " "
         tag_icon = " "
 
+# Right prompt: Used for language information (and time display)
 [[blocks]]
-alignment = "left"
-newline = true
-type = "prompt"
+type = "rprompt"
+overflow = "hidden"
 
     [[blocks.segments]]
+    type = "python"
+    style = "plain"
+    foreground = "green"
+    template = "  {{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}{{ .Venv }} {{ end }}{{ .Full }}{{ end }}"
+
+    [[blocks.segments]]
+    type = "node"
+    style = "plain"
+    foreground = "p:lavender"
+    template = " {{ if .PackageManagerIcon }}{{ .PackageManagerIcon }}{{ else }}{{ end }} {{ .Full }}"
+
+    [[blocks.segments]]
+    type = "java"
+    style = "plain"
+    foreground = "p:lavender"
+    template = "  {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}"
+
+    [[blocks.segments]]
+    type = "rust"
+    style = "plain"
+    foreground = "p:lavender"
+    template = "  {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}"
+
+    [[blocks.segments]]
+    type = "go"
+    style = "plain"
+    foreground = "p:lavender"
+    template = " Go {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}"
+
+    [[blocks.segments]]
+    type = "time"
+    style = "plain"
+    foreground = "p:blue"
+    template = " \ue641 {{ .CurrentDate | date .Format}}"
+
+# Cursor prompt
+[[blocks]]
+type = "prompt"
+alignment = "left"
+newline = true
+
+    [[blocks.segments]]
+    type = "root"
     foreground = "#fff"
     style = "plain"
     template = " ⚡ "
-    type = "root"
 
     [[blocks.segments]]
-    style = "plain"
-    foreground = "p:closer"
-    template = ""
     type = "text"
+    style = "plain"
+    foreground_templates = [
+        "{{ if eq .Code 0 }}p:pink{{ end }}",
+        "{{ if gt .Code 0 }}red{{ end }}",
+    ]
+    template = "\ue602"
