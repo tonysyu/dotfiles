@@ -8,12 +8,17 @@ plugins=(
   'zsh-users/zsh-autosuggestions'
   'zsh-users/zsh-completions'
   'zsh-users/zsh-syntax-highlighting'
-  'jeffreytse/zsh-vi-mode'
 )
 for repo in ${plugins[@]};
   # ice depth=1 tells next command to limit history depth of git clone to 1 (most recent)
   do zinit ice depth=1; zinit light $repo;
 done
+
+# Use oh-my-zsh vi-mode plugin
+# The jeffreytse/zsh-vi-mode plugin clashes with fzf keybindings AND history-search-*
+# See https://github.com/jeffreytse/zsh-vi-mode/issues/24
+zinit snippet OMZP::vi-mode
+VI_MODE_SET_CURSOR=true
 
 # User configuration
 # ======================================================================================
@@ -41,6 +46,27 @@ alias lt='exa --tree --level=2'
 alias gr='./gradlew'
 alias gw='./gradlew'
 
+# History search configuration
+# ======================================================================================
+# Adapted from https://github.com/dreamsofautonomy/zensh/blob/main/.zshrc
+HISTFILE="${HOME}/.zsh_history"
+HISTSIZE=5000
+SAVEHIST=$HISTSIZE
+setopt appendhistory
+setopt sharehistory
+# Ignore commands with leading space (useful for ignoring secrets)
+setopt hist_ignore_space
+# Ignore duplicate commands
+HISTDUP=erase
+setopt hist_expire_dups_first
+setopt hist_find_no_dups
+setopt hist_ignore_dups
+setopt hist_ignore_all_dups
+setopt hist_save_no_dups
+
+bindkey '^p' history-search-backward
+bindkey '^n' history-search-forward
+
 # fzf configuration
 # ======================================================================================
 # Initialize key bindings for fzf
@@ -48,21 +74,8 @@ alias gw='./gradlew'
 eval "$(fzf --zsh)"
 
 # Initialize fzf-git
-# Use <Ctrl-G><Ctrl-X> where X is
-#     F = Files
-#     B = Branches
-#     H = commit Hashes
-#     R = Remotes
-#     S = Stashes
 # See https://github.com/junegunn/fzf-git.sh?tab=readme-ov-file#list-of-bindings
-fzf_git_bin="$HOME/dotfiles/fzf-git.sh/fzf-git.sh"
-if test -f "$fzf_git_bin"; then
-  source "$fzf_git_bin"
-else
-  echo "Could not find $fzf_git_bin. Execute the following:"
-  echo "cd ~/dotfiles"
-  echo "git submodule update"
-fi
+source "$HOME/dotfiles/fzf-git.sh/fzf-git.sh"
 
 # frg: Command to search files by ripgrep, refine with fzf, and open in vim:
 # See https://junegunn.github.io/fzf/tips/ripgrep-integration/
