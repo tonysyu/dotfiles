@@ -1,0 +1,6 @@
+[schema]
+path = "taplo://taplo.toml"
+
+[formatting]
+indent_string = "    "
+indent_tables = true
