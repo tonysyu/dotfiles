@@ -3,6 +3,8 @@
 # zinit.git path should match what's in ./ansible-devenv/roles/zsh/vars/main.yml
 ZINIT_HOME="${HOME}/.config/zinit"
 source "${ZINIT_HOME}/zinit.git/zinit.zsh"
+# zinit aliases zi as a short cut for zinit. Remove since this clashes w/ zoxide
+unalias zi
 
 plugins=(
   'zsh-users/zsh-autosuggestions'
@@ -14,7 +16,11 @@ for repo in ${plugins[@]};
   do zinit ice depth=1; zinit light $repo;
 done
 
-# Use oh-my-zsh vi-mode plugin
+# Configure plugins
+# Load completions for zsh-completions
+autoload -U compinit && compinit
+
+# Use oh-my-zsh vi-mode plugin instead of jeffreytse/zsh-vi-mode.
 # The jeffreytse/zsh-vi-mode plugin clashes with fzf keybindings AND history-search-*
 # See https://github.com/jeffreytse/zsh-vi-mode/issues/24
 zinit snippet OMZP::vi-mode
