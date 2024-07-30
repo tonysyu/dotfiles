@@ -71,7 +71,14 @@ require('lualine').setup {
     component_separators = '|',
     section_separators = '',
   },
+  extensions = {
+    'fugitive',
+    'neo-tree',
+    'quickfix',
+    'symbols-outline',
+    'trouble',
+  },
 }
 
--- Set up indent-blankline
+-- set up indent-blankline
 require("ibl").setup()
