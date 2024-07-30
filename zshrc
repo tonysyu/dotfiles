@@ -45,9 +45,9 @@ export PATH=/usr/local/opt/python@3.8/bin:$PATH
 export PATH=/usr/local/opt/python@3.9/bin:$PATH
 export PATH=/usr/local/opt/python@3.10/bin:$PATH
 
-alias ls='exa'
-alias ll='exa -l'
-alias lt='exa --tree --level=2'
+alias ls='eza'
+alias ll='eza -l'
+alias lt='eza --tree --level=2'
 
 alias gr='./gradlew'
 alias gw='./gradlew'

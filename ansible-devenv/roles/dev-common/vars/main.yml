@@ -1,7 +1,7 @@
 homebrew_packages:
 - bat
 - comby
-- exa
+- eza
 - fd
 - fzf
 - git
