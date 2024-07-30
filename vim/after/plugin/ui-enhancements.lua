@@ -78,6 +78,23 @@ require('lualine').setup {
     'symbols-outline',
     'trouble',
   },
+  sections = {
+    lualine_b = {
+      { 'branch', icons_enabled = true, icon = '' },
+      'diff',
+      {
+        'diagnostics',
+        symbols = { error = '', warn = '', info = '' },
+      },
+    },
+    lualine_c = {
+      {
+        'filename',
+        newfile_status = true,
+        path = 1, -- 1 = Display relative path
+      },
+    }
+  }
 }
 
 -- set up indent-blankline
