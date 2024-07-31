@@ -1,5 +1,6 @@
 local telescope_builtin = require('telescope.builtin')
 local live_grep_args = require('telescope').extensions.live_grep_args
+local live_grep_args_shortcuts = require("telescope-live-grep-args.shortcuts")
 local utils = require('utils')
 
 -- Prefer `<leader>f` as keymap for find/search that requires input
@@ -14,7 +15,8 @@ vim.keymap.set('n', '<leader>ff', telescope_builtin.find_files, { desc = 'Find a
 -- Code text search
 -- ............................................................................
 vim.keymap.set('n', '<leader>fg', live_grep_args.live_grep_args, { desc = 'Find/search text using grep/search' })
-vim.keymap.set('n', '<leader>*', telescope_builtin.grep_string, { desc = 'Find/search string under cursor' })
+vim.keymap.set('n', '<leader>*', live_grep_args_shortcuts.grep_word_under_cursor, { desc = 'Find/search string under cursor' })
+vim.keymap.set('v', '<leader>*', live_grep_args_shortcuts.grep_visual_selection, { desc = 'Find/search selected string' })
 vim.keymap.set('n', '<leader>S', ':%s/', { desc = 'Find/search and replace using regex' })
 vim.keymap.set('v', '<leader>S', ':s/', { desc = 'Find/search and replace using regex' })
 vim.keymap.set('n', '<leader>/', telescope_builtin.current_buffer_fuzzy_find,
