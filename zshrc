@@ -7,6 +7,7 @@ source "${ZINIT_HOME}/zinit.git/zinit.zsh"
 unalias zi
 
 plugins=(
+  'Aloxaf/fzf-tab'
   'zsh-users/zsh-autosuggestions'
   'zsh-users/zsh-completions'
   'zsh-users/zsh-syntax-highlighting'
@@ -57,6 +58,26 @@ alias gw='./gradlew'
 precmd() {
   echo -ne "\e]1;$(basename $PWD)\a"
 }
+
+# Completion styling
+# ======================================================================================
+# Use case-insensitive completion
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+# Set list-colors to enable filename colorizing
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
+# Force zsh not to show completion menu, to avoid conflict with Aloxaf/fzf-tab
+zstyle ':completion:*' menu no
+# Disable sort when completing `git checkout` (keep commits chronological)
+zstyle ':completion:*:git-checkout:*' sort false
+# preview directory's content with eza when completing cd
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --color=always $realpath'
+
+# Groups:
+# -------
+# Set descriptions format to enable group support
+zstyle ':completion:*:descriptions' format '[%d]'
+# Switch group using `<` and `>`
+zstyle ':fzf-tab:*' switch-group '<' '>'
 
 # History search configuration
 # ======================================================================================
