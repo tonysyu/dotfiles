@@ -52,6 +52,12 @@ alias lt='eza --tree --level=2'
 alias gr='./gradlew'
 alias gw='./gradlew'
 
+# Use `precmd` zsh hook (see "SPECIAL FUNCTIONS" in `man zshmisc`) to add current
+# directory name to tab title.
+precmd() {
+  echo -ne "\e]1;$(basename $PWD)\a"
+}
+
 # History search configuration
 # ======================================================================================
 # Adapted from https://github.com/dreamsofautonomy/zensh/blob/main/.zshrc
