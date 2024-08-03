@@ -1,4 +1,5 @@
 local telescope = require('telescope')
+local actions = require('telescope.actions')
 local lga_actions = require("telescope-live-grep-args.actions")
 
 telescope.setup {
@@ -49,6 +50,8 @@ telescope.setup {
                     ["<C-'>"] = lga_actions.quote_prompt(),
                     -- Add quotes around search term and start " --iglob " filter
                     ["<C-i>"] = lga_actions.quote_prompt({ postfix = " --iglob " }),
+                    -- Freeze the current list and start a fuzzy search in the frozen list
+                    ["<C-space>"] = actions.to_fuzzy_refine,
                 },
             },
         }
