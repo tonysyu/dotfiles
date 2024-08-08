@@ -14,17 +14,22 @@ configs.setup {
         "java",
         "javascript",
         "json",
+        "kotlin",
         "lua",
         "markdown",
         "markdown_inline",
+        "proto",
         "python",
         "rst",
         "rust",
         "scss",
+        "sql",
+        "templ",
         "toml",
         "tsx",
         "typescript",
         "vim",
+        "vimdoc",
         "yaml",
     },
     highlight = {
@@ -89,8 +94,8 @@ configs.setup {
 }
 
 -- Set up treesitter-context plugin to display code context
-vim.cmd[[hi TreesitterContextBottom gui=underline guisp=#5f0000 ]]
-vim.cmd[[hi TreesitterContext guibg=#444444]]
+vim.cmd [[hi TreesitterContextBottom gui=underline guisp=#5f0000 ]]
+vim.cmd [[hi TreesitterContext guibg=#444444]]
 
 require('treesitter-context').setup {
     mode = 'topline',
