@@ -15,18 +15,13 @@ require("symbols-outline").setup()
 require("neodev").setup() -- IMPORTANT: must setup neodev BEFORE lspconfig
 
 local custom_server_options = {}
-custom_server_options['sumneko_lua'] = {
+custom_server_options['lua_ls'] = {
     settings = {
         Lua = {
             -- Avoid 'global vim is undefined' errors when editing neovim config files.
-            -- See https://www.reddit.com/r/neovim/comments/khk335/lua_configuration_global_vim_is_undefined/
+            -- See https://github.com/neovim/neovim/issues/21686#issuecomment-1522446128
             diagnostics = {
                 globals = { 'vim' }
-            },
-            -- Avoid luassert configuration popup
-            -- See https://github.com/sumneko/lua-language-server/discussions/1688
-            workspace = {
-                checkThirdParty = false,
             },
         }
     }
@@ -34,7 +29,7 @@ custom_server_options['sumneko_lua'] = {
 
 -- Attach keymappings to LSP servers
 -- See https://github.com/neovim/nvim-lspconfig#keybindings-and-completion
-local function on_attach(client, bufnr)
+local function on_attach(client)
     -- Definitions and references
     vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, { desc = 'Go to declaration' })
     vim.keymap.set('n', 'gd', telescope_builtin.lsp_definitions, { desc = 'Go to definition' })
