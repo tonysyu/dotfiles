@@ -99,6 +99,16 @@ require("lazy").setup({
     ft = { "markdown" },
   },
 
+  {
+    "epwalsh/obsidian.nvim",
+    version = "*", -- use latest release, instead of latest commit
+    lazy = true,
+    ft = "markdown",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+    },
+  },
+
   -- Motion and text-object plugins
   -- ..........................................................................
   'andymass/vim-matchup', -- Extends % to match non-traditional delimiters (e.g. begin/end)
