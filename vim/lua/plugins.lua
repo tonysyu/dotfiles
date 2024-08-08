@@ -155,7 +155,7 @@ require("lazy").setup({
   },
 
   -- Terminal
-  { 'voldikss/vim-floaterm' },
+  { 'akinsho/toggleterm.nvim', version = "*", config = true },
 
   -- Editor configuration
   -- ..........................................................................

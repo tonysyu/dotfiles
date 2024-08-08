@@ -97,5 +97,11 @@ require('lualine').setup {
   }
 }
 
+require("toggleterm").setup {
+  open_mapping = [[<C-/>]],
+  direction = 'float',
+  winblend = 10,
+}
+
 -- set up indent-blankline
 require("ibl").setup()

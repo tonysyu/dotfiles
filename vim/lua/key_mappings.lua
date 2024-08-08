@@ -15,7 +15,8 @@ vim.keymap.set('n', '<leader>ff', telescope_builtin.find_files, { desc = 'Find a
 -- Code text search
 -- ............................................................................
 vim.keymap.set('n', '<leader>fg', live_grep_args.live_grep_args, { desc = 'Find/search text using grep/search' })
-vim.keymap.set('n', '<leader>*', live_grep_args_shortcuts.grep_word_under_cursor, { desc = 'Find/search string under cursor' })
+vim.keymap.set('n', '<leader>*', live_grep_args_shortcuts.grep_word_under_cursor,
+    { desc = 'Find/search string under cursor' })
 vim.keymap.set('v', '<leader>*', live_grep_args_shortcuts.grep_visual_selection, { desc = 'Find/search selected string' })
 vim.keymap.set('n', '<leader>S', ':%s/', { desc = 'Find/search and replace using regex' })
 vim.keymap.set('v', '<leader>S', ':s/', { desc = 'Find/search and replace using regex' })
@@ -79,9 +80,7 @@ vim.keymap.set('n', '<leader>vd', ':Trouble diagnostics toggle filter.buf=0<CR>'
     { desc = 'View/toggle Trouble diagnostics for buffer', silent = true })
 vim.keymap.set('n', '<leader>vD', ':Trouble diagnostics toggle<CR>',
     { desc = 'View/toggle Trouble diagnostics for workspace', silent = true })
--- Terminal
-vim.keymap.set('n', '<F12>', ':FloatermToggle<CR>', { desc = 'View/toggle Floaterm', silent = true })
-vim.keymap.set('t', '<F12>', '<C-\\><C-n>:FloatermToggle<CR>', { desc = 'View/toggle Floaterm', silent = true })
+-- The toggleterm keymapping is set in the toggleterm setup in ui-enhancements.lua
 
 -- Vim tool search
 -- ............................................................................
