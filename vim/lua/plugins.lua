@@ -109,6 +109,11 @@ require("lazy").setup({
     },
   },
 
+  {
+    "folke/todo-comments.nvim",
+    dependencies = { "nvim-lua/plenary.nvim" },
+  },
+
   -- Motion and text-object plugins
   -- ..........................................................................
   'andymass/vim-matchup', -- Extends % to match non-traditional delimiters (e.g. begin/end)
