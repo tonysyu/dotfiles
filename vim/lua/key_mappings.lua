@@ -45,6 +45,13 @@ vim.keymap.set('n', '<C-k>', '<C-w>k', { desc = 'Switch to buffer/pane above ' }
 vim.keymap.set('n', '<C-h>', '<C-w>h', { desc = 'Switch to buffer/pane on left' })
 vim.keymap.set('n', '<C-l>', '<C-w>l', { desc = 'Switch to buffer/pane on right' })
 
+-- Split buffer resizing
+-- ............................................................................
+vim.keymap.set('n', '<C-S-k>', '5<C-w>+', { desc = 'Increase height of buffer/pane by 5' })
+vim.keymap.set('n', '<C-S-j>', '5<C-w>-', { desc = 'Decrease height of buffer/pane by 5' })
+vim.keymap.set('n', '<C-S-l>', '5<C-w>>', { desc = 'Increase width fo buffer/pane by 5' })
+vim.keymap.set('n', '<C-S-h>', '5<C-w><', { desc = 'Decrease width fo buffer/pane by 5' })
+
 -- Move text line-by-line (see https://youtu.be/hSHATqh8svM)
 -- ............................................................................
 vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv", { desc = 'Move selected text down' })
