@@ -82,6 +82,7 @@ vim.keymap.set('n', '<leader>vs', ':SymbolsOutline<cr>', { desc = 'View/toggle s
 vim.keymap.set('n', '<leader>vf', ':Neotree toggle reveal<cr>',
     { desc = 'View/toggle nvim-tree filesystem explorer', silent = true })
 vim.keymap.set('n', '<leader>vq', utils.toggle_quickfix, { desc = 'View/toggle quickfix window', silent = true })
+vim.keymap.set('n', '<leader>vt', ':TodoTelescope<CR>', { desc = 'View Todo list in telescope', silent = true })
 -- Diagnostics (errors, warnings)
 vim.keymap.set('n', '<leader>vd', ':Trouble diagnostics toggle filter.buf=0<CR>',
     { desc = 'View/toggle Trouble diagnostics for buffer', silent = true })
