@@ -33,8 +33,8 @@ local function on_attach(client)
     -- Definitions and references
     vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, { desc = 'Go to declaration' })
     vim.keymap.set('n', 'gd', telescope_builtin.lsp_definitions, { desc = 'Go to definition' })
+    vim.keymap.set('n', 'gr', telescope_builtin.lsp_references, { desc = 'Find/search references' })
     vim.keymap.set('n', '<leader>si', telescope_builtin.lsp_implementations, { desc = 'Find/search implementation' })
-    vim.keymap.set('n', '<leader>sr', telescope_builtin.lsp_references, { desc = 'Find/search references' })
     vim.keymap.set('n', '<leader>st', telescope_builtin.lsp_type_definitions, { desc = 'Find/search type definition' })
 
     -- Code search
