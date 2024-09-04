@@ -22,6 +22,7 @@ vim.keymap.set('n', '<leader>S', ':%s/', { desc = 'Find/search and replace using
 vim.keymap.set('v', '<leader>S', ':s/', { desc = 'Find/search and replace using regex' })
 vim.keymap.set('n', '<leader>/', telescope_builtin.current_buffer_fuzzy_find,
     { desc = 'Fuzzy find/search in current buffer' })
+vim.keymap.set('n', '<C-?>', ':noh<CR>', { desc = 'Clear hlsearch', silent = true })
 
 -- Undo ignorecase for star search
 vim.keymap.set('n', '*', utils.find_current_word_without_ignorecase,
