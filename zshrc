@@ -42,9 +42,9 @@ eval "$(zoxide init zsh)"
 
 # Add homebrew python versions to path
 # Should match versions in ~/dotfiles/ansible-devenv/roles/dev-common/vars/main.yml
-export PATH=/usr/local/opt/python@3.8/bin:$PATH
-export PATH=/usr/local/opt/python@3.9/bin:$PATH
 export PATH=/usr/local/opt/python@3.10/bin:$PATH
+export PATH=/usr/local/opt/python@3.11/bin:$PATH
+export PATH=/usr/local/opt/python@3.12/bin:$PATH
 
 alias ls='eza'
 alias ll='eza -l'
