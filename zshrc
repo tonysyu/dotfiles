@@ -38,6 +38,8 @@ if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
 fi
 
 # Initialize zoxide
+# Revert to old fzf behavior (see https://github.com/ajeetdsouza/zoxide/issues/626#issuecomment-1753582198)
+export _ZO_FZF_OPTS="--scheme=path --tiebreak=end,chunk,index --bind=ctrl-z:ignore,btab:up,tab:down --cycle --keep-right --border=sharp --height=45% --info=inline --layout=reverse --tabstop=1 --exit-0 --select-1"
 eval "$(zoxide init zsh)"
 
 # Add homebrew python versions to path
