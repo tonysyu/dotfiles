@@ -1,6 +1,7 @@
 local telescope_builtin = require('telescope.builtin')
 local live_grep_args = require('telescope').extensions.live_grep_args
 local live_grep_args_shortcuts = require("telescope-live-grep-args.shortcuts")
+local snacks = require('snacks')
 local utils = require('utils')
 
 -- Prefer `<leader>f` as keymap for find/search that requires input
@@ -23,6 +24,11 @@ vim.keymap.set('v', '<leader>S', ':s/', { desc = 'Find/search and replace using 
 vim.keymap.set('n', '<leader>/', telescope_builtin.current_buffer_fuzzy_find,
     { desc = 'Fuzzy find/search in current buffer' })
 vim.keymap.set('n', '<C-?>', ':noh<CR>', { desc = 'Clear hlsearch', silent = true })
+-- snacks.nvim words plugin highlights current word and allows navigation
+vim.keymap.set('n', ']w', function() snacks.words.jump(vim.v.count1) end,
+    { desc = 'Next word matching word under cursor', silent = true })
+vim.keymap.set('n', '[w', function() snacks.words.jump(-vim.v.count1) end,
+    { desc = 'Previous word matching word under cursor', silent = true })
 
 -- Undo ignorecase for star search
 vim.keymap.set('n', '*', utils.find_current_word_without_ignorecase,
@@ -32,12 +38,15 @@ vim.keymap.set('n', '*', utils.find_current_word_without_ignorecase,
 -- ............................................................................
 vim.keymap.set('n', '<leader>gb', telescope_builtin.git_branches, { desc = 'Find/list git branches' })
 vim.keymap.set('n', '<leader>gc', telescope_builtin.git_commits, { desc = 'Find/list git commits' })
+vim.keymap.set('n', '<leader>gd', telescope_builtin.git_status, { desc = 'Find/list git diff file / status ' })
 vim.keymap.set('n', '<leader>gs', telescope_builtin.git_stash, { desc = 'Find/list git stash items' })
 
 -- Buffer navigation
 -- ............................................................................
 vim.keymap.set('n', '<leader>fb', telescope_builtin.buffers, { desc = 'Find buffer' })
 vim.keymap.set('n', '<leader><leader>', '<c-^>', { desc = 'Toggle between two, most-recent buffers' })
+-- snacks.nvim bufdelete plugin deletes buffer while preserving window layout
+vim.keymap.set('n', '<leader>bd', function() snacks.bufdelete() end, { desc = 'Delete buffer', silent = true })
 
 -- Split buffer navigation
 -- ............................................................................
@@ -89,7 +98,13 @@ vim.keymap.set('n', '<leader>vd', ':Trouble diagnostics toggle filter.buf=0<CR>'
     { desc = 'View/toggle Trouble diagnostics for buffer', silent = true })
 vim.keymap.set('n', '<leader>vD', ':Trouble diagnostics toggle<CR>',
     { desc = 'View/toggle Trouble diagnostics for workspace', silent = true })
--- The toggleterm keymapping is set in the toggleterm setup in ui-enhancements.lua
+-- snacks.nvim terminal plugin (double escape within to normal mode)
+vim.keymap.set('n', '<c-/>', function() snacks.terminal() end, { desc = 'Toggle Terminal', silent = true })
+-- snacks.nvim notifier plugin
+vim.keymap.set('n', '<leader>nn', function() snacks.notifier.show_history() end,
+    { desc = 'Show notification history', silent = true })
+vim.keymap.set('n', '<leader>nd', function() snacks.notifier.hide() end,
+    { desc = 'Hide/delete notification popup', silent = true })
 
 -- Vim tool search
 -- ............................................................................

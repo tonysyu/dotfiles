@@ -35,7 +35,7 @@ require("lazy").setup({
     },
   },
 
-  'folke/neodev.nvim', -- Additional lua configuration, makes nvim stuff amazing
+  'folke/neodev.nvim',             -- Additional lua configuration, makes nvim stuff amazing
   'simrat39/symbols-outline.nvim', -- Side pane LSP symbols
 
   --- Diagnostics
@@ -121,14 +121,14 @@ require("lazy").setup({
   -- Motion and text-object plugins
   -- ..........................................................................
   'andymass/vim-matchup', -- Extends % to match non-traditional delimiters (e.g. begin/end)
-  'tpope/vim-surround', -- Easily add, change, and delete surrounding delimiters
+  'tpope/vim-surround',   -- Easily add, change, and delete surrounding delimiters
   -- ..........................................................................
 
   -- Filesystem plugins
   -- ..........................................................................
-  'nanotee/zoxide.vim', -- Integrate with zoxide fuzzy directory matcher
+  'nanotee/zoxide.vim',  -- Integrate with zoxide fuzzy directory matcher
   'Shougo/junkfile.vim', -- Quickly create junkfile
-  'tpope/vim-eunuch', -- Unix shell commands for file/directory management
+  'tpope/vim-eunuch',    -- Unix shell commands for file/directory management
   -- Filesystem explorer
   {
     "nvim-neo-tree/neo-tree.nvim",
@@ -149,37 +149,56 @@ require("lazy").setup({
 
   -- UI enhancements (see vim/after/plugin/ui-enhancements.lua)
   -- ..........................................................................
-  'junegunn/vim-peekaboo', -- Display the content of registers
-  'kshenoy/vim-signature', -- Display marks in the gutter
+  'junegunn/vim-peekaboo',        -- Display the content of registers
+  'kshenoy/vim-signature',        -- Display marks in the gutter
   'kyazdani42/nvim-web-devicons', -- Icons for languages, files, directories, etc.
-  'lukas-reineke/indent-blankline.nvim', -- Add indentation guides even on blank lines
-  'nvim-lualine/lualine.nvim', -- Fancier statusline
+  'nvim-lualine/lualine.nvim',    -- Fancier statusline
 
   -- Colorschemes/themes
   'catppuccin/nvim', -- Default colorscheme; don't lazy load
-  { 'EdenEast/nightfox.nvim', lazy = true },
-  { 'folke/tokyonight.nvim', lazy = true },
-  { 'navarasu/onedark.nvim', lazy = true },
+  { 'EdenEast/nightfox.nvim',      lazy = true },
+  { 'folke/tokyonight.nvim',       lazy = true },
+  { 'navarasu/onedark.nvim',       lazy = true },
   { 'projekt0n/github-nvim-theme', lazy = true },
-  { 'sainnhe/sonokai', lazy = true },
+  { 'sainnhe/sonokai',             lazy = true },
 
-  -- Noice plugin for cmdline, messages, and popups
+  -- Noice plugin for pretty cmdline, messages, and popups
   {
     "folke/noice.nvim",
     event = "VeryLazy",
     dependencies = {
       "MunifTanjim/nui.nvim",
-      "rcarriga/nvim-notify",
     }
   },
 
-  -- Terminal
-  { 'akinsho/toggleterm.nvim', version = "*", config = true },
+  -- snacks.nvim: A collection of quality-of-life plugins
+  {
+    "folke/snacks.nvim",
+    priority = 1000,
+    lazy = false,
+    opts = {
+      -- Disables Treesitter and Lsp for large files
+      bigfile = { enabled = true },
+      -- Delete buffers while preserving window layout
+      bufdelete = { enabled = true },
+      -- Neovim startup dashboard
+      dashboard = { enabled = true },
+      -- indentation guide (indent-blankline alternative)
+      indent = { enabled = true },
+      -- Notification popup (integrates with folke/noice.nvim; replaces nvim-notify)
+      notifier = { enabled = true },
+      -- Embedded terminal (replaces toggleterm.nvim)
+      terminal = { enabled = true },
+      -- Render files before loading plugins
+      quickfile = { enabled = true },
+      words = { enabled = true },
+    },
+  },
 
   -- Editor configuration
   -- ..........................................................................
   'editorconfig/editorconfig-vim', -- Autodetect https://editorconfig.org/ files
-  'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
+  'tpope/vim-sleuth',              -- Detect tabstop and shiftwidth automatically
 
   -- General editing (see vim/after/plugin/general-editing.lua)
   -- ..........................................................................
