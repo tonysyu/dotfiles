@@ -10,6 +10,8 @@ config_directories:
 - "~/.config/zinit"
 
 link_configs:
+- src: "~/dotfiles/btop.conf"
+  dest: "~/.config/btop/btop.conf"
 - src: "~/dotfiles/starship.toml"
   dest: "~/.config/starship.toml"
 - src: "~/dotfiles/ohmyposh.toml"
