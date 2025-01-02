@@ -65,6 +65,25 @@ require("lazy").setup({
     },
   },
 
+  -- Vim tools
+  -- ..........................................................................
+  {
+    "folke/which-key.nvim",
+    event = "VeryLazy",
+    keys = {
+      {
+        "<leader>vK",
+        function()
+          require("which-key").show({ global = false })
+        end,
+        desc = "Buffer Local Keymaps (which-key)",
+      },
+    },
+    dependencies = {
+      'echasnovski/mini.icons',
+    }
+  },
+
   -- AI Assitants
   -- ..........................................................................
   'github/copilot.vim',

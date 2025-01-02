@@ -71,10 +71,11 @@ vim.keymap.set('n', '<leader>k', ':m .-2<CR>==', { desc = 'Move line up' })
 
 -- Yank/paste to system clipboard
 -- ............................................................................
-vim.keymap.set({ 'n', 'v' }, "<leader>y", "\"+y")
-vim.keymap.set('n', "<leader>Y", "\"+Y")
-vim.keymap.set({ 'n', 'v' }, "<leader>p", "\"+p")
-vim.keymap.set("n", "<leader>P", "\"+P")
+vim.keymap.set({ 'n', 'v' }, "<leader>y", "\"+y", { desc = 'Yank to clipboard' })
+vim.keymap.set('n', "<leader>Y", "\"+Y", { desc = 'Yank line to clipboard' })
+vim.keymap.set({ 'n', 'v' }, "<leader>p", "\"+p", { desc = 'Paste from clipboard' })
+vim.keymap.set("n", "<leader>P", "\"+P", { desc = 'Paste from clipboard before cursor' })
+
 
 -- Text formatting mappings
 -- ............................................................................
@@ -99,8 +100,7 @@ vim.keymap.set('n', '<leader>vd', ':Trouble diagnostics toggle filter.buf=0<CR>'
 vim.keymap.set('n', '<leader>vD', ':Trouble diagnostics toggle<CR>',
     { desc = 'View/toggle Trouble diagnostics for workspace', silent = true })
 -- snacks.nvim terminal plugin (double escape within to normal mode)
-vim.keymap.set('n', '<c-/>', function() snacks.terminal() end, { desc = 'Toggle Terminal', silent = true })
-vim.keymap.set('t', '<c-/>', function() snacks.terminal() end, { desc = 'Toggle Terminal', silent = true })
+vim.keymap.set({ 'n', 't' }, '<c-/>', function() snacks.terminal() end, { desc = 'Toggle Terminal', silent = true })
 -- snacks.nvim notifier plugin
 vim.keymap.set('n', '<leader>nn', function() snacks.notifier.show_history() end,
     { desc = 'Show notification history', silent = true })
