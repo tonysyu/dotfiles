@@ -100,6 +100,7 @@ vim.keymap.set('n', '<leader>vD', ':Trouble diagnostics toggle<CR>',
     { desc = 'View/toggle Trouble diagnostics for workspace', silent = true })
 -- snacks.nvim terminal plugin (double escape within to normal mode)
 vim.keymap.set('n', '<c-/>', function() snacks.terminal() end, { desc = 'Toggle Terminal', silent = true })
+vim.keymap.set('t', '<c-/>', function() snacks.terminal() end, { desc = 'Toggle Terminal', silent = true })
 -- snacks.nvim notifier plugin
 vim.keymap.set('n', '<leader>nn', function() snacks.notifier.show_history() end,
     { desc = 'Show notification history', silent = true })
