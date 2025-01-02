@@ -1,122 +1,137 @@
-"$schema" = "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json"
+version = 3
 final_space = true
-version = 2
 
 [palette]
-os = "#ACB0BE"
-closer = "p:os"
-pink = "#F5C2E7"
-lavender = "#B4BEFE"
-blue = "#89B4FA"
+  blue = '#89B4FA'
+  closer = 'p:os'
+  lavender = '#B4BEFE'
+  os = '#ACB0BE'
+  pink = '#F5C2E7'
 
-# Main prompt: Used for user, path, and git info
 [[blocks]]
-type = "prompt"
-alignment = "left"
-newline = true
+  type = 'prompt'
+  alignment = 'left'
+  newline = true
 
-    [[blocks.segments]]
-    type = "session"
-    style = "plain"
-    foreground = "p:blue"
-    template = "{{ .UserName }}@{{ .HostName }} "
+  [[blocks.segments]]
+    template = '{{ .UserName }}@{{ .HostName }} '
+    foreground = 'p:blue'
+    type = 'session'
+    style = 'plain'
 
-    [[blocks.segments]]
-    type = "path"
-    style = "plain"
-    foreground = "p:pink"
-    template = "{{ .Path }}"
+    [blocks.segments.properties]
+      cache_duration = 'none'
 
-        [blocks.segments.properties]
-        folder_icon = "**"
-        home_icon = "~"
-        style = "agnoster_short"
-        max_depth = 3
+  [[blocks.segments]]
+    template = '{{ .Path }}'
+    foreground = 'p:pink'
+    type = 'path'
+    style = 'plain'
 
-    [[blocks.segments]]
-    type = "git"
-    style = "plain"
-    foreground = "p:lavender"
-    template = """ {{ .UpstreamIcon }}{{ .HEAD }}\
-      {{ if .BranchStatus }} {{ .BranchStatus }}{{ end }}\
-      {{ if .Working.Changed }}  {{ .Working.String }}{{ end }}\
-      {{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}\
-      {{ if .Staging.Changed }}  {{ .Staging.String }}{{ end }}\
-      {{ if gt .StashCount 0 }} {{ .StashCount }}{{ end }}\
-    """
+    [blocks.segments.properties]
+      cache_duration = 'none'
+      folder_icon = '**'
+      home_icon = '~'
+      max_depth = 3
+      style = 'agnoster_short'
 
-        [blocks.segments.properties]
-        fetch_stash_count = true
-        fetch_status = true
-        fetch_upstream_icon = true
+  [[blocks.segments]]
+    template = ' {{ .UpstreamIcon }}{{ .HEAD }}{{ if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }}  {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }}  {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }} {{ .StashCount }}{{ end }}'
+    foreground = 'p:lavender'
+    type = 'git'
+    style = 'plain'
 
-        branch_icon = " "
-        cherry_pick_icon = " "
-        commit_icon = " "
-        merge_icon = " "
-        no_commits_icon = " "
-        rebase_icon = " "
-        revert_icon = " "
-        tag_icon = " "
+    [blocks.segments.properties]
+      branch_icon = ' '
+      cache_duration = 'none'
+      cherry_pick_icon = ' '
+      commit_icon = ' '
+      fetch_stash_count = true
+      fetch_status = true
+      fetch_upstream_icon = true
+      merge_icon = ' '
+      no_commits_icon = ' '
+      rebase_icon = ' '
+      revert_icon = ' '
+      tag_icon = ' '
 
-# Right prompt: Used for language information (and time display)
 [[blocks]]
-type = "rprompt"
-overflow = "hidden"
+  type = 'rprompt'
+  overflow = 'hidden'
 
-    [[blocks.segments]]
-    type = "python"
-    style = "plain"
-    foreground = "green"
-    template = "  {{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}{{ .Venv }} {{ end }}{{ .Full }}{{ end }}"
+  [[blocks.segments]]
+    template = '  {{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}{{ .Venv }} {{ end }}{{ .Full }}{{ end }}'
+    foreground = 'green'
+    type = 'python'
+    style = 'plain'
 
-    [[blocks.segments]]
-    type = "node"
-    style = "plain"
-    foreground = "p:lavender"
-    template = " {{ if .PackageManagerIcon }}{{ .PackageManagerIcon }}{{ else }}{{ end }} {{ .Full }}"
+    [blocks.segments.properties]
+      cache_duration = 'none'
 
-    [[blocks.segments]]
-    type = "java"
-    style = "plain"
-    foreground = "p:lavender"
-    template = "  {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}"
+  [[blocks.segments]]
+    template = ' {{ if .PackageManagerIcon }}{{ .PackageManagerIcon }}{{ else }}{{ end }} {{ .Full }}'
+    foreground = 'p:lavender'
+    type = 'node'
+    style = 'plain'
 
-    [[blocks.segments]]
-    type = "rust"
-    style = "plain"
-    foreground = "p:lavender"
-    template = "  {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}"
+    [blocks.segments.properties]
+      cache_duration = 'none'
 
-    [[blocks.segments]]
-    type = "go"
-    style = "plain"
-    foreground = "p:lavender"
-    template = " Go {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}"
+  [[blocks.segments]]
+    template = '  {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}'
+    foreground = 'p:lavender'
+    type = 'java'
+    style = 'plain'
 
-    [[blocks.segments]]
-    type = "time"
-    style = "plain"
-    foreground = "p:blue"
-    template = " \ue641 {{ .CurrentDate | date .Format}}"
+    [blocks.segments.properties]
+      cache_duration = 'none'
 
-# Cursor prompt
+  [[blocks.segments]]
+    template = '  {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}'
+    foreground = 'p:lavender'
+    type = 'rust'
+    style = 'plain'
+
+    [blocks.segments.properties]
+      cache_duration = 'none'
+
+  [[blocks.segments]]
+    template = ' Go {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}'
+    foreground = 'p:lavender'
+    type = 'go'
+    style = 'plain'
+
+    [blocks.segments.properties]
+      cache_duration = 'none'
+
+  [[blocks.segments]]
+    template = '  {{ .CurrentDate | date .Format}}'
+    foreground = 'p:blue'
+    type = 'time'
+    style = 'plain'
+
+    [blocks.segments.properties]
+      cache_duration = 'none'
+
 [[blocks]]
-type = "prompt"
-alignment = "left"
-newline = true
+  type = 'prompt'
+  alignment = 'left'
+  newline = true
 
-    [[blocks.segments]]
-    type = "root"
-    foreground = "#fff"
-    style = "plain"
-    template = " ⚡ "
+  [[blocks.segments]]
+    template = ' ⚡ '
+    foreground = '#fff'
+    type = 'root'
+    style = 'plain'
 
-    [[blocks.segments]]
-    type = "text"
-    style = "plain"
-    foreground_templates = [
-        "{{ if eq .Code 0 }}p:pink{{ end }}",
-        "{{ if gt .Code 0 }}red{{ end }}",
-    ]
-    template = "\ue602"
+    [blocks.segments.properties]
+      cache_duration = 'none'
+
+  [[blocks.segments]]
+    template = ''
+    type = 'text'
+    style = 'plain'
+    foreground_templates = ['{{ if eq .Code 0 }}p:pink{{ end }}', '{{ if gt .Code 0 }}red{{ end }}']
+
+    [blocks.segments.properties]
+      cache_duration = 'none'
