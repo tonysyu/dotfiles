@@ -188,7 +188,12 @@ require("lazy").setup({
       -- Notification popup (integrates with folke/noice.nvim; replaces nvim-notify)
       notifier = { enabled = true },
       -- Embedded terminal (replaces toggleterm.nvim)
-      terminal = { enabled = true },
+      terminal = {
+        enabled = true,
+        win = {
+          style = "float",
+        },
+      },
       -- Render files before loading plugins
       quickfile = { enabled = true },
       words = { enabled = true },
