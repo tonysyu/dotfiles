@@ -16,3 +16,16 @@
   loop: '{{ homebrew_cask_apps }}'
   tags:
   - cask
+
+- name: Ensure .config directories exists
+  file:
+    path: '{{ item }}'
+    state: directory
+  loop: '{{ config_directories }}'
+
+- name: Link configs
+  file:
+    src: '{{ item.src }}'
+    dest: '{{ item.dest }}'
+    state: link
+  loop: '{{ link_configs }}'

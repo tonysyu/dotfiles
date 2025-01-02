@@ -28,3 +28,11 @@ homebrew_packages:
 homebrew_cask_apps: []
 
 python_executable: python3.12
+
+config_directories:
+- "~/.config"
+- "~/.config/btop"
+
+link_configs:
+- src: "~/dotfiles/btop.conf"
+  dest: "~/.config/btop/btop.conf"

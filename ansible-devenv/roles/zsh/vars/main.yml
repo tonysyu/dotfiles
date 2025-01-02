@@ -3,15 +3,12 @@
 homebrew_packages:
 - jandedobbeleer/oh-my-posh/oh-my-posh
 
-
 config_directories:
 - "~/.config"
 - "~/.config/ohmyposh"
 - "~/.config/zinit"
 
 link_configs:
-- src: "~/dotfiles/btop.conf"
-  dest: "~/.config/btop/btop.conf"
 - src: "~/dotfiles/starship.toml"
   dest: "~/.config/starship.toml"
 - src: "~/dotfiles/ohmyposh.toml"
