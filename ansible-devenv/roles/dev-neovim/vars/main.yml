@@ -11,7 +11,6 @@ homebrew_packages:
 homebrew_cask_apps:
 - font-hack-nerd-font
 - font-inconsolata-nerd-font
-- vimr
 
 python_venv_root: "~/.venv/"
 

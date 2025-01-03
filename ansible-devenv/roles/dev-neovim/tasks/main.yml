@@ -60,13 +60,6 @@
   tags:
   - python
 
-# See https://github.com/qvacua/vimr/issues/815#issuecomment-843612804
-- name: Add node to /etc/path.d to support vimr
-  shell: |
-    sudo sh -c 'echo $(dirname $(which node)) > /etc/paths.d/node'
-  tags:
-  - node
-
 # See neovim docs: https://neovim.io/doc/user/provider.html
 - name: Install npm packages for neovim
   community.general.npm:
