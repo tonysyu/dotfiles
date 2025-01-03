@@ -39,6 +39,10 @@ vim.keymap.set('n', '*', utils.find_current_word_without_ignorecase,
 vim.keymap.set('n', '<leader>gb', telescope_builtin.git_branches, { desc = 'Find/list git branches' })
 vim.keymap.set('n', '<leader>gc', telescope_builtin.git_commits, { desc = 'Find/list git commits' })
 vim.keymap.set('n', '<leader>gd', telescope_builtin.git_status, { desc = 'Find/list git diff file / status ' })
+vim.keymap.set('n', '<leader>gg', function() snacks.lazygit() end, { desc = 'Open lazygit' })
+vim.keymap.set('n', '<leader>gh', function() snacks.lazygit.log_file() end,
+    { desc = 'Open lazygit log/history for current file' })
+vim.keymap.set('n', '<leader>gl', function() snacks.lazygit.log() end, { desc = 'Open lazygit log for repo' })
 vim.keymap.set('n', '<leader>gs', telescope_builtin.git_stash, { desc = 'Find/list git stash items' })
 
 -- Buffer navigation

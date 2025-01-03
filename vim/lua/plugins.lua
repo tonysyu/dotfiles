@@ -219,11 +219,6 @@ require("lazy").setup({
       quickfile = { enabled = true },
       words = { enabled = true },
     },
-    keys = {
-      { "<leader>gh", function() Snacks.lazygit.log_file() end, desc = "Lazygit Current File History" },
-      { "<leader>gg", function() Snacks.lazygit() end, desc = "Lazygit" },
-      { "<leader>gl", function() Snacks.lazygit.log() end, desc = "Lazygit Log (cwd)" },
-    },
   },
 
   -- Editor configuration
