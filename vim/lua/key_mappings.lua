@@ -94,7 +94,6 @@ vim.keymap.set('n', "<leader>Y", "\"+Y", { desc = 'Yank line to clipboard' })
 vim.keymap.set({ 'n', 'v' }, "<leader>p", "\"+p", { desc = 'Paste from clipboard' })
 vim.keymap.set("n", "<leader>P", "\"+P", { desc = 'Paste from clipboard before cursor' })
 
-
 -- Text formatting mappings
 -- ............................................................................
 vim.keymap.set('n', 'Q', 'gqap', { desc = 'Reflow paragraph (i.e. remove end of lines)' })
@@ -133,6 +132,7 @@ vim.keymap.set('n', '<leader>vc', telescope_builtin.commands, { desc = 'View com
 vim.keymap.set('n', '<leader>vm', telescope_builtin.marks, { desc = 'View marks' })
 vim.keymap.set('n', '<leader>vj', telescope_builtin.jumplist, { desc = 'View jump list' })
 vim.keymap.set('n', '<leader>vr', telescope_builtin.registers, { desc = 'View registers' })
+vim.keymap.set('n', '<leader>vv', function() snacks.dashboard.open() end, { desc = 'View home/dashboard' })
 
 -- Vim configuration helpers
 -- ............................................................................
