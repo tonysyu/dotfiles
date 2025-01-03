@@ -35,7 +35,7 @@ require("lazy").setup({
     },
   },
 
-  'folke/neodev.nvim',             -- Additional lua configuration, makes nvim stuff amazing
+  'folke/neodev.nvim', -- Additional lua configuration, makes nvim stuff amazing
   'simrat39/symbols-outline.nvim', -- Side pane LSP symbols
 
   --- Diagnostics
@@ -140,14 +140,14 @@ require("lazy").setup({
   -- Motion and text-object plugins
   -- ..........................................................................
   'andymass/vim-matchup', -- Extends % to match non-traditional delimiters (e.g. begin/end)
-  'tpope/vim-surround',   -- Easily add, change, and delete surrounding delimiters
+  'tpope/vim-surround', -- Easily add, change, and delete surrounding delimiters
   -- ..........................................................................
 
   -- Filesystem plugins
   -- ..........................................................................
-  'nanotee/zoxide.vim',  -- Integrate with zoxide fuzzy directory matcher
+  'nanotee/zoxide.vim', -- Integrate with zoxide fuzzy directory matcher
   'Shougo/junkfile.vim', -- Quickly create junkfile
-  'tpope/vim-eunuch',    -- Unix shell commands for file/directory management
+  'tpope/vim-eunuch', -- Unix shell commands for file/directory management
   -- Filesystem explorer
   {
     "nvim-neo-tree/neo-tree.nvim",
@@ -168,18 +168,18 @@ require("lazy").setup({
 
   -- UI enhancements (see vim/after/plugin/ui-enhancements.lua)
   -- ..........................................................................
-  'junegunn/vim-peekaboo',        -- Display the content of registers
-  'kshenoy/vim-signature',        -- Display marks in the gutter
+  'junegunn/vim-peekaboo', -- Display the content of registers
+  'kshenoy/vim-signature', -- Display marks in the gutter
   'kyazdani42/nvim-web-devicons', -- Icons for languages, files, directories, etc.
-  'nvim-lualine/lualine.nvim',    -- Fancier statusline
+  'nvim-lualine/lualine.nvim', -- Fancier statusline
 
   -- Colorschemes/themes
   'catppuccin/nvim', -- Default colorscheme; don't lazy load
-  { 'EdenEast/nightfox.nvim',      lazy = true },
-  { 'folke/tokyonight.nvim',       lazy = true },
-  { 'navarasu/onedark.nvim',       lazy = true },
+  { 'EdenEast/nightfox.nvim', lazy = true },
+  { 'folke/tokyonight.nvim', lazy = true },
+  { 'navarasu/onedark.nvim', lazy = true },
   { 'projekt0n/github-nvim-theme', lazy = true },
-  { 'sainnhe/sonokai',             lazy = true },
+  { 'sainnhe/sonokai', lazy = true },
 
   -- Noice plugin for pretty cmdline, messages, and popups
   {
@@ -204,6 +204,8 @@ require("lazy").setup({
       dashboard = { enabled = true },
       -- indentation guide (indent-blankline alternative)
       indent = { enabled = true },
+      -- Lazygit integration
+      lazygit = { enabled = true },
       -- Notification popup (integrates with folke/noice.nvim; replaces nvim-notify)
       notifier = { enabled = true },
       -- Embedded terminal (replaces toggleterm.nvim)
@@ -217,12 +219,17 @@ require("lazy").setup({
       quickfile = { enabled = true },
       words = { enabled = true },
     },
+    keys = {
+      { "<leader>gh", function() Snacks.lazygit.log_file() end, desc = "Lazygit Current File History" },
+      { "<leader>gg", function() Snacks.lazygit() end, desc = "Lazygit" },
+      { "<leader>gl", function() Snacks.lazygit.log() end, desc = "Lazygit Log (cwd)" },
+    },
   },
 
   -- Editor configuration
   -- ..........................................................................
   'editorconfig/editorconfig-vim', -- Autodetect https://editorconfig.org/ files
-  'tpope/vim-sleuth',              -- Detect tabstop and shiftwidth automatically
+  'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
 
   -- General editing (see vim/after/plugin/general-editing.lua)
   -- ..........................................................................

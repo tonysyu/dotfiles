@@ -10,6 +10,7 @@ homebrew_packages:
 - git-delta
 - httpie
 - jq
+- lazygit
 - mdcat
 - nvm
 - pipx
