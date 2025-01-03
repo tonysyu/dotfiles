@@ -119,7 +119,3 @@ eval "$(zoxide init zsh)"
 # Initialize key bindings for fzf
 # See https://junegunn.github.io/fzf/installation/
 eval "$(fzf --zsh)"
-
-# Initialize fzf-git
-# See https://github.com/junegunn/fzf-git.sh?tab=readme-ov-file#list-of-bindings
-source "$HOME/dotfiles/fzf-git.sh/fzf-git.sh"
