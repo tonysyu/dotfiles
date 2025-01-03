@@ -21,6 +21,7 @@ homebrew_packages:
 - ripgrep
 - sd
 - semgrep
+- tldr
 - tree
 - wget
 - zoxide
