@@ -1,4 +1,5 @@
 local telescope_builtin = require('telescope.builtin')
+local telescope_previewers = require('telescope.previewers')
 local live_grep_args = require('telescope').extensions.live_grep_args
 local live_grep_args_shortcuts = require("telescope-live-grep-args.shortcuts")
 local snacks = require('snacks')
@@ -36,9 +37,22 @@ vim.keymap.set('n', '*', utils.find_current_word_without_ignorecase,
 
 -- Git search
 -- ............................................................................
+-- Custom telescope previewer to use git diff. This allows reuse of the default git pager,
+-- which in our case uses git-delta to show pretty diffs.
+-- Copied from https://www.reddit.com/r/neovim/comments/101e5lb/using_delta_in_telescope_git_status/
+local git_diff_previewer = telescope_previewers.new_termopen_previewer({
+    get_command = function(entry)
+        if entry.status == '??' or 'A ' then
+            return { 'git', 'diff', entry.value }
+        end
+
+        return { 'git', 'diff', entry.value .. '^!' }
+    end
+})
 vim.keymap.set('n', '<leader>gb', telescope_builtin.git_branches, { desc = 'Find/list git branches' })
 vim.keymap.set('n', '<leader>gc', telescope_builtin.git_commits, { desc = 'Find/list git commits' })
-vim.keymap.set('n', '<leader>gd', telescope_builtin.git_status, { desc = 'Find/list git diff file / status ' })
+vim.keymap.set('n', '<leader>gd', function() telescope_builtin.git_status({ previewer = git_diff_previewer }) end,
+    { desc = 'Find/list git diff file / status ' })
 vim.keymap.set('n', '<leader>gg', function() snacks.lazygit() end, { desc = 'Open lazygit' })
 vim.keymap.set('n', '<leader>gh', function() snacks.lazygit.log_file() end,
     { desc = 'Open lazygit log/history for current file' })
