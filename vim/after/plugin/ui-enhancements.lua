@@ -72,7 +72,6 @@ require('lualine').setup {
     section_separators = '',
   },
   extensions = {
-    'fugitive',
     'neo-tree',
     'quickfix',
     'symbols-outline',
