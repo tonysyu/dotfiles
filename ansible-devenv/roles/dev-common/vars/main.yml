@@ -32,7 +32,10 @@ python_executable: python3.12
 config_directories:
 - "~/.config"
 - "~/.config/btop"
+- "~/.config/lazygit"
 
 link_configs:
 - src: "~/dotfiles/btop.conf"
   dest: "~/.config/btop/btop.conf"
+- src: "~/dotfiles/lazygit_config.yml"
+  dest: "~/Library/Application Support/lazygit/config.yml"

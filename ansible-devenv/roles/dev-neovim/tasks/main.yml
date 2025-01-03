@@ -21,6 +21,7 @@
     state: latest
   loop: '{{ homebrew_cask_apps }}'
   tags:
+  - brew
   - cask
 
 - name: Ensure .config directory exists
