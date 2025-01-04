@@ -11,7 +11,12 @@ opt.termguicolors = true
 
 -- Custom Filetypes
 -- ............................................................................
-vim.filetype.add({ extension = { templ = "templ" } })
+vim.filetype.add({ extension = { templ = 'templ' } })
+vim.filetype.add({
+    pattern = {
+        ['.*.gitconfig'] = 'gitconfig'
+    }
+})
 
 -- NeoVim providers
 -- ............................................................................
