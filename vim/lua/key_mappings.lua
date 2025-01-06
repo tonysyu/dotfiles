@@ -50,14 +50,23 @@ local git_diff_previewer = telescope_previewers.new_termopen_previewer({
     end
 })
 vim.keymap.set('n', '<leader>gb', telescope_builtin.git_branches, { desc = 'Find/list git branches' })
-vim.keymap.set('n', '<leader>gc', telescope_builtin.git_commits, { desc = 'Find/list git commits' })
-vim.keymap.set('n', '<leader>gd', function() telescope_builtin.git_status({ previewer = git_diff_previewer }) end,
-    { desc = 'Find/list git diff file / status ' })
+vim.keymap.set('n', '<leader>gL',
+    function() telescope_builtin.git_commits({ previewer = git_diff_previewer }) end,
+    { desc = 'Show git log/commits for repo' })
+vim.keymap.set('n', '<leader>gl',
+    function()
+        local current_file = vim.fn.expand('%:p')
+        telescope_builtin.git_commits({
+            git_command = { "git", "log", "--pretty=oneline", "--abbrev-commit", "--", current_file },
+            previewer = git_diff_previewer,
+        })
+    end,
+    { desc = 'Show git log/commits for file' })
+vim.keymap.set('n', '<leader>gs',
+    function() telescope_builtin.git_status({ previewer = git_diff_previewer }) end,
+    { desc = 'Show git status / changed files' })
 vim.keymap.set('n', '<leader>gg', function() snacks.lazygit() end, { desc = 'Open lazygit' })
-vim.keymap.set('n', '<leader>gh', function() snacks.lazygit.log_file() end,
-    { desc = 'Open lazygit log/history for current file' })
-vim.keymap.set('n', '<leader>gl', function() snacks.lazygit.log() end, { desc = 'Open lazygit log for repo' })
-vim.keymap.set('n', '<leader>gs', telescope_builtin.git_stash, { desc = 'Find/list git stash items' })
+vim.keymap.set('n', '<leader>gx', telescope_builtin.git_stash, { desc = 'Find/list git stash items' })
 
 -- Buffer navigation
 -- ............................................................................
