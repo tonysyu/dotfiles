@@ -11,8 +11,9 @@ local utils = require('utils')
 
 -- Code file search
 -- ............................................................................
-vim.keymap.set('n', '<leader>gf', telescope_builtin.git_files, { desc = 'Find git files' })
-vim.keymap.set('n', '<leader>ff', telescope_builtin.find_files, { desc = 'Find all files' })
+vim.keymap.set('n', '<leader>gf', telescope_builtin.git_files, { desc = 'Find/list git files' })
+vim.keymap.set('n', '<leader>ff', telescope_builtin.find_files, { desc = 'Find/list all files' })
+vim.keymap.set('n', '<leader>fr', telescope_builtin.oldfiles, { desc = 'Find/list recent files' })
 
 -- Code text search
 -- ............................................................................
