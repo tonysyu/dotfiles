@@ -11,6 +11,7 @@ homebrew_packages:
 homebrew_cask_apps:
 - font-hack-nerd-font
 - font-inconsolata-nerd-font
+- font-meslo-lg-nerd-font
 
 python_venv_root: "~/.venv/"
 
