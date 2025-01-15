@@ -3,6 +3,13 @@ local opt = vim.opt
 
 opt.guifont = "Hack Nerd Font Mono:h13"
 
+-- General settings
+-- ............................................................................
+-- Override default terminal title ("vim") with `opt.titlestring`
+opt.title = true
+-- Specify title of terminal window with filename (%t) and current working directory.
+opt.titlestring = 'vim: %t%( (%{getcwd()})%)'
+
 -- Colorscheme settings
 -- ............................................................................
 -- Actual colorscheme configuration is in vim/after/plugin/ui-enhancements.lua

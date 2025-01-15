@@ -40,12 +40,6 @@ if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
   eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/ohmyposh.toml)"
 fi
 
-# Use `precmd` zsh hook (see "SPECIAL FUNCTIONS" in `man zshmisc`) to add current
-# directory name to tab title.
-precmd() {
-  echo -ne "\e]1;$(basename $PWD)\a"
-}
-
 # Completion styling
 # --------------------------------------------------------------------------------------
 # Use case-insensitive completion
