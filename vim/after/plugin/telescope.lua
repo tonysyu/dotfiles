@@ -32,8 +32,8 @@ telescope.setup {
         },
         mappings = {
             i = {
-                ["<C-j>"] = require('telescope.actions').cycle_history_next,
-                ["<C-k>"] = require('telescope.actions').cycle_history_prev,
+                ["<C-j>"] = actions.cycle_history_next,
+                ["<C-k>"] = actions.cycle_history_prev,
             },
         },
     },
