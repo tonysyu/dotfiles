@@ -2,6 +2,7 @@ local telescope_builtin = require('telescope.builtin')
 local telescope_previewers = require('telescope.previewers')
 local live_grep_args = require('telescope').extensions.live_grep_args
 local live_grep_args_shortcuts = require("telescope-live-grep-args.shortcuts")
+local gitsigns = require('gitsigns')
 local snacks = require('snacks')
 local utils = require('utils')
 
@@ -18,6 +19,7 @@ vim.keymap.set('n', '<leader>fr',
     { desc = 'Find/list recent files in current directory' })
 vim.keymap.set('n', '<leader>fR', telescope_builtin.oldfiles,
     { desc = 'Find/list recent files across all projects' })
+
 -- Code text search
 -- ............................................................................
 vim.keymap.set('n', '<leader>fg', live_grep_args.live_grep_args, { desc = 'Find/search text using grep/search' })
@@ -39,7 +41,7 @@ vim.keymap.set('n', '[w', function() snacks.words.jump(-vim.v.count1) end,
 vim.keymap.set('n', '*', utils.find_current_word_without_ignorecase,
     { desc = 'Find/search current word under the cursor' })
 
--- Git search
+-- Git
 -- ............................................................................
 -- Custom telescope previewer to use git diff. This allows reuse of the default git pager,
 -- which in our case uses git-delta to show pretty diffs.
@@ -71,6 +73,27 @@ vim.keymap.set('n', '<leader>gs',
     { desc = 'Show git status / changed files' })
 vim.keymap.set('n', '<leader>gg', function() snacks.lazygit() end, { desc = 'Open lazygit' })
 vim.keymap.set('n', '<leader>gx', telescope_builtin.git_stash, { desc = 'Find/list git stash items' })
+
+-- gitsigns ("c" for code changes)
+-- Adapted from https://github.com/lewis6991/gitsigns.nvim?tab=readme-ov-file#keymaps
+vim.keymap.set('n', '<leader>cs', gitsigns.stage_hunk, { desc = 'Code change: Stage hunk' })
+vim.keymap.set('n', '<leader>cu', gitsigns.undo_stage_hunk, { desc = 'Code change: Unstage hunk' })
+vim.keymap.set('n', '<leader>cd', gitsigns.toggle_deleted, { desc = 'Code change: Toggle display of deleted code' })
+vim.keymap.set('n', ']c', function()
+    if vim.wo.diff then
+        vim.cmd.normal({ ']c', bang = true })
+    else
+        gitsigns.nav_hunk('next')
+    end
+end, { desc = 'Code change: Next hunk' })
+
+vim.keymap.set('n', '[c', function()
+    if vim.wo.diff then
+        vim.cmd.normal({ '[c', bang = true })
+    else
+        gitsigns.nav_hunk('prev')
+    end
+end, { desc = 'Code change: Previous hunk' })
 
 -- Buffer navigation
 -- ............................................................................
