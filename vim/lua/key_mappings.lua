@@ -30,7 +30,7 @@ vim.keymap.set('n', '<leader>S', ':%s/', { desc = 'Find/search and replace using
 vim.keymap.set('v', '<leader>S', ':s/', { desc = 'Find/search and replace using regex' })
 vim.keymap.set('n', '<leader>/', telescope_builtin.current_buffer_fuzzy_find,
     { desc = 'Fuzzy find/search in current buffer' })
-vim.keymap.set('n', '<C-?>', ':noh<CR>', { desc = 'Clear hlsearch', silent = true })
+vim.keymap.set('n', '<C-S-/>', ':noh<CR>', { desc = 'Clear hlsearch', silent = true })
 -- snacks.nvim words plugin highlights current word and allows navigation
 vim.keymap.set('n', ']w', function() snacks.words.jump(vim.v.count1) end,
     { desc = 'Next word matching word under cursor', silent = true })
