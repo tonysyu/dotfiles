@@ -7,8 +7,8 @@ opt.guifont = "Hack Nerd Font Mono:h13"
 -- ............................................................................
 -- Override default terminal title ("vim") with `opt.titlestring`
 opt.title = true
--- Specify title of terminal window with filename (%t) and current working directory.
-opt.titlestring = 'vim: %t%( (%{getcwd()})%)'
+-- Set title of terminal window with current directory (+ replace $HOME with ~)
+opt.titlestring = "vim:%{substitute(getcwd(),$HOME,'~','')}"
 
 -- Colorscheme settings
 -- ............................................................................
