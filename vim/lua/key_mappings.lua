@@ -129,6 +129,7 @@ vim.keymap.set({ 'n', 'v' }, "<leader>y", "\"+y", { desc = 'Yank to clipboard' }
 vim.keymap.set('n', "<leader>Y", "\"+Y", { desc = 'Yank line to clipboard' })
 vim.keymap.set({ 'n', 'v' }, "<leader>p", "\"+p", { desc = 'Paste from clipboard' })
 vim.keymap.set("n", "<leader>P", "\"+P", { desc = 'Paste from clipboard before cursor' })
+vim.keymap.set('n', '<leader>yp', ":call setreg('+', expand('%'))<CR>", { desc = 'Save current path to clipboard' })
 
 -- Text formatting mappings
 -- ............................................................................
