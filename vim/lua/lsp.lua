@@ -38,8 +38,6 @@ local function on_attach(client)
     vim.keymap.set('n', '<leader>st', telescope_builtin.lsp_type_definitions, { desc = 'Find/search type definition' })
 
     -- Code search
-    vim.keymap.set('n', '<leader>fs', telescope_builtin.lsp_dynamic_workspace_symbols,
-        { desc = 'Find/search symbol through search input' })
     vim.keymap.set('n', '<leader>ss', function()
         telescope_builtin.lsp_workspace_symbols {
             query = vim.call('expand', '<cword>')

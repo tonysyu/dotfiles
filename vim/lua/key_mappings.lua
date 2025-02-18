@@ -22,6 +22,8 @@ vim.keymap.set('n', '<leader>fR', telescope_builtin.oldfiles,
 
 -- Code text search
 -- ............................................................................
+vim.keymap.set('n', '<leader>fs', function() snacks.picker.lsp_symbols() end,
+    { desc = 'Find/search symbol definitions in current file' })
 vim.keymap.set('n', '<leader>fg', live_grep_args.live_grep_args, { desc = 'Find/search text using grep/search' })
 vim.keymap.set('n', '<leader>*', live_grep_args_shortcuts.grep_word_under_cursor,
     { desc = 'Find/search string under cursor' })
