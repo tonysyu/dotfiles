@@ -149,10 +149,10 @@ vim.keymap.set('n', '<leader>vf', ':Neotree toggle reveal<cr>',
 vim.keymap.set('n', '<leader>vq', utils.toggle_quickfix, { desc = 'View/toggle quickfix window', silent = true })
 vim.keymap.set('n', '<leader>vt', ':TodoTelescope<CR>', { desc = 'View Todo list in telescope', silent = true })
 -- Diagnostics (errors, warnings)
-vim.keymap.set('n', '<leader>vd', ':Trouble diagnostics toggle filter.buf=0<CR>',
-    { desc = 'View/toggle Trouble diagnostics for buffer', silent = true })
-vim.keymap.set('n', '<leader>vD', ':Trouble diagnostics toggle<CR>',
-    { desc = 'View/toggle Trouble diagnostics for workspace', silent = true })
+vim.keymap.set('n', '<leader>vD', function() snacks.picker.diagnostics_buffer() end,
+    { desc = 'View/toggle diagnostics for buffer', silent = true })
+vim.keymap.set('n', '<leader>vd', function() snacks.picker.diagnostics() end,
+    { desc = 'View/toggle diagnostics for workspace', silent = true })
 -- snacks.nvim terminal plugin (double escape within to normal mode)
 vim.keymap.set({ 'n', 't' }, '<c-/>', function() snacks.terminal() end, { desc = 'Toggle Terminal', silent = true })
 -- snacks.nvim notifier plugin
