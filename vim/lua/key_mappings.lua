@@ -149,7 +149,6 @@ vim.keymap.set('n', '<space>.', ':lua MiniFiles.open(vim.api.nvim_buf_get_name(0
 vim.keymap.set('n', '<leader>vs', ':SymbolsOutline<cr>', { desc = 'View/toggle symbols', silent = true })
 vim.keymap.set('n', '<leader>vf', ':Neotree toggle reveal<cr>',
     { desc = 'View/toggle nvim-tree filesystem explorer', silent = true })
-vim.keymap.set('n', '<leader>vq', utils.toggle_quickfix, { desc = 'View/toggle quickfix window', silent = true })
 vim.keymap.set('n', '<leader>vt', ':TodoTelescope<CR>', { desc = 'View Todo list in telescope', silent = true })
 -- Diagnostics (errors, warnings)
 vim.keymap.set('n', '<leader>vD', function() snacks.picker.diagnostics_buffer() end,
@@ -163,6 +162,13 @@ vim.keymap.set('n', '<leader>nn', function() snacks.notifier.show_history() end,
     { desc = 'Show notification history', silent = true })
 vim.keymap.set('n', '<leader>nd', function() snacks.notifier.hide() end,
     { desc = 'Hide/delete notification popup', silent = true })
+
+-- Quickfix window
+-- ............................................................................
+vim.keymap.set('n', '<leader>vq', utils.toggle_quickfix, { desc = 'View/toggle quickfix window', silent = true })
+-- Navigate to previous/next quickfix item
+vim.keymap.set('n', ']q', ':cnext<CR>', { silent = true, desc = 'Goto next quickfix item' })
+vim.keymap.set('n', '[q', ':cprev<CR>', { silent = true, desc = 'Goto previous quickfix item' })
 
 -- Vim tool search
 -- ............................................................................
@@ -218,7 +224,6 @@ vim.keymap.set('n', 'J', 'mzJ`z')
 -- ............................................................................
 -- Disable default behavior of space (advance one to the right) since space is used as a
 -- leader key for some commands.
---
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 -- Duplicate system paste to paste-without-formatting keymap used by other apps.
 -- This works in Vimr, but in iterm, this is overridden by a terminal command.
