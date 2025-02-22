@@ -126,8 +126,6 @@ require("lazy").setup({
   -- Motion and text-object plugins
   -- ..........................................................................
   'andymass/vim-matchup', -- Extends % to match non-traditional delimiters (e.g. begin/end)
-  'tpope/vim-surround',   -- Easily add, change, and delete surrounding delimiters
-  -- ..........................................................................
 
   -- Filesystem plugins
   -- ..........................................................................
@@ -215,13 +213,8 @@ require("lazy").setup({
 
   -- General editing (see vim/after/plugin/general-editing.lua)
   -- ..........................................................................
-  'AndrewRadev/splitjoin.vim',
-  'jiangmiao/auto-pairs',
-  'numToStr/Comment.nvim', -- "gc" to comment visual regions/lines
-  'tpope/vim-abolish',
-  'tpope/vim-endwise',
+  { 'echasnovski/mini.nvim', version = '*' },
   'tpope/vim-repeat',
-  'tpope/vim-unimpaired',
 
   -- Fuzzy Finder (files, lsp, etc)
   -- ..........................................................................

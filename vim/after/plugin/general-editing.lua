@@ -1,6 +1,4 @@
 -- Enable Comment.nvim
-require('Comment').setup()
-
 local default_augroup = vim.api.nvim_create_augroup('GeneralEditingAuGroup', { clear = true })
 
 -- Auto-save when leaving

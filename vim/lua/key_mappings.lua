@@ -1,3 +1,7 @@
+-- Most custom key-mappings are defined here, but there are some notable exceptions:
+-- * ./lsp.lua: LSP-related mappings
+-- * ./treesitter.lua: treesitter-related mappings; in particular textobjects
+-- * ../after/plugin/mini.lua: mini.vim mappings
 local telescope_builtin = require('telescope.builtin')
 local telescope_previewers = require('telescope.previewers')
 local live_grep_args = require('telescope').extensions.live_grep_args
@@ -118,13 +122,6 @@ vim.keymap.set('n', '<C-S-j>', '5<C-w>-', { desc = 'Decrease height of buffer/pa
 vim.keymap.set('n', '<C-S-l>', '5<C-w>>', { desc = 'Increase width fo buffer/pane by 5' })
 vim.keymap.set('n', '<C-S-h>', '5<C-w><', { desc = 'Decrease width fo buffer/pane by 5' })
 
--- Move text line-by-line (see https://youtu.be/hSHATqh8svM)
--- ............................................................................
-vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv", { desc = 'Move selected text down' })
-vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv", { desc = 'Move selected text up' })
-vim.keymap.set('n', '<leader>j', ':m .+1<CR>==', { desc = 'Move line down' })
-vim.keymap.set('n', '<leader>k', ':m .-2<CR>==', { desc = 'Move line up' })
-
 -- Yank/paste to system clipboard
 -- ............................................................................
 vim.keymap.set({ 'n', 'v' }, "<leader>y", "\"+y", { desc = 'Yank to clipboard' })
@@ -144,6 +141,8 @@ vim.keymap.set('v', 'Q', 'gq', { desc = 'Reflow selected text' })
 -- ............................................................................
 vim.keymap.set('n', '<leader>ep', ":echo expand('%:p')<CR>", { desc = 'Show/echo current path' })
 vim.keymap.set('n', '<leader>.', ':Neotree reveal<cr>', { desc = 'Show current file explorer' })
+vim.keymap.set('n', '<space>.', ':lua MiniFiles.open(vim.api.nvim_buf_get_name(0))<CR>',
+    { desc = 'Show current file using mini.file explorer' })
 
 -- View helper windows
 -- ............................................................................
