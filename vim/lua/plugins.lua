@@ -193,6 +193,8 @@ require("lazy").setup({
       lazygit = { enabled = true },
       -- Notification popup (integrates with folke/noice.nvim; replaces nvim-notify)
       notifier = { enabled = true },
+      -- Picker for selecting items (like telelscope)
+      picker = { enabled = true },
       -- Embedded terminal (replaces toggleterm.nvim)
       terminal = {
         enabled = true,
