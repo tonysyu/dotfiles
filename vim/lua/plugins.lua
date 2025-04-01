@@ -96,6 +96,13 @@ require("lazy").setup({
   'alvan/vim-closetag',
   'chrisbra/Colorizer',
   'elixir-editors/vim-elixir',
+  {
+    'linux-cultist/venv-selector.nvim',
+    dependencies = { 'neovim/nvim-lspconfig', 'nvim-telescope/telescope.nvim' },
+    opts = {},          -- required to setup plugin
+    branch = "regexp",  -- regexp branch is the newer version of this plugin
+    event = 'VeryLazy', -- Optional: needed only if you want to type `:VenvSelect` without a keymapping
+  },
   'mattn/emmet-vim',
   'tpope/vim-ragtag',
   {
