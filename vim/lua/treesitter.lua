@@ -95,7 +95,7 @@ configs.setup {
 
 -- Set up treesitter-context plugin to display code context
 vim.cmd [[hi TreesitterContextBottom gui=underline guisp=#5f0000 ]]
-vim.cmd [[hi TreesitterContext guibg=#444444]]
+vim.cmd [[hi TreesitterContext guibg='black']]
 
 require('treesitter-context').setup {
     mode = 'topline',
