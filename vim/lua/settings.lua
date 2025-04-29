@@ -29,7 +29,7 @@ vim.filetype.add({
 
 -- NeoVim providers
 -- ............................................................................
-g.python3_host_prog = vim.fn.expand('~/.venv/py3nvim/bin/python')
+g.python3_host_prog = vim.fn.expand('~/dotfiles/vim/.venv/py3nvim/bin/python')
 
 -- Indentation
 -- ............................................................................

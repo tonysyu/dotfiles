@@ -13,7 +13,7 @@ homebrew_cask_apps:
 - font-inconsolata-nerd-font
 - font-meslo-lg-nerd-font
 
-python_venv_root: "~/.venv/"
+python_venv_root: "~/dotfiles/vim/.venv/"
 
 venv_pip_packages:
 - black
