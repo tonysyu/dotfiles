@@ -47,6 +47,39 @@ vim.keymap.set('n', '[w', function() snacks.words.jump(-vim.v.count1) end,
 vim.keymap.set('n', '*', utils.find_current_word_without_ignorecase,
     { desc = 'Find/search current word under the cursor' })
 
+
+-- LSP-related mappings
+-- ............................................................................
+vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, { desc = 'Go to declaration' })
+vim.keymap.set('n', 'gd', telescope_builtin.lsp_definitions, { desc = 'Go to definition' })
+vim.keymap.set('n', 'gr', telescope_builtin.lsp_references, { desc = 'Find/search references' })
+vim.keymap.set('n', '<leader>si', telescope_builtin.lsp_implementations, { desc = 'Find/search implementation' })
+vim.keymap.set('n', '<leader>st', telescope_builtin.lsp_type_definitions, { desc = 'Find/search type definition' })
+
+-- Code search
+vim.keymap.set('n', '<leader>fS', telescope_builtin.lsp_dynamic_workspace_symbols,
+    { desc = 'Find/search symbol in workspace' })
+vim.keymap.set('n', '<leader>ss', function()
+    telescope_builtin.lsp_workspace_symbols {
+        query = vim.call('expand', '<cword>')
+    }
+end, { desc = 'Find symbol under cursor' })
+
+-- Documentation
+vim.keymap.set('n', 'K', vim.lsp.buf.hover, { desc = 'Show documentation' })
+vim.keymap.set('i', '<C-k>', vim.lsp.buf.signature_help, { desc = 'Show signature help' })
+
+-- Diagnostics
+vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous LSP diagnostic' })
+vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next LSP diagnostic' })
+vim.keymap.set('n', '<leader>dd', vim.diagnostic.open_float, { desc = 'Show line diagnostics' })
+
+-- Editing
+vim.keymap.set('n', '<leader>va', vim.lsp.buf.code_action, { desc = 'View LSP code action' })
+vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, { desc = 'Rename' })
+vim.keymap.set('n', '<space>f', vim.lsp.buf.format, { desc = 'Reformat' })
+
+
 -- Git
 -- ............................................................................
 -- Custom telescope previewer to use git diff. This allows reuse of the default git pager,
