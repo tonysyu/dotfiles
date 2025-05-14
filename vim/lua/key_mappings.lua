@@ -52,8 +52,10 @@ vim.keymap.set('n', '*', utils.find_current_word_without_ignorecase,
 -- ............................................................................
 vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, { desc = 'Go to declaration' })
 vim.keymap.set('n', 'gd', telescope_builtin.lsp_definitions, { desc = 'Go to definition' })
-vim.keymap.set('n', 'gr', telescope_builtin.lsp_references, { desc = 'Find/search references' })
-vim.keymap.set('n', '<leader>si', telescope_builtin.lsp_implementations, { desc = 'Find/search implementation' })
+-- Override keymap for vim.lsp.buf.references() to use telescope
+vim.keymap.set('n', 'grr', telescope_builtin.lsp_references, { desc = 'Find/search references' })
+-- Override keymap for vim.lsp.buf.implementation() to use telescope
+vim.keymap.set('n', 'gri', telescope_builtin.lsp_implementations, { desc = 'Find/search implementation' })
 vim.keymap.set('n', '<leader>st', telescope_builtin.lsp_type_definitions, { desc = 'Find/search type definition' })
 
 -- Code search
@@ -75,8 +77,6 @@ vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next LSP dia
 vim.keymap.set('n', '<leader>dd', vim.diagnostic.open_float, { desc = 'Show line diagnostics' })
 
 -- Editing
-vim.keymap.set('n', '<leader>va', vim.lsp.buf.code_action, { desc = 'View LSP code action' })
-vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, { desc = 'Rename' })
 vim.keymap.set('n', '<space>f', vim.lsp.buf.format, { desc = 'Reformat' })
 
 
