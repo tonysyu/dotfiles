@@ -1,5 +1,4 @@
 homebrew_taps:
-- homebrew/cask-fonts
 - uptech/homebrew-oss
 
 homebrew_packages:
