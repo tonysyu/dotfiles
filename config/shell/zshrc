@@ -101,7 +101,7 @@ alias gg='lazygit'
 # --------------------------------------------------------------------------------------
 
 # Initialize vim tools
-source $(dirname -- $0)/vim/init.zsh
+source $(dirname -- $0)/../nvim/init.zsh
 
 # Initialize zoxide
 # Revert to old fzf behavior (see https://github.com/ajeetdsouza/zoxide/issues/626#issuecomment-1753582198)

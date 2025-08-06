@@ -1,9 +1,6 @@
-ipython/profile_default/db/*
-ipython/profile_default/history.sqlite
-ipython/profile_default/security/
-vim/.venv
-vim/plugin/packer_compiled.lua
-vim/spell/en.utf-8.add.spl
-vim/syntax/enaml.vim
+config/nvim/.venv
+config/nvim/plugin/packer_compiled.lua
+config/nvim/spell/en.utf-8.add.spl
+config/nvim/syntax/enaml.vim
 .DS_STORE
 .aider*

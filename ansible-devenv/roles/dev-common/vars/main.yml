@@ -36,11 +36,11 @@ config_directories:
 - "~/.config/lazygit"
 
 link_configs:
-- src: "~/dotfiles/btop.conf"
+- src: "~/dotfiles/config/tools/btop.conf"
   dest: "~/.config/btop/btop.conf"
-- src: "~/dotfiles/ghostty.config"
+- src: "~/dotfiles/config/terminal/ghostty.config"
   dest: "~/Library/Application Support/com.mitchellh.ghostty/config"
-- src: "~/dotfiles/lazygit_config.yml"
+- src: "~/dotfiles/config/tools/lazygit_config.yml"
   dest: "~/Library/Application Support/lazygit/config.yml"
-- src: "~/dotfiles/yazi"
+- src: "~/dotfiles/config/tools/yazi"
   dest: "~/.config/yazi"

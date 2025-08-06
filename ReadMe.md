@@ -37,10 +37,10 @@ See `ansible-devenv/ReadMe.md` for options to install only specific components (
 **Ansible Configuration** (`ansible-devenv/`):
 See Architecture section in `ansible-devenv/ReadMe.md`
 
-**Neovim Configuration** (`vim/`):
-See Architecture section in `vim/ReadMe.md`
+**Neovim Configuration** (`config/nvim/`):
+See Architecture section in `config/nvim/ReadMe.md`
 
-**Zsh Configuration** (`zshrc`):
+**Zsh Configuration** (`config/shell/`):
 - Uses zinit for plugin management (`~/.config/zinit`)
 - Key plugins: fzf-tab, zsh-autosuggestions, zsh-completions, zsh-syntax-highlighting
 - Oh-my-posh for prompt theming (`ohmyposh.toml`)

@@ -16,7 +16,7 @@
 - name: Ensure .zshrc sources ~/dotfiles/zshrc
   ansible.builtin.lineinfile:
     dest: "~/.zshrc"
-    line: "source ~/dotfiles/zshrc"
+    line: "source ~/dotfiles/config/shell/zshrc"
 
 - name: Install homebrew packages
   homebrew:

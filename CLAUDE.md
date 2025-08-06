@@ -11,7 +11,7 @@ Personal dotfiles repository for macOS development environments. See `ReadMe.md`
 Refer to existing documentation:
 - **Overview**: See `ReadMe.md` overview of project
 - **Dev environment management**: See `ansible-devenv/ReadMe.md` for environment setup
-- **Neovim setup**: See `vim/ReadMe.md` for plugin installation
+- **Neovim setup**: See `config/nvim/ReadMe.md` for plugin installation
 - **Ansible targets**: See `ansible-devenv/Makefile` for available commands
 
 ## Architecture for Claude Code
@@ -22,8 +22,8 @@ Refer to existing documentation:
 - **Enhanced Zsh**: Uses zinit for plugin management at `~/.config/zinit`
 
 ### Key Locations for Code Changes
-- Neovim configs: `vim/lua/` modules and `vim/after/plugin/`
-- Shell configs: `zshrc`, `zshenv` 
+- Neovim configs: `config/nvim/lua/` modules and `config/nvim/after/plugin/`
+- Shell configs: `config/shell/zshrc`, `config/shell/zshenv` 
 - Ansible roles: `ansible-devenv/roles/`
 - Git configs: `git/general.gitconfig`, `git/personal.gitconfig`
 
@@ -41,7 +41,7 @@ When making changes:
 2. For Neovim plugins, update `lazy-lock.json` when adding/updating
 3. For system-wide changes, update appropriate ansible role in `ansible-devenv/roles/`
 4. Use `make` targets in `ansible-devenv/` to apply changes
-5. Shell changes require restart or `source ~/.zshrc`
+5. Shell changes require restart or `source ~/.zshrc` (which sources `config/shell/zshrc`)
 
 ## Documentation Guidelines
 

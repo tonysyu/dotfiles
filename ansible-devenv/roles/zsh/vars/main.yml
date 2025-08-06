@@ -9,9 +9,9 @@ config_directories:
 - "~/.config/zinit"
 
 link_configs:
-- src: "~/dotfiles/starship.toml"
+- src: "~/dotfiles/config/terminal/starship.toml"
   dest: "~/.config/starship.toml"
-- src: "~/dotfiles/ohmyposh.toml"
+- src: "~/dotfiles/config/terminal/ohmyposh.toml"
   dest: "~/.config/ohmyposh/ohmyposh.toml"
 - src: "~/dotfiles/zinit"
   dest: "~/.config/zinit/zinit.git"

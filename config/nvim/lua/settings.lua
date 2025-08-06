@@ -48,7 +48,7 @@ opt.swapfile = false
 opt.hidden = true       -- Allow switching from modified buffers (i.e. hidden buffers)
 opt.confirm = true      -- Confirm before quitting if a modified buffer is hidden
 opt.autowriteall = true -- Write/save file when switching buffers
--- opt.undodir = os.getenv('HOME') .. './vim/undodir'
+opt.undodir = os.getenv('HOME') .. './dotfiles/config/nvim/undo'
 opt.undofile = true
 
 -- Fill column

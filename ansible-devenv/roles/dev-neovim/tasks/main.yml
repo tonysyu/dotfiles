@@ -31,7 +31,7 @@
 
 - name: Link neovim config
   file:
-    src: "~/dotfiles/vim"
+    src: "~/dotfiles/config/nvim"
     dest: "~/.config/nvim"
     state: link
   tags:
