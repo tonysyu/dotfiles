@@ -1,7 +1,8 @@
 ---
 
 homebrew_packages:
-- jandedobbeleer/oh-my-posh/oh-my-posh
+- name: jandedobbeleer/oh-my-posh/oh-my-posh
+  options: --cask
 
 config_directories:
 - "~/.config"

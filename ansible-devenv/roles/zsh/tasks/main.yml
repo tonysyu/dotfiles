@@ -20,8 +20,9 @@
 
 - name: Install homebrew packages
   homebrew:
-    name: '{{ item }}'
+    name: '{{ item.name }}'
     state: latest
+    install_options: '{{ item.options | default(omit) }}'
   loop: '{{ homebrew_packages }}'
   tags:
   - brew
