@@ -1,6 +1,0 @@
-This vim configuration uses Vundle to manage vim plugins. When downloading this
-for the first time, run the following from this directory
-
-   git clone https://github.com/VundleVim/Vundle.vim.git bundle/Vundle.vim
-
-Then, open vim and run `:PluginInstall`.

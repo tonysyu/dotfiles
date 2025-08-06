@@ -1,20 +1,36 @@
-# Automated development environment setup using Ansible
+# Automated Development Environment Setup
 
-## Pre-requisites
+Uses Ansible to configure macOS development environment with dotfiles and tools.
 
-**Install ansible**
-```sh
+## Prerequisites
+
+```bash
 brew install ansible
 ```
 
 ## Usage
 
-To build (or update) the development environment, just run the following in this directory:
-```sh
+### Full Environment Setup
+```bash
 make
 ```
+Equivalent to: `ansible-playbook main.yml -i hosts.yml`
 
-Underneath the hood, this just runs the following:
-```sh
-ansible-playbook main.yml -i hosts.yml
+### Selective Installation
+```bash
+make neovim        # Install only Neovim configuration
+make no-brew       # Skip homebrew package installation
+make no-casks      # Skip homebrew cask installation
 ```
+
+## What Gets Installed
+
+- **Common tools**: Basic CLI utilities and configurations
+- **Zsh**: Shell configuration with zinit and plugins
+- **Neovim**: Complete development environment setup
+- **Development packages**: Language tools and utilities via homebrew
+
+## Architecture
+- Role-based structure: `common`, `zsh`, `dev-common`, `dev-neovim`
+- Main playbook: `main.yml` with inventory in `hosts.yml`
+- Makefile provides convenient installation targets
