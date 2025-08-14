@@ -18,6 +18,8 @@ local utils = require('utils')
 -- ............................................................................
 vim.keymap.set('n', '<leader>gf', telescope_builtin.git_files, { desc = 'Find/list git files' })
 vim.keymap.set('n', '<leader>ff', telescope_builtin.find_files, { desc = 'Find/list all files' })
+vim.keymap.set('n', '<leader>fh', function() telescope_builtin.find_files({ hidden = true }) end,
+    { desc = 'Find/list all files (including hidden)' })
 vim.keymap.set('n', '<leader>fr',
     function() telescope_builtin.oldfiles({ only_cwd = true }) end,
     { desc = 'Find/list recent files in current directory' })
