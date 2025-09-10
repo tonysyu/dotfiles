@@ -2,5 +2,6 @@ config/nvim/.venv
 config/nvim/plugin/packer_compiled.lua
 config/nvim/spell/en.utf-8.add.spl
 config/nvim/syntax/enaml.vim
+config/nvim/undo
 .DS_STORE
 .aider*

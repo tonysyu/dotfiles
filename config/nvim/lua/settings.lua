@@ -48,7 +48,7 @@ opt.swapfile = false
 opt.hidden = true       -- Allow switching from modified buffers (i.e. hidden buffers)
 opt.confirm = true      -- Confirm before quitting if a modified buffer is hidden
 opt.autowriteall = true -- Write/save file when switching buffers
-opt.undodir = os.getenv('HOME') .. './dotfiles/config/nvim/undo'
+opt.undodir = os.getenv('HOME') .. '/dotfiles/config/nvim/undo'
 opt.undofile = true
 
 -- Fill column
@@ -148,3 +148,8 @@ opt.diffopt:append('vertical')
 -- Level 2: Concealed text is completely hidden unless it has a custom replacement character defined.
 -- Concealed text is used for things like rendering links in markdown.
 opt.conceallevel = 2
+
+-- File name characters for 'gf' command
+-- ............................................................................
+-- Include @ symbol for npm scoped packages (e.g., @scope/package)
+opt.isfname:append('@-@')
