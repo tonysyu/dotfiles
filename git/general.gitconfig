@@ -6,7 +6,7 @@
 [core]
     excludesfile = ~/.gitignore
     editor = nvim
-    pager = delta
+    pager = delta --tabs=4
 [push]
 	default = current
 [gui]
@@ -24,7 +24,7 @@
     prlog = log --grep 'Merge pull request'
     qlog = log --pretty=oneline --abbrev-commit --graph --decorate
 [interactive]
-    diffFilter = delta --color-only
+    diffFilter = delta --color-only --tabs=4
 [delta "decorations"]
     commit-decoration-style = bold yellow box ul
     file-style = bold yellow ul
