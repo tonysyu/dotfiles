@@ -6,11 +6,14 @@ homebrew_packages:
 - eza
 - fd
 - fzf
+- ghostscript
 - git
 - git-delta
 - httpie
+- imagemagick
 - jq
 - lazygit
+- mermaid-cli
 - mdcat
 - nvm
 - protolint
@@ -20,6 +23,7 @@ homebrew_packages:
 - ripgrep
 - sd
 - semgrep
+- tectonic
 - tldr
 - tree
 - wget
