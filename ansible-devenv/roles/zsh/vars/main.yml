@@ -16,3 +16,5 @@ link_configs:
   dest: "~/.config/ohmyposh/ohmyposh.toml"
 - src: "~/dotfiles/zinit"
   dest: "~/.config/zinit/zinit.git"
+- src: "~/dotfiles/config/shell/zshenv"
+  dest: "~/.zshenv"
