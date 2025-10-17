@@ -1,4 +1,8 @@
 require("obsidian").setup({
+    ui = {
+        -- Disable UI to avoid conflicts with render-markdown.nvim
+        enable = false
+    },
     workspaces = {
         {
             name = "default",
