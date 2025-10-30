@@ -1,14 +1,16 @@
 ---
 
 homebrew_packages:
-- name: jandedobbeleer/oh-my-posh/oh-my-posh
-  options: --cask
+- oh-my-posh
+
+homebrew_cask_apps: []
 
 config_directories:
 - "~/.config"
 - "~/.config/ohmyposh"
 - "~/.config/zinit"
 
+# FIXME: Delete starship
 link_configs:
 - src: "~/dotfiles/config/terminal/starship.toml"
   dest: "~/.config/starship.toml"
