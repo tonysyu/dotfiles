@@ -11,6 +11,7 @@ homebrew_packages:
 - git-delta
 - httpie
 - imagemagick
+- jj
 - jq
 - lazygit
 - mermaid-cli
@@ -32,7 +33,7 @@ homebrew_packages:
 
 homebrew_cask_apps: []
 
-python_executable: python3.12
+python_executable: python3.13
 
 config_directories:
 - "~/.config"
@@ -49,5 +50,7 @@ link_configs:
   dest: "~/Library/Application Support/lazygit/config.yml"
 - src: "~/dotfiles/config/tools/yazi"
   dest: "~/.config/yazi"
+- src: "~/dotfiles/config/tools/jj"
+  dest: "~/.config/jj"
 - src: "~/dotfiles/config/tools/claude/settings.json"
   dest: "~/.claude/settings.json"
