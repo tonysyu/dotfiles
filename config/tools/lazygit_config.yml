@@ -1,8 +1,8 @@
 git:
-  paging:
-    colorArg: always
-    # Use git-delta for paging
-    pager: delta --dark --paging=never --tabs=4
+  pagers:
+    - colorArg: always
+      # Use git-delta for paging
+      pager: delta --dark --paging=never --tabs=4
 gui:
   # The number of lines to scroll by when scrolling the main window (default: 2)
   # This looks jerky when scrolling with the mouse wheel, but it's much nicer than the
