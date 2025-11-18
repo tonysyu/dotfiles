@@ -40,25 +40,11 @@ if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
   eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/ohmyposh.toml)"
 fi
 
-# Completion styling
+# Completion using carapace
 # --------------------------------------------------------------------------------------
-# Use case-insensitive completion
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
-# Set list-colors to enable filename colorizing
-zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
-# Force zsh not to show completion menu, to avoid conflict with Aloxaf/fzf-tab
-zstyle ':completion:*' menu no
-# Disable sort when completing `git checkout` (keep commits chronological)
-zstyle ':completion:*:git-checkout:*' sort false
-# preview directory's content with eza when completing cd
-zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --color=always $realpath'
-
-# Groups:
-# -------
-# Set descriptions format to enable group support
-zstyle ':completion:*:descriptions' format '[%d]'
-# Switch group using `<` and `>`
-zstyle ':fzf-tab:*' switch-group '<' '>'
+export CARAPACE_BRIDGES='zsh,fish,bash,inshellisense' # optional
+zstyle ':completion:*' format $'\e[2;37mCompleting %d\e[m'
+source <(carapace _carapace)
 
 # History search configuration
 # --------------------------------------------------------------------------------------
