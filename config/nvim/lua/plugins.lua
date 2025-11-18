@@ -38,6 +38,12 @@ require("lazy").setup({
   'folke/neodev.nvim',             -- Additional lua configuration, makes nvim stuff amazing
   'simrat39/symbols-outline.nvim', -- Side pane LSP symbols
 
+  -- Java LSP support
+  {
+    'mfussenegger/nvim-jdtls',
+    ft = 'java',
+  },
+
   -- Autocompletion
   -- ..........................................................................
   {
