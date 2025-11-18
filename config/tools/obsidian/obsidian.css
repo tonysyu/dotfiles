@@ -1,0 +1,155 @@
+/* ============================================================================================= */
+/* Customize colors */
+/* ============================================================================================= */
+.theme-dark {
+    /* Only --color-NAME variables are standard. Strong and muted variants are custom variables. */
+    --color-red: #ff6188;
+    --color-muted-red: #561F1F;
+    --color-orange: #fc9867;
+    --color-muted-orange: #a36141;
+    --color-strong-orange: #f8ab67;
+    --color-yellow: #ebcb8b;
+    --color-strong-yellow: #ffe4b5;
+    --color-green: #a9dc76;
+    --color-blue: #78dce8;
+    --color-muted-blue: #3c6f75;
+    --color-purple: #ab9df2;
+    --color-muted-purple: #605888;
+    --color-strong-purple: #8873ef;
+}
+
+/* ============================================================================================= */
+/* Customize Obsidian variables */
+/* ============================================================================================= */
+.theme-dark {
+    --font-monospace: 'Ubunut Mono', monospace;
+
+    /* Accents */
+    --color-accent: var(--color-purple);
+    --text-on-accent: black;
+    --interactive-accent: var(--color-purple);
+    --interactive-accent-hover: var(--color-strong-purple);
+
+    /* Emphasis */
+    --bold-color: var(--color-strong-yellow);
+    --bold-weight: 800;
+    --italic-color: var(--color-strong-yellow);
+    /* Default highlight bgcolor is similar to bold/italic color, which prevents combining */
+    --text-highlight-bg: var(--color-base);
+    --text-highlight-decoration-color-tsy: var(--color-pink);
+
+    /* Headings */
+    --h1-color: var(--color-pink);
+    --h2-color: var(--color-base-100);
+    --h3-color: var(--color-yellow);
+    --h4-color: var(--color-green);
+    --h5-color: var(--color-blue);
+    --h6-color: var(--color-purple);
+
+    --h1-weight: 500;
+    --h2-weight: 500;
+    --h3-weight: 500;
+    --h4-weight: 500;
+    --h5-weight: 500;
+    --h6-weight: 500;
+
+    --h1-size: 34px;
+    --h2-size: 26px;
+    --h3-size: 22px;
+    --h4-size: 20px;
+    --h5-size: 18px;
+    --h6-size: 16px;
+
+    /* Links and tags */
+    /* The `decoration-style` variables are custom (not currently part of app.css) */
+    --link-decoration-thickness: 1px;
+    --link-decoration-style-tsy: dotted;
+    --link-decoration-style-hover-tsy: dotted;
+
+    --link-external-color: var(--color-orange);
+    --link-external-color-hover: var(--color-strong-orange);
+    --link-external-decoration-style-tsy: dotted;
+
+    --tag-color: var(--color-blue);
+    --tag-decoration: underline dotted var(--color-muted-blue);
+
+    /* Code */
+    --code-inline-tsy: var(--color-pink);
+    --code-background: var(--background-primary-alt);
+}
+
+/* ============================================================================================= */
+/* Additional customization */
+/* ============================================================================================= */
+
+.markdown-source-view { font-family: "inconsolata", monospace; }
+
+/* Emphasis ==================================================================================== */
+
+span.cm-highlight {
+    text-decoration-line: underline;
+    text-decoration-color: var(--text-highlight-decoration-color-tsy);
+}
+
+/* In edit/preview mode (but not reading mode) highlight overrides italic and bold colors. */
+/* These changes overrides that override. */
+span.cm-em.cm-highlight {
+    color: var(--italic-color);
+}
+span.cm-highlight.cm-strong {
+    color: var(--bold-color);
+}
+
+/* Links ======================================================================================= */
+
+a,
+.cm-s-obsidian span.cm-url,
+.markdown-rendered .internal-link{
+    text-decoration-style: var(--link-decoration-style-tsy);
+}
+
+.markdown-source-view.mod-cm6 .cm-underline {
+    text-decoration-thickness: var(--link-decoration-thickness);
+    text-decoration-style: var(--link-decoration-style-tsy);
+}
+
+/* Update on 2024-04-01 caused external link color to be overriden w/o this rule */
+.cm-s-obsidian span.cm-link > a{
+  color: var(--link-external-color);
+}
+
+/* Code blocks ================================================================================= */
+
+.markdown-rendered code,
+.cm-s-obsidian span.cm-inline-code {
+    color: var(--code-inline-tsy);
+}
+
+/* Headers ===================================================================================== */
+
+/* Copy header colors to header "formatter" (i.e. leading hashes) */
+.cm-formatting-header-1 {
+    color: var(--h1-color);
+}
+.cm-formatting-header-2 {
+    color: var(--h2-color);
+}
+.cm-formatting-header-3 {
+    color: var(--h3-color);
+}
+.cm-formatting-header-4 {
+    color: var(--h4-color);
+}
+.cm-formatting-header-5 {
+    color: var(--h5-color);
+}
+.cm-formatting-header-6 {
+    color: var(--h6-color);
+}
+
+/* Add bottom-border to h2 header */
+.HyperMD-header-2,
+.markdown-preview-section h2 {
+    padding-bottom: 5px;
+    border-bottom: 1px solid var(--color-base-40)
+}
