@@ -39,10 +39,8 @@ require("lazy").setup({
   'simrat39/symbols-outline.nvim', -- Side pane LSP symbols
 
   -- Java LSP support
-  {
-    'mfussenegger/nvim-jdtls',
-    ft = 'java',
-  },
+  -- Currently this hangs on the require('java') in lua/lsp.lua
+  -- 'nvim-java/nvim-java',           -- Requires configuration in lua/lsp.lua
 
   -- Autocompletion
   -- ..........................................................................
@@ -106,7 +104,6 @@ require("lazy").setup({
     'linux-cultist/venv-selector.nvim',
     dependencies = { 'neovim/nvim-lspconfig', 'nvim-telescope/telescope.nvim' },
     opts = {},          -- required to setup plugin
-    branch = "regexp",  -- regexp branch is the newer version of this plugin
     event = 'VeryLazy', -- Optional: needed only if you want to type `:VenvSelect` without a keymapping
   },
   'mattn/emmet-vim',
@@ -114,10 +111,7 @@ require("lazy").setup({
   {
     "iamcco/markdown-preview.nvim",
     cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
-    build = "cd app && yarn install",
-    init = function()
-      vim.g.mkdp_filetypes = { "markdown" }
-    end,
+    build = function() vim.fn["mkdp#util#install"]() end,
     ft = { "markdown" },
   },
   {

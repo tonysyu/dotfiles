@@ -26,8 +26,48 @@ vim.lsp.config['lua_ls'] = {
     }
 }
 
+-- Configure Mason
 mason.setup()
 mason_lspconfig.setup()
+
+-- require("java").setup({})
+--
+-- -- List of LSP servers to be installed using mason with the help of mason-lspconfig
+-- local servers = {
+--     jdtls = {
+--         settings = {
+--             java = {
+--                 configuration = {
+--                     runtimes = {
+--                         {
+--                             name = "Java 17",
+--                             -- Match path from $JAVA_HOME
+--                             path = "/Library/Java/JavaVirtualMachines/jdk17.0.16.jdk/Contents/Home",
+--                             default = true,
+--                         }
+--                     }
+--                 }
+--             }
+--         }
+--     }
+-- }
+--
+-- local capabilities = vim.lsp.protocol.make_client_capabilities()
+-- capabilities = cmp_nvim_lsp.default_capabilities(capabilities)
+--
+-- mason_lspconfig.setup({
+--   ensure_installed = vim.tbl_keys(servers),
+-- })
+-- mason_lspconfig.setup_handlers({
+--   function(server_name)
+--     require("lspconfig")[server_name].setup({
+--       capabilities = capabilities,
+--       on_attach = on_attach,
+--       settings = servers[server_name],
+--     })
+--   end,
+-- })
+
 
 -- Configure completion
 -- Ensure completion options are displayed
