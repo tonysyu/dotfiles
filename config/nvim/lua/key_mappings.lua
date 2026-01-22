@@ -119,8 +119,10 @@ vim.keymap.set('n', '<leader>gx', telescope_builtin.git_stash, { desc = 'Find/li
 -- Adapted from https://github.com/lewis6991/gitsigns.nvim?tab=readme-ov-file#keymaps
 vim.keymap.set('n', '<leader>cs', gitsigns.stage_hunk, { desc = 'Code change: Stage hunk' })
 vim.keymap.set('n', '<leader>cu', gitsigns.undo_stage_hunk, { desc = 'Code change: Unstage hunk' })
+vim.keymap.set('n', '<leader>cp', gitsigns.preview_hunk_inline, { desc = 'Code change: Preview hunk' })
 vim.keymap.set('n', '<leader>cr', gitsigns.reset_hunk, { desc = 'Code change: Reset hunk' })
 vim.keymap.set('n', '<leader>cd', gitsigns.toggle_deleted, { desc = 'Code change: Toggle display of deleted code' })
+vim.keymap.set('n', '<leader>qc', function() gitsigns.setqflist("all") end, { desc = 'Code change: Toggle display of deleted code' })
 vim.keymap.set('n', ']c', function()
     if vim.wo.diff then
         vim.cmd.normal({ ']c', bang = true })
