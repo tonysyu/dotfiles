@@ -12,4 +12,14 @@ vim.api.nvim_buf_create_user_command(
     {}
 )
 
+vim.api.nvim_buf_create_user_command(
+    0,
+    "TrimTrailingWhitespace",
+    function()
+        vim.api.nvim_command([[%s/\s\+$//e]])
+        print("Trailing whitespace removed")
+    end,
+    {}
+)
+
 return M
