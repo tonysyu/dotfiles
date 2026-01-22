@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//Users/tonyyu/.local/share/nvim/lazy/**)"
+    ],
+    "defaultMode": "acceptEdits"
+  }
+}
