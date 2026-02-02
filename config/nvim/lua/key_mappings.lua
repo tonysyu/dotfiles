@@ -127,7 +127,7 @@ vim.keymap.set('n', ']c', function()
     if vim.wo.diff then
         vim.cmd.normal({ ']c', bang = true })
     else
-        gitsigns.nav_hunk('next')
+        gitsigns.nav_hunk('next', { target = 'all' })
     end
 end, { desc = 'Code change: Next hunk' })
 
@@ -135,7 +135,7 @@ vim.keymap.set('n', '[c', function()
     if vim.wo.diff then
         vim.cmd.normal({ '[c', bang = true })
     else
-        gitsigns.nav_hunk('prev')
+        gitsigns.nav_hunk('prev', { target = 'all' })
     end
 end, { desc = 'Code change: Previous hunk' })
 
