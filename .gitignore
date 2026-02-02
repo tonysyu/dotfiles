@@ -5,3 +5,4 @@ config/nvim/syntax/enaml.vim
 config/nvim/undo
 .DS_STORE
 .aider*
+.claude/settings.local.json
