@@ -14,7 +14,7 @@ vim.api.nvim_create_autocmd('BufLeave', {
 -- See `:help vim.highlight.on_yank()`
 vim.api.nvim_create_autocmd('TextYankPost', {
     callback = function()
-        vim.highlight.on_yank()
+        vim.hl.on_yank()
     end,
     group = default_augroup,
     pattern = '*',
