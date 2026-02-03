@@ -14,21 +14,76 @@ require('fidget').setup()
 require("symbols-outline").setup()
 require("neodev").setup() -- IMPORTANT: must setup neodev BEFORE lspconfig
 
-vim.lsp.config['lua_ls'] = {
-    settings = {
-        Lua = {
-            -- Avoid 'global vim is undefined' errors when editing neovim config files.
-            -- See https://github.com/neovim/neovim/issues/21686#issuecomment-1522446128
-            diagnostics = {
-                globals = { 'vim' }
-            },
-        }
-    }
-}
-
 -- Configure Mason
 mason.setup()
-mason_lspconfig.setup()
+
+-- Set up LSP capabilities for completion
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities = cmp_nvim_lsp.default_capabilities(capabilities)
+
+-- Configure Mason-lspconfig with automatic server setup
+mason_lspconfig.setup({
+    handlers = {
+        -- Default handler for all servers
+        function(server_name)
+            lspconfig[server_name].setup({
+                capabilities = capabilities,
+            })
+        end,
+
+        -- Special configuration for specific servers
+
+        ["lua_ls"] = function()
+            lspconfig.lua_ls.setup({
+                capabilities = capabilities,
+                settings = {
+                    Lua = {
+                        diagnostics = {
+                            globals = { 'vim' }
+                        },
+                    }
+                }
+            })
+        end,
+
+        ["kotlin_language_server"] = function()
+            lspconfig.kotlin_language_server.setup({
+                capabilities = capabilities,
+                -- Ensure proper root directory detection for Kotlin projects
+                root_dir = lspconfig.util.root_pattern("settings.gradle", "settings.gradle.kts", "build.gradle",
+                    "build.gradle.kts", "pom.xml"),
+                handlers = {
+                    -- Disable document highlight to fix: kotlin_language_server: -32602: Internal error.
+                    ["textDocument/documentHighlight"] = function() end,
+                },
+                init_options = {
+                    -- Automatically refresh when build files change
+                    storagePath = vim.fn.stdpath("data") .. "/kotlin-language-server",
+                },
+                settings = {
+                    kotlin = {
+                        -- Enable code completion from external sources
+                        completion = {
+                            snippets = {
+                                enabled = true
+                            }
+                        },
+                        -- Increase indexing for generated sources
+                        indexing = {
+                            enabled = true
+                        },
+                        -- Configure compiler settings to match your build
+                        compiler = {
+                            jvm = {
+                                target = "17" -- Adjust to your JVM target version
+                            }
+                        }
+                    }
+                }
+            })
+        end,
+    }
+})
 
 -- require("java").setup({})
 --
