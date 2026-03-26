@@ -1,5 +1,10 @@
 {
+  "statusLine": {
+    "type": "command",
+    "command": "bash /Users/tonyyu/.claude/statusline-command.sh"
+  },
   "permissions": {
+    "defaultMode": "plan",
     "allow": [
       "Bash(echo:*)",
       "Bash(find:*)",

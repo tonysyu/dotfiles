@@ -1,5 +1,11 @@
 #!/bin/sh
 
+# Colors
+normal=$'\033[0m'
+blue=$'\033[34m'
+red=$'\033[35m'
+yellow=$'\033[33m'
+
 # Read JSON input from stdin
 input=$(cat)
 
@@ -8,7 +14,7 @@ model=$(echo "$input" | jq -r '.model.display_name // "Unknown" | gsub(" \\(.*";
 
 # Extract context usage format as percentage (e.g. ~12%)
 percent_used=$(echo "$input" | jq -r '.context_window.used_percentage // 0')
-percent_used=$(printf "~%.0f%%" "$percent_used")
+percent_used=$(printf "${red}~%.0f%%${normal}" "$percent_used")
 
 # Extract context size and format as K (e.g., 200000 -> 200K)
 context_size=$(echo "$input" | jq -r '.context_window.context_window_size // 0')
@@ -20,7 +26,7 @@ cost=$(printf "\$%.2f" "$cost")
 
 # Get current directory
 cwd=$(echo "$input" | jq -r '.workspace.current_dir // .cwd // ""')
-dir=$(basename "$cwd")
+dir="${blue}$(basename "$cwd")${normal}"
 
 # Build git branch info (skip optional locks)
 branch=""
@@ -29,7 +35,7 @@ if [ -n "$cwd" ] && [ -d "$cwd/.git" ] || git -C "$cwd" rev-parse --git-dir > /d
 fi
 # Append branch to directory, if found
 if [ -n "$branch" ]; then
-  dir="${dir} (${branch})"
+  dir="${dir} (${yellow}${branch}${normal})"
 fi
 
 # Display: "Opus 4.5 | ~21% of 200K | my-project (main) | $0.12"
