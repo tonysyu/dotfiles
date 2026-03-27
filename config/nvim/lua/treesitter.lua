@@ -1,3 +1,13 @@
+local parser_config = require('nvim-treesitter.parsers').get_parser_configs()
+parser_config.vhs = {
+    install_info = {
+        url = "https://github.com/charmbracelet/tree-sitter-vhs",
+        files = { "src/parser.c" },
+        branch = "main",
+    },
+    filetype = "tape",
+}
+
 local configs = require('nvim-treesitter.configs')
 
 configs.setup {
@@ -30,6 +40,7 @@ configs.setup {
         "typescript",
         "vim",
         "vimdoc",
+        "vhs",
         "yaml",
     },
     highlight = {
