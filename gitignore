@@ -10,6 +10,7 @@
 .netrwhist
 tags
 .ropeproject
+kls_database.db
 
 # Python related
 *.prof
