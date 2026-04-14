@@ -74,21 +74,13 @@ require("lazy").setup({
     }
   },
 
-  -- Treesitter (Highlight, edit, and navigate code)
+  -- Treesitter (Neovim 0.12 has built-in highlight/indent; these plugins add extras)
   -- ..........................................................................
   {
-    'nvim-treesitter/nvim-treesitter',
+    'nvim-treesitter/nvim-treesitter-textobjects',
     branch = "main",
-    build = ":TSUpdate",
-    dependencies = {
-      -- Adds :TSPlaygroundToggle to view Treesitter
-      'nvim-treesitter/playground',
-      -- Additional text objects via treesitter
-      'nvim-treesitter/nvim-treesitter-textobjects',
-      -- Display code context
-      'nvim-treesitter/nvim-treesitter-context'
-    }
   },
+  'nvim-treesitter/nvim-treesitter-context',
 
   -- Language-specific plugins
   -- ..........................................................................
@@ -111,7 +103,7 @@ require("lazy").setup({
   },
   {
     'MeanderingProgrammer/render-markdown.nvim',
-    dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.nvim' },
+    dependencies = { 'echasnovski/mini.nvim' },
     opts = {},
   },
 
