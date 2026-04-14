@@ -78,9 +78,8 @@ require("lazy").setup({
   -- ..........................................................................
   {
     'nvim-treesitter/nvim-treesitter',
-    build = function()
-      pcall(require('nvim-treesitter.install').update { with_sync = true })
-    end,
+    branch = "main",
+    build = ":TSUpdate",
     dependencies = {
       -- Adds :TSPlaygroundToggle to view Treesitter
       'nvim-treesitter/playground',
