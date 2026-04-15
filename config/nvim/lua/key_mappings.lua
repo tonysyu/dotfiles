@@ -188,6 +188,8 @@ vim.keymap.set('n', '<leader>vs', ':SymbolsOutline<cr>', { desc = 'View/toggle s
 vim.keymap.set('n', '<leader>vf', ':Neotree toggle reveal<cr>',
     { desc = 'View/toggle nvim-tree filesystem explorer', silent = true })
 vim.keymap.set('n', '<leader>vt', ':TodoTelescope<CR>', { desc = 'View Todo list in telescope', silent = true })
+-- Terminal
+vim.keymap.set({ 't' }, '<c-\\><c-\\>', '<c-\\><c-n>', { desc = 'Escape Terminal Mode', silent = true })
 -- Diagnostics (errors, warnings)
 vim.keymap.set('n', '<leader>vD', function() snacks.picker.diagnostics_buffer() end,
     { desc = 'View/toggle diagnostics for buffer', silent = true })

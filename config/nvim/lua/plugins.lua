@@ -227,6 +227,18 @@ require("lazy").setup({
     }
   },
 
+  -- AI coding assistant
+  -- ..........................................................................
+  {
+    "olimorris/codecompanion.nvim",
+    version = "^19.0.0",
+    lazy = true,
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "agentclientprotocol/claude-agent-acp",
+    },
+  },
+
   -- Fuzzy Finder Algorithm which requires local dependencies to be built.
   -- Only load if `make` is available
   {
