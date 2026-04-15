@@ -1,10 +1,5 @@
 {
-  "statusLine": {
-    "type": "command",
-    "command": "bash /Users/tonyyu/.claude/statusline-command.sh"
-  },
   "permissions": {
-    "defaultMode": "plan",
     "allow": [
       "Bash(echo:*)",
       "Bash(find:*)",
@@ -24,7 +19,8 @@
       "WebFetch(domain:docs.anthropic.com)"
     ],
     "deny": [],
-    "ask": []
+    "ask": [],
+    "defaultMode": "plan"
   },
   "hooks": {
     "Stop": [
@@ -38,7 +34,12 @@
       }
     ]
   },
+  "statusLine": {
+    "type": "command",
+    "command": "bash /Users/tonyyu/.claude/statusline-command.sh"
+  },
   "enabledPlugins": {
-    "code-simplifier@claude-plugins-official": true
+    "code-simplifier@claude-plugins-official": true,
+    "lua-lsp@claude-plugins-official": true
   }
 }
