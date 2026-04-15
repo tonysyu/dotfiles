@@ -5,6 +5,7 @@ require('tools')
 require('key_mappings')
 require('lsp')
 require('treesitter')
+require('custom_commands')
 
 -- Old vimscript files not-yet converted to lua
 local function source_vimscript(path)
