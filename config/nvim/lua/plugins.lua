@@ -24,10 +24,9 @@ require("lazy").setup({
   -- LSP Configuration (see vim/lua/lsp.lua)
   -- ..........................................................................
   {
-    'neovim/nvim-lspconfig',
+    'williamboman/mason.nvim',
     dependencies = {
       -- Automatically install LSPs to stdpath for neovim
-      'williamboman/mason.nvim',
       'williamboman/mason-lspconfig.nvim',
 
       -- Useful status updates for LSP
@@ -35,7 +34,6 @@ require("lazy").setup({
     },
   },
 
-  'folke/neodev.nvim',             -- Additional lua configuration, makes nvim stuff amazing
   'simrat39/symbols-outline.nvim', -- Side pane LSP symbols
 
   -- Java LSP support
@@ -89,7 +87,7 @@ require("lazy").setup({
   'elixir-editors/vim-elixir',
   {
     'linux-cultist/venv-selector.nvim',
-    dependencies = { 'neovim/nvim-lspconfig', 'nvim-telescope/telescope.nvim' },
+    dependencies = { 'nvim-telescope/telescope.nvim' },
     opts = {},          -- required to setup plugin
     event = 'VeryLazy', -- Optional: needed only if you want to type `:VenvSelect` without a keymapping
   },
