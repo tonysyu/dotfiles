@@ -89,7 +89,7 @@ vim.keymap.set('n', '<space>f', vim.lsp.buf.format, { desc = 'Reformat' })
 -- Copied from https://www.reddit.com/r/neovim/comments/101e5lb/using_delta_in_telescope_git_status/
 local git_diff_previewer = telescope_previewers.new_termopen_previewer({
     get_command = function(entry)
-        if entry.status == '??' or 'A ' then
+        if entry.status == '??' or entry.status == 'A ' then
             return { 'git', 'diff', entry.value }
         end
 
@@ -225,7 +225,6 @@ vim.keymap.set('n', '<leader>vv', function() snacks.dashboard.open() end, { desc
 vim.keymap.set('n', '<leader>ev', function() telescope_builtin.find_files({ search_dirs = { "~/.config/nvim/" } }) end,
     { desc = 'Find vim configuration file' })
 vim.keymap.set('n', '<leader>sv', ':so $MYVIMRC<CR>', { desc = 'Reload (source) the vim settings' })
-vim.keymap.set('n', '<leader>eb', ':e ~/.config/nvim/init/bundles.vim<CR>', { desc = 'Quickly edit vim bundles file' })
 
 -- ============================================================================
 -- Changes to default behavior (no descriptions, since these aren't commands)

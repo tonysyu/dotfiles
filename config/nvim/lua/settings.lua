@@ -69,7 +69,8 @@ opt.relativenumber = true
 
 -- Editor completion (a.k.a. Insert mode completion)
 -- ............................................................................
-opt.completeopt = 'menuone,noselect' -- pretty completion experience
+-- See config/nvim/lua/lsp.lua
+-- opt.completeopt = 'menuone,noselect' -- pretty completion experience
 
 -- Wildmenu (Ex-mode completion)
 -- ............................................................................
@@ -135,7 +136,7 @@ opt.wildignore = {
 -- Folding (with Treesitter)
 -- ............................................................................
 opt.foldmethod = 'expr'
-opt.foldexpr = 'nvim_treesitter#foldexpr()'
+opt.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
 opt.foldlevel = 99
 
 -- Diff

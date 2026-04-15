@@ -232,7 +232,6 @@ require("lazy").setup({
   {
     "olimorris/codecompanion.nvim",
     version = "^19.0.0",
-    lazy = true,
     dependencies = {
       "nvim-lua/plenary.nvim",
       "agentclientprotocol/claude-agent-acp",
