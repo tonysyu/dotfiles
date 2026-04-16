@@ -46,3 +46,8 @@ end, { desc = "AI: Prompt the CLI agent" })
 vim.keymap.set({ "n", "v" }, "<leader>cca", function()
   return require("codecompanion").cli("#{this}")
 end, { desc = "AI: Add context to the CLI agent" })
+
+-- Escape CodeCompanionCLI and focus on main buffer
+-- NOTE: This assumes main buffer is to the left
+vim.keymap.set({ 't' }, '<C-\\><C-\\>', '<C-\\><C-n><C-w>h',
+  { desc = 'Escape CodeCompanionCLI and focus on other left buffer', silent = true })
