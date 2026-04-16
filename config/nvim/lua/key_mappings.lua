@@ -149,9 +149,13 @@ vim.keymap.set('n', '<leader>bd', function() snacks.bufdelete() end, { desc = 'D
 -- Split buffer navigation
 -- ............................................................................
 vim.keymap.set('n', '<C-j>', '<C-w>j', { desc = 'Switch to buffer/pane below' })
+vim.keymap.set('t', '<C-j>', '<C-\\><C-n><C-w>j', { desc = 'Switch to buffer/pane below' })
 vim.keymap.set('n', '<C-k>', '<C-w>k', { desc = 'Switch to buffer/pane above ' })
+vim.keymap.set('t', '<C-k>', '<C-\\><C-n><C-w>k', { desc = 'Switch to buffer/pane above ' })
 vim.keymap.set('n', '<C-h>', '<C-w>h', { desc = 'Switch to buffer/pane on left' })
+vim.keymap.set('t', '<C-h>', '<C-\\><C-n><C-w>h', { desc = 'Switch to buffer/pane on left' })
 vim.keymap.set('n', '<C-l>', '<C-w>l', { desc = 'Switch to buffer/pane on right' })
+vim.keymap.set('t', '<C-l>', '<C-\\><C-n><C-w>l', { desc = 'Switch to buffer/pane on right' })
 
 -- Split buffer resizing
 -- ............................................................................
