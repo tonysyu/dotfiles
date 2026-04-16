@@ -4,7 +4,11 @@ local default_augroup = vim.api.nvim_create_augroup('GeneralEditingAuGroup', { c
 -- Auto-save when leaving
 -- ..........................................................................
 vim.api.nvim_create_autocmd('BufLeave', {
-    command = 'wall',
+    callback = function()
+        if vim.bo.modified and vim.bo.buftype == '' and vim.api.nvim_buf_get_name(0) ~= '' then
+            vim.cmd('silent! update')
+        end
+    end,
     group = default_augroup,
     pattern = '*',
 })

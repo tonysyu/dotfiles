@@ -2,7 +2,7 @@
 
 -- Install lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-if not vim.loop.fs_stat(lazypath) then
+if not vim.uv.fs_stat(lazypath) then
   vim.fn.system({
     "git",
     "clone",
@@ -34,7 +34,7 @@ require("lazy").setup({
     },
   },
 
-  'simrat39/symbols-outline.nvim', -- Side pane LSP symbols
+  { 'hedyhli/outline.nvim', opts = {} }, -- Side pane LSP symbols
 
   -- Java LSP support
   -- Currently this hangs on the require('java') in lua/lsp.lua
@@ -150,7 +150,6 @@ require("lazy").setup({
   -- ..........................................................................
   'junegunn/vim-peekaboo',        -- Display the content of registers
   'kshenoy/vim-signature',        -- Display marks in the gutter
-  'kyazdani42/nvim-web-devicons', -- Icons for languages, files, directories, etc.
   'nvim-lualine/lualine.nvim',    -- Fancier statusline
 
   -- Colorschemes/themes
@@ -203,8 +202,7 @@ require("lazy").setup({
 
   -- Editor configuration
   -- ..........................................................................
-  'editorconfig/editorconfig-vim', -- Autodetect https://editorconfig.org/ files
-  'tpope/vim-sleuth',              -- Detect tabstop and shiftwidth automatically
+  'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
 
   -- General editing (see vim/after/plugin/general-editing.lua)
   -- ..........................................................................

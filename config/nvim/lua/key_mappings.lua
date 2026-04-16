@@ -184,7 +184,7 @@ vim.keymap.set('n', '<space>.', ':lua MiniFiles.open(vim.api.nvim_buf_get_name(0
 
 -- View helper windows
 -- ............................................................................
-vim.keymap.set('n', '<leader>vs', ':SymbolsOutline<cr>', { desc = 'View/toggle symbols', silent = true })
+vim.keymap.set('n', '<leader>vs', ':Outline<cr>', { desc = 'View/toggle symbols', silent = true })
 vim.keymap.set('n', '<leader>vf', ':Neotree toggle reveal<cr>',
     { desc = 'View/toggle nvim-tree filesystem explorer', silent = true })
 vim.keymap.set('n', '<leader>vt', ':TodoTelescope<CR>', { desc = 'View Todo list in telescope', silent = true })
