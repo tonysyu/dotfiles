@@ -63,15 +63,8 @@ vim.lsp.config['kotlin_language_server'] = {
     }
 }
 
--- Enable all Mason-installed servers
-mason_lspconfig.setup({
-    handlers = {
-        -- Default handler: enable each installed server
-        function(server_name)
-            vim.lsp.enable(server_name)
-        end,
-    }
-})
+-- Enable all Mason-installed servers (automatic_enable = true by default in v2)
+mason_lspconfig.setup()
 
 
 -- Configure completion

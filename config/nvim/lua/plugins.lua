@@ -29,6 +29,10 @@ require("lazy").setup({
       -- Automatically install LSPs to stdpath for neovim
       'williamboman/mason-lspconfig.nvim',
 
+      -- Provides default LSP server configs (cmd, filetypes, root_markers)
+      -- Required by mason-lspconfig v2
+      'neovim/nvim-lspconfig',
+
       -- Useful status updates for LSP
       'j-hui/fidget.nvim',
     },
