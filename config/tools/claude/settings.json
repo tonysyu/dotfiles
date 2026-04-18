@@ -14,8 +14,6 @@
       "Bash(npm test:*)",
       "Bash(npx eslint:*)",
       "Bash(npx tsc:*)",
-      "mcp__gitlab__get_file_contents",
-      "mcp__ifl__listIFLComponents",
       "WebFetch(domain:docs.anthropic.com)"
     ],
     "deny": [],
