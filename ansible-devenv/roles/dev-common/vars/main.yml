@@ -28,6 +28,7 @@ homebrew_packages:
 - tectonic
 - tldr
 - tree
+- tree-sitter-cli
 - wget
 - yazi
 - zoxide

@@ -76,13 +76,17 @@ require("lazy").setup({
     }
   },
 
-  -- Treesitter (Neovim 0.12 has built-in highlight/indent; these plugins add extras)
+  -- Treesitter (parser installation + extras for Neovim 0.12+)
   -- ..........................................................................
   {
-    'nvim-treesitter/nvim-treesitter-textobjects',
-    branch = "main",
+    'nvim-treesitter/nvim-treesitter',
+    branch = 'main',
+    build = ':TSUpdate',
+    dependencies = {
+      { 'nvim-treesitter/nvim-treesitter-textobjects', branch = 'main' },
+      'nvim-treesitter/nvim-treesitter-context',
+    },
   },
-  'nvim-treesitter/nvim-treesitter-context',
 
   -- Language-specific plugins
   -- ..........................................................................
