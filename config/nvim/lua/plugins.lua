@@ -72,7 +72,7 @@ require("lazy").setup({
       },
     },
     dependencies = {
-      'echasnovski/mini.icons',
+      'nvim-mini/mini.icons',
     }
   },
 
@@ -105,7 +105,7 @@ require("lazy").setup({
   },
   {
     'MeanderingProgrammer/render-markdown.nvim',
-    dependencies = { 'echasnovski/mini.nvim' },
+    dependencies = { 'nvim-mini/mini.nvim' },
     opts = {},
   },
 
@@ -210,7 +210,7 @@ require("lazy").setup({
 
   -- General editing (see vim/after/plugin/general-editing.lua)
   -- ..........................................................................
-  { 'echasnovski/mini.nvim', version = '*' },
+  { 'nvim-mini/mini.nvim', version = '*' },
   'tpope/vim-repeat',
 
   -- Fuzzy Finder (files, lsp, etc)
