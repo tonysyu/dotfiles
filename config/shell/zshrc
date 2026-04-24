@@ -86,6 +86,9 @@ alias gg='lazygit'
 # Miscellaneous tools
 # --------------------------------------------------------------------------------------
 
+# Initialize git tools
+source $(dirname -- $0)/../../git/tools.sh
+
 # Initialize vim tools
 source $(dirname -- $0)/../nvim/init.zsh
 
