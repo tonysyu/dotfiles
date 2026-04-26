@@ -1,0 +1,58 @@
+matches:
+- label: Eval and feedback
+  replace: '### [[Eval and Feedback - 2026-H1]]
+
+
+    #### Strengths
+
+
+    #### Areas for improvement
+
+
+    #### Feedback request notes'
+  trigger: qfeedback;;
+- label: Weekly note template
+  replace: "Related: [[15five]], [[Weekly Notes]]\n\n---\n\n[Current 15five](https://indeed.15five.com/report/current/)\n\
+    \n## Daily notes\n- \n\n## 15five\n"
+  trigger: week-note;;
+- label: Meeting template
+  replace: '### Meeting: {snippet:date;;}
+
+    - Related:
+
+    - Attendees:
+
+    - Tasks:
+
+    - Notes:'
+  trigger: meet;;
+- label: Quote
+  replace: '> [!quote]
+
+    > '
+  trigger: quote;;
+- label: Aliases
+  replace: '---
+
+    aliases: []
+
+    ---'
+  trigger: aliases;;
+- label: Project template
+  replace: "Related: [[Projects]]\n\n---\n\n## Summary\n\n## Milestones\n- \n\n##\
+    \ References\n- \n\n## Notes\n- "
+  trigger: proj;;
+- label: Today's one-on-one
+  replace: '### {snippet:date;;}
+
+    - Tasks:
+
+    - Notes:'
+  trigger: 1on1;;
+- label: Next one-on-one
+  replace: '### Next
+
+    - Tasks:
+
+    - Notes:'
+  trigger: next;;

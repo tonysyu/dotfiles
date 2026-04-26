@@ -1,0 +1,187 @@
+matches:
+- label: 'No: ❌'
+  replace: ❌
+  trigger: x;;
+- label: 'Target: 🎯'
+  replace: 🎯
+  trigger: target;;
+- label: Option Key
+  replace: ⌥
+  trigger: opt;;
+- label: 'Up Fat Arrow: ⬆'
+  replace: ⬆
+  trigger: Up;;
+- label: 'Down Arrow: ↓'
+  replace: ↓
+  trigger: down;;
+- label: 'Pin: 📌'
+  replace: 📌
+  trigger: pin;;
+- label: ToDo
+  replace: '📌TODO: '
+  trigger: todo;;
+- label: 'Winner: 🏅'
+  replace: 🏅
+  trigger: winner;;
+- label: 'Con: 💩'
+  replace: 💩
+  trigger: con;;
+- label: 'No: 🚫'
+  replace: 🚫
+  trigger: no;;
+- label: 'WIP: 🚧'
+  replace: 🚧
+  trigger: wip;;
+- label: '!'
+  replace: ❗
+  trigger: '!;;'
+- label: 'Ok: 👌'
+  replace: 👌
+  trigger: ok;;
+- label: 'Blocked: ⛔'
+  replace: ⛔
+  trigger: blocked;;
+- label: '?'
+  replace: ❓
+  trigger: ?;;
+- label: 'Down Fat Arrow: ⬇'
+  replace: ⬇
+  trigger: Down;;
+- label: 'See this: 👉'
+  replace: 👉
+  trigger: this;;
+- label: time
+  replace: '{time:short}'
+  trigger: time;;
+- label: 'Label: 🏷'
+  replace: 🏷
+  trigger: label;;
+- label: Interrobang
+  replace: ⁉️
+  trigger: ?!;;
+- label: Command key
+  replace: '⌘ '
+  trigger: cmd;;
+- label: 'Done: ✅'
+  replace: ✅
+  trigger: done;;
+- label: 'Files: Branch'
+  replace: ├
+  trigger: '|-;;'
+- label: 'Thought: 💭'
+  replace: 💭
+  trigger: thought;;
+- label: 'Pro: ⭐'
+  replace: ⭐
+  trigger: pro;;
+- label: 'Idea: 💡'
+  replace: 💡
+  trigger: idea;;
+- label: 'Risk: ⚠️'
+  replace: ⚠️
+  trigger: risk;;
+- label: 'Maybe: 🤔'
+  replace: 🤔
+  trigger: maybe;;
+- label: 'Left Fat Arrow: ⬅'
+  replace: ⬅
+  trigger: Left;;
+- label: 'Right Arrow: →'
+  replace: →
+  trigger: right;;
+- label: 'Up Arrow: ↑'
+  replace: ↑
+  trigger: up;;
+- label: Question mark
+  replace: ❓
+  trigger: question;;
+- label: 'Good: 👍'
+  replace: 👍
+  trigger: +;;
+- label: 'Hot Topic: 🌶'
+  replace: 🌶
+  trigger: hot;;
+- label: 'Key: 🔑'
+  replace: 🔑
+  trigger: key;;
+- label: 'Yes: ✅'
+  replace: ✅
+  trigger: yes;;
+- label: 'Files: Final branch'
+  replace: └
+  trigger: '|_;;'
+- label: 'Note: 👉'
+  replace: 👉
+  trigger: note;;
+- label: Pro/con
+  replace: 🌦
+  trigger: procon;;
+- label: 'Goal: ⛳'
+  replace: ⛳
+  trigger: goal;;
+- label: 'Left Arrow: ←'
+  replace: ←
+  trigger: <;;
+- label: Star
+  replace: ⭐
+  trigger: star;;
+- label: 'Alert: 🚨'
+  replace: 🚨
+  trigger: alert;;
+- label: 'User Group: 👥'
+  replace: 👥
+  trigger: user-group;;
+- label: 'Files: Horizontal Bar'
+  replace: ─
+  trigger: --;;
+- label: 'Option/Choice: ⚖️'
+  replace: ⚖️
+  trigger: choice;;
+- label: 'Tag: 🏷'
+  replace: 🏷
+  trigger: tag;;
+- label: Control Key
+  replace: ⌃
+  trigger: ctrl;;
+- label: Interrobang
+  replace: ⁉️
+  trigger: '!?;;'
+- label: Date
+  replace: '{date:short}'
+  trigger: date;;
+- label: 'Left Arrow: ←'
+  replace: ←
+  trigger: left;;
+- label: 'Maybe: 🤔'
+  replace: 🤔
+  trigger: ~;;
+- label: 'Files: Vertical Bar'
+  replace: │
+  trigger: '|;;'
+- label: Shift Key
+  replace: ⇧
+  trigger: shift;;
+- label: 'Right Arrow: →'
+  replace: →
+  trigger: '>;;'
+- label: 'Chat bubble: 💬'
+  replace: 💬
+  trigger: chat;;
+- label: 'Bad: 👎'
+  replace: 👎
+  trigger: -;;
+- label: 'Right Fat Arrow: ➡'
+  replace: ➡
+  trigger: Right;;
+- label: 'Warning: ⚠️'
+  replace: ⚠️
+  trigger: warn;;
+- label: 'User: 👤'
+  replace: 👤
+  trigger: user;;
+- label: Con
+  replace: 🚨
+  trigger: con2;;
+- label: 'Tab: 🔖'
+  replace: 🔖
+  trigger: tab;;

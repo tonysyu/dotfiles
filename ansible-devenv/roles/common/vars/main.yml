@@ -1,4 +1,11 @@
+homebrew_packages:
+- espanso
+
 homebrew_cask_apps:
 - alfred
 - dropbox
 - rectangle
+
+link_configs:
+- src: "~/dotfiles/config/tools/espanso"
+  dest: "~/Library/Application Support/espanso"

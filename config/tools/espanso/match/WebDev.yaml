@@ -1,0 +1,8 @@
+matches:
+- label: Text fragment deep link
+  replace: '#:~:text='
+  trigger: text;;;;
+- label: console debug log
+  replace: 'console.log(''%c----- Debug Log -----'', ''font-size: 18px; color: red;
+    text-align: center;'');'
+  trigger: ;;
