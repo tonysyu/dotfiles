@@ -19,9 +19,9 @@ homebrew_packages:
 - mdcat
 - nvm
 - protolint
-- python@3.11
 - python@3.12
 - python@3.13
+- python@3.14
 - ripgrep
 - sd
 - semgrep
