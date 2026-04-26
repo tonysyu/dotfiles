@@ -146,9 +146,14 @@ matches:
 - label: Interrobang
   replace: ⁉️
   trigger: '!?;;'
-- label: Date
-  replace: '{date:short}'
-  trigger: date;;
+- label: Today's Date
+  replace: '{{shortdate}}'
+  trigger: today;;
+  vars:
+    - name: shortdate
+      type: date
+      params:
+        format: "%Y-%m-%d"
 - label: 'Left Arrow: ←'
   replace: ←
   trigger: left;;

@@ -1,27 +1,18 @@
 matches:
+
 - label: zoom link
   replace: https://link.indeed.tech/tonyyu
   trigger: zoom;;
-- label: Acceptance Criteria (Jira)
-  replace: '*Acceptance Criteria*:
 
-    - '
-  trigger: ac;;
 - label: go.indeed.com link
   replace: https://link.indeed.tech/
   trigger: go;;
-- label: Verified in prod
-  replace: '*Verified in prod*: Repeated verification steps done in QA (above) but
-    in prod environment'
-  trigger: vstage;;
-- label: Architecture Interview
-  replace: "Related: [[Architecture Interviews]]\n\n---\n\n- [Wiki: Architecture Signals](https://wiki.indeed.com/x/NJDPDQ)\n\
-    \n## Notes\n\n## Evaluation\n\nCandidate:\nInterview: Architecture\nQuestion:\n\
-    \n### Signals:\n- Quality of Solution:\n- Quality of Execution:\n- Collaboration\
-    \ / Communication:\n\n### Yellow flags: \n\n### Red flags: \n\n### Justification:\n\
-    \n### Details:\n\n#### Quality of Solution:\n\n#### Quality of Execution:\n\n\
-    #### Collaboration / Communication:"
-  trigger: archint;;
+
 - label: Imhotep time
-  replace: imhotep_unixtime('{date:short} 00:00:00')
   trigger: imtime;;
+  replace: IMHOTEP_UNIXTIME('{{shortdate}} 00:00:00')
+  vars:
+    - name: shortdate
+      type: date
+      params:
+        format: "%Y-%m-%d"
