@@ -24,7 +24,7 @@ type Group struct {
 	cfg  config.GroupConfig
 }
 
-func (g Group) Name() string             { return g.name }
+func (g Group) Name() string               { return g.name }
 func (g Group) Config() config.GroupConfig { return g.cfg }
 
 // Apply executes all operations defined in the group's config in a fixed order:
@@ -38,18 +38,11 @@ func (g Group) Config() config.GroupConfig { return g.cfg }
 func (g Group) Apply(opts Options) error {
 	cfg := g.cfg
 	name := g.name
+	id := func(s string) string { return s }
 
 	// Git submodules
-	if len(cfg.GitSubmodules) > 0 {
-		ops.PrintTask(name, "Update git submodules")
-		for _, repo := range cfg.GitSubmodules {
-			r, err := ops.GitUpdateSubmodules(repo)
-			if err != nil {
-				return ops.PrintTaskError(fmt.Errorf("[%s] git submodule update %s: %w", name, repo, err))
-			}
-			ops.PrintResult(r, repo)
-		}
-		fmt.Println()
+	if err := ops.RunItems(name, "Update git submodules", cfg.GitSubmodules, ops.GitUpdateSubmodules, id); err != nil {
+		return err
 	}
 
 	// Homebrew
@@ -60,34 +53,17 @@ func (g Group) Apply(opts Options) error {
 			fmt.Println()
 		}
 	} else {
-		if len(cfg.Homebrew.Taps) > 0 {
-			ops.PrintTask(name, "Add homebrew taps")
-			for _, tap := range cfg.Homebrew.Taps {
-				r, err := ops.BrewAddTap(tap)
-				if err != nil {
-					return ops.PrintTaskError(fmt.Errorf("[%s] brew tap %s: %w", name, tap, err))
-				}
-				ops.PrintResult(r, tap)
-			}
-			fmt.Println()
+		if err := ops.RunItems(name, "Add homebrew taps", cfg.Homebrew.Taps, ops.BrewAddTap, id); err != nil {
+			return err
 		}
-
-		if len(cfg.Homebrew.Packages) > 0 {
-			ops.PrintTask(name, "Install homebrew packages")
-			for _, pkg := range cfg.Homebrew.Packages {
-				r, err := ops.BrewInstallPkg(pkg)
-				if err != nil {
-					return ops.PrintTaskError(fmt.Errorf("[%s] brew install %s: %w", name, pkg, err))
-				}
-				ops.PrintResult(r, pkg)
-			}
-			fmt.Println()
+		if err := ops.RunItems(name, "Install homebrew packages", cfg.Homebrew.Packages, ops.BrewInstallPkg, id); err != nil {
+			return err
 		}
-
 		if len(cfg.Homebrew.Casks) > 0 {
 			ops.PrintTask(name, "Install homebrew cask apps")
 			if opts.SkipCasks {
 				ops.PrintResult(ops.ResultSkipped, "")
+				fmt.Println()
 			} else {
 				for _, cask := range cfg.Homebrew.Casks {
 					r, err := ops.BrewInstallCaskApp(cask)
@@ -96,83 +72,55 @@ func (g Group) Apply(opts Options) error {
 					}
 					ops.PrintResult(r, cask)
 				}
+				fmt.Println()
 			}
-			fmt.Println()
 		}
 	}
 
 	// Directories
-	if len(cfg.Directories) > 0 {
-		ops.PrintTask(name, "Ensure directories exist")
-		for _, d := range cfg.Directories {
-			r, err := ops.EnsureDirectory(d)
-			if err != nil {
-				return ops.PrintTaskError(fmt.Errorf("[%s] mkdir %s: %w", name, d, err))
-			}
-			ops.PrintResult(r, d)
-		}
-		fmt.Println()
+	if err := ops.RunItems(name, "Ensure directories exist", cfg.Directories, ops.EnsureDirectory, id); err != nil {
+		return err
 	}
 
 	// Symlinks
-	if len(cfg.Symlinks) > 0 {
-		ops.PrintTask(name, "Link configs")
-		for _, s := range cfg.Symlinks {
-			r, err := ops.Symlink(s.Src, s.Dst)
-			if err != nil {
-				return ops.PrintTaskError(fmt.Errorf("[%s] symlink %s -> %s: %w", name, s.Dst, s.Src, err))
-			}
-			ops.PrintResult(r, fmt.Sprintf("{src: %s, dest: %s}", s.Src, s.Dst))
-		}
-		fmt.Println()
+	if err := ops.RunItems(name, "Link configs", cfg.Symlinks,
+		func(s config.SymlinkSpec) (ops.Result, error) { return ops.Symlink(s.Src, s.Dst) },
+		func(s config.SymlinkSpec) string { return fmt.Sprintf("{src: %s, dest: %s}", s.Src, s.Dst) },
+	); err != nil {
+		return err
 	}
 
 	// Shell sources
-	if len(cfg.ShellSources) > 0 {
-		ops.PrintTask(name, "Ensure shell sources")
-		for _, line := range cfg.ShellSources {
-			r, err := ops.LineInFile("~/.zshrc", line)
-			if err != nil {
-				return ops.PrintTaskError(fmt.Errorf("[%s] lineinfile ~/.zshrc %q: %w", name, line, err))
-			}
-			ops.PrintResult(r, line)
-		}
-		fmt.Println()
+	if err := ops.RunItems(name, "Ensure shell sources", cfg.ShellSources,
+		func(line string) (ops.Result, error) { return ops.LineInFile("~/.zshrc", line) }, id,
+	); err != nil {
+		return err
 	}
 
 	// Python venv
 	if v := cfg.PythonVenv; v != nil {
-		ops.PrintTask(name, "Create python venv")
-		r, err := ops.PythonCreateVenv(v.Root, v.Executable)
-		if err != nil {
-			return ops.PrintTaskError(fmt.Errorf("[%s] python venv %s: %w", name, v.Root, err))
+		if err := ops.RunOne(name, "Create python venv",
+			func() (ops.Result, error) { return ops.PythonCreateVenv(v.Root, v.Executable) }, v.Root,
+		); err != nil {
+			return err
 		}
-		ops.PrintResult(r, v.Root)
-		fmt.Println()
-
 		if len(v.Packages) > 0 {
-			ops.PrintTask(name, "Install pip packages")
-			r, err := ops.PipInstall(v.Root, v.Packages)
-			if err != nil {
-				return ops.PrintTaskError(fmt.Errorf("[%s] pip install: %w", name, err))
+			if err := ops.RunOne(name, "Install pip packages",
+				func() (ops.Result, error) { return ops.PipInstall(v.Root, v.Packages) }, "",
+			); err != nil {
+				return err
 			}
-			ops.PrintResult(r, "")
-			fmt.Println()
 		}
 	}
 
 	// npm
 	if n := cfg.Npm; n != nil && len(n.GlobalPackages) > 0 {
-		ops.PrintTask(name, "Install npm global packages")
 		installed := ops.NpmGlobalInstalled()
-		for _, pkg := range n.GlobalPackages {
-			r, err := ops.NpmInstallGlobalPkg(installed, pkg)
-			if err != nil {
-				return ops.PrintTaskError(fmt.Errorf("[%s] npm install -g %s: %w", name, pkg, err))
-			}
-			ops.PrintResult(r, pkg)
+		if err := ops.RunItems(name, "Install npm global packages", n.GlobalPackages,
+			func(pkg string) (ops.Result, error) { return ops.NpmInstallGlobalPkg(installed, pkg) }, id,
+		); err != nil {
+			return err
 		}
-		fmt.Println()
 	}
 
 	return nil

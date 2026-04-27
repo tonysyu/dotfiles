@@ -1,9 +1,8 @@
 homebrew:
-  packages:
-    - espanso
   casks:
     # - alfred
     - dropbox
+    - espanso
     - rectangle
 
 symlinks:

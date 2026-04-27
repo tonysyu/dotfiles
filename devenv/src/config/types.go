@@ -2,12 +2,12 @@ package config
 
 // GroupConfig is the schema for each devenv/setup/*.yml file.
 type GroupConfig struct {
-	Homebrew     HomebrewConfig  `yaml:"homebrew"`
-	Directories  []string        `yaml:"directories"`
-	Symlinks     []SymlinkSpec   `yaml:"symlinks"`
-	ShellSources []string        `yaml:"shell_sources"`
-	PythonVenv   *PythonVenv     `yaml:"python_venv,omitempty"`
-	Npm          *NpmConfig      `yaml:"npm,omitempty"`
+	Homebrew      HomebrewConfig `yaml:"homebrew"`
+	Directories   []string       `yaml:"directories"`
+	Symlinks      []SymlinkSpec  `yaml:"symlinks"`
+	ShellSources  []string       `yaml:"shell_sources"`
+	PythonVenv    *PythonVenv    `yaml:"python_venv,omitempty"`
+	Npm           *NpmConfig     `yaml:"npm,omitempty"`
 	GitSubmodules []string       `yaml:"git_submodules"`
 }
 
