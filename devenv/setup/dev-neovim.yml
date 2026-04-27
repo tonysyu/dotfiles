@@ -1,11 +1,8 @@
 homebrew:
-  taps:
-    - uptech/homebrew-oss
   packages:
     - luajit
     - neovim
     - tree-sitter
-    - uptech/oss/alt
   casks:
     - font-hack-nerd-font
     - font-inconsolata-nerd-font
@@ -13,7 +10,7 @@ homebrew:
 
 python_venv:
   root: ~/dotfiles/config/nvim/.venv
-  executable: python3.13
+  executable: "3.13"
   packages:
     - black
     - flake8
