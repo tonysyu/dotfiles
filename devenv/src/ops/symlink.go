@@ -7,24 +7,29 @@ import (
 )
 
 // Symlink force-creates a symlink at dst pointing to src.
-// Both paths have ~ expanded. Parent directories of dst are created as needed.
-func Symlink(src, dst string) error {
+// Returns OK if the symlink already points to src, Changed if it was (re)created.
+func Symlink(src, dst string) (Result, error) {
 	src = expandHome(src)
 	dst = expandHome(dst)
 
-	if err := os.MkdirAll(filepath.Dir(dst), 0o755); err != nil {
-		return fmt.Errorf("mkdir parent of %s: %w", dst, err)
+	// Already correct — nothing to do.
+	if existing, err := os.Readlink(dst); err == nil && existing == src {
+		return ResultOK, nil
 	}
 
-	// Remove existing file/symlink/dir at dst so we can force-create.
+	if err := os.MkdirAll(filepath.Dir(dst), 0o755); err != nil {
+		return ResultChanged, fmt.Errorf("mkdir parent of %s: %w", dst, err)
+	}
+
+	// Remove existing file/symlink/dir so we can force-create.
 	if _, err := os.Lstat(dst); err == nil {
 		if err := os.Remove(dst); err != nil {
-			return fmt.Errorf("remove existing %s: %w", dst, err)
+			return ResultChanged, fmt.Errorf("remove existing %s: %w", dst, err)
 		}
 	}
 
 	if err := os.Symlink(src, dst); err != nil {
-		return fmt.Errorf("symlink %s -> %s: %w", dst, src, err)
+		return ResultChanged, fmt.Errorf("symlink %s -> %s: %w", dst, src, err)
 	}
-	return nil
+	return ResultChanged, nil
 }

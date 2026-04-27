@@ -24,7 +24,7 @@ type Group struct {
 	cfg  config.GroupConfig
 }
 
-func (g Group) Name() string            { return g.name }
+func (g Group) Name() string             { return g.name }
 func (g Group) Config() config.GroupConfig { return g.cfg }
 
 // Apply executes all operations defined in the group's config in a fixed order:
@@ -37,56 +37,142 @@ func (g Group) Config() config.GroupConfig { return g.cfg }
 //  7. npm global installs
 func (g Group) Apply(opts Options) error {
 	cfg := g.cfg
+	name := g.name
 
-	for _, repo := range cfg.GitSubmodules {
-		if err := ops.GitUpdateSubmodules(repo); err != nil {
-			return err
-		}
-	}
-
-	if !opts.SkipBrew {
-		if err := ops.BrewTap(cfg.Homebrew.Taps); err != nil {
-			return err
-		}
-		if err := ops.BrewInstall(cfg.Homebrew.Packages); err != nil {
-			return err
-		}
-		if !opts.SkipCasks {
-			if err := ops.BrewInstallCask(cfg.Homebrew.Casks); err != nil {
-				return err
+	// Git submodules
+	if len(cfg.GitSubmodules) > 0 {
+		ops.PrintTask(name, "Update git submodules")
+		for _, repo := range cfg.GitSubmodules {
+			r, err := ops.GitUpdateSubmodules(repo)
+			if err != nil {
+				return ops.PrintTaskError(fmt.Errorf("[%s] git submodule update %s: %w", name, repo, err))
 			}
+			ops.PrintResult(r, repo)
+		}
+		fmt.Println()
+	}
+
+	// Homebrew
+	if opts.SkipBrew {
+		if len(cfg.Homebrew.Taps)+len(cfg.Homebrew.Packages)+len(cfg.Homebrew.Casks) > 0 {
+			ops.PrintTask(name, "Install homebrew packages")
+			ops.PrintResult(ops.ResultSkipped, "")
+			fmt.Println()
+		}
+	} else {
+		if len(cfg.Homebrew.Taps) > 0 {
+			ops.PrintTask(name, "Add homebrew taps")
+			for _, tap := range cfg.Homebrew.Taps {
+				r, err := ops.BrewAddTap(tap)
+				if err != nil {
+					return ops.PrintTaskError(fmt.Errorf("[%s] brew tap %s: %w", name, tap, err))
+				}
+				ops.PrintResult(r, tap)
+			}
+			fmt.Println()
+		}
+
+		if len(cfg.Homebrew.Packages) > 0 {
+			ops.PrintTask(name, "Install homebrew packages")
+			for _, pkg := range cfg.Homebrew.Packages {
+				r, err := ops.BrewInstallPkg(pkg)
+				if err != nil {
+					return ops.PrintTaskError(fmt.Errorf("[%s] brew install %s: %w", name, pkg, err))
+				}
+				ops.PrintResult(r, pkg)
+			}
+			fmt.Println()
+		}
+
+		if len(cfg.Homebrew.Casks) > 0 {
+			ops.PrintTask(name, "Install homebrew cask apps")
+			if opts.SkipCasks {
+				ops.PrintResult(ops.ResultSkipped, "")
+			} else {
+				for _, cask := range cfg.Homebrew.Casks {
+					r, err := ops.BrewInstallCaskApp(cask)
+					if err != nil {
+						return ops.PrintTaskError(fmt.Errorf("[%s] brew install --cask %s: %w", name, cask, err))
+					}
+					ops.PrintResult(r, cask)
+				}
+			}
+			fmt.Println()
 		}
 	}
 
-	if err := ops.EnsureDirectories(cfg.Directories); err != nil {
-		return err
-	}
-
-	for _, s := range cfg.Symlinks {
-		if err := ops.Symlink(s.Src, s.Dst); err != nil {
-			return err
+	// Directories
+	if len(cfg.Directories) > 0 {
+		ops.PrintTask(name, "Ensure directories exist")
+		for _, d := range cfg.Directories {
+			r, err := ops.EnsureDirectory(d)
+			if err != nil {
+				return ops.PrintTaskError(fmt.Errorf("[%s] mkdir %s: %w", name, d, err))
+			}
+			ops.PrintResult(r, d)
 		}
+		fmt.Println()
 	}
 
-	for _, line := range cfg.ShellSources {
-		if err := ops.LineInFile("~/.zshrc", line); err != nil {
-			return err
+	// Symlinks
+	if len(cfg.Symlinks) > 0 {
+		ops.PrintTask(name, "Link configs")
+		for _, s := range cfg.Symlinks {
+			r, err := ops.Symlink(s.Src, s.Dst)
+			if err != nil {
+				return ops.PrintTaskError(fmt.Errorf("[%s] symlink %s -> %s: %w", name, s.Dst, s.Src, err))
+			}
+			ops.PrintResult(r, fmt.Sprintf("{src: %s, dest: %s}", s.Src, s.Dst))
 		}
+		fmt.Println()
 	}
 
+	// Shell sources
+	if len(cfg.ShellSources) > 0 {
+		ops.PrintTask(name, "Ensure shell sources")
+		for _, line := range cfg.ShellSources {
+			r, err := ops.LineInFile("~/.zshrc", line)
+			if err != nil {
+				return ops.PrintTaskError(fmt.Errorf("[%s] lineinfile ~/.zshrc %q: %w", name, line, err))
+			}
+			ops.PrintResult(r, line)
+		}
+		fmt.Println()
+	}
+
+	// Python venv
 	if v := cfg.PythonVenv; v != nil {
-		if err := ops.PythonCreateVenv(v.Root, v.Executable); err != nil {
-			return err
+		ops.PrintTask(name, "Create python venv")
+		r, err := ops.PythonCreateVenv(v.Root, v.Executable)
+		if err != nil {
+			return ops.PrintTaskError(fmt.Errorf("[%s] python venv %s: %w", name, v.Root, err))
 		}
-		if err := ops.PipInstall(v.Root, v.Packages); err != nil {
-			return err
+		ops.PrintResult(r, v.Root)
+		fmt.Println()
+
+		if len(v.Packages) > 0 {
+			ops.PrintTask(name, "Install pip packages")
+			r, err := ops.PipInstall(v.Root, v.Packages)
+			if err != nil {
+				return ops.PrintTaskError(fmt.Errorf("[%s] pip install: %w", name, err))
+			}
+			ops.PrintResult(r, "")
+			fmt.Println()
 		}
 	}
 
-	if n := cfg.Npm; n != nil {
-		if err := ops.NpmInstallGlobal(n.GlobalPackages); err != nil {
-			return err
+	// npm
+	if n := cfg.Npm; n != nil && len(n.GlobalPackages) > 0 {
+		ops.PrintTask(name, "Install npm global packages")
+		installed := ops.NpmGlobalInstalled()
+		for _, pkg := range n.GlobalPackages {
+			r, err := ops.NpmInstallGlobalPkg(installed, pkg)
+			if err != nil {
+				return ops.PrintTaskError(fmt.Errorf("[%s] npm install -g %s: %w", name, pkg, err))
+			}
+			ops.PrintResult(r, pkg)
 		}
+		fmt.Println()
 	}
 
 	return nil
