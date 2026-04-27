@@ -1,0 +1,58 @@
+homebrew:
+  packages:
+    - bat
+    - btop
+    - bufbuild/buf/buf
+    - carapace
+    - comby
+    - eza
+    - fd
+    - fzf
+    - ghostscript
+    - git
+    - git-delta
+    - httpie
+    - imagemagick
+    - jj
+    - jq
+    - lazygit
+    - mermaid-cli
+    - mdcat
+    - nvm
+    - protolint
+    - python@3.12
+    - python@3.13
+    - python@3.14
+    - ripgrep
+    - sd
+    - semgrep
+    - tectonic
+    - tldr
+    - tree
+    - tree-sitter-cli
+    - wget
+    - yazi
+    - zoxide
+  casks: []
+
+directories:
+  - ~/.config
+  - ~/.config/btop
+  - ~/.config/lazygit
+  - ~/.claude
+
+symlinks:
+  - src: ~/dotfiles/config/tools/btop.conf
+    dst: ~/.config/btop/btop.conf
+  - src: ~/dotfiles/config/terminal/ghostty.config
+    dst: ~/Library/Application Support/com.mitchellh.ghostty/config
+  - src: ~/dotfiles/config/tools/lazygit_config.yml
+    dst: ~/Library/Application Support/lazygit/config.yml
+  - src: ~/dotfiles/config/tools/yazi
+    dst: ~/.config/yazi
+  - src: ~/dotfiles/config/tools/jj
+    dst: ~/.config/jj
+  - src: ~/dotfiles/config/tools/claude/settings.json
+    dst: ~/.claude/settings.json
+  - src: ~/dotfiles/config/tools/claude/statusline-command.sh
+    dst: ~/.claude/statusline-command.sh

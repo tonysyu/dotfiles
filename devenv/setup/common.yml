@@ -1,0 +1,11 @@
+homebrew:
+  packages:
+    - espanso
+  casks:
+    # - alfred
+    - dropbox
+    - rectangle
+
+symlinks:
+  - src: ~/dotfiles/config/tools/espanso
+    dst: ~/Library/Application Support/espanso

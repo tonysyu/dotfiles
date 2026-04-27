@@ -1,0 +1,31 @@
+homebrew:
+  taps:
+    - uptech/homebrew-oss
+  packages:
+    - luajit
+    - neovim
+    - tree-sitter
+    - uptech/oss/alt
+  casks:
+    - font-hack-nerd-font
+    - font-inconsolata-nerd-font
+    - font-meslo-lg-nerd-font
+
+python_venv:
+  root: ~/dotfiles/config/nvim/.venv
+  executable: python3.13
+  packages:
+    - black
+    - flake8
+    - pynvim
+
+npm:
+  global_packages:
+    - neovim
+    - eslint
+    - prettier
+    - remark-language-server
+
+symlinks:
+  - src: ~/dotfiles/config/nvim
+    dst: ~/.config/nvim

@@ -1,0 +1,21 @@
+homebrew:
+  packages:
+    - oh-my-posh
+  casks: []
+
+git_submodules:
+  - ~/dotfiles
+
+directories:
+  - ~/.config
+  - ~/.config/ohmyposh
+  - ~/.config/zinit
+
+symlinks:
+  - src: ~/dotfiles/config/terminal/ohmyposh.toml
+    dst: ~/.config/ohmyposh/ohmyposh.toml
+  - src: ~/dotfiles/zinit
+    dst: ~/.config/zinit/zinit.git
+
+shell_sources:
+  - "source ~/dotfiles/config/shell/zshrc"
