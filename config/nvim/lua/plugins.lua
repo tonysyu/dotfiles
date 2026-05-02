@@ -93,6 +93,7 @@ require("lazy").setup({
   'alvan/vim-closetag',
   'chrisbra/Colorizer',
   'elixir-editors/vim-elixir',
+  'sindrets/diffview.nvim',
   {
     'linux-cultist/venv-selector.nvim',
     dependencies = { 'nvim-telescope/telescope.nvim' },
