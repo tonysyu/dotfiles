@@ -1,0 +1,28 @@
+matches:
+- label: 'Files: Branch'
+  replace: ├
+  trigger: '|-;;'
+- label: 'Files: Final branch'
+  replace: └
+  trigger: '|_;;'
+- label: 'Files: Horizontal Bar'
+  replace: ─
+  trigger: --;;
+- label: 'Files: Vertical Bar'
+  replace: │
+  trigger: '|;;'
+- label: 'Keys: Command'
+  replace: '⌘ '
+  trigger: cmd;;
+- label: 'Keys: Control'
+  replace: ⌃
+  trigger: ctrl;;
+- label: 'Keys: Enter'
+  replace: ⏎
+  trigger: 'enter;;'
+- label: 'Keys: Option'
+  replace: ⌥
+  trigger: opt;;
+- label: 'Keys: Shift'
+  replace: ⇧
+  trigger: shift;;

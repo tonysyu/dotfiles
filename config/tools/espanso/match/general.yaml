@@ -5,9 +5,6 @@ matches:
 - label: 'Target: 🎯'
   replace: 🎯
   trigger: target;;
-- label: Option Key
-  replace: ⌥
-  trigger: opt;;
 - label: 'Up Fat Arrow: ⬆'
   replace: ⬆
   trigger: Up;;
@@ -59,15 +56,9 @@ matches:
 - label: Interrobang
   replace: ⁉️
   trigger: ?!;;
-- label: Command key
-  replace: '⌘ '
-  trigger: cmd;;
 - label: 'Done: ✅'
   replace: ✅
   trigger: done;;
-- label: 'Files: Branch'
-  replace: ├
-  trigger: '|-;;'
 - label: 'Thought: 💭'
   replace: 💭
   trigger: thought;;
@@ -107,9 +98,6 @@ matches:
 - label: 'Yes: ✅'
   replace: ✅
   trigger: yes;;
-- label: 'Files: Final branch'
-  replace: └
-  trigger: '|_;;'
 - label: 'Note: 👉'
   replace: 👉
   trigger: note;;
@@ -131,18 +119,12 @@ matches:
 - label: 'User Group: 👥'
   replace: 👥
   trigger: user-group;;
-- label: 'Files: Horizontal Bar'
-  replace: ─
-  trigger: --;;
 - label: 'Option/Choice: ⚖️'
   replace: ⚖️
   trigger: choice;;
 - label: 'Tag: 🏷'
   replace: 🏷
   trigger: tag;;
-- label: Control Key
-  replace: ⌃
-  trigger: ctrl;;
 - label: Interrobang
   replace: ⁉️
   trigger: '!?;;'
@@ -160,12 +142,6 @@ matches:
 - label: 'Maybe: 🤔'
   replace: 🤔
   trigger: ~;;
-- label: 'Files: Vertical Bar'
-  replace: │
-  trigger: '|;;'
-- label: Shift Key
-  replace: ⇧
-  trigger: shift;;
 - label: 'Right Arrow: →'
   replace: →
   trigger: '>;;'
