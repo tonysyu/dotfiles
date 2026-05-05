@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(~/.local/state/nvim/*)",
+      "Read(~/.cache/nvim/*)"
+    ]
+  }
+}
