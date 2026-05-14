@@ -22,3 +22,7 @@ matches:
     aliases: []
     ---
   trigger: aliases;;
+
+- label: 'Obsidian: Trim tailing whitespace'
+  replace: ':%s/\s+$//e'
+  trigger: obsidian-trim-whitespace;;
