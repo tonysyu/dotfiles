@@ -125,4 +125,5 @@ vim.cmd [[hi TreesitterContext guibg='black']]
 
 require('treesitter-context').setup {
     mode = 'topline',
+    max_lines = 10,
 }
