@@ -11,11 +11,3 @@ require('custom_commands')
 -- Use w/ delete line (dd) keymap defined in after/plugin/general-editing
 -- :Cfilter[!] /{pat}/
 vim.cmd('packadd cfilter')
-
--- Old vimscript files not-yet converted to lua
-local function source_vimscript(path)
-  vim.cmd('source ' .. path)
-end
-
-source_vimscript('~/.config/nvim/init/highlight.vim')
-source_vimscript('~/.config/nvim/init/search_and_nav.vim')
