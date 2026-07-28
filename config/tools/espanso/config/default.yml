@@ -50,3 +50,6 @@
 # max_regex_buffer_size: 30
 
 # For a list of all the available options, visit the official docs at: https://espanso.org/docs/
+
+# Override default ALT+SPACE, which blocks use of Non-breaking space
+search_shortcut: ALT+SHIFT+SPACE
