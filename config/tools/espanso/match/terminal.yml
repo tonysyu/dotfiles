@@ -1,0 +1,9 @@
+matches:
+- label: 'Git: exclude patterns'
+  replace: "-- ':!*__generated__*'"
+  triggers:
+      - 'gitexclude;;'
+      - 'gitex;;'
+- label: 'Print executable $PATH'
+  replace: "echo $PATH | tr : '\\n' | sort"
+  trigger: 'path;;'
