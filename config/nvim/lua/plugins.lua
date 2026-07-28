@@ -199,8 +199,15 @@ require("lazy").setup({
       -- Embedded terminal (replaces toggleterm.nvim)
       terminal = {
         enabled = true,
+        -- Show terminal id, so we can easily open specific terminals (e.g. 2<C-/>)
         win = {
           style = "float",
+          border = "rounded",
+          title_pos = "center",
+          on_buf = function(self)
+            local terminal = vim.b[self.buf].snacks_terminal
+            self:set_title(("Terminal %d"):format(terminal.id))
+          end,
         },
       },
       -- Render files before loading plugins
