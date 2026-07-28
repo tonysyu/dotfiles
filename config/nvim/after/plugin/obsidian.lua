@@ -19,6 +19,10 @@ require("obsidian").setup({
     },
 })
 
+-- ============================================================================
+-- Key mappings
+-- ============================================================================
+
 vim.keymap.set('n', '<space>oo', ':ObsidianQuickSwitch<CR>', { desc = 'Obsidian: Quick switch notes' })
 vim.keymap.set('n', '<space>oO', ':ObsidianOpen<CR>', { desc = 'Obsidian: Open current file in Obsidian app' })
 vim.keymap.set('n', '<space>ob', ':ObsidianBacklinks<CR>', { desc = 'Obsidian: Open picker for backlinks' })

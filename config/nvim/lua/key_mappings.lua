@@ -14,6 +14,15 @@ local utils = require('utils')
 -- Prefer `<leader>s` as keymap for find/search that uses the current word
 -- Prefer `<leader>v` as keymap for viewing panes and find/search is vim-specific
 
+-- Additional key mappings
+-- ............................................................................
+-- ../after/plugin/codecompanion.lua
+-- ../after/plugin/general-editing.lua
+-- ../after/plugin/mini.lua
+-- ../after/plugin/obsidian.lua
+-- ../after/plugin/telescope.lua
+-- ../after/plugin/terminal.lua
+
 -- Code file search
 -- ............................................................................
 vim.keymap.set('n', '<leader>gf', telescope_builtin.git_files, { desc = 'Find/list git files' })
@@ -197,8 +206,6 @@ vim.keymap.set('n', '<leader>vD', function() snacks.picker.diagnostics_buffer() 
     { desc = 'View/toggle diagnostics for buffer', silent = true })
 vim.keymap.set('n', '<leader>vd', function() snacks.picker.diagnostics() end,
     { desc = 'View/toggle diagnostics for workspace', silent = true })
--- snacks.nvim terminal plugin (double escape within to normal mode)
-vim.keymap.set({ 'n', 't' }, '<c-/>', function() snacks.terminal() end, { desc = 'Toggle Terminal', silent = true })
 -- snacks.nvim notifier plugin
 vim.keymap.set('n', '<leader>nn', function() snacks.notifier.show_history() end,
     { desc = 'Show notification history', silent = true })
@@ -215,7 +222,8 @@ vim.keymap.set('n', '[q', ':cprev<CR>', { silent = true, desc = 'Goto previous q
 -- Vim tool search
 -- ............................................................................
 vim.keymap.set('n', '<leader>vh', telescope_builtin.help_tags, { desc = 'View help tags' })
-vim.keymap.set('n', '<leader>vk', telescope_builtin.keymaps, { desc = 'View keymappings/keybindings' })
+vim.keymap.set('n', '<leader>vk', function() snacks.picker.keymaps() end,
+    { desc = 'View keymappings/keybindings' })
 vim.keymap.set('n', '<leader>vc', telescope_builtin.commands, { desc = 'View commands' })
 vim.keymap.set('n', '<leader>vm', telescope_builtin.marks, { desc = 'View marks' })
 vim.keymap.set('n', '<leader>vj', telescope_builtin.jumplist, { desc = 'View jump list' })

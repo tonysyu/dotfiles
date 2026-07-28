@@ -29,8 +29,10 @@ require("codecompanion").setup({
   },
 })
 
---
--- CodeCompanion keymappings
+-- ============================================================================
+-- Key mappings
+-- ============================================================================
+
 -- Expand 'cc' into 'CodeCompanion' in the command line
 vim.cmd([[cab cc CodeCompanion]])
 -- Expand 'ccc' into 'CodeCompanionCLI' in the command line

@@ -8,6 +8,16 @@ require('mini.jump').setup()
 
 require('mini.move').setup()
 
+require('mini.pairs').setup()
+
+require('mini.splitjoin').setup()
+
+require('mini.surround').setup()
+
+-- ============================================================================
+-- Key mappings
+-- ============================================================================
+
 require('mini.operators').setup {
     -- Evaluate text and replace with output
     evaluate = {
@@ -34,9 +44,3 @@ require('mini.operators').setup {
         prefix = 'xs',
     }
 }
-
-require('mini.pairs').setup()
-
-require('mini.splitjoin').setup()
-
-require('mini.surround').setup()
